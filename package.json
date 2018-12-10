@@ -1,0 +1,25 @@
+{
+  "name": "krasnopolskaya-biblioteka",
+  "version": "1.0.0",
+  "main": "script.js",
+  "repository": "git@github.com:hopes91/krasnopolskaya-biblioteka.git",
+  "author": "Nadya F-a <iam@nadyafa.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.2.0",
+    "@babel/preset-env": "^7.2.0",
+    "autoprefixer": "^9.4.2",
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-remember": "^1.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "gulp-uglifycss": "^1.1.0",
+    "path": "^0.12.7"
+  }
+}

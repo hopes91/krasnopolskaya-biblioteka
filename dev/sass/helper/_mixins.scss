@@ -1,0 +1,15 @@
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin indentations($margin, $padding) {
+  margin: $margin;
+  padding: $padding;
+}
+
+@mixin respond-to($media) {
+  @if $media == tiny-screens {
+    @media (max-width: 480px) { @content; }
+  }
+}
