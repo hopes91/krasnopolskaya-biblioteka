@@ -31,7 +31,7 @@ gulp.task('css', function() {
 gulp.task('js', function() {
   return gulp.src('./dev/js/*.js')
     .pipe(cached('js'))
-    .pipe(babel({presets: ['env']}))
+    .pipe(babel({presets: ['@babel/env']}))
     .pipe(remember('js'))
     .pipe(concat('script.js'))
     .pipe(uglify())
