@@ -54,7 +54,7 @@ body {
       @include dimensions(100%, auto);
       @include indentations(0, 0 1em);
       box-sizing: border-box;
-      .about-library, .news-and-events {
+      .about-library, .news-and-events, .services {
         @include dimensions(50%, auto);
         @include indentations(0 auto, 0);
         h2 {
