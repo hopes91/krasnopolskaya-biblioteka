@@ -1,7 +1,50 @@
 @import 'helper/variables';
 @import 'helper/mixins';
 
-html, body {
+html, body, .container {
   @include dimensions(100%, 100%);
   @include indentations(0, 0);
+}
+
+body {
+  background-color: $white;
+  a {
+    @include dimensions(100%, 100%);
+    text-decoration: none;
+    outline: none;
+    display: inline-block;
+    img {
+      @include dimensions(100%, 100%);
+    }
+  }
+
+  .container {
+    min-height: 100%;
+    position: relative;
+    overflow-x: hidden;
+    .navbar {
+      @include dimensions(15em, 100%);
+      position: relative;
+      top: 0;
+      left: 0;
+      .section-title {
+        border: $simple-border;
+        @include indentations(0, 0.3em);
+        box-sizing: border-box;
+        cursor: pointer;
+      }
+      .section-links {
+        border: $simple-border;
+        @include indentations(0, 0);
+        display: none;
+        a {
+          border: $simple-border;
+          li {
+            @include indentations(0, 0.3em);
+            list-style-type: none;
+          }
+        }
+      }
+    }
+  }
 }
