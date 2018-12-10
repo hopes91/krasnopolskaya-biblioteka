@@ -23,7 +23,7 @@ body {
     position: relative;
     overflow-x: hidden;
     .navbar {
-      @include dimensions(100%, auto);
+      @include dimensions(100%, 10em);
       text-align: center;
       .navbar-section {
         @include dimensions(15em, auto);
@@ -45,6 +45,33 @@ body {
               @include indentations(0, 0.5em);
               list-style-type: none;
             }
+          }
+        }
+      }
+    }
+
+    main {
+      @include dimensions(100%, auto);
+      @include indentations(0, 0 1em);
+      box-sizing: border-box;
+      .about-library {
+        @include dimensions(50%, auto);
+        @include indentations(0 auto, 0);
+        h2 {
+          text-align: center;
+        }
+      }
+      .rezhim-raboty-biblioteki {
+        @include dimensions(30em, auto);
+        text-align: center;
+        p {
+          @include dimensions(100%, 1.2em);
+          .schedule-days {
+            float: left;
+            clear: right;
+          }
+          .schedule-time {
+            float: right;
           }
         }
       }
