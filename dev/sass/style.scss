@@ -54,14 +54,14 @@ body {
       @include dimensions(100%, auto);
       @include indentations(0, 0 1em);
       box-sizing: border-box;
-      .about-library {
+      .about-library, .news-and-events {
         @include dimensions(50%, auto);
         @include indentations(0 auto, 0);
         h2 {
           text-align: center;
         }
       }
-      .rezhim-raboty-biblioteki {
+      .library-schedule {
         @include dimensions(30em, auto);
         text-align: center;
         p {
