@@ -23,25 +23,28 @@ body {
     position: relative;
     overflow-x: hidden;
     .navbar {
-      @include dimensions(15em, 100%);
-      position: relative;
-      top: 0;
-      left: 0;
-      .section-title {
-        border: $simple-border;
-        @include indentations(0, 0.3em);
-        box-sizing: border-box;
-        cursor: pointer;
-      }
-      .section-links {
-        border: $simple-border;
+      @include dimensions(100%, auto);
+      text-align: center;
+      .navbar-section {
+        @include dimensions(15em, auto);
         @include indentations(0, 0);
-        display: none;
-        a {
+        display: inline-block;
+        vertical-align: top;
+        .section-title {
           border: $simple-border;
-          li {
-            @include indentations(0, 0.3em);
-            list-style-type: none;
+          @include indentations(0, 0.5em);
+          cursor: pointer;
+        }
+        .section-links {
+          @include indentations(0, 0);
+          display: none;
+          a {
+            border: $simple-border;
+            box-sizing: border-box;
+            li {
+              @include indentations(0, 0.5em);
+              list-style-type: none;
+            }
           }
         }
       }

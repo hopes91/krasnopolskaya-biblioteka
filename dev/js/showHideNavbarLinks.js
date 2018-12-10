@@ -1,12 +1,12 @@
-const navbarSections = document.querySelectorAll('.section-title');
+const navbarSections = document.querySelectorAll('.navbar-section');
 
 const showNavbarLinks = event => {
-  let projectTitle = event.target.nextElementSibling;
+  let projectTitle = event.target.children[1];
 	projectTitle.style.display = 'block';
 }
 
 const hideNavbarLinks = event => {
-  let projectTitle = event.target.nextElementSibling;
+  let projectTitle = event.target.children[1];
 	projectTitle.style.display = 'none';
 }
 
