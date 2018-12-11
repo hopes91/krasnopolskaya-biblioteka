@@ -22,28 +22,35 @@ body {
     min-height: 100%;
     position: relative;
     overflow-x: hidden;
-    .navbar {
-      @include dimensions(100%, 10em);
-      text-align: center;
-      .navbar-section {
-        @include dimensions(15em, auto);
-        @include indentations(0, 0);
-        display: inline-block;
-        vertical-align: top;
-        .section-title {
-          border: $simple-border;
-          @include indentations(0, 0.5em);
-          cursor: pointer;
-        }
-        .section-links {
+    header {
+      @include dimensions(100%, 17em);
+      .site-title {
+        @include indentations(0, 1em);
+      }
+
+      .navbar {
+        @include dimensions(100%, 10em);
+        text-align: center;
+        .navbar-section {
+          @include dimensions(15em, auto);
           @include indentations(0, 0);
-          display: none;
-          a {
+          display: inline-block;
+          vertical-align: top;
+          .section-title {
             border: $simple-border;
-            box-sizing: border-box;
-            li {
-              @include indentations(0, 0.5em);
-              list-style-type: none;
+            @include indentations(0, 0.5em);
+            cursor: pointer;
+          }
+          .section-links {
+            @include indentations(0, 0);
+            display: none;
+            a {
+              border: $simple-border;
+              box-sizing: border-box;
+              li {
+                @include indentations(0, 0.5em);
+                list-style-type: none;
+              }
             }
           }
         }
@@ -58,6 +65,7 @@ body {
         @include dimensions(50%, auto);
         @include indentations(0 auto, 0);
         h2 {
+          @include indentations(1em 0 2em 0, 0);
           text-align: center;
         }
       }
@@ -73,6 +81,24 @@ body {
           .schedule-time {
             float: right;
           }
+        }
+      }
+      .poster {
+        div {
+          @include dimensions(100%, 7em);
+        }
+        p {
+          @include dimensions(auto, 1.2em);
+          @include indentations(0.3em 0, 0);
+        }
+        .poster-dates {
+          text-align: left;
+          float: left;
+        }
+        .poster-events {
+          text-align: right;
+          float: right;
+          clear: right;
         }
       }
     }
