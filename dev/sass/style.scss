@@ -83,22 +83,22 @@ body {
           }
         }
       }
-      .poster {
+      .news-and-events {
         div {
           @include dimensions(100%, 7em);
-        }
-        p {
-          @include dimensions(auto, 1.2em);
-          @include indentations(0.3em 0, 0);
-        }
-        .poster-dates {
-          text-align: left;
-          float: left;
-        }
-        .poster-events {
-          text-align: right;
-          float: right;
-          clear: right;
+          p {
+            @include dimensions(auto, 1.2em);
+            @include indentations(0.3em 0, 0);
+          }
+          .poster-dates {
+            text-align: left;
+            float: left;
+          }
+          .poster-events {
+            text-align: right;
+            float: right;
+            clear: right;
+          }
         }
       }
     }
