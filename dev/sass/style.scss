@@ -85,7 +85,7 @@ body {
       }
       .news-and-events {
         div {
-          @include dimensions(100%, 7em);
+          @include dimensions(100%, 8.5em);
           p {
             @include dimensions(auto, 1.2em);
             @include indentations(0.3em 0, 0);
@@ -99,6 +99,11 @@ body {
             float: right;
             clear: right;
           }
+        }
+      }
+      .poster-biblionik {
+        ul {
+          @include indentations(2em 0, 0 5em);
         }
       }
     }
