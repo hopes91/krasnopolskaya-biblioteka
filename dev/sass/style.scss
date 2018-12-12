@@ -69,6 +69,7 @@ body {
           text-align: center;
         }
       }
+
       .library-schedule {
         @include dimensions(30em, auto);
         text-align: center;
@@ -83,6 +84,7 @@ body {
           }
         }
       }
+
       .news-and-events {
         div {
           @include dimensions(100%, 8.5em);
@@ -106,9 +108,23 @@ body {
           @include indentations(2em 0, 0 5em);
         }
       }
+
       .safe-internet {
         a {
           @include dimensions(auto, auto);
+        }
+      }
+      .price-list {
+        table, th, td {
+          border: $simple-border;
+          border-collapse: collapse;
+        }
+        th, td {
+          padding: 1em;
+          text-align: center;
+        }
+        .td-title {
+          font-weight: bold;
         }
       }
     }
