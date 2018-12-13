@@ -1,5 +1,6 @@
 @import 'helper/variables';
 @import 'helper/mixins';
+@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p|Tenor+Sans');
 
 html, body, .container {
   @include dimensions(100%, 100%);
@@ -7,48 +8,73 @@ html, body, .container {
 }
 
 body {
-  background-color: $white;
+  font-family: 'M PLUS 1p', sans-serif;
+  background-color: white;
   a {
     @include dimensions(100%, 100%);
-    text-decoration: none;
+    color: black;
     outline: none;
     display: inline-block;
     img {
       @include dimensions(100%, 100%);
     }
   }
-
   .container {
     min-height: 100%;
+    background: linear-gradient(to right, peachpuff, burlywood);
     position: relative;
     overflow-x: hidden;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
     header {
-      @include dimensions(100%, 17em);
+      @include dimensions(100%, auto);
       .site-title {
         @include indentations(0, 1em);
+        font-family: 'Tenor Sans', sans-serif;
+        position: relative;
+        top: 1.5em;
+        left: 0;
       }
-
       .navbar {
-        @include dimensions(100%, 10em);
+        @include dimensions(100%, 3.3em);
+        @include indentations(0 auto, 0);
         text-align: center;
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        left: 0;
         .navbar-section {
           @include dimensions(15em, auto);
           @include indentations(0, 0);
-          display: inline-block;
+          box-sizing: border-box;
+          background-color: oldlace;
           vertical-align: top;
+          @include respond-to(wide-screens) {
+            @include dimensions(20%, auto);
+          }
           .section-title {
+            @include indentations(0, 0.9em 0.3em);
+            font-size: 1em;
+            color: saddlebrown;
             border: $simple-border;
-            @include indentations(0, 0.5em);
             cursor: pointer;
           }
           .section-links {
             @include indentations(0, 0);
+            background-color: oldlace;
+            border: $simple-border;
             display: none;
             a {
-              border: $simple-border;
               box-sizing: border-box;
+              color: saddlebrown;
+              font-size: 0.95em;
+              border: $simple-border;
+              text-decoration: none;
               li {
-                @include indentations(0, 0.5em);
+                @include indentations(0, 0.7em);
                 list-style-type: none;
               }
             }
@@ -56,35 +82,47 @@ body {
         }
       }
     }
+    #header-index {
+      min-height: 100%;
+      background: url(images/SDC12945.JPG) 0 30%/cover no-repeat;
+    }
 
     main {
       @include dimensions(100%, auto);
-      @include indentations(0, 0 1em);
+      @include indentations(0, 0 1em 1em 1em);
       box-sizing: border-box;
-      .about-library, .news-and-events, .services {
-        @include dimensions(50%, auto);
+      .news, .about-library, .news-and-events, .services {
+        @include dimensions(60em, auto);
         @include indentations(0 auto, 0);
+        text-align: justify;
+        @include respond-to(wide-screens) {
+          @include dimensions(50em, auto);
+        }
+        @include respond-to(medium-screens) {
+          @include dimensions(45em, auto);
+        }
+        @include respond-to(small-screens) {
+          @include dimensions(90%, auto);
+        }
         h2 {
-          @include indentations(1em 0 2em 0, 0);
+          @include indentations(1.5em 0, 0);
           text-align: center;
         }
       }
-
       .library-schedule {
         @include dimensions(30em, auto);
         text-align: center;
         p {
           @include dimensions(100%, 1.2em);
-          .schedule-days {
-            float: left;
-            clear: right;
-          }
-          .schedule-time {
-            float: right;
-          }
+        }
+        .schedule-days {
+          float: left;
+          clear: right;
+        }
+        .schedule-time {
+          float: right;
         }
       }
-
       .news-and-events {
         div {
           @include dimensions(100%, 8.5em);
@@ -93,13 +131,14 @@ body {
             @include indentations(0.3em 0, 0);
           }
           .poster-dates {
+            @include dimensions(30%, auto);
             text-align: left;
             float: left;
           }
           .poster-events {
-            text-align: right;
+            @include dimensions(70%, auto);
+            text-align: left;
             float: right;
-            clear: right;
           }
         }
       }
@@ -108,7 +147,6 @@ body {
           @include indentations(2em 0, 0 5em);
         }
       }
-
       .safe-internet {
         a {
           @include dimensions(auto, auto);
@@ -116,7 +154,7 @@ body {
       }
       .price-list {
         table, th, td {
-          border: $simple-border;
+          border: 1px solid black;
           border-collapse: collapse;
         }
         th, td {
@@ -126,6 +164,18 @@ body {
         .td-title {
           font-weight: bold;
         }
+      }
+    }
+
+    footer {
+      @include dimensions(100%, 5em);
+      @include indentations(0, 1em);
+      box-sizing: border-box;
+      background-color: oldlace;
+      border-top: $simple-border;
+      .copyright {
+        @include indentations(0, 1em 0);
+        float: left;
       }
     }
   }
