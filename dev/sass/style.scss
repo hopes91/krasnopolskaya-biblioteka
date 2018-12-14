@@ -31,6 +31,8 @@ body {
       @include dimensions(100%, auto);
       .site-title {
         @include indentations(0, 1em);
+        box-sizing: border-box;
+        text-decoration: none;
       }
       .navbar {
         @include dimensions(100%, 3.3em);
