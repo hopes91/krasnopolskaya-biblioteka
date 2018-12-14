@@ -1,6 +1,6 @@
 @import 'helper/variables';
 @import 'helper/mixins';
-@import url('https://fonts.googleapis.com/css?family=M+PLUS+1p|Tenor+Sans');
+@import url('https://fonts.googleapis.com/css?family=Oranienbaum');
 
 html, body, .container {
   @include dimensions(100%, 100%);
@@ -8,11 +8,12 @@ html, body, .container {
 }
 
 body {
-  // font-family: 'M PLUS 1p', sans-serif;
+  color: #471a00;
+  font-family: 'Oranienbaum', serif;
   background-color: white;
   a {
     @include dimensions(100%, 100%);
-    color: black;
+    color: #471a00;
     outline: none;
     display: inline-block;
     img {
@@ -53,8 +54,8 @@ body {
             @include dimensions(20%, auto);
           }
           .section-title {
-            @include indentations(0, 1.05em 0.5em);
-            color: saddlebrown;
+            @include indentations(0, 0.89em 0.3em);
+            font-size: 1.1em;
             border: $simple-border;
             cursor: pointer;
           }
@@ -65,11 +66,12 @@ body {
             display: none;
             a {
               box-sizing: border-box;
+              font-size: 1.05em;
               color: saddlebrown;
               border: $simple-border;
               text-decoration: none;
               li {
-                @include indentations(0, 0.7em);
+                @include indentations(0, 0.8em);
                 list-style-type: none;
               }
             }
@@ -89,6 +91,10 @@ body {
       h2 {
         @include indentations(0.5em 0 1em 0, 0);
         text-align: center;
+      }
+      p, li {
+        font-size: 1.05em;
+        line-height: 1.2;
       }
       .news, .about-library, .news-and-events, .services {
         @include dimensions(60em, auto);
@@ -110,10 +116,7 @@ body {
           @include indentations(0.3em 0, 0);
         }
       }
-
-      .about-library {
-
-      }
+      // about-library
       .library-schedule {
         height: 40em;
         text-align: center;
@@ -128,7 +131,7 @@ body {
           float: right;
         }
       }
-
+      // news-and-events
       .news-and-events {
         div {
           p {
@@ -166,10 +169,7 @@ body {
           @include dimensions(100%, 11em);
         }
       }
-
-      .services {
-
-      }
+      // services
       .safe-internet {
         a {
           @include dimensions(auto, auto);
