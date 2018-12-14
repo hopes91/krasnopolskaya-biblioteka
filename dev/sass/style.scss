@@ -8,7 +8,7 @@ html, body, .container {
 }
 
 body {
-  font-family: 'M PLUS 1p', sans-serif;
+  // font-family: 'M PLUS 1p', sans-serif;
   background-color: white;
   a {
     @include dimensions(100%, 100%);
@@ -20,21 +20,17 @@ body {
     }
   }
   .container {
-    min-height: 100%;
     background: linear-gradient(to right, peachpuff, burlywood);
     position: relative;
     overflow-x: hidden;
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
-    > * {
-      position: relative;
-    }
     header {
       @include dimensions(100%, auto);
       .site-title {
         @include indentations(0, 1em);
-        font-family: 'Tenor Sans', sans-serif;
+        // font-family: 'Tenor Sans', sans-serif;
       }
       .navbar {
         @include dimensions(100%, 3.3em);
@@ -51,15 +47,13 @@ body {
         .navbar-section {
           @include dimensions(15em, auto);
           @include indentations(0, 0);
-          box-sizing: border-box;
           background-color: oldlace;
           vertical-align: top;
           @include respond-to(wide-screens) {
             @include dimensions(20%, auto);
           }
           .section-title {
-            @include indentations(0, 0.9em 0.3em);
-            font-size: 1em;
+            @include indentations(0, 1.05em 0.5em);
             color: saddlebrown;
             border: $simple-border;
             cursor: pointer;
@@ -72,7 +66,6 @@ body {
             a {
               box-sizing: border-box;
               color: saddlebrown;
-              font-size: 0.95em;
               border: $simple-border;
               text-decoration: none;
               li {
@@ -91,12 +84,18 @@ body {
 
     main {
       @include dimensions(100%, auto);
-      @include indentations(0, 2em 1em);
+      @include indentations(0, 1em);
       box-sizing: border-box;
+      h2 {
+        @include indentations(0.5em 0 1em 0, 0);
+        text-align: center;
+      }
       .news, .about-library, .news-and-events, .services {
         @include dimensions(60em, auto);
-        @include indentations(0 auto, 0);
+        @include indentations(1em auto, 1em);
+        box-sizing: border-box;
         text-align: justify;
+        background-color: oldlace;
         @include respond-to(wide-screens) {
           @include dimensions(50em, auto);
         }
@@ -104,15 +103,19 @@ body {
           @include dimensions(45em, auto);
         }
         @include respond-to(small-screens) {
-          @include dimensions(90%, auto);
+          @include dimensions(100%, auto);
         }
-        h2 {
-          @include indentations(1.5em 0, 0);
-          text-align: center;
+        img {
+          @include dimensions(100%, auto);
+          @include indentations(0.3em 0, 0);
         }
       }
+
+      .about-library {
+
+      }
       .library-schedule {
-        @include dimensions(30em, auto);
+        height: 40em;
         text-align: center;
         p {
           @include dimensions(100%, 1.2em);
@@ -125,29 +128,47 @@ body {
           float: right;
         }
       }
+
       .news-and-events {
         div {
-          @include dimensions(100%, 8.5em);
           p {
             @include dimensions(auto, 1.2em);
             @include indentations(0.3em 0, 0);
           }
           .poster-dates {
-            @include dimensions(30%, auto);
+            @include dimensions(25%, auto);
             text-align: left;
             float: left;
           }
           .poster-events {
-            @include dimensions(70%, auto);
+            @include dimensions(75%, auto);
             text-align: left;
             float: right;
           }
+        }
+      }
+      .poster {
+        div {
+          @include dimensions(100%, 6.5em);
+        }
+      }
+      .poster-ot-vsej-dushi {
+        height: 40em;
+        div {
+          @include dimensions(100%, 3em);
         }
       }
       .poster-biblionik {
         ul {
           @include indentations(2em 0, 0 5em);
         }
+        div {
+          @include dimensions(100%, 11em);
+        }
+      }
+
+      .services {
+
       }
       .safe-internet {
         a {
@@ -156,7 +177,7 @@ body {
       }
       .price-list {
         table, th, td {
-          border: 1px solid black;
+          border: $simple-border;
           border-collapse: collapse;
         }
         th, td {
