@@ -47,6 +47,7 @@ body {
         position: relative;
         bottom: 0;
         left: 0;
+        z-index: 1;
         .navbar-section {
           @include dimensions(15em, auto);
           @include indentations(0, 0);
@@ -90,7 +91,7 @@ body {
 
     main {
       @include dimensions(100%, auto);
-      @include indentations(0, 0 1em 1em 1em);
+      @include indentations(0, 2em 1em);
       box-sizing: border-box;
       .news, .about-library, .news-and-events, .services {
         @include dimensions(60em, auto);
