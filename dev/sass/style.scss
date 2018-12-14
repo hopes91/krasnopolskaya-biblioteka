@@ -54,6 +54,12 @@ body {
           @include respond-to(wide-screens) {
             @include dimensions(20%, auto);
           }
+          @include respond-to(medium-screens) {
+            width: 19%;
+            &:nth-child(3) {
+              width: 24%;
+            }
+          }
           .section-title {
             @include dimensions(100%, auto);
             @include indentations(0, 0.89em 0.3em);
@@ -62,6 +68,18 @@ body {
             border: $simple-border;
             text-decoration: none;
             cursor: pointer;
+            position: relative;
+            span {
+              color: #471a00;
+              position: absolute;
+              right: 1.5em;
+              @include respond-to(wide-screens) {
+                right: 1em;
+              }
+              @include respond-to(medium-screens) {
+                right: 0.5em;
+              }
+            }
           }
           .section-links {
             @include indentations(0, 0);
