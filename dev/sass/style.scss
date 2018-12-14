@@ -190,6 +190,18 @@ body {
           font-weight: bold;
         }
       }
+      // site's map
+      .sites-map {
+        div {
+          @include dimensions(100%, 6em);
+        }
+        .map__index, .map__sites-map {
+          height: 4em;
+        }
+        .map__services {
+          height: 5em;
+        }
+      }
     }
 
     footer {
