@@ -31,7 +31,6 @@ body {
       @include dimensions(100%, auto);
       .site-title {
         @include indentations(0, 1em);
-        // font-family: 'Tenor Sans', sans-serif;
       }
       .navbar {
         @include dimensions(100%, 3.3em);
@@ -54,9 +53,12 @@ body {
             @include dimensions(20%, auto);
           }
           .section-title {
+            @include dimensions(100%, auto);
             @include indentations(0, 0.89em 0.3em);
+            box-sizing: border-box;
             font-size: 1.1em;
             border: $simple-border;
+            text-decoration: none;
             cursor: pointer;
           }
           .section-links {
