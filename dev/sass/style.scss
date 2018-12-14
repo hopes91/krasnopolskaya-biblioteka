@@ -27,24 +27,25 @@ body {
     display: flex;
     flex-flow: column nowrap;
     justify-content: space-between;
+    > * {
+      position: relative;
+    }
     header {
       @include dimensions(100%, auto);
       .site-title {
         @include indentations(0, 1em);
         font-family: 'Tenor Sans', sans-serif;
-        position: relative;
-        top: 1.5em;
-        left: 0;
       }
       .navbar {
         @include dimensions(100%, 3.3em);
         @include indentations(0 auto, 0);
         text-align: center;
+        background: linear-gradient(to right, peachpuff, burlywood);
         display: flex;
         flex-flow: row wrap;
         justify-content: center;
-        position: fixed;
-        top: 0;
+        position: relative;
+        bottom: 0;
         left: 0;
         .navbar-section {
           @include dimensions(15em, auto);
@@ -82,10 +83,10 @@ body {
         }
       }
     }
-    #header-index {
-      min-height: 100%;
-      background: url(images/SDC12945.JPG) 0 30%/cover no-repeat;
-    }
+    // #header-index {
+    //   min-height: 100%;
+    //   background: url(images/SDC12945.JPG) 0 30%/cover no-repeat;
+    // }
 
     main {
       @include dimensions(100%, auto);
