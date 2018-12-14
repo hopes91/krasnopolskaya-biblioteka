@@ -98,7 +98,7 @@ body {
         font-size: 1.05em;
         line-height: 1.2;
       }
-      .news, .about-library, .news-and-events, .services {
+      .news, .about-library, .news-and-events, .services, .sites-map {
         @include dimensions(60em, auto);
         @include indentations(1em auto, 1em);
         box-sizing: border-box;
