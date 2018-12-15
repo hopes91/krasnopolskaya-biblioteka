@@ -51,7 +51,7 @@ body {
           @include indentations(0, 0);
           background-color: oldlace;
           vertical-align: top;
-          @include respond-to(wide-screens) {
+          @include respond-to(standart-screens) {
             @include dimensions(20%, auto);
           }
           @include respond-to(medium-screens) {
@@ -73,7 +73,7 @@ body {
               color: #471a00;
               position: absolute;
               right: 1.5em;
-              @include respond-to(wide-screens) {
+              @include respond-to(standart-screens) {
                 right: 1em;
               }
               @include respond-to(medium-screens) {
@@ -110,6 +110,7 @@ body {
       @include dimensions(100%, auto);
       @include indentations(0, 1em);
       box-sizing: border-box;
+      position: relative;
       h2 {
         @include indentations(0.5em 0 1em 0, 0);
         text-align: center;
@@ -118,17 +119,32 @@ body {
         font-size: 1.05em;
         line-height: 1.2;
       }
+      .stack-of-books {
+        @include dimensions(17em, auto);
+        position: absolute;
+        bottom: 1em;
+        right: 1em;
+        @include respond-to(medium-screens) {
+          @include dimensions(15em, auto);
+        }
+      }
       .news, .about-library, .news-and-events, .services, .sites-map {
-        @include dimensions(60em, auto);
-        @include indentations(1em auto, 1em);
+        @include dimensions(65%, auto);
+        @include indentations(1em, 1em);
         box-sizing: border-box;
         text-align: justify;
         background-color: oldlace;
+        position: relative;
+        left: 5em;
         @include respond-to(wide-screens) {
-          @include dimensions(50em, auto);
+          @include indentations(1em 0 1em 5%, 1em);
+        }
+        @include respond-to(standart-screens) {
+          left: 1em;
         }
         @include respond-to(medium-screens) {
-          @include dimensions(45em, auto);
+          @include dimensions(63%, auto);
+          left: 0;
         }
         @include respond-to(small-screens) {
           @include dimensions(100%, auto);
