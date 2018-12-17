@@ -120,34 +120,35 @@ body {
         line-height: 1.2;
       }
       .stack-of-books {
-        @include dimensions(17em, auto);
+        @include dimensions(15%, auto);
         position: absolute;
         bottom: 1em;
         right: 1em;
         @include respond-to(medium-screens) {
-          @include dimensions(15em, auto);
+          @include dimensions(20%, auto);
+        }
+        @include respond-to(small-screens) {
+          display: none;
         }
       }
       .news, .about-library, .news-and-events, .services, .sites-map {
         @include dimensions(65%, auto);
-        @include indentations(1em, 1em);
+        @include indentations(1em auto, 1em);
         box-sizing: border-box;
         text-align: justify;
         background-color: oldlace;
         position: relative;
-        left: 5em;
         @include respond-to(wide-screens) {
-          @include indentations(1em 0 1em 5%, 1em);
-        }
-        @include respond-to(standart-screens) {
-          left: 1em;
+          @include dimensions(55%, auto);
         }
         @include respond-to(medium-screens) {
-          @include dimensions(63%, auto);
+          @include dimensions(75%, auto);
+          @include indentations(1em, 1em);
           left: 0;
         }
         @include respond-to(small-screens) {
           @include dimensions(100%, auto);
+          @include indentations(1em auto, 1em);
         }
         img {
           @include dimensions(100%, auto);
