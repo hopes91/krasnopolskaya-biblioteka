@@ -30,7 +30,7 @@ body {
     header {
       @include dimensions(100%, auto);
       @include respond-to(small-screens) {
-        @include dimensions(100%, 10em);
+        height: 10em;
         position: absolute;
         top: 0;
         left: 0;
@@ -40,7 +40,7 @@ body {
         box-sizing: border-box;
         text-decoration: none;
         @include respond-to(small-screens) {
-          @include dimensions(100%, 5.5em);
+          height: 5.5em;
           position: relative;
           top: 4em;
         }
@@ -75,7 +75,7 @@ body {
           background-color: oldlace;
           vertical-align: top;
           @include respond-to(standart-screens) {
-            @include dimensions(20%, auto);
+            width: 20%;
           }
           @include respond-to(medium-screens) {
             width: 19%;
@@ -161,10 +161,10 @@ body {
           display: block;
         }
         #drop-menu {
-      		display: none;
       		@include dimensions(100%, auto);
       		@include indentations(0, 4em 0 0 0);
           text-align: center;
+        	display: none;
       		position: absolute;
       		z-index: 1;
           .dropdown-section {
@@ -229,10 +229,10 @@ body {
       box-sizing: border-box;
       position: relative;
       @include respond-to(small-screens) {
-        @include indentations(8em 0 0 0, 1em);
+        margin: 8em 0 0 0;
       }
       @include respond-to(tiny-screens) {
-        @include indentations(8em 0 0 0, 1em 0.5em);
+        padding: 1em 0.5em;
       }
       h2 {
         @include indentations(0.5em 0 1em 0, 0);
@@ -248,7 +248,7 @@ body {
         bottom: 1em;
         right: 1em;
         @include respond-to(medium-screens) {
-          @include dimensions(20%, auto);
+          width: 20%;
         }
         @include respond-to(small-screens) {
           display: none;
@@ -262,16 +262,16 @@ body {
         background-color: oldlace;
         position: relative;
         @include respond-to(wide-screens) {
-          @include dimensions(55%, auto);
+          width: 55%;
         }
         @include respond-to(medium-screens) {
-          @include dimensions(75%, auto);
-          @include indentations(1em, 1em);
+          width: 75%;
+          margin: 1em;
           left: 0;
         }
         @include respond-to(small-screens) {
-          @include dimensions(100%, auto);
-          @include indentations(1em auto, 1em);
+          width: 100%;
+          margin: 1em auto;
         }
         img {
           @include dimensions(100%, auto);
@@ -360,7 +360,7 @@ body {
           @include indentations(0, 1em);
           text-align: center;
           @include respond-to(tiny-screens) {
-            @include indentations(0, 0.5em);
+            padding: 0.5em;
           }
         }
         .td-title {
@@ -386,9 +386,9 @@ body {
       background-color: oldlace;
       border-top: $simple-border;
       @include respond-to(small-screens) {
-        @include dimensions(100%, 9.5em);
+        height: 9.5em;
       }
-      > * {
+      p {
         @include respond-to(small-screens) {
           @include dimensions(100%, auto);
           text-align: center;
@@ -398,7 +398,7 @@ body {
         @include indentations(0, 1.5em 0);
         float: left;
         @include respond-to(small-screens) {
-          @include indentations(0, 0.5em 0);
+          padding: 0.5em 0;
         }
       }
       .adress {
@@ -406,7 +406,7 @@ body {
         text-align: center;
         float: right;
         @include respond-to(small-screens) {
-          @include indentations(0, 0.5em 0);
+          padding: 0.5em 0;
         }
         span {
           font-weight: bold;
