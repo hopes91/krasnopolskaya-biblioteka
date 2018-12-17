@@ -286,14 +286,14 @@ body {
         height: 40em;
         text-align: center;
         p {
-          @include dimensions(100%, 1.2em);
+          @include dimensions(100%, auto);
+          @include indentations(0.5em 0, 0);
         }
         .schedule-days {
-          float: left;
-          clear: right;
+          font-weight: bold;
         }
         .schedule-time {
-          float: right;
+          margin-bottom: 1.5em;
         }
       }
       // news-and-events
