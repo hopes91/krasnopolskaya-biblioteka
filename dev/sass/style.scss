@@ -277,6 +277,16 @@ body {
           @include dimensions(100%, auto);
           @include indentations(0.3em 0, 0);
         }
+        ul {
+          @include indentations(1.5em 0, 0 5em);
+          text-align: left;
+          @include respond-to(medium-screens) {
+            padding: 0 3em;
+          }
+          @include respond-to(tiny-screens) {
+            padding: 0 1em;
+          }
+        }
       }
       // about-library
       .about-librarian { // delete after adding a photo
@@ -299,12 +309,14 @@ body {
       // news-and-events
       .news-and-events {
         div {
+          @include dimensions(100%, auto);
           p {
             @include dimensions(auto, 1.2em);
             @include indentations(0.3em 0, 0);
           }
           .poster-dates {
             @include dimensions(25%, auto);
+            font-weight: bold;
             text-align: left;
             float: left;
           }
@@ -313,25 +325,44 @@ body {
             text-align: left;
             float: right;
           }
+          .poster-dates, .poster-events {
+            @include respond-to(small-screens) {
+              @include dimensions(100%, auto);
+              text-align: center;
+              float: none;
+            }
+          }
         }
       }
       .poster {
         div {
-          @include dimensions(100%, 6.5em);
+          height: 6.5em;
+          @include respond-to(small-screens) {
+            height: auto;
+            margin-bottom: 1em;
+          }
         }
       }
       .poster-ot-vsej-dushi {
         height: 40em;
+        @include respond-to(small-screens) {
+          height: auto;
+        }
         div {
-          @include dimensions(100%, 3em);
+          height: 3em;
+          @include respond-to(small-screens) {
+            height: auto;
+            margin-bottom: 1em;
+          }
         }
       }
       .poster-biblionik {
-        ul {
-          @include indentations(2em 0, 0 5em);
-        }
         div {
-          @include dimensions(100%, 11em);
+          height: 11em;
+          @include respond-to(small-screens) {
+            height: auto;
+            margin-bottom: 1em;
+          }
         }
       }
       // services
@@ -372,6 +403,13 @@ body {
         text-align: left;
         div {
           @include dimensions(100%, 6em);
+          margin-bottom: 1em;
+          p {
+            margin: 0.5em 0;
+          }
+          ul {
+            @include indentations(0, 0 2em);
+          }
         }
         .map__index, .map__sites-map {
           height: 4em;
