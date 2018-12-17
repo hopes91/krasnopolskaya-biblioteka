@@ -231,6 +231,9 @@ body {
       @include respond-to(small-screens) {
         @include indentations(8em 0 0 0, 1em);
       }
+      @include respond-to(tiny-screens) {
+        @include indentations(8em 0 0 0, 1em 0.5em);
+      }
       h2 {
         @include indentations(0.5em 0 1em 0, 0);
         text-align: center;
@@ -336,6 +339,7 @@ body {
       }
       .useful-links {
         height: 40em;
+        text-align: left;
         a {
           @include indentations(0.2em 0, 0);
         }
@@ -362,6 +366,7 @@ body {
       }
       // site's map
       .sites-map {
+        text-align: left;
         div {
           @include dimensions(100%, 6em);
         }
@@ -378,7 +383,7 @@ body {
       background-color: oldlace;
       border-top: $simple-border;
       @include respond-to(small-screens) {
-        @include dimensions(100%, 10em);
+        @include dimensions(100%, 9.5em);
       }
       > * {
         @include respond-to(small-screens) {
