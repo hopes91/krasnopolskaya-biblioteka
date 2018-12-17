@@ -21,4 +21,7 @@
   @else if $media == small-screens {
     @media (max-width: 800px) { @content; }
   }
+  @else if $media == tiny-screens {
+    @media (max-width: 640px) { @content; }
+  }
 }

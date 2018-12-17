@@ -221,6 +221,10 @@ body {
         }
       }
       .price-list {
+          @include respond-to(tiny-screens) {
+            @include indentations(1em auto, 1em 0);
+            overflow-x: scroll;
+          }
         table, th, td {
           border: $simple-border;
           border-collapse: collapse;
@@ -228,6 +232,9 @@ body {
         th, td {
           padding: 1em;
           text-align: center;
+          @include respond-to(tiny-screens) {
+            padding: 0.5em;
+          }
         }
         .td-title {
           font-weight: bold;
