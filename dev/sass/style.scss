@@ -221,10 +221,10 @@ body {
         }
       }
       .price-list {
-          @include respond-to(tiny-screens) {
-            @include indentations(1em auto, 1em 0);
-            overflow-x: scroll;
-          }
+        @include respond-to(tiny-screens) {
+          @include indentations(1em auto, 1em 0);
+          overflow-x: scroll;
+        }
         table, th, td {
           border: $simple-border;
           border-collapse: collapse;
@@ -257,9 +257,16 @@ body {
       box-sizing: border-box;
       background-color: oldlace;
       border-top: $simple-border;
+      @include respond-to(tiny-screens) {
+        @include dimensions(100%, 6em);
+      }
       .copyright {
         @include indentations(0, 1em 0);
         float: left;
+        @include respond-to(tiny-screens) {
+          @include dimensions(100%, auto);
+          text-align: center;
+        }
       }
     }
   }
