@@ -217,7 +217,7 @@ body {
       .useful-links {
         height: 40em;
         a {
-          @include indentations(0.1em 0, 0);
+          @include indentations(0.2em 0, 0);
         }
       }
       .price-list {
