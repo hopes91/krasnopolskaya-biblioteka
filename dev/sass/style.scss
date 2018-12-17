@@ -33,6 +33,14 @@ body {
         @include indentations(0, 1em);
         box-sizing: border-box;
         text-decoration: none;
+        h1 {
+          @include respond-to(small-screens) {
+            font-size: 1.7em;
+          }
+          @include respond-to(tiny-screens) {
+            font-size: 1.4em;
+          }
+        }
       }
       .navbar {
         @include dimensions(100%, 3.3em);
