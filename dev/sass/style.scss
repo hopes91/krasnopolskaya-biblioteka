@@ -252,20 +252,36 @@ body {
     }
 
     footer {
-      @include dimensions(100%, 5em);
+      @include dimensions(100%, 6em);
       @include indentations(0, 1em);
       box-sizing: border-box;
       background-color: oldlace;
       border-top: $simple-border;
-      @include respond-to(tiny-screens) {
-        @include dimensions(100%, 6em);
+      @include respond-to(small-screens) {
+        @include dimensions(100%, 10em);
       }
-      .copyright {
-        @include indentations(0, 1em 0);
-        float: left;
-        @include respond-to(tiny-screens) {
+      > * {
+        @include respond-to(small-screens) {
           @include dimensions(100%, auto);
           text-align: center;
+        }
+      }
+      .copyright {
+        @include indentations(0, 1.5em 0);
+        float: left;
+        @include respond-to(small-screens) {
+          @include indentations(0, 0.5em 0);
+        }
+      }
+      .adress {
+        @include indentations(0, 1em 0);
+        text-align: center;
+        float: right;
+        @include respond-to(small-screens) {
+          @include indentations(0, 0.5em 0);
+        }
+        span {
+          font-weight: bold;
         }
       }
     }
