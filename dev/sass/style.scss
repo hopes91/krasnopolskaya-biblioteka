@@ -400,6 +400,9 @@ body {
           @include indentations(1em auto, 1em 0);
           overflow-x: scroll;
         }
+        table {
+          margin-bottom: 1.5em;
+        }
         table, th, td {
           border: $simple-border;
           border-collapse: collapse;
