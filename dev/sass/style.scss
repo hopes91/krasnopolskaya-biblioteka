@@ -239,7 +239,7 @@ body {
         text-align: center;
       }
       p, a, li {
-        font-size: 1.05em;
+        font-size: 1em;
         line-height: 1.2;
       }
       .stack-of-books {
@@ -404,11 +404,17 @@ body {
         div {
           @include dimensions(100%, 6em);
           margin-bottom: 1em;
+          @include respond-to(tiny-screens) {
+            margin-bottom: 1.5em;
+          }
           p {
             margin: 0.5em 0;
           }
           ul {
             @include indentations(0, 0 2em);
+            @include respond-to(tiny-screens) {
+              padding: 0 1em;
+            }
           }
         }
         .map__index, .map__sites-map {
@@ -424,6 +430,9 @@ body {
       background-color: oldlace;
       border-top: $simple-border;
       @include respond-to(small-screens) {
+        height: 7.5em;
+      }
+      @include respond-to(tiny-screens) {
         height: 9.5em;
       }
       p {
