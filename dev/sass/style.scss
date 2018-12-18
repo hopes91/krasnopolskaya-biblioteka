@@ -106,7 +106,7 @@ body {
           }
           .section-links {
             @include indentations(0, 0);
-            background-color: oldlace;
+            background-color: #fcf8ef;
             border: $simple-border;
             display: none;
             a {
@@ -189,7 +189,7 @@ body {
             }
             .section-links {
               @include indentations(0, 0);
-              background-color: oldlace;
+              background-color: #fcf8ef;
               border: $simple-border;
               display: none;
               a {
