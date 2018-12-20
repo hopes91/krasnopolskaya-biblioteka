@@ -580,10 +580,12 @@ body {
         }
       }
       .adress {
+        @include dimensions(20em, auto);
         @include indentations(0, 1em 0);
         text-align: center;
         float: right;
         @include respond-to(small-screens) {
+          @include dimensions(100%, auto);
           padding: 0.5em 0;
         }
         span {
