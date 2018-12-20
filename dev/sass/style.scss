@@ -35,14 +35,107 @@ body {
         top: 0;
         left: 0;
       }
+      .dropdown {
+      	display: none;
+        @include dimensions(100%, 4em);
+        box-sizing: border-box;
+        background-color: oldlace;
+        border: $simple-border;
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 5;
+        #burger {
+          width: 2.5em;
+          height: 1.5em;
+          position: absolute;
+          top: 1.2em;
+          right: 1em;
+          cursor: pointer;
+          span {
+            display: block;
+            width: 100%;
+            height: 3px;
+            background-color: saddlebrown;
+            position: absolute;
+            transition: .5s;
+            &:first-child {
+              top: 0;
+            }
+            &:nth-child(2) {
+              top: 0.66em;
+            }
+            &:last-child {
+              bottom: 0;
+            }
+          }
+          .span-one-active {
+        		transform: rotate(40deg);
+        		transform-origin: 9% 50%;
+        	}
+        	.span-two-active {
+        		display: none !important;
+        	}
+        	.span-three-active {
+        		transform: rotate(-40deg);
+        		transform-origin: 9% 50%;
+        	}
+        }
+        @include respond-to(small-screens) {
+          display: block;
+        }
+        #drop-menu {
+      		@include dimensions(100%, auto);
+      		@include indentations(0, 4em 0 0 0);
+          text-align: center;
+        	display: none;
+      		position: absolute;
+      		z-index: 5;
+          .dropdown-section {
+            @include dimensions(100%, auto);
+            @include indentations(0, 0);
+            background-color: oldlace;
+            .section-title {
+              @include dimensions(100%, auto);
+              @include indentations(0, 1em);
+              box-sizing: border-box;
+              font-size: 1.1em;
+              border: $simple-border;
+              text-decoration: none;
+              position: relative;
+              cursor: pointer;
+              span {
+                color: #471a00;
+                position: absolute;
+                right: 2em;
+              }
+            }
+            .section-links {
+              @include indentations(0, 0);
+              background-color: #fcf8ef;
+              border: $simple-border;
+              display: none;
+              a {
+                box-sizing: border-box;
+                font-size: 1.05em;
+                color: saddlebrown;
+                border: $simple-border;
+                text-decoration: none;
+                li {
+                  @include indentations(0, 0.8em);
+                  list-style-type: none;
+                }
+              }
+            }
+          }
+      	}
+      }
       .site-title {
         @include dimensions(100%, auto);
         box-sizing: border-box;
         text-decoration: none;
         @include respond-to(small-screens) {
           height: 5.5em;
-          position: relative;
-          top: 4em;
         }
         h1 {
           @include indentations(1em, 0);
@@ -121,101 +214,6 @@ body {
           }
         }
       }
-      .dropdown {
-      	display: none;
-        @include dimensions(100%, 4em);
-        box-sizing: border-box;
-        background-color: oldlace;
-        border: $simple-border;
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: 5;
-        #burger {
-          width: 2.5em;
-          height: 1.5em;
-          position: absolute;
-          top: 1.2em;
-          right: 1em;
-          cursor: pointer;
-          span {
-            display: block;
-            width: 100%;
-            height: 3px;
-            background-color: saddlebrown;
-            position: absolute;
-            transition: .5s;
-            &:first-child {
-              top: 0;
-            }
-            &:nth-child(2) {
-              top: 0.66em;
-            }
-            &:last-child {
-              bottom: 0;
-            }
-          }
-        }
-        @include respond-to(small-screens) {
-          display: block;
-        }
-        #drop-menu {
-      		@include dimensions(100%, auto);
-      		@include indentations(0, 4em 0 0 0);
-          text-align: center;
-        	display: none;
-      		position: absolute;
-      		z-index: 5;
-          .dropdown-section {
-            @include dimensions(100%, auto);
-            @include indentations(0, 0);
-            background-color: oldlace;
-            .section-title {
-              @include dimensions(100%, auto);
-              @include indentations(0, 1em);
-              box-sizing: border-box;
-              font-size: 1.1em;
-              border: $simple-border;
-              text-decoration: none;
-              position: relative;
-              cursor: pointer;
-              span {
-                color: #471a00;
-                position: absolute;
-                right: 2em;
-              }
-            }
-            .section-links {
-              @include indentations(0, 0);
-              background-color: #fcf8ef;
-              border: $simple-border;
-              display: none;
-              a {
-                box-sizing: border-box;
-                font-size: 1.05em;
-                color: saddlebrown;
-                border: $simple-border;
-                text-decoration: none;
-                li {
-                  @include indentations(0, 0.8em);
-                  list-style-type: none;
-                }
-              }
-            }
-          }
-      	}
-      }
-      .span-one-active {
-    		transform: rotate(40deg);
-    		transform-origin: 9% 50%;
-    	}
-    	.span-two-active {
-    		display: none !important;
-    	}
-    	.span-three-active {
-    		transform: rotate(-40deg);
-    		transform-origin: 9% 50%;
-    	}
     }
 
     main {
@@ -323,103 +321,93 @@ body {
             }
           }
         }
-        #back {
-        	@include dimensions(100%, 100%);
-        	background-color: rgba(0, 0, 0, 0.9);
-        	position: fixed;
-        	top: 0;
-        	left: 0;
-        	z-index: 10;
-        	display: none;
-          #close {
-          	color: oldlace;
-          	font-size: 3em;
-          	background-color: rgba(0, 0, 0, 0);
-          	border: 0;
-          	position: absolute;
-          	top: 0.1em;
-          	right: 0.5em;
-          	outline: none;
-          	z-index: 20;
-            cursor: pointer;
-            &:hover {
-            	font-size: 3.05em;
-            }
+      }
+      #back {
+        @include dimensions(100%, 100%);
+        background-color: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+        display: none;
+        #close {
+          color: oldlace;
+          font-size: 3em;
+          background-color: rgba(0, 0, 0, 0);
+          border: 0;
+          position: absolute;
+          top: 0.1em;
+          right: 0.5em;
+          outline: none;
+          z-index: 20;
+          cursor: pointer;
+          &:hover {
+            font-size: 3.05em;
           }
-          #front {
-          	@include dimensions(70%, 100%);
-          	@include indentations(0 auto, 0);
-          	background-color: rgba(0, 0, 0, 0);
-          	position: relative;
-          	top: 0;
-          	z-index: 20;
-            .slide {
-            	@include indentations(auto, 0);
-            	position: absolute;
-            	top: 0;
-            	right: 0;
-            	bottom: 0;
-            	left: 0;
-              display: none;
-            }
-            .horizontal {
-              @include dimensions(100%, auto);
-              @include respond-to(small-screens) {
-                // fix it
-              }
-            }
-            .vertical {
-              @include dimensions(auto, 80%);
-              @include respond-to(small-screens) {
-                // fix it
-              }
-            }
-          }
-          .prev-slide, .next-slide {
-            @include indentations(0, 1em 1.2em);
-            color: oldlace;
-            font-size: 1.5em;
-            border-radius: 0.3em;
+        }
+        #front {
+          @include dimensions(70%, 100%);
+          @include indentations(0 auto, 0);
+          background-color: rgba(0, 0, 0, 0);
+          position: relative;
+          top: 0;
+          z-index: 20;
+          .slide {
+            max-width: 100%;
+            max-height: 80%;
+            @include indentations(auto, 0);
             position: absolute;
-            top: 45%;
-            cursor: pointer;
-            @include respond-to(small-screens) {
-              padding: 1em;
-            }
-            @include respond-to(tiny-screens) {
-              padding: 1em 0.5em;
-            }
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: none;
           }
-          .prev-slide {
-            left: 1em;
-            @include respond-to(small-screens) {
-              left: 0;
-            }
+        }
+        .prev-slide, .next-slide {
+          @include indentations(0, 1em 1.2em);
+          color: oldlace;
+          font-size: 1.5em;
+          border-radius: 0.3em;
+          position: absolute;
+          top: 45%;
+          cursor: pointer;
+          @include respond-to(small-screens) {
+            padding: 1em;
           }
-          .next-slide {
-            right: 1em;
-            @include respond-to(small-screens) {
-              right: 0;
-            }
+          @include respond-to(tiny-screens) {
+            padding: 1em 0.5em;
           }
-          .dots {
-            @include dimensions(100%, 1em);
-            @include indentations(0 auto, 0);
-            text-align: center;
-            position: relative;
-            bottom: 2.5em;
-            z-index: 20;
-            @include respond-to(small-screens) {
-              bottom: 2.3em;
-            }
-            .dot {
-              @include dimensions(0.5em, 0.5em);
-              @include indentations(0 0.1em, 0);
-              background-color: oldlace;
-              border-radius: 50%;
-              display: inline-block;
-              vertical-align: middle;
-            }
+        }
+        .prev-slide {
+          left: 1em;
+          @include respond-to(small-screens) {
+            left: 0;
+          }
+        }
+        .next-slide {
+          right: 1em;
+          @include respond-to(small-screens) {
+            right: 0;
+          }
+        }
+        .dots {
+          @include dimensions(100%, 1em);
+          @include indentations(0 auto, 0);
+          text-align: center;
+          position: relative;
+          bottom: 2.5em;
+          z-index: 20;
+          @include respond-to(small-screens) {
+            bottom: 2em;
+          }
+          .dot {
+            @include dimensions(0.5em, 0.5em);
+            @include indentations(0 0.1em, 0);
+            background-color: oldlace;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: middle;
           }
         }
       }

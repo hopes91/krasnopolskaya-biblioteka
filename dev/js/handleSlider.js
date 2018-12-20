@@ -5,15 +5,12 @@ const dots = document.querySelectorAll('.dot');
 const prevSlide = document.querySelector('.prev-slide');
 const nextSlide = document.querySelector('.next-slide');
 const closeIcon = document.getElementById('close');
-const navbar = document.querySelector('.navbar');
-const dropdown = document.querySelector('.dropdown');
 
 let mainSlide = null;
 let start = null;
 
 function showFirstSlide() {
 	back.style.display = 'block';
-  navbar.style.position = 'static';
 
 	let clickedAlt = this.getAttribute('alt');
 	let comparedAlt = null;
@@ -74,7 +71,6 @@ function currentSlide() {
 function hideSlider() {
 	mainSlide = null;
 	start = null;
-  navbar.style.position = 'relative';
 	back.style.display = 'none';
 }
 
