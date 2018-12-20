@@ -4,7 +4,6 @@ const slides = document.querySelectorAll('.slide');
 const dots = document.querySelectorAll('.dot');
 const prevSlide = document.querySelector('.prev-slide');
 const nextSlide = document.querySelector('.next-slide');
-const closeIcon = document.getElementById('close');
 
 let mainSlide = null;
 let start = null;
@@ -75,4 +74,3 @@ function hideSlider() {
 }
 
 miniPhotos.forEach(photo => photo.addEventListener('click', showFirstSlide));
-closeIcon.addEventListener('click', hideSlider);
