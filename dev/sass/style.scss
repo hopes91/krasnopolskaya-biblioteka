@@ -63,9 +63,7 @@ body {
         flex-flow: row wrap;
         justify-content: center;
         position: relative;
-        bottom: 0;
-        left: 0;
-        z-index: 10;
+        z-index: 5;
         @include respond-to(small-screens) {
           display: none;
         }
@@ -132,7 +130,7 @@ body {
         position: absolute;
         top: 0;
         left: 0;
-        z-index: 10;
+        z-index: 5;
         #burger {
           width: 2.5em;
           height: 1.5em;
@@ -167,7 +165,7 @@ body {
           text-align: center;
         	display: none;
       		position: absolute;
-      		z-index: 1;
+      		z-index: 5;
           .dropdown-section {
             @include dimensions(100%, auto);
             @include indentations(0, 0);
@@ -322,6 +320,105 @@ body {
             cursor: pointer;
             @include respond-to(tiny-screens) {
               width: 90%;
+            }
+          }
+        }
+        #back {
+        	@include dimensions(100%, 100%);
+        	background-color: rgba(0, 0, 0, 0.9);
+        	position: fixed;
+        	top: 0;
+        	left: 0;
+        	z-index: 10;
+        	display: none;
+          #close {
+          	color: oldlace;
+          	font-size: 3em;
+          	background-color: rgba(0, 0, 0, 0);
+          	border: 0;
+          	position: absolute;
+          	top: 0.1em;
+          	right: 0.5em;
+          	outline: none;
+          	z-index: 20;
+            cursor: pointer;
+            &:hover {
+            	font-size: 3.05em;
+            }
+          }
+          #front {
+          	@include dimensions(70%, 100%);
+          	@include indentations(0 auto, 0);
+          	background-color: rgba(0, 0, 0, 0);
+          	position: relative;
+          	top: 0;
+          	z-index: 20;
+            .slide {
+            	@include indentations(auto, 0);
+            	position: absolute;
+            	top: 0;
+            	right: 0;
+            	bottom: 0;
+            	left: 0;
+              display: none;
+            }
+            .horizontal {
+              @include dimensions(100%, auto);
+              @include respond-to(small-screens) {
+                // fix it
+              }
+            }
+            .vertical {
+              @include dimensions(auto, 80%);
+              @include respond-to(small-screens) {
+                // fix it
+              }
+            }
+          }
+          .prev-slide, .next-slide {
+            @include indentations(0, 1em 1.2em);
+            color: oldlace;
+            font-size: 1.5em;
+            border-radius: 0.3em;
+            position: absolute;
+            top: 45%;
+            cursor: pointer;
+            @include respond-to(small-screens) {
+              padding: 1em;
+            }
+            @include respond-to(tiny-screens) {
+              padding: 1em 0.5em;
+            }
+          }
+          .prev-slide {
+            left: 1em;
+            @include respond-to(small-screens) {
+              left: 0;
+            }
+          }
+          .next-slide {
+            right: 1em;
+            @include respond-to(small-screens) {
+              right: 0;
+            }
+          }
+          .dots {
+            @include dimensions(100%, 1em);
+            @include indentations(0 auto, 0);
+            text-align: center;
+            position: relative;
+            bottom: 2.5em;
+            z-index: 20;
+            @include respond-to(small-screens) {
+              bottom: 2.3em;
+            }
+            .dot {
+              @include dimensions(0.5em, 0.5em);
+              @include indentations(0 0.1em, 0);
+              background-color: oldlace;
+              border-radius: 50%;
+              display: inline-block;
+              vertical-align: middle;
             }
           }
         }
