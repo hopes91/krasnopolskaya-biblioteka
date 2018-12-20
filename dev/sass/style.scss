@@ -306,6 +306,26 @@ body {
         }
       }
       // about-library
+      .photogalery {
+        h3 {
+          text-align: center;
+        }
+        .sorted-by-year {
+          margin-bottom: 1em;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-around;
+          align-items: center;
+          .mini-photo {
+            @include dimensions(10em, auto);
+            margin: 0.5em;
+            cursor: pointer;
+            @include respond-to(tiny-screens) {
+              width: 90%;
+            }
+          }
+        }
+      }
       .about-librarian { // delete after adding a photo
         height: 40em;
       }
