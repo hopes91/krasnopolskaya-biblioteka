@@ -261,7 +261,7 @@ body {
         padding: 1em 0.5em;
       }
       h2 {
-        @include indentations(0.5em 1em 1em 1em, 0);
+        @include indentations(1em, 0);
         text-align: center;
       }
       p, a, li {
