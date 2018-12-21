@@ -30,7 +30,7 @@ body {
     header {
       @include dimensions(100%, auto);
       @include respond-to(small-screens) {
-        height: 10em;
+        height: 8em;
         position: absolute;
         top: 0;
         left: 0;
@@ -137,6 +137,7 @@ body {
         h1 {
           @include indentations(1em, 0);
           @include respond-to(small-screens) {
+            margin-bottom: 0;
             font-size: 1.7em;
           }
           @include respond-to(tiny-screens) {
@@ -144,19 +145,39 @@ body {
           }
         }
       }
-      #todaysDate {
-        @include dimensions(5em, auto);
+      .new-year__top {
+        @include dimensions(6em, auto);
         @include indentations(0, 0);
-        font-size: 1.2em;
-        text-align: center;
         position: absolute;
         top: 1.4em;
         right: 1em;
+        z-index: 6;
         @include respond-to(small-screens) {
-          width: 8em;
-          top: 1.1em;
-          left: 1em;
+          @include dimensions(12em, 4em);
+          padding: 0.5em;
+          box-sizing: border-box;
+          top: 0;
+          left: 0;
           z-index: 10;
+          #todaysDate {
+            float: right;
+          }
+          a {
+            @include dimensions(5em, auto);
+            float: left;
+          }
+        }
+        a {
+          cursor: default;
+        }
+        #todaysDate {
+          @include dimensions(5em, auto);
+          @include indentations(0 auto, 0);
+          font-size: 1.2em;
+          text-align: center;
+          @include respond-to(small-screens) {
+            margin: 0;
+          }
         }
       }
       .navbar {
@@ -246,6 +267,19 @@ body {
       p, a, li {
         font-size: 1em;
         line-height: 1.2;
+      }
+      .new-year__center {
+        @include dimensions(50%, auto);
+        @include indentations(0 auto, 0);
+        @include respond-to(small-screens) {
+          width: 80%;
+        }
+        @include respond-to(tiny-screens) {
+          margin-top: 0.5em;
+        }
+        a {
+          cursor: default;
+        }
       }
       .news, .about-library, .news-and-events, .services, .sites-map {
         @include dimensions(65%, auto);
