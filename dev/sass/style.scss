@@ -149,34 +149,47 @@ body {
         @include dimensions(6em, auto);
         @include indentations(0, 0);
         position: absolute;
-        top: 1.4em;
+        top: 0.7em;
         right: 1em;
         z-index: 6;
         @include respond-to(small-screens) {
-          @include dimensions(12em, 4em);
-          padding: 0.5em;
+          @include dimensions(auto, 4em);
+          padding: 0.2em 0 0.2em 1em;
           box-sizing: border-box;
           top: 0;
+          right: 4.5em;
           left: 0;
           z-index: 10;
-          #todaysDate {
-            float: right;
-          }
-          a {
-            @include dimensions(5em, auto);
-            float: left;
-          }
+        }
+        @include respond-to(tiny-screens) {
+          padding-left: 0.5em;
         }
         a {
           cursor: default;
+          @include respond-to(small-screens) {
+            @include dimensions(5.5em, auto);
+            float: left;
+          }
         }
-        #todaysDate {
-          @include dimensions(5em, auto);
+        .todaysDate {
+          @include dimensions(100%, auto);
           @include indentations(0 auto, 0);
           font-size: 1.2em;
           text-align: center;
           @include respond-to(small-screens) {
+            width: 5em;
             margin: 0;
+            float: right;
+          }
+          #span-dayOfTheWeek {
+            @include indentations(0, 0.4em 0 0 0);
+            float: right;
+          }
+          #span-day {
+            font: {
+              size: 1.5em;
+              weight: bold;
+            }
           }
         }
       }

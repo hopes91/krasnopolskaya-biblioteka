@@ -1,4 +1,8 @@
-const todaysDate = document.getElementById('todaysDate');
+const todaysDate = document.querySelector('.todaysDate');
+const spanDayOfTheWeek = document.getElementById('span-dayOfTheWeek');
+const spanDay = document.getElementById('span-day');
+const spanMonth = document.getElementById('span-month');
+const spanYear = document.getElementById('span-year');
 
 const getTodaysDate = () => {
   if (todaysDate) {
@@ -6,7 +10,8 @@ const getTodaysDate = () => {
     let dayOfTheWeekNum = today.getDay();
     let dayOfTheWeekStr = null;
     let day = today.getDate();
-    let month = today.getMonth();
+    let monthNum = today.getMonth();
+    let monthStr = null;
     let year = today.getFullYear();
 
     let daysOfTheWeek = {
@@ -25,7 +30,31 @@ const getTodaysDate = () => {
       }
     }
 
-    todaysDate.textContent = `${dayOfTheWeekStr}, ${day}.${month}.${year}`;
+    let months = {
+      1: 'января',
+      2: 'февраля',
+      3: 'марта',
+      4: 'апреля',
+      5: 'мая',
+      6: 'июня',
+      7: 'июля',
+      8: 'августа',
+      9: 'сентября',
+      10: 'октября',
+      11: 'ноября',
+      12: 'декабря'
+    };
+
+    for (let month in months) {
+      if (monthNum == month) {
+        monthStr = months[month];
+      }
+    }
+
+    spanDayOfTheWeek.textContent = dayOfTheWeekStr;
+    spanDay.textContent = day;
+    spanMonth.textContent = monthStr;
+    spanYear.textContent = year;
   }
 }
 
