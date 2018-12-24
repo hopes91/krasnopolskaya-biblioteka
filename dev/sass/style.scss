@@ -136,6 +136,10 @@ body {
         text-decoration: none;
         h1 {
           @include indentations(1em, 0);
+          @include respond-to(medium-screens) {
+            margin: 1.2em 1em;
+            font-size: 1.8em;
+          }
           @include respond-to(small-screens) {
             margin-bottom: 0;
             font-size: 1.7em;
@@ -146,7 +150,7 @@ body {
         }
       }
       .new-year__top {
-        @include dimensions(6em, auto);
+        @include dimensions(9em, auto);
         @include indentations(0, 0);
         position: absolute;
         top: 0.7em;
@@ -170,14 +174,21 @@ body {
             @include dimensions(5.5em, auto);
             float: left;
           }
+          img {
+            @include dimensions(70%, auto);
+            @include indentations(0 15%, 0);
+            @include respond-to(small-screens) {
+              width: 100%;
+              margin: 0;
+            }
+          }
         }
         .todaysDate {
           @include dimensions(100%, auto);
           @include indentations(0 auto, 0);
           font-size: 1.2em;
-          text-align: center;
           @include respond-to(small-screens) {
-            width: 5em;
+            width: 7.5em;
             margin: 0;
             float: right;
           }
@@ -186,10 +197,18 @@ body {
             float: right;
           }
           #span-day {
+            padding-top: 0.3em;
             font: {
-              size: 1.5em;
+              size: 2em;
               weight: bold;
             }
+            float: left;
+          }
+          #span-month {
+            padding-left: 0.3em;
+          }
+          #span-year {
+            float: right;
           }
         }
       }
