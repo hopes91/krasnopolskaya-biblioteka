@@ -5,7 +5,7 @@ const dropdownMenu = document.getElementById('drop-menu');
 
 function toggleDropdown(event) {
 	let parentId = event.target.parentNode.id;
-	if (event.target === burger || parentId.includes('burger')) {
+	if (event.target === burger || parentId === 'burger') {
 		showDropdown();
 	} else if (event.target === dropdownMenu) {
 		hideDropdown();
