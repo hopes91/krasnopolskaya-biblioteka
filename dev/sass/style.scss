@@ -210,7 +210,7 @@ body {
         text-align: center;
         background: linear-gradient(to right, peachpuff, burlywood);
         display: flex;
-        flex-flow: row wrap;
+        flex-flow: row nowrap;
         justify-content: center;
         position: relative;
         z-index: 5;
@@ -220,22 +220,22 @@ body {
         .navbar-section {
           @include dimensions(15em, auto);
           @include indentations(0, 0);
+          font-size: 1.05em;
           background-color: oldlace;
           vertical-align: top;
           @include respond-to(standart-screens) {
             width: 20%;
           }
           @include respond-to(medium-screens) {
-            width: 19%;
+            width: 18.8%;
             &:nth-child(3) {
-              width: 24%;
+              width: 25%;
             }
           }
           .section-title {
             @include dimensions(100%, auto);
-            @include indentations(0, 0.89em 0.3em);
+            @include indentations(0, 0.95em 0.3em);
             box-sizing: border-box;
-            font-size: 1.1em;
             border: $simple-border;
             text-decoration: none;
             cursor: pointer;
@@ -259,7 +259,6 @@ body {
             display: none;
             a {
               box-sizing: border-box;
-              font-size: 1.05em;
               color: saddlebrown;
               border: $simple-border;
               text-decoration: none;
