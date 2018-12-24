@@ -481,10 +481,10 @@ body {
           @include indentations(0 auto, 0);
           text-align: center;
           position: relative;
-          bottom: 2.5em;
+          bottom: 2.2em;
           z-index: 20;
           @include respond-to(small-screens) {
-            bottom: 2em;
+            bottom: 1.8em;
           }
           .dot {
             @include dimensions(0.5em, 0.5em);
