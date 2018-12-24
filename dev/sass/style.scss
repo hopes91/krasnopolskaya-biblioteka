@@ -228,13 +228,9 @@ body {
         .navbar-section {
           @include dimensions(15em, auto);
           @include indentations(0, 0);
-          font-size: 1.05em;
           background-color: oldlace;
           vertical-align: top;
           @include respond-to(standart-screens) {
-            width: 20%;
-          }
-          @include respond-to(medium-screens) {
             width: 18.8%;
             &:nth-child(3) {
               width: 25%;
@@ -242,7 +238,7 @@ body {
           }
           .section-title {
             @include dimensions(100%, auto);
-            @include indentations(0, 0.95em 0.3em);
+            @include indentations(0, 1.05em 0.3em);
             box-sizing: border-box;
             border: $simple-border;
             text-decoration: none;
@@ -251,7 +247,7 @@ body {
             span {
               color: #471a00;
               position: absolute;
-              right: 1.5em;
+              right: 1.3em;
               @include respond-to(standart-screens) {
                 right: 1em;
               }
