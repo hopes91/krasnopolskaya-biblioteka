@@ -177,12 +177,18 @@ body {
             bottom: 0;
             float: left;
           }
+          @include respond-to(tiny-screens) {
+            width: 4.5em;
+          }
           img {
             @include dimensions(70%, auto);
             @include indentations(0 15%, 0);
             @include respond-to(small-screens) {
               width: 100%;
               margin: 0;
+            }
+            @include respond-to(tiny-screens) {
+              padding-top: 0.4em;
             }
           }
         }
