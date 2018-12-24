@@ -150,7 +150,7 @@ body {
         @include dimensions(9em, auto);
         @include indentations(0, 0);
         position: absolute;
-        top: 0.7em;
+        top: 1.2em;
         right: 1em;
         z-index: 6;
         @include respond-to(small-screens) {
@@ -166,6 +166,8 @@ body {
           padding-left: 0.5em;
         }
         a {
+          position: relative;
+          bottom: 0.5em;
           cursor: default;
           @include respond-to(small-screens) {
             @include dimensions(5.5em, auto);
@@ -186,26 +188,19 @@ body {
           font-size: 1.2em;
           @include respond-to(small-screens) {
             width: 7.5em;
-            margin: 0;
+            @include indentations(0, 0.25em 0 0 0);
             float: right;
           }
           #span-dayOfTheWeek {
-            @include indentations(0, 0.4em 0 0 0);
             float: right;
           }
           #span-day {
-            padding-top: 0.3em;
+            padding: 0.17em 0.1em 0 0;
             font: {
               size: 2em;
               weight: bold;
             }
             float: left;
-          }
-          #span-month {
-            padding-left: 0.3em;
-          }
-          #span-year {
-            float: right;
           }
         }
       }
