@@ -21,6 +21,8 @@ body {
     }
   }
   .container {
+    height: auto;
+    min-height: 100%;
     background: linear-gradient(to right, peachpuff, burlywood);
     position: relative;
     overflow-x: hidden;
@@ -274,13 +276,14 @@ body {
 
     main {
       @include dimensions(100%, auto);
-      @include indentations(0, 1em);
+      @include indentations(0 0 6em 0, 1em);
       box-sizing: border-box;
       position: relative;
       @include respond-to(small-screens) {
-        margin: 8em 0 0 0;
+        margin: 8em 0 7em 0;
       }
       @include respond-to(tiny-screens) {
+        margin-bottom: 9em;
         padding: 1em 0.5em;
       }
       h2 {
@@ -637,6 +640,8 @@ body {
       box-sizing: border-box;
       background-color: oldlace;
       border-top: $simple-border;
+      position: absolute;
+      bottom: 0;
       @include respond-to(small-screens) {
         height: 7.5em;
       }
