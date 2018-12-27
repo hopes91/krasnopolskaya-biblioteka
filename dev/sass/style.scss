@@ -136,20 +136,20 @@ body {
         h1 {
           @include indentations(1em, 0);
           @include respond-to(medium-screens) {
-            margin: 1.2em 1em;
-            font-size: 1.8em;
+            margin: 1.6em 0.5em;
+            font-size: 1.5em;
           }
           @include respond-to(small-screens) {
-            margin-bottom: 0;
-            font-size: 1.7em;
+            margin: 1.3em 1em 0 1em;
           }
           @include respond-to(tiny-screens) {
+            margin-top: 1em;
             font-size: 1.4em;
           }
         }
       }
       .new-year__top {
-        @include dimensions(9em, auto);
+        @include dimensions(9.1em, auto);
         @include indentations(0, 0);
         position: absolute;
         top: 1.2em;
