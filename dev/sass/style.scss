@@ -25,12 +25,12 @@ body {
     min-height: 100%;
     background: linear-gradient(to right, peachpuff, burlywood);
     position: relative;
-    overflow-x: hidden;
+    overflow: hidden;
     header {
       @include dimensions(100%, auto);
       @include respond-to(small-screens) {
         height: 8em;
-        position: absolute;
+        position: relative;
         top: 0;
         left: 0;
       }
@@ -136,7 +136,7 @@ body {
         h1 {
           @include indentations(1em, 0);
           @include respond-to(medium-screens) {
-            margin: 1.6em 0.5em;
+            margin: 1.6em 0.8em;
             font-size: 1.5em;
           }
           @include respond-to(small-screens) {
@@ -282,7 +282,7 @@ body {
       box-sizing: border-box;
       position: relative;
       @include respond-to(small-screens) {
-        margin: 8em 0 7em 0;
+        margin: 0 0 7em 0;
       }
       @include respond-to(tiny-screens) {
         margin-bottom: 9em;
