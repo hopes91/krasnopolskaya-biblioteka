@@ -136,8 +136,8 @@ body {
         h1 {
           @include indentations(1em, 0);
           @include respond-to(medium-screens) {
-            margin: 1.6em 0.8em;
-            font-size: 1.5em;
+            margin: 1.55em 0.8em;
+            font-size: 1.55em;
           }
           @include respond-to(small-screens) {
             margin: 1.3em 1em 0 1em;
