@@ -20,6 +20,9 @@ body {
       @include dimensions(100%, 100%);
     }
   }
+  img {
+    border: none;
+  }
   .container {
     height: auto;
     min-height: 100%;
@@ -246,7 +249,7 @@ body {
           }
           .section-title {
             @include dimensions(100%, auto);
-            @include indentations(0, 1.05em 0.3em);
+            @include indentations(0, 1.04em 0.3em);
             box-sizing: border-box;
             border: $simple-border;
             text-decoration: none;
