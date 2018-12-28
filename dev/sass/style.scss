@@ -143,8 +143,8 @@ body {
             margin: 1.3em 1em 0 1em;
           }
           @include respond-to(tiny-screens) {
-            margin-top: 1em;
-            font-size: 1.4em;
+            margin-top: 0.8em;
+            font-size: 1.3em;
           }
         }
       }
@@ -276,6 +276,18 @@ body {
       }
     }
 
+    .new-year__center {
+      @include dimensions(50%, auto);
+      max-width: 1200px;
+      @include indentations(1em auto 0 auto, 0);
+      @include respond-to(small-screens) {
+        width: 80%;
+      }
+      a {
+        cursor: default;
+      }
+    }
+
     main {
       @include dimensions(100%, auto);
       @include indentations(0 0 6em 0, 1em);
@@ -286,7 +298,6 @@ body {
       }
       @include respond-to(tiny-screens) {
         margin-bottom: 9em;
-        padding: 1em 0.5em;
       }
       h2 {
         @include indentations(1em, 0);
@@ -295,19 +306,6 @@ body {
       p, a, li {
         font-size: 1em;
         line-height: 1.2;
-      }
-      .new-year__center {
-        @include dimensions(50%, auto);
-        @include indentations(0 auto, 0);
-        @include respond-to(small-screens) {
-          width: 80%;
-        }
-        @include respond-to(tiny-screens) {
-          margin-top: 0.5em;
-        }
-        a {
-          cursor: default;
-        }
       }
       .news, .about-library, .news-and-events, .services, .sites-map {
         @include dimensions(65%, auto);
@@ -318,8 +316,8 @@ body {
         background-color: oldlace;
         position: relative;
         z-index: 1;
-        @include respond-to(wide-screens) {
-          width: 55%;
+        @include respond-to(superwide-screens) {
+          width: 70em;
         }
         @include respond-to(medium-screens) {
           width: 75%;
@@ -619,20 +617,24 @@ body {
           }
         }
       }
-      .stack-of-books {
-        @include dimensions(15%, auto);
-        position: absolute;
-        bottom: 1em;
-        right: 1em;
-        @include respond-to(medium-screens) {
-          width: 20%;
-        }
-        @include respond-to(small-screens) {
-          display: none;
-        }
-        a {
-          cursor: default;
-        }
+    }
+
+    .stack-of-books {
+      @include dimensions(15%, auto);
+      position: absolute;
+      bottom: 7em;
+      right: 1em;
+      @include respond-to(wide-screens) {
+        width: 13em;
+      }
+      @include respond-to(medium-screens) {
+        width: 20%;
+      }
+      @include respond-to(small-screens) {
+        display: none;
+      }
+      a {
+        cursor: default;
       }
     }
 
