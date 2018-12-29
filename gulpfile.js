@@ -15,14 +15,10 @@ const path = require('path');
 const browserSync = require('browser-sync').create();
 
 gulp.task('css', function() {
-  const plugins = [
-    autoprefixer({browsers: ['last 3 versions']})
-  ];
-
   return gulp.src('./dev/sass/**/*.scss')
     .pipe(cached('css'))
     .pipe(sass().on('error', sass.logError))
-    .pipe(postcss(plugins))
+    .pipe(postcss([autoprefixer()]))
     .pipe(remember('css'))
     .pipe(uglifycss({"uglyComments": true}))
     .pipe(gulp.dest('./public'));
