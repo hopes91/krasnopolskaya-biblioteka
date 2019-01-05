@@ -174,10 +174,36 @@ body {
         @include respond-to(tiny-screens) {
           padding-left: 0.5em;
         }
+        .todaysDate {
+          @include dimensions(100%, auto);
+          @include indentations(0 auto, 0);
+          font-size: 1.2em;
+          @include respond-to(small-screens) {
+            @include dimensions(7.7em, 100%);
+            @include indentations(0, 0.25em 0 0 0);
+            box-sizing: border-box;
+            float: right;
+          }
+          #span-dayOfTheWeek {
+            width: 70%;
+            display: inline-block;
+          }
+          #span-day {
+            padding: 0.17em 0.1em 0 0;
+            font: {
+              size: 2em;
+              weight: bold;
+            }
+            float: left;
+          }
+          #span-month {
+            padding-left: 0.1em;
+          }
+        }
         a {
-          width: 7.3em;
+          @include dimensions(7.3em, auto);
           position: relative;
-          bottom: 0.5em;
+          bottom: 0.3em;
           cursor: default;
           @include respond-to(wide-screens) {
             width: 8em;
@@ -193,7 +219,7 @@ body {
           }
           img {
             @include dimensions(70%, auto);
-            @include indentations(0 15%, 0);
+            @include indentations(0, 0);
             @include respond-to(small-screens) {
               width: 100%;
               margin: 0;
@@ -201,25 +227,6 @@ body {
             @include respond-to(tiny-screens) {
               padding-top: 0.4em;
             }
-          }
-        }
-        .todaysDate {
-          @include dimensions(100%, auto);
-          @include indentations(0 auto, 0);
-          font-size: 1.2em;
-          @include respond-to(small-screens) {
-            @include dimensions(7.7em, 100%);
-            @include indentations(0, 0.25em 0 0 0);
-            box-sizing: border-box;
-            float: right;
-          }
-          #span-day {
-            padding: 0.17em 0.1em 0 0;
-            font: {
-              size: 2em;
-              weight: bold;
-            }
-            float: left;
           }
         }
       }
