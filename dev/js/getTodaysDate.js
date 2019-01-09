@@ -1,4 +1,4 @@
-const todaysDate = document.querySelector('.todaysDate');
+const todaysDate = document.querySelector('.todays-date');
 const spanDayOfTheWeek = document.getElementById('span-dayOfTheWeek');
 const spanDay = document.getElementById('span-day');
 const spanMonth = document.getElementById('span-month');

@@ -151,17 +151,14 @@ body {
           }
         }
       }
-      .new-year__top {
-        @include dimensions(9.3em, 5.8em);
-        @include indentations(0, 0);
+      .ornament-top {
+        @include dimensions(9.3em, 6.5em);
+        @include indentations(0, 1.3em 0 0 0);
+        box-sizing: border-box;
         position: absolute;
-        top: 0.5em;
+        top: 0;
         right: 1em;
         z-index: 6;
-        @include respond-to(wide-screens) {
-          height: 6em;
-          top: 1.3em;
-        }
         @include respond-to(small-screens) {
           @include dimensions(auto, 4em);
           padding: 0.25em 0 0 1em;
@@ -174,7 +171,7 @@ body {
         @include respond-to(tiny-screens) {
           padding-left: 0.5em;
         }
-        .todaysDate {
+        .todays-date {
           @include dimensions(100%, auto);
           @include indentations(0 auto, 0);
           font-size: 1.2em;
@@ -294,17 +291,17 @@ body {
       }
     }
 
-    .new-year__center {
-      @include dimensions(50%, auto);
-      max-width: 1200px;
-      @include indentations(1em auto 0 auto, 0);
-      @include respond-to(small-screens) {
-        width: 80%;
-      }
-      a {
-        cursor: default;
-      }
-    }
+    // .ornament-center {
+    //   @include dimensions(50%, auto);
+    //   max-width: 1200px;
+    //   @include indentations(1em auto 0 auto, 0);
+    //   @include respond-to(small-screens) {
+    //     width: 80%;
+    //   }
+    //   a {
+    //     cursor: default;
+    //   }
+    // }
 
     main {
       @include dimensions(100%, auto);
