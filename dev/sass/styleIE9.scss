@@ -232,23 +232,25 @@ body {
         @include indentations(0 auto, 0);
         text-align: center;
         background: linear-gradient(to right, peachpuff, burlywood);
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: center;
+        display: block;
         position: relative;
         z-index: 5;
         @include respond-to(small-screens) {
           display: none;
         }
         .navbar-section {
-          @include dimensions(15em, auto);
+          @include dimensions(14.8em, auto);
           @include indentations(0, 0);
           vertical-align: top;
+          display: inline-block;
           @include respond-to(standart-screens) {
-            width: 18.8%;
+            width: 18.5%;
             &:nth-child(3) {
-              width: 25%;
+              width: 24%;
             }
+          }
+          @include respond-to(medium-screens) {
+            width: 18.3%;
           }
           .section-title {
             @include dimensions(100%, auto);
@@ -309,7 +311,7 @@ body {
       box-sizing: border-box;
       position: relative;
       @include respond-to(small-screens) {
-        margin-bottom: 7em;
+        margin: 0 0 7em 0;
       }
       @include respond-to(tiny-screens) {
         margin-bottom: 9em;

@@ -26,7 +26,7 @@ gulp.task('css', function() {
 
 gulp.task('js', function() {
   return gulp.src([
-      'node_modules/@babel/polyfill/dist/polyfill.js', 
+      'node_modules/@babel/polyfill/dist/polyfill.js',
       './dev/js/*.js'
     ])
     .pipe(cached('js'))

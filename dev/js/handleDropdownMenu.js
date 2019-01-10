@@ -14,20 +14,20 @@ const toggleDropdown = event => {
 }
 
 const showDropdown = () => {
-	burgerSpans[0].classList.add('span-one-active');
-	burgerSpans[2].classList.add('span-three-active');
-	setTimeout(function() {
-		burgerSpans[1].classList.add('span-two-active');
+	burgerSpans[0].className = 'span-one-active';
+	burgerSpans[2].className = 'span-three-active';
+	setTimeout(() => {
+		burgerSpans[1].className = 'span-two-active';
 	}, 200);
 
 	dropdownMenu.style.display = 'block';
 }
 
 const hideDropdown = () => {
-	burgerSpans[0].classList.remove('span-one-active');
-	burgerSpans[2].classList.remove('span-three-active');
-	setTimeout(function() {
-		burgerSpans[1].classList.remove('span-two-active');
+	burgerSpans[0].className = '';
+	burgerSpans[2].className = '';
+	setTimeout(() => {
+		burgerSpans[1].className = '';
 	}, 200);
 
 	dropdownMenu.style.display = 'none';
