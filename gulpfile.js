@@ -6,7 +6,6 @@ const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const uglifycss = require('gulp-uglifycss');
 const babel = require('gulp-babel');
-const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const cached = require('gulp-cached');
 const remember = require('gulp-remember');
