@@ -1,8 +1,8 @@
-const dropdownSections = document.querySelectorAll('.dropdown-section');
+let dropdownSections = document.querySelectorAll('.dropdown-section');
 
 const toggleDropdownLinks = event => {
   let parent = event.target.parentNode;
-  
+
   if (event.target.className === 'section-title') {
     let dropdownLinks = event.target.nextElementSibling;
 

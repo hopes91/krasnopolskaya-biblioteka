@@ -1,10 +1,11 @@
-const dropdown = document.querySelectorAll('.dropdown');
-const burger = document.getElementById('burger');
-const burgerSpans = document.querySelectorAll('#burger span');
-const dropdownMenu = document.getElementById('drop-menu');
+let dropdown = document.querySelectorAll('.dropdown');
+let burger = document.getElementById('burger');
+let burgerSpans = document.querySelectorAll('#burger span');
+let dropdownMenu = document.getElementById('drop-menu');
 
-function toggleDropdown(event) {
+const toggleDropdown = event => {
 	let parentId = event.target.parentNode.id;
+
 	if (event.target === burger || parentId === 'burger') {
 		showDropdown();
 	} else if (event.target === dropdownMenu) {
@@ -12,7 +13,7 @@ function toggleDropdown(event) {
 	}
 }
 
-function showDropdown() {
+const showDropdown = () => {
 	burgerSpans[0].classList.add('span-one-active');
 	burgerSpans[2].classList.add('span-three-active');
 	setTimeout(function() {
@@ -22,7 +23,7 @@ function showDropdown() {
 	dropdownMenu.style.display = 'block';
 }
 
-function hideDropdown() {
+const hideDropdown = () => {
 	burgerSpans[0].classList.remove('span-one-active');
 	burgerSpans[2].classList.remove('span-three-active');
 	setTimeout(function() {

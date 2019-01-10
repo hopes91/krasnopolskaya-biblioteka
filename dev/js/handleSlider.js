@@ -1,9 +1,9 @@
-const miniPhotos = document.querySelectorAll('.mini-photo');
-const back = document.getElementById('back');
-const slides = document.querySelectorAll('.slide');
-const dots = document.querySelectorAll('.dot');
-const prevSlide = document.querySelector('.prev-slide');
-const nextSlide = document.querySelector('.next-slide');
+let miniPhotos = document.querySelectorAll('.mini-photo');
+let back = document.getElementById('back');
+let slides = document.querySelectorAll('.slide');
+let dots = document.querySelectorAll('.dot');
+let prevSlide = document.querySelector('.prev-slide');
+let nextSlide = document.querySelector('.next-slide');
 
 let mainSlide = null;
 let start = null;
@@ -36,7 +36,7 @@ function showFirstSlide() {
 	});
 }
 
-function moveSlides(index) {
+const moveSlides = index => {
 	mainSlide += index;
 
 	if (mainSlide < 1) {
@@ -59,7 +59,7 @@ function moveSlides(index) {
 	}
 }
 
-function currentSlide() {
+const currentSlide = () => {
 	dots.forEach(dot => dot.style.backgroundColor = 'oldlace');
 
 	for (let i = start; i < dots.length; i++) {
@@ -67,7 +67,7 @@ function currentSlide() {
 	}
 }
 
-function hideSlider() {
+const hideSlider = () => {
 	mainSlide = null;
 	start = null;
 	back.style.display = 'none';

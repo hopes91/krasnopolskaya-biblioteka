@@ -1,16 +1,18 @@
-const navbarSections = document.querySelectorAll('.navbar-section');
+let navbarSections = document.querySelectorAll('.navbar-section');
 
 const showNavbarLinks = event => {
-  let projectTitle = event.target.children[1];
-  if (projectTitle) {
-    projectTitle.style.display = 'block';
+  let projectLinks = event.target.children[1];
+
+  if (projectLinks) {
+    projectLinks.style.display = 'block';
   }
 }
 
 const hideNavbarLinks = event => {
-  let projectTitle = event.target.children[1];
-  if (projectTitle) {
-    projectTitle.style.display = 'none';
+  let projectLinks = event.target.children[1];
+  
+  if (projectLinks) {
+    projectLinks.style.display = 'none';
   }
 }
 

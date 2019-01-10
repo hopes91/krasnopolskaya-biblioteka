@@ -1,5 +1,5 @@
-const main = document.querySelector('main');
-const ornaments = document.querySelectorAll('.ornament');
+let main = document.querySelector('main');
+let ornaments = document.querySelectorAll('.ornament');
 
 const handlePriceListTable = () => {
   if (main.children[0].className.includes('price-list') && window.innerWidth <= 640) {
