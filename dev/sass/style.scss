@@ -29,6 +29,9 @@ body {
     background: linear-gradient(to right, peachpuff, burlywood);
     position: relative;
     overflow: hidden;
+    .bold {
+      font-weight: bold;
+    }
     header {
       @include dimensions(100%, auto);
       @include respond-to(small-screens) {
