@@ -396,6 +396,10 @@ body {
       // news
       .news {
         section {
+          h6 {
+            @include indentations(1em 0, 0);
+            font-size: 0.9em;
+          }
           img {
             width: auto;
             max-width: 100%;
