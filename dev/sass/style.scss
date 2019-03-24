@@ -325,6 +325,23 @@ body {
         font-size: 1em;
         line-height: 1.2;
       }
+      table {
+        margin-bottom: 1.5em;
+      }
+      table, th, td {
+        border: $simple-border;
+        border-collapse: collapse;
+      }
+      th, td {
+        @include indentations(0, 1em);
+        text-align: center;
+        @include respond-to(tiny-screens) {
+          padding: 0.5em;
+        }
+      }
+      .td-title {
+        font-weight: bold;
+      }
       .news, .about-library, .news-and-events, .services, .sites-map {
         @include dimensions(65%, auto);
         min-height: 40em;
@@ -396,6 +413,10 @@ body {
       // news
       .news {
         section {
+          h6 {
+            @include indentations(1em 0, 0);
+            font-size: 0.9em;
+          }
           img {
             width: auto;
             max-width: 100%;
@@ -599,23 +620,6 @@ body {
         @include respond-to(tiny-screens) {
           @include indentations(1em auto, 1em 0);
           overflow-x: scroll;
-        }
-        table {
-          margin-bottom: 1.5em;
-        }
-        table, th, td {
-          border: $simple-border;
-          border-collapse: collapse;
-        }
-        th, td {
-          @include indentations(0, 1em);
-          text-align: center;
-          @include respond-to(tiny-screens) {
-            padding: 0.5em;
-          }
-        }
-        .td-title {
-          font-weight: bold;
         }
       }
       // site's map
