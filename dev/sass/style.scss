@@ -574,15 +574,6 @@ body {
           }
         }
       }
-      .poster {
-        div {
-          height: 6.5em;
-          @include respond-to(small-screens) {
-            height: auto;
-            margin-bottom: 1em;
-          }
-        }
-      }
       .poster-ot-vsej-dushi {
         @include respond-to(small-screens) {
           height: auto;
@@ -598,15 +589,6 @@ body {
       .poster-biblionik {
         div {
           height: 11em;
-          @include respond-to(small-screens) {
-            height: auto;
-            margin-bottom: 1em;
-          }
-        }
-      }
-      .past-events {
-        div {
-          height: 6.5em;
           @include respond-to(small-screens) {
             height: auto;
             margin-bottom: 1em;
