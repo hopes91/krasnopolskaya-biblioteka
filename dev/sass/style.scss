@@ -604,6 +604,15 @@ body {
           }
         }
       }
+      .past-events {
+        div {
+          height: 6.5em;
+          @include respond-to(small-screens) {
+            height: auto;
+            margin-bottom: 1em;
+          }
+        }
+      }
       // services
       .services {
         a {
