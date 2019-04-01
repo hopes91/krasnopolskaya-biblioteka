@@ -1,0 +1,48 @@
+@import 'helpers/variables';
+@import 'helpers/mixins';
+
+footer {
+  @include dimensions(100%, 6em);
+  @include indentations(0, 1em);
+  box-sizing: border-box;
+  background-color: oldlace;
+  border-top: $simple-border;
+  position: absolute;
+  bottom: 0;
+  @include respond-to(small-screens) {
+    height: 7.5em;
+  }
+  @include respond-to(tiny-screens) {
+    height: 9.5em;
+  }
+
+  p {
+    @include respond-to(small-screens) {
+      @include dimensions(100%, auto);
+      text-align: center;
+    }
+  }
+
+  .copyright {
+    @include indentations(0, 1.5em 0);
+    float: left;
+    @include respond-to(small-screens) {
+      padding: 0.5em 0;
+    }
+  }
+
+  .adress {
+    @include dimensions(20em, auto);
+    @include indentations(0, 1em 0);
+    text-align: center;
+    float: right;
+    @include respond-to(small-screens) {
+      @include dimensions(100%, auto);
+      padding: 0.5em 0;
+    }
+    
+    span {
+      font-weight: bold;
+    }
+  }
+}
