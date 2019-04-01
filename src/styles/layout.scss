@@ -1,0 +1,36 @@
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import url('https://fonts.googleapis.com/css?family=Oranienbaum');
+
+html, body, .container {
+  @include dimensions(100%, 100%);
+  @include indentations(0, 0);
+}
+
+body {
+  color: #471a00;
+  font-family: 'Oranienbaum', serif;
+  background-color: peachpuff;
+  a {
+    @include dimensions(100%, 100%);
+    display: inline-block;
+    color: #471a00;
+    outline: none;
+    img {
+      @include dimensions(100%, 100%);
+    }
+  }
+  img {
+    border: none;
+  }
+  .container {
+    height: auto;
+    min-height: 100%;
+    background: linear-gradient(to right, peachpuff, burlywood);
+    position: relative;
+    overflow: hidden;
+    .bold {
+      font-weight: bold;
+    }
+  }
+}
