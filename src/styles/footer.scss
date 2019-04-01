@@ -29,6 +29,11 @@ footer {
     @include respond-to(small-screens) {
       padding: 0.5em 0;
     }
+
+    a {
+      width: auto;
+      text-decoration: none;
+    }
   }
 
   .address {
