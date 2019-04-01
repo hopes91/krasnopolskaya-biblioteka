@@ -326,6 +326,7 @@ body {
         line-height: 1.2;
       }
       table {
+        width: 100%;
         margin-bottom: 1.5em;
       }
       table, th, td {
@@ -574,6 +575,12 @@ body {
           }
         }
       }
+      .poster {
+        @include respond-to(tiny-screens) {
+          @include indentations(1em auto, 1em 0);
+          overflow-x: scroll;
+        }
+      }
       .poster-ot-vsej-dushi {
         @include respond-to(small-screens) {
           height: auto;
@@ -593,6 +600,12 @@ body {
             height: auto;
             margin-bottom: 1em;
           }
+        }
+      }
+      .past-events {
+        @include respond-to(tiny-screens) {
+          @include indentations(1em auto, 1em 0);
+          overflow-x: scroll;
         }
       }
       // services
