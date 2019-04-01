@@ -7,7 +7,6 @@ function SEO({ description, lang, meta, keywords, title }) {
   const {
     title: siteMetaTitle,
     description: siteMetaDescription,
-    author,
   } = useSiteMetadata()
 
   const metaDescription = description || siteMetaDescription
