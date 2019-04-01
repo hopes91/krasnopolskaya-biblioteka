@@ -1,0 +1,85 @@
+@import 'helpers/variables';
+@import 'helpers/mixins';
+
+.ornament-top {
+  @include dimensions(9.3em, 6.5em);
+  @include indentations(0, 1.3em 0 0 0);
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 1em;
+  z-index: 6;
+  @include respond-to(small-screens) {
+    @include dimensions(auto, 4em);
+    padding: 0.25em 0 0 1em;
+    box-sizing: border-box;
+    top: 0;
+    right: 4.5em;
+    left: 0;
+    z-index: 10;
+  }
+  @include respond-to(tiny-screens) {
+    padding-left: 0.5em;
+  }
+
+  .todays-date {
+    @include dimensions(100%, auto);
+    @include indentations(0 auto, 0);
+    font-size: 1.2em;
+    @include respond-to(small-screens) {
+      @include dimensions(7.7em, 100%);
+      @include indentations(0, 0.25em 0 0 0);
+      box-sizing: border-box;
+      float: right;
+    }
+
+    #span-dayOfTheWeek {
+      width: 65%;
+      display: inline-block;
+    }
+
+    #span-day {
+      padding: 0.17em 0.1em 0 0;
+      font: {
+        size: 2em;
+        weight: bold;
+      }
+      float: left;
+    }
+
+    #span-month {
+      padding-left: 0.1em;
+    }
+  }
+
+  a {
+    @include dimensions(7.3em, auto);
+    position: relative;
+    bottom: 0.3em;
+    cursor: default;
+    @include respond-to(wide-screens) {
+      width: 8em;
+    }
+    @include respond-to(small-screens) {
+      @include dimensions(5.5em, 100%);
+      box-sizing: border-box;
+      bottom: 0;
+      float: left;
+    }
+    @include respond-to(tiny-screens) {
+      width: 4.5em;
+    }
+    
+    img {
+      @include dimensions(70%, auto);
+      @include indentations(0, 0);
+      @include respond-to(small-screens) {
+        width: 100%;
+        margin: 0;
+      }
+      @include respond-to(tiny-screens) {
+        padding-top: 0.4em;
+      }
+    }
+  }
+}

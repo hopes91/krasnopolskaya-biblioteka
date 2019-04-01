@@ -1,0 +1,33 @@
+@import 'helpers/variables';
+@import 'helpers/mixins';
+
+header {
+  @include dimensions(100%, auto);
+  @include respond-to(small-screens) {
+    height: 8em;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .site-title {
+    @include indentations(0, 1em);
+    @include respond-to(medium-screens) {
+      padding: 1.55em 0.8em;
+      font-size: 1.55em;
+    }
+    @include respond-to(small-screens) {
+      padding: 1.3em 1em 0 1em;
+    }
+    @include respond-to(tiny-screens) {
+      padding-top: 0.8em;
+      font-size: 1.3em;
+    }
+
+    a {
+      @include dimensions(auto, auto);
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+  }
+}
