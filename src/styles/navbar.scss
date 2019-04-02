@@ -56,15 +56,11 @@
       border: $simple-border;
 
       a {
+        @include indentations(0, 0.8em);
         box-sizing: border-box;
         color: saddlebrown;
         text-decoration: none;
         border: $simple-border;
-
-        // li {
-        //   @include indentations(0, 0.8em);
-        //   list-style-type: none;
-        // }
       }
     }
   }

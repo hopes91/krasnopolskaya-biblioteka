@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import { Link } from 'gatsby'
 
 import '../styles/navbar.scss'
@@ -21,14 +22,45 @@ const linksSectionFour = [
   { to: '/prejskurant-na-platnye-uslugi', page: 'prejskurant-na-platnye-uslugi', title: 'Прейскурант цен на платные услуги' }
 ]
 
+const showNavbarLinks = event => {
+  let sectionLinks
+
+  if (event.target.className === 'section-title') {
+    sectionLinks = ReactDOM.findDOMNode(event.target).nextElementSibling
+  }
+
+  if (sectionLinks) {
+    sectionLinks.style.display = 'block'
+  }
+}
+
+const hideNavbarLinks = event => {
+  let parent = ReactDOM.findDOMNode(event.target).parentNode
+  // parent.className === 'section-links' || parent.className === 'navbar-section'
+  let sectionLinks
+
+  if (event.target.className === 'section-title') {
+    sectionLinks = ReactDOM.findDOMNode(event.target).nextElementSibling
+  }
+
+  if (sectionLinks) {
+    sectionLinks.style.display = 'none'
+  }
+  // console.log(parent.className)
+}
+
 const Navbar = () => (
   <div id='navbar'>
-    <div className='navbar-section'>
+    <div className='navbar-section'
+         onMouseEnter={showNavbarLinks} onMouseLeave={hideNavbarLinks}
+    >
       <Link to='/' key='index' className='section-title'>
         Главная
       </Link>
     </div>
-    <div className='navbar-section'>
+    <div className='navbar-section'
+         onMouseEnter={showNavbarLinks} onMouseLeave={hideNavbarLinks}
+    >
       <p className='section-title'>О библиотеке <span>&#9662;</span></p>
       <nav className='section-links'>
         {linksSectionTwo.map(link => {
@@ -42,7 +74,9 @@ const Navbar = () => (
         })}
       </nav>
     </div>
-    <div className='navbar-section'>
+    <div className='navbar-section'
+         onMouseEnter={showNavbarLinks} onMouseLeave={hideNavbarLinks}
+    >
       <p className='section-title'>Новости и события <span>&#9662;</span></p>
       <nav className='section-links'>
         {linksSectionThree.map(link => {
@@ -56,7 +90,9 @@ const Navbar = () => (
         })}
       </nav>
     </div>
-    <div className='navbar-section'>
+    <div className='navbar-section'
+         onMouseEnter={showNavbarLinks} onMouseLeave={hideNavbarLinks}
+    >
       <p className='section-title'>Услуги <span>&#9662;</span></p>
       <nav className='section-links'>
         {linksSectionFour.map(link => {
@@ -70,7 +106,9 @@ const Navbar = () => (
         })}
       </nav>
     </div>
-    <div className='navbar-section'>
+    <div className='navbar-section'
+         onMouseEnter={showNavbarLinks} onMouseLeave={hideNavbarLinks}
+    >
       <Link to='/karta-sajta' key='karta-sajta' className='section-title'>
         Карта сайта
       </Link>
