@@ -1,7 +1,7 @@
 @import 'helpers/variables';
 @import 'helpers/mixins';
 
-.dropdown {
+#dropdown {
   @include dimensions(100%, 4em);
   box-sizing: border-box;
   display: none;
@@ -96,7 +96,7 @@
           font-size: 1.05em;
           text-decoration: none;
           border: $simple-border;
-          
+
           // li {
           //   @include indentations(0, 0.8em);
           //   list-style-type: none;
