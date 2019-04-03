@@ -96,3 +96,38 @@
     cursor: default;
   }
 }
+
+.ornament-main {
+  @include dimensions(100%, 100%);
+
+  .ornament {
+    @include dimensions(10%, auto);
+    @include indentations(0, 0);
+    position: absolute;
+    z-index: -1;
+    cursor: default;
+    @include respond-to(small-screens) {
+      width: 12%;
+    }
+
+    img {
+      margin: 0;
+    }
+  }
+  .one {
+    top: 0.5em;
+    left: 0.5em;
+  }
+  .two {
+    top: 0.5em;
+    right: 0.5em;
+  }
+  .three {
+    bottom: 0.5em;
+    right: 0.5em;
+  }
+  .four {
+    bottom: 0.5em;
+    left: 0.5em;
+  }
+}
