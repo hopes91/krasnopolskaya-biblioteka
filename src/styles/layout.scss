@@ -17,7 +17,7 @@ body {
     display: inline-block;
     color: #471a00;
     outline: none;
-    
+
     img {
       @include dimensions(100%, 100%);
     }
@@ -36,6 +36,342 @@ body {
 
     .bold {
       font-weight: bold;
+    }
+
+    main {
+      @include dimensions(100%, auto);
+      @include indentations(0 0 6em 0, 1em);
+      box-sizing: border-box;
+      position: relative;
+      @include respond-to(small-screens) {
+        margin-bottom: 7em;
+      }
+      @include respond-to(tiny-screens) {
+        margin-bottom: 9em;
+      }
+
+      h2 {
+        @include indentations(1em, 0);
+        text-align: center;
+      }
+
+      p, a, li {
+        font-size: 1em;
+        line-height: 1.2;
+      }
+
+      table {
+        width: 100%;
+        margin-bottom: 1.5em;
+      }
+      table, th, td {
+        border: $simple-border;
+        border-collapse: collapse;
+      }
+      th, td {
+        @include indentations(0, 1em);
+        text-align: center;
+        @include respond-to(tiny-screens) {
+          padding: 0.5em;
+        }
+      }
+      .td-title {
+        font-weight: bold;
+      }
+
+      .news, .about-library, .news-and-events, .services, .site-map {
+        @include dimensions(65%, auto);
+        min-height: 40em;
+        @include indentations(1em auto, 1em 2.2em);
+        box-sizing: border-box;
+        text-align: justify;
+        background-color: oldlace;
+        position: relative;
+        z-index: 1;
+        @include respond-to(superwide-screens) {
+          width: 70em;
+        }
+        @include respond-to(medium-screens) {
+          width: 75%;
+          margin: 1em;
+          left: 0;
+        }
+        @include respond-to(small-screens) {
+          width: 100%;
+          @include indentations(1em auto, 1.5em);
+        }
+
+        img {
+          @include dimensions(100%, auto);
+          @include indentations(0.3em 0, 0);
+          &:last-child {
+            margin-bottom: 1em;
+          }
+        }
+
+        ul {
+          @include indentations(1.5em 0, 0 5em);
+          text-align: left;
+          @include respond-to(medium-screens) {
+            padding: 0 3em;
+          }
+          @include respond-to(tiny-screens) {
+            padding: 0 1em;
+          }
+        }
+      }
+      // news
+      .news {
+        section {
+          h6 {
+            @include indentations(1em 0, 0);
+            font-size: 0.9em;
+          }
+
+          img {
+            width: auto;
+            max-width: 100%;
+          }
+        }
+      }
+      // about-library
+      .photogalery {
+        h3 {
+          text-align: center;
+        }
+
+        .sorted-by-year {
+          margin-bottom: 1em;
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-around;
+          align-items: center;
+
+          .mini-photo {
+            @include dimensions(10em, auto);
+            margin: 0.5em;
+            cursor: pointer;
+            @include respond-to(tiny-screens) {
+              width: 90%;
+            }
+          }
+        }
+      }
+      #back {
+        @include dimensions(100%, 100%);
+        display: none;
+        background-color: rgba(0, 0, 0, 0.9);
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 10;
+
+        #close {
+          color: oldlace;
+          font-size: 3em;
+          background-color: rgba(0, 0, 0, 0);
+          border: 0;
+          position: absolute;
+          top: 0.1em;
+          right: 0.5em;
+          outline: none;
+          z-index: 20;
+          cursor: pointer;
+          &:hover {
+            font-size: 3.05em;
+          }
+        }
+
+        #front {
+          @include dimensions(70%, 100%);
+          @include indentations(0 auto, 0);
+          background-color: rgba(0, 0, 0, 0);
+          position: relative;
+          top: 0;
+          z-index: 20;
+
+          .slide {
+            max-width: 100%;
+            max-height: 80%;
+            @include indentations(auto, 0);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            display: none;
+          }
+        }
+        .prev-slide, .next-slide {
+          @include indentations(0, 1em 1.2em);
+          color: oldlace;
+          font-size: 1.5em;
+          border-radius: 0.3em;
+          position: absolute;
+          top: 45%;
+          cursor: pointer;
+          @include respond-to(small-screens) {
+            padding: 1em;
+          }
+          @include respond-to(tiny-screens) {
+            padding: 1em 0.5em;
+          }
+        }
+        .prev-slide {
+          left: 1em;
+          @include respond-to(small-screens) {
+            left: 0;
+          }
+        }
+        .next-slide {
+          right: 1em;
+          @include respond-to(small-screens) {
+            right: 0;
+          }
+        }
+
+        .dots {
+          @include dimensions(100%, 1em);
+          @include indentations(0 auto, 0);
+          text-align: center;
+          position: relative;
+          bottom: 2.2em;
+          z-index: 20;
+          @include respond-to(small-screens) {
+            bottom: 1.8em;
+          }
+
+          .dot {
+            @include dimensions(0.5em, 0.5em);
+            @include indentations(0 0.1em, 0);
+            background-color: oldlace;
+            border-radius: 50%;
+            display: inline-block;
+            vertical-align: middle;
+          }
+        }
+      }
+      .library-schedule {
+        text-align: center;
+
+        p {
+          @include dimensions(100%, auto);
+          @include indentations(0.5em 0, 0);
+        }
+
+        .schedule-days {
+          font-weight: bold;
+        }
+
+        .schedule-time {
+          margin-bottom: 1.5em;
+        }
+      }
+      // news-and-events
+      .news-and-events {
+        div {
+          @include dimensions(100%, auto);
+
+          p {
+            @include dimensions(auto, 1.2em);
+            @include indentations(0.3em 0, 0);
+          }
+
+          .poster-dates {
+            @include dimensions(25%, auto);
+            font-weight: bold;
+            text-align: left;
+            float: left;
+          }
+
+          .poster-events {
+            @include dimensions(75%, auto);
+            text-align: left;
+            float: right;
+          }
+
+          .poster-dates, .poster-events {
+            @include respond-to(small-screens) {
+              @include dimensions(100%, auto);
+              text-align: center;
+              float: none;
+            }
+          }
+        }
+      }
+      .poster {
+        @include respond-to(tiny-screens) {
+          @include indentations(1em auto, 1em 0);
+          overflow-x: scroll;
+        }
+      }
+      .poster-ot-vsej-dushi {
+        @include respond-to(small-screens) {
+          height: auto;
+        }
+
+        div {
+          height: 3em;
+          @include respond-to(small-screens) {
+            height: auto;
+            margin-bottom: 1em;
+          }
+        }
+      }
+      .poster-biblionik {
+        div {
+          height: 11em;
+          @include respond-to(small-screens) {
+            height: auto;
+            margin-bottom: 1em;
+          }
+        }
+      }
+      .past-events {
+        @include respond-to(tiny-screens) {
+          @include indentations(1em auto, 1em 0);
+          overflow-x: scroll;
+        }
+      }
+      // services
+      .services {
+        a {
+          @include dimensions(100%, auto);
+        }
+      }
+      .useful-links {
+        text-align: left;
+
+        a {
+          @include indentations(0.2em 0.5em, 0);
+        }
+      }
+      .price-list {
+        @include respond-to(tiny-screens) {
+          @include indentations(1em auto, 1em 0);
+          overflow-x: scroll;
+        }
+      }
+      // site map
+      .site-map {
+        text-align: left;
+
+        div {
+          @include dimensions(100%, auto);
+          margin-bottom: 1em;
+          @include respond-to(small-screens) {
+            margin-bottom: 1.5em;
+          }
+
+          p {
+            margin: 0.5em 0;
+          }
+          
+          ul {
+            @include indentations(0, 0 2em);
+          }
+        }
+      }
     }
   }
 }
