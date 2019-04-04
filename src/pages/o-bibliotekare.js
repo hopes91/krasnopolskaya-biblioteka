@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
-const AboutTheLibrarianPage = () => (
+const AboutLibrarianPage = () => (
   <Layout>
     <SEO title='О библиотекаре' keywords={[`о библиотекаре`, `фалалеева елена евгеньевна`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
     <div className='about-library about-librarian'>
@@ -15,4 +15,4 @@ const AboutTheLibrarianPage = () => (
   </Layout>
 )
 
-export default AboutTheLibrarianPage
+export default AboutLibrarianPage
