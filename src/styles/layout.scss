@@ -79,7 +79,7 @@ body {
         font-weight: bold;
       }
 
-      .news, .about-library, .news-and-events, .services, .site-map {
+      .news, .about-library, .news-and-events, .services, .site-map, .not-found-page {
         @include dimensions(65%, auto);
         min-height: 40em;
         @include indentations(1em auto, 1em 2.2em);
@@ -370,6 +370,14 @@ body {
           ul {
             @include indentations(0, 0 2em);
           }
+        }
+      }
+      // not found page
+      .not-found-page {
+        text-align: center;
+
+        p a {
+          width: auto;
         }
       }
     }
