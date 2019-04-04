@@ -1,6 +1,7 @@
 import React from 'react'
 
 import '../styles/ornaments.scss'
+
 import ornamentOne from '../images/design/ornament-1.jpg'
 import ornamentTwo from '../images/design/ornament-2.jpg'
 import ornamentThree from '../images/design/ornament-3.jpg'
