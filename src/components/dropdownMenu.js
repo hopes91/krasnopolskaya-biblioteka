@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactDOM from 'react-dom'
 import { Link } from 'gatsby'
 
 import '../styles/dropdownMenu.scss'
@@ -21,8 +22,42 @@ const linksSectionFour = [
   { to: '/prejskurant-na-platnye-uslugi', page: 'prejskurant-na-platnye-uslugi', title: 'Прейскурант цен на платные услуги' }
 ]
 
+const burgerSpans = document.querySelectorAll('#dropdown__burger span')
+const dropdownMenu = document.getElementById('dropdown__menu')
+
+const toggleDropdown = event => {
+  let parentId = ReactDOM.findDOMNode(event.target).parentNode.id
+  const dropdownBurger = document.getElementById('dropdown__burger')
+
+  if (event.target === dropdownBurger || parentId === 'dropdown__burger') {
+    showDropdown()
+  } else if (event.target === dropdownMenu) {
+    hideDropdown()
+  }
+}
+
+const showDropdown = () => {
+  burgerSpans[0].className = 'span-one-active'
+  burgerSpans[2].className = 'span-three-active'
+  setTimeout(() => {
+    burgerSpans[1].className = 'span-two-active'
+  }, 200)
+
+  dropdownMenu.style.display = 'block'
+}
+
+const hideDropdown = () => {
+  burgerSpans[0].className = ''
+  burgerSpans[2].className = ''
+  setTimeout(() => {
+    burgerSpans[1].className = ''
+  }, 200)
+
+  dropdownMenu.style.display = 'none'
+}
+
 const DropdownMenu = () => (
-  <div id='dropdown'>
+  <div id='dropdown' onClick={toggleDropdown}>
     <div id='dropdown__burger'>
       <span></span>
       <span></span>
