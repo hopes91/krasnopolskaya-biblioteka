@@ -2,24 +2,24 @@ import React from 'react'
 
 import '../styles/ornaments.scss'
 
-import ornamentOne from '../images/design/ornament-1.jpg'
-import ornamentTwo from '../images/design/ornament-2.jpg'
-import ornamentThree from '../images/design/ornament-3.jpg'
-import ornamentFour from '../images/design/ornament-4.jpg'
+import ornament1 from '../images/design/ornament-1.jpg'
+import ornament2 from '../images/design/ornament-2.jpg'
+import ornament3 from '../images/design/ornament-3.jpg'
+import ornament4 from '../images/design/ornament-4.jpg'
 
 const OrnamentMain = () => (
   <div className='ornament-main'>
     <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' className='ornament one'>
-      <img src={ornamentOne} alt='Уголок' />
+      <img src={ornament1} alt='Уголок' />
     </a>
     <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' className='ornament two'>
-      <img src={ornamentTwo} alt='Уголок' />
+      <img src={ornament2} alt='Уголок' />
     </a>
     <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' className='ornament three'>
-      <img src={ornamentThree} alt='Уголок' />
+      <img src={ornament3} alt='Уголок' />
     </a>
     <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' className='ornament four'>
-      <img src={ornamentFour} alt='Уголок' />
+      <img src={ornament4} alt='Уголок' />
     </a>
   </div>
 )

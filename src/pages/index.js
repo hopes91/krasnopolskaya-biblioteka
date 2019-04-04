@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
-import newsOne from '../images/news/24032019-2.jpg'
+import news24032019 from '../images/news/24032019-2.jpg'
 
 const IndexPage = () => (
   <Layout>
@@ -14,7 +14,7 @@ const IndexPage = () => (
       <h2>Новости</h2>
       <section>
         <h3>24 марта 2019 год</h3>
-        <img src={newsOne} alt='Благодарность Пермяковой Л. А.' />
+        <img src={news24032019} alt='Благодарность Пермяковой Л. А.' />
       </section>
     </div>
   </Layout>
