@@ -16,7 +16,7 @@
   }
 
   .navbar-section {
-    @include dimensions(15em, auto);
+    @include dimensions(15em, 100%);
     @include indentations(0, 0);
     vertical-align: top;
     @include respond-to(standart-screens) {

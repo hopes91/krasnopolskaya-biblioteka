@@ -36,17 +36,17 @@ const showNavbarLinks = event => {
 
 const hideNavbarLinks = event => {
   let parent = ReactDOM.findDOMNode(event.target).parentNode
-  // parent.className === 'section-links' || parent.className === 'navbar-section'
   let sectionLinks
 
   if (event.target.className === 'section-title') {
     sectionLinks = ReactDOM.findDOMNode(event.target).nextElementSibling
+  } else if (parent.className === 'section-links') {
+    sectionLinks = parent
   }
 
   if (sectionLinks) {
     sectionLinks.style.display = 'none'
   }
-  // console.log(parent.className)
 }
 
 const Navbar = () => (
