@@ -4,6 +4,7 @@ import useSiteMetadata from '../hooks/useSiteMetadata'
 
 import Header from './header'
 // import OrnamentCenter from './ornamentCenter'
+import StackOfBooks from './stackOfBooks'
 import Footer from './footer'
 import '../styles/layout.scss'
 
@@ -17,6 +18,7 @@ const Layout = ({ children }) => {
       <main>
         {children}
       </main>
+      <StackOfBooks />
       <Footer siteTitle={title} />
     </div>
   )

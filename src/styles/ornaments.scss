@@ -131,3 +131,23 @@
     left: 0.5em;
   }
 }
+
+.stack-of-books {
+  @include dimensions(15%, auto);
+  position: absolute;
+  bottom: 7em;
+  right: 1em;
+  @include respond-to(wide-screens) {
+    width: 13em;
+  }
+  @include respond-to(medium-screens) {
+    width: 20%;
+  }
+  @include respond-to(small-screens) {
+    display: none;
+  }
+  
+  a {
+    cursor: default;
+  }
+}
