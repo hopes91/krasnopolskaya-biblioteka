@@ -56,6 +56,28 @@ const hideDropdown = () => {
   dropdownMenu.style.display = 'none'
 }
 
+const toggleDropdownLinks = event => {
+  let parent = ReactDOM.findDOMNode(event.target).parentNode
+
+  if (event.target.className === 'section-title') {
+    let dropdownLinks = ReactDOM.findDOMNode(event.target).nextElementSibling
+
+    if (dropdownLinks.style.display === 'block') {
+      dropdownLinks.style.display = 'none'
+    } else {
+      dropdownLinks.style.display = 'block'
+    }
+  } else if (parent.className === 'section-title') {
+    let dropdownLinks = ReactDOM.findDOMNode(event.target).parentNode.nextElementSibling
+
+    if (dropdownLinks.style.display === 'block') {
+      dropdownLinks.style.display = 'none'
+    } else {
+      dropdownLinks.style.display = 'block'
+    }
+  }
+}
+
 const DropdownMenu = () => (
   <div id='dropdown' onClick={toggleDropdown}>
     <div id='dropdown__burger'>
@@ -64,12 +86,12 @@ const DropdownMenu = () => (
       <span></span>
     </div>
     <div id='dropdown__menu'>
-      <div className='menu-section'>
+      <div className='menu-section' onClick={toggleDropdownLinks}>
         <Link to='/' key='index' className='section-title'>
           Главная
         </Link>
       </div>
-      <div className='menu-section'>
+      <div className='menu-section' onClick={toggleDropdownLinks}>
         <p className='section-title'>О библиотеке <span>&#9662;</span></p>
         <nav className='section-links'>
           {linksSectionTwo.map(link => {
@@ -83,7 +105,7 @@ const DropdownMenu = () => (
           })}
         </nav>
       </div>
-      <div className='menu-section'>
+      <div className='menu-section' onClick={toggleDropdownLinks}>
         <p className='section-title'>Новости и события <span>&#9662;</span></p>
         <nav className='section-links'>
           {linksSectionThree.map(link => {
@@ -97,7 +119,7 @@ const DropdownMenu = () => (
           })}
         </nav>
       </div>
-      <div className='menu-section'>
+      <div className='menu-section' onClick={toggleDropdownLinks}>
         <p className='section-title'>Услуги <span>&#9662;</span></p>
         <nav className='section-links'>
           {linksSectionFour.map(link => {
@@ -111,7 +133,7 @@ const DropdownMenu = () => (
           })}
         </nav>
       </div>
-      <div className='menu-section'>
+      <div className='menu-section' onClick={toggleDropdownLinks}>
         <Link to='/karta-sajta' key='karta-sajta' className='section-title'>
           Карта сайта
         </Link>
