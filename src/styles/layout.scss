@@ -373,5 +373,15 @@ body {
         }
       }
     }
+
+    .empty {
+      @include dimensions(100%, 6em);
+      @include respond-to(small-screens) {
+        height: 7.5em;
+      }
+      @include respond-to(tiny-screens) {
+        height: 9.5em;
+      }
+    }
   }
 }
