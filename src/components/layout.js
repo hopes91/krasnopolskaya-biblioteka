@@ -18,7 +18,7 @@ const Layout = ({ children }) => {
       <main>
         {children}
       </main>
-      <div class="empty"></div> {/* для IE */}
+      <div className='empty'></div> {/* для IE */}
       <StackOfBooks />
       <Footer siteTitle={title} />
     </div>
