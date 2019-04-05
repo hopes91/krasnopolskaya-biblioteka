@@ -98,7 +98,7 @@
 }
 
 .ornament-main {
-  @include dimensions(100%, 100%);
+  @include dimensions(100%, 100% !important);
 
   .ornament {
     @include dimensions(10%, auto);
