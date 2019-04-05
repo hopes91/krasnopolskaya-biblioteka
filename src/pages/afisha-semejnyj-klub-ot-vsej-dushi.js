@@ -5,15 +5,15 @@ import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
 const otVsejDushiEvents = [
-  { posterDate: 'Январь', posterEvent: 'Святочный вечер' }, 
-  { posterDate: 'Февраль', posterEvent: 'Вечер к Дню влюблённых' }, 
-  { posterDate: 'Март', posterEvent: 'Вечер юмора' }, 
-  { posterDate: 'Апрель', posterEvent: 'Огородные хлопоты' }, 
-  { posterDate: 'Май', posterEvent: 'Вечер отдыха к Международному дню семьи' }, 
-  { posterDate: 'Август', posterEvent: 'Собрал нас вместе Спас' }, 
-  { posterDate: 'Октябрь', posterEvent: 'Осенние дары' }, 
-  { posterDate: 'Ноябрь', posterEvent: 'Вечер по толерантности (к Году Турции в России)' }, 
-  { posterDate: 'Декабрь', posterEvent: 'Новогодняя сказка' }
+  { posterDate: 'Январь', posterEvents: 'Святочный вечер' }, 
+  { posterDate: 'Февраль', posterEvents: 'Вечер к Дню влюблённых' }, 
+  { posterDate: 'Март', posterEvents: 'Вечер юмора' }, 
+  { posterDate: 'Апрель', posterEvents: 'Огородные хлопоты' }, 
+  { posterDate: 'Май', posterEvents: 'Вечер отдыха к Международному дню семьи' }, 
+  { posterDate: 'Август', posterEvents: 'Собрал нас вместе Спас' }, 
+  { posterDate: 'Октябрь', posterEvents: 'Осенние дары' }, 
+  { posterDate: 'Ноябрь', posterEvents: 'Вечер по толерантности (к Году Турции в России)' }, 
+  { posterDate: 'Декабрь', posterEvents: 'Новогодняя сказка' }
 ]
 
 const PosterOtVsejDushiPage = () => (
@@ -23,12 +23,12 @@ const PosterOtVsejDushiPage = () => (
       <OrnamentMain />
       <h2>Программа семейного клуба «От всей души» на 2019 год</h2>
       {otVsejDushiEvents.map((event, ind) => {
-        const { posterDate, posterEvent } = event
+        const { posterDate, posterEvents } = event
 
         return (
-          <div key={ind}> 
-            <p key={posterDate} className='poster-dates'>{posterDate}</p>
-            <p key={posterEvent} className='poster-events'>{posterEvent}</p>
+          <div key={posterDate}> 
+            <p className='poster-dates'>{posterDate}</p>
+            <p className='poster-events'>{posterEvents}</p>
           </div>
         )
       })}
