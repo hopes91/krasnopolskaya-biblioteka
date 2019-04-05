@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { Component } from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
@@ -48,14 +48,6 @@ const photos2018 = [
 
 const allPhotos = photos2019.concat(photos2018)
 
-const allDots = () => {
-  for (let i = 0; i < allPhotos.length; i++) {
-    const dot = document.createElement('span')
-    dot.setAttribute('class', 'dot')
-    document.querySelector('.dots').appendChild(dot)
-  }
-}
-
 const miniPhotos = document.querySelectorAll('.mini-photo')
 const back = document.getElementById('back')
 const slides = document.querySelectorAll('.slide')
@@ -66,127 +58,143 @@ const nextSlide = document.querySelector('.next-slide')
 let mainSlide = null
 let start = null
 
-function showFirstSlide() {
-  back.style.display = 'block'
+class PhotogalleryPage extends Component {
+  constructor(props) {
+    super(props)
 
-  let clickedAlt = this.getAttribute('alt')
-  let comparedAlt = null
+    this.showFirstSlide = this.showFirstSlide.bind(this)
+  }
 
-  slides.forEach((slide, index) => {
-    comparedAlt = slide.getAttribute('alt')
-    slide.style.display = 'none'
-
-    if (clickedAlt === comparedAlt) {
-      slide.style.display = 'block'
-      mainSlide = index
-      start = index
-      currentSlide(mainSlide)
+  componentDidMount() {
+    for (let i = 0; i < allPhotos.length; i++) {
+      const dot = document.createElement('span')
+      dot.setAttribute('class', 'dot')
+      document.querySelector('.dots').appendChild(dot)
     }
+  }
 
-    if (start === 0) {
+  showFirstSlide() {
+    back.style.display = 'block'
+
+    let clickedAlt = this.getAttribute('alt')
+    let comparedAlt = null
+
+    slides.forEach((slide, index) => {
+      comparedAlt = slide.getAttribute('alt')
+      slide.style.display = 'none'
+
+      if (clickedAlt === comparedAlt) {
+        slide.style.display = 'block'
+        mainSlide = index
+        start = index
+        this.currentSlide(mainSlide)
+      }
+
+      if (start === 0) {
+        prevSlide.style.display = 'none'
+      } else if (start === miniPhotos.length - 1) {
+        nextSlide.style.display = 'none'
+      } else {
+        prevSlide.style.display = 'block'
+        nextSlide.style.display = 'block'
+      }
+    })
+  }
+
+  moveSlides = index => {
+    mainSlide += index;
+
+    if (mainSlide < 1) {
       prevSlide.style.display = 'none'
-    } else if (start === miniPhotos.length - 1) {
-      nextSlide.style.display = 'none'
     } else {
       prevSlide.style.display = 'block'
+    }
+
+    if (mainSlide > slides.length - 2) {
+      nextSlide.style.display = 'none'
+    } else {
       nextSlide.style.display = 'block'
     }
-  })
-}
 
-const moveSlides = index => {
-  mainSlide += index;
+    slides.forEach(slide => slide.style.display = 'none')
 
-  if (mainSlide < 1) {
-    prevSlide.style.display = 'none'
-  } else {
-    prevSlide.style.display = 'block'
+    for (let i = start; i < slides.length; i++) {
+      slides[mainSlide].style.display = 'block'
+      this.currentSlide(mainSlide)
+    }
   }
 
-  if (mainSlide > slides.length - 2) {
-    nextSlide.style.display = 'none'
-  } else {
-    nextSlide.style.display = 'block'
+  currentSlide = () => {
+    dots.forEach(dot => dot.style.backgroundColor = 'oldlace')
+
+    for (let i = start; i < dots.length; i++) {
+      dots[mainSlide].style.backgroundColor = 'saddlebrown'
+    }
   }
 
-  slides.forEach(slide => slide.style.display = 'none')
+  hideSlider = () => {
+    mainSlide = null
+    start = null
+    back.style.display = 'none'
+  }
 
-  for (let i = start; i < slides.length; i++) {
-    slides[mainSlide].style.display = 'block'
-    currentSlide(mainSlide)
+  render() {
+    return (
+      <Layout>
+        <SEO title='Фотогалерея' keywords={[`фотогалерея`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
+        <div className='about-library photogalery'>
+          <OrnamentMain />
+          <h2>Фотогалерея</h2>
+          <h3>2019 год</h3>
+          <div className='sorted-by-year'>
+            {photos2019.map(photo => {
+              const { src, alt } = photo
+
+              return (
+                <img
+                  src={src} alt={alt} title='Нажмите, чтобы посмотреть в большом разрешении' key={src}
+                  className='mini-photo'
+                  onClick={this.showFirstSlide}
+                />
+              )
+            })}
+          </div>
+          <h3>2018 год</h3>
+          <div className='sorted-by-year'>
+            {photos2018.map(photo => {
+              const { src, alt } = photo
+
+              return (
+                <img
+                  src={src} alt={alt} title='Нажмите, чтобы посмотреть в большом разрешении' key={src}
+                  className='mini-photo'
+                  onClick={this.showFirstSlide}
+                />
+              )
+            })}
+          </div>
+        </div>
+        <div id='back'>
+          <span title='Закрыть' id='close' onClick={this.hideSlider}>&times;</span>
+          <div id='front'>
+            {allPhotos.map(photo => {
+              const { src, alt } = photo
+
+              return (
+                <img
+                  src={src} alt={alt} title={alt} key={src}
+                  className='slide'
+                />
+              )
+            })}
+          </div>
+          <span className='prev-slide' onClick={() => this.moveSlides(-1)}>&#10094;</span>
+          <span className='next-slide' onClick={() => this.moveSlides(1)}>&#10095;</span>
+          <div className='dots'></div>
+        </div>
+      </Layout>
+    )
   }
 }
-
-const currentSlide = () => {
-  dots.forEach(dot => dot.style.backgroundColor = 'oldlace')
-
-  for (let i = start; i < dots.length; i++) {
-    dots[mainSlide].style.backgroundColor = 'saddlebrown'
-  }
-}
-
-const hideSlider = () => {
-  mainSlide = null
-  start = null
-  back.style.display = 'none'
-}
-
-window.addEventListener('load', allDots)
-
-const PhotogalleryPage = () => (
-  <Layout>
-    <SEO title='Фотогалерея' keywords={[`фотогалерея`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
-    <div className='about-library photogalery'>
-      <OrnamentMain />
-      <h2>Фотогалерея</h2>
-      <h3>2019 год</h3>
-      <div className='sorted-by-year'>
-        {photos2019.map(photo => {
-          const { src, alt } = photo
-
-          return (
-            <img
-              src={src} alt={alt} title='Нажмите, чтобы посмотреть в большом разрешении' key={src}
-              className='mini-photo'
-              onClick={showFirstSlide}
-            />
-          )
-        })}
-      </div>
-      <h3>2018 год</h3>
-      <div className='sorted-by-year'>
-        {photos2018.map(photo => {
-          const { src, alt } = photo
-
-          return (
-            <img
-              src={src} alt={alt} title='Нажмите, чтобы посмотреть в большом разрешении' key={src}
-              className='mini-photo'
-              onClick={showFirstSlide}
-            />
-          )
-        })}
-      </div>
-    </div>
-    <div id='back'>
-      <span title='Закрыть' id='close' onClick={hideSlider}>&times;</span>
-      <div id='front'>
-        {allPhotos.map(photo => {
-          const { src, alt } = photo
-
-          return (
-            <img
-              src={src} alt={alt} title={alt} key={src}
-              className='slide'
-            />
-          )
-        })}
-      </div>
-      <span className='prev-slide' onClick={() => moveSlides(-1)}>&#10094;</span>
-      <span className='next-slide' onClick={() => moveSlides(1)}>&#10095;</span>
-      <div className='dots'></div>
-    </div>
-  </Layout>
-)
 
 export default PhotogalleryPage
