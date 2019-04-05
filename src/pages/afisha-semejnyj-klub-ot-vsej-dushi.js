@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
-const clubEvents = [
+const otVsejDushiEvents = [
   { posterDate: 'Январь', posterEvent: 'Святочный вечер' }, 
   { posterDate: 'Февраль', posterEvent: 'Вечер к Дню влюблённых' }, 
   { posterDate: 'Март', posterEvent: 'Вечер юмора' }, 
@@ -22,7 +22,7 @@ const PosterOtVsejDushiPage = () => (
     <div className='news-and-events poster-ot-vsej-dushi'>
       <OrnamentMain />
       <h2>Программа семейного клуба «От всей души» на 2019 год</h2>
-      {clubEvents.map((event, ind) => {
+      {otVsejDushiEvents.map((event, ind) => {
         const { posterDate, posterEvent } = event
 
         return (
