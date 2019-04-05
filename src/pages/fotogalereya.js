@@ -48,6 +48,14 @@ const photos2018 = [
 
 const allPhotos = photos2019.concat(photos2018)
 
+const allDots = () => {
+  for (let i = 0; i < allPhotos.length; i++) {
+    const dot = document.createElement('span')
+    dot.setAttribute('class', 'dot')
+    document.querySelector('.dots').appendChild(dot)
+  }
+}
+
 const miniPhotos = document.querySelectorAll('.mini-photo')
 const back = document.getElementById('back')
 const slides = document.querySelectorAll('.slide')
@@ -123,6 +131,8 @@ const hideSlider = () => {
   back.style.display = 'none'
 }
 
+window.addEventListener('load', allDots)
+
 const PhotogalleryPage = () => (
   <Layout>
     <SEO title='Фотогалерея' keywords={[`фотогалерея`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
@@ -174,16 +184,7 @@ const PhotogalleryPage = () => (
       </div>
       <span className='prev-slide' onClick={() => moveSlides(-1)}>&#10094;</span>
       <span className='next-slide' onClick={() => moveSlides(1)}>&#10095;</span>
-      <div className='dots'>
-        {/* {
-          const dotsDiv = document.querySelector('.dots')
-          const dot = document.createElement('span').setAttribute('class', 'dot')
-
-          for (let i = 0; i < allPhotos.length; i++) {
-            dotsDiv.appendChild(dot)
-          }
-        } */}
-      </div>
+      <div className='dots'></div>
     </div>
   </Layout>
 )
