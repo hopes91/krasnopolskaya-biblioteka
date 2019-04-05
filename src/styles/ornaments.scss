@@ -98,20 +98,20 @@
 }
 
 .ornament-main {
-  @include dimensions(100%, 100% !important);
+  @include dimensions(100% !important, 100% !important);
 
   .ornament {
-    @include dimensions(10%, auto);
-    @include indentations(0, 0);
-    position: absolute;
-    z-index: -1;
-    cursor: default;
+    @include dimensions(10% !important, auto !important);
+    @include indentations(0 !important, 0 !important);
+    position: absolute !important;
+    z-index: -1 !important;
+    cursor: default !important;
     @include respond-to(small-screens) {
-      width: 12%;
+      width: 12% !important;
     }
 
     img {
-      margin: 0;
+      margin: 0 !important;
     }
   }
   .one {
