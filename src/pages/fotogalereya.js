@@ -175,24 +175,14 @@ const PhotogalleryPage = () => (
       <span className='prev-slide' onClick={() => moveSlides(-1)}>&#10094;</span>
       <span className='next-slide' onClick={() => moveSlides(1)}>&#10095;</span>
       <div className='dots'>
-        <span className='dot'></span>
-        <span className='dot'></span>
-        <span className='dot'></span>
-        <span className='dot'></span>
-        <span className='dot'></span>
-        <span className='dot'></span>
-        <span className='dot'></span>
-        <span className='dot'></span>
-        <span className='dot'></span>
-        <span className='dot'></span>
-        <span className='dot'></span>
-        <span className='dot'></span>
-        <span className='dot'></span>
-        <span className='dot'></span>
-        <span className='dot'></span>
-        <span className='dot'></span>
-        <span className='dot'></span>
-        <span className='dot'></span>
+        {/* {
+          const dotsDiv = document.querySelector('.dots')
+          const dot = document.createElement('span').setAttribute('class', 'dot')
+
+          for (let i = 0; i < allPhotos.length; i++) {
+            dotsDiv.appendChild(dot)
+          }
+        } */}
       </div>
     </div>
   </Layout>
