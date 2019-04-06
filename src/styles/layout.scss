@@ -369,6 +369,10 @@ body {
           
           ul {
             @include indentations(0, 0 2em);
+
+            a {
+              display: list-item;
+            }
           }
         }
       }
