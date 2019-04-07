@@ -416,7 +416,10 @@ body {
         section {
           h6 {
             @include indentations(1em 0, 0);
-            font-size: 0.9em;
+            font: {
+              size: 0.9em;
+              weight: normal;
+            }
           }
           img {
             width: auto;
