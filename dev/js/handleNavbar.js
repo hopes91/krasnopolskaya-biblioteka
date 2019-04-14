@@ -22,9 +22,9 @@ const toggleNavbarTabindex = () => {
 
 const showHideNavbarLinksOnKeyDown = event => {
   if (event.key === 'Enter') {
-    let projectLinks = event.target.children[1];
+    let navbarLinks = event.target.children[1];
 
-    if (projectLinks.style.display === '' || projectLinks.style.display === 'none') {
+    if (navbarLinks.style.display === '' || navbarLinks.style.display === 'none') {
       showNavbarLinks(event);
     } else {
       hideNavbarLinks(event);
@@ -33,18 +33,18 @@ const showHideNavbarLinksOnKeyDown = event => {
 }
 
 const showNavbarLinks = event => {
-  let projectLinks = event.target.children[1];
+  let navbarLinks = event.target.children[1];
 
-  if (projectLinks) {
-    projectLinks.style.display = 'block';
+  if (navbarLinks) {
+    navbarLinks.style.display = 'block';
   }
 }
 
 const hideNavbarLinks = event => {
-  let projectLinks = event.target.children[1];
+  let navbarLinks = event.target.children[1];
   
-  if (projectLinks) {
-    projectLinks.style.display = 'none';
+  if (navbarLinks) {
+    navbarLinks.style.display = 'none';
   }
 }
 
