@@ -7,6 +7,11 @@ html, body, .container {
   @include indentations(0, 0);
 }
 
+body * {
+  outline-width: 1.7em;
+  outline-color: #471a00;
+}
+
 body {
   color: #471a00;
   font-family: 'Oranienbaum', serif;
@@ -14,7 +19,6 @@ body {
   a {
     @include dimensions(100%, 100%);
     color: #471a00;
-    outline: none;
     display: inline-block;
     img {
       @include dimensions(100%, 100%);
@@ -40,7 +44,7 @@ body {
         top: 0;
         left: 0;
       }
-      .dropdown {
+      #dropdown {
       	display: none;
         @include dimensions(100%, 4em);
         box-sizing: border-box;
@@ -60,6 +64,7 @@ body {
           top: 1.2em;
           right: 1em;
           cursor: pointer;
+          z-index: 10;
           span {
             display: block;
             width: 100%;
@@ -230,7 +235,7 @@ body {
           }
         }
       }
-      .navbar {
+      #navbar {
         @include dimensions(100%, 3.3em);
         @include indentations(0 auto, 0);
         text-align: center;

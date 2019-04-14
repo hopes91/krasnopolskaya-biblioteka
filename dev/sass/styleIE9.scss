@@ -37,7 +37,7 @@ body {
         top: 0;
         left: 0;
       }
-      .dropdown {
+      #dropdown {
       	display: none;
         @include dimensions(100%, 4em);
         box-sizing: border-box;
@@ -227,7 +227,7 @@ body {
           }
         }
       }
-      .navbar {
+      #navbar {
         @include dimensions(100%, 3.3em);
         @include indentations(0 auto, 0);
         text-align: center;

@@ -28,17 +28,17 @@
   <body>
     <div class="container">
       <header>
-        <div class="dropdown">
-          <div id="burger">
+        <div id="dropdown">
+          <div tabindex="-1" id="burger">
             <span></span>
             <span></span>
             <span></span>
           </div>
           <div id="drop-menu">
             <div class="dropdown-section">
-              <a class="section-title" href="index.html">Главная</a>
+              <a tabindex="-1" class="section-title" href="index.html">Главная</a>
             </div>
-            <div class="dropdown-section">
+            <div tabindex="-1" class="dropdown-section">
               <p class="section-title">О библиотеке <span>&#9662;</span></p>
               <ul class="section-links">
                 <a href="istoriya-biblioteki.html"><li>История библиотеки</li></a>
@@ -47,7 +47,7 @@
                 <a href="rezhim-raboty-biblioteki.html"><li>Режим работы библиотеки</li></a>
               </ul>
             </div>
-            <div class="dropdown-section">
+            <div tabindex="-1" class="dropdown-section">
               <p class="section-title">Новости и события <span>&#9662;</span></p>
               <ul class="section-links">
                 <a href="afisha.html"><li>Афиша апреля 2019 года</li></a>
@@ -56,7 +56,7 @@
                 <a href="proshedshie-sobytiya-goda.html"><li>Прошедшие события 2019 года</li></a>
               </ul>
             </div>
-            <div class="dropdown-section">
+            <div tabindex="-1" class="dropdown-section">
               <p class="section-title">Услуги <span>&#9662;</span></p>
               <ul class="section-links">
                 <a href="poleznye-ssylki.html"><li>Полезные ссылки</li></a>
@@ -65,16 +65,24 @@
               </ul>
             </div>
             <div class="dropdown-section">
-              <a class="section-title" href="karta-sajta.html">Карта сайта</a>
+              <a tabindex="-1" class="section-title" href="karta-sajta.html">Карта сайта</a>
             </div>
           </div>
         </div>
         <a class="site-title" href="http://krasnopolielib.ru/"><h1>Краснопольская библиотека МКУК Сунская МБС</h1></a>
-        <nav class="navbar">
+        <div class="ornament-top">
+          <p class="todays-date">
+            <span id="span-dayOfTheWeek"></span>
+            <span id="span-day"></span>
+            <span id="span-month"></span>
+            <span id="span-year"></span>
+          </p>
+        </div>
+        <nav id="navbar">
           <div class="navbar-section">
-            <a class="section-title" href="index.html">Главная</a>
+            <a tabindex="0" class="section-title" href="index.html">Главная</a>
           </div>
-          <div class="navbar-section">
+          <div tabindex="0" class="navbar-section">
             <p class="section-title">О библиотеке <span>&#9662;</span></p>
             <ul class="section-links">
               <a href="istoriya-biblioteki.html"><li>История библиотеки</li></a>
@@ -83,7 +91,7 @@
               <a href="rezhim-raboty-biblioteki.html"><li>Режим работы библиотеки</li></a>
             </ul>
           </div>
-          <div class="navbar-section">
+          <div tabindex="0" class="navbar-section">
             <p class="section-title">Новости и события <span>&#9662;</span></p>
             <ul class="section-links">
               <a href="afisha.html"><li>Афиша апреля 2019 года</li></a>
@@ -92,7 +100,7 @@
               <a href="proshedshie-sobytiya-goda.html"><li>Прошедшие события 2019 года</li></a>
             </ul>
           </div>
-          <div class="navbar-section">
+          <div tabindex="0" class="navbar-section">
             <p class="section-title">Услуги <span>&#9662;</span></p>
             <ul class="section-links">
               <a href="poleznye-ssylki.html"><li>Полезные ссылки</li></a>
@@ -101,7 +109,7 @@
             </ul>
           </div>
           <div class="navbar-section">
-            <a class="section-title" href="karta-sajta.html">Карта сайта</a>
+            <a tabindex="0" class="section-title" href="karta-sajta.html">Карта сайта</a>
           </div>
         </nav>
       </header>
