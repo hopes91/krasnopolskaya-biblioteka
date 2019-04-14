@@ -1,4 +1,5 @@
 let burger = document.getElementById('burger');
+let dropdownSections = document.querySelectorAll('.dropdown-section');
 
 const toggleDropdownTabindex = () => {
 	let dropdownSections = document.querySelectorAll('.dropdown-section');
@@ -56,8 +57,31 @@ const toggleDropdownMenu = () => {
 	}
 }
 
-window.addEventListener('resize', toggleDropdownTabindex);
-window.addEventListener('keydown', toggleBurgerOnKeyDown);
+const toggleDropdownLinks = event => {
+  let parent = event.target.parentNode;
+
+  if (event.target.className === 'section-title') {
+    let dropdownLinks = event.target.nextElementSibling;
+
+    if (dropdownLinks.style.display === 'block') {
+      dropdownLinks.style.display = 'none';
+    } else {
+      dropdownLinks.style.display = 'block';
+    }
+  } else if (parent.className === 'section-title') {
+    let dropdownLinks = event.target.parentNode.nextElementSibling;
+
+    if (dropdownLinks.style.display === 'block') {
+      dropdownLinks.style.display = 'none';
+    } else {
+      dropdownLinks.style.display = 'block';
+    }
+  }
+}
+
 if (burger) {
+	window.addEventListener('resize', toggleDropdownTabindex);
+	window.addEventListener('keydown', toggleBurgerOnKeyDown);
 	burger.addEventListener('click', toggleBurger);
+	dropdownSections.forEach(section => section.addEventListener('click', toggleDropdownLinks));
 }
