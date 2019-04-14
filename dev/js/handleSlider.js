@@ -1,17 +1,23 @@
 let miniPhotos = document.querySelectorAll('.mini-photo');
 let back = document.getElementById('back');
 let slides = document.querySelectorAll('.slide');
-let dots = document.querySelectorAll('.dot');
 let prevSlide = document.querySelector('.prev-slide');
 let nextSlide = document.querySelector('.next-slide');
+let closeIcon = document.getElementById('close');
 
 let mainSlide = null;
 let start = null;
 
-function showFirstSlide() {
+const showFirstSlideOnKeyDown = event => {
+	if (event.key === 'Enter') {
+		showFirstSlide(event);
+	}
+}
+
+const showFirstSlide = event => {
 	back.style.display = 'block';
 
-	let clickedAlt = this.getAttribute('alt');
+	let clickedAlt = event.target.getAttribute('alt');
 	let comparedAlt = null;
 
 	slides.forEach((slide, index) => {
@@ -34,6 +40,14 @@ function showFirstSlide() {
 			nextSlide.style.display = 'block';
 		}
 	});
+}
+
+const moveSlidesOnKeyDown = event => {
+	if (event.key === 'ArrowLeft') {
+		moveSlides(-1);
+	} else if (event.key === 'ArrowRight') {
+		moveSlides(1);
+	}
 }
 
 const moveSlides = index => {
@@ -60,10 +74,18 @@ const moveSlides = index => {
 }
 
 const currentSlide = () => {
+	let dots = document.querySelectorAll('.dot');
+
 	dots.forEach(dot => dot.style.backgroundColor = 'oldlace');
 
 	for (let i = start; i < dots.length; i++) {
 		dots[mainSlide].style.backgroundColor = 'saddlebrown';
+	}
+}
+
+const hideSliderOnKeyDown = event => {
+	if (event.key === 'Escape') {
+		hideSlider();
 	}
 }
 
@@ -73,4 +95,10 @@ const hideSlider = () => {
 	back.style.display = 'none';
 }
 
-miniPhotos.forEach(photo => photo.addEventListener('click', showFirstSlide));
+if (back) {
+	miniPhotos.forEach(photo => photo.addEventListener('keydown', showFirstSlideOnKeyDown));
+	miniPhotos.forEach(photo => photo.addEventListener('click', showFirstSlide));
+	window.addEventListener('keydown', moveSlidesOnKeyDown);
+	window.addEventListener('keydown', hideSliderOnKeyDown);
+	closeIcon.addEventListener('click', hideSlider);
+}
