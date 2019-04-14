@@ -422,8 +422,13 @@ body {
             }
           }
           img {
-            width: auto;
+            @include dimensions(auto, auto);
             max-width: 100%;
+            @include indentations(0.5em 0, 0);
+            &:last-child {
+              margin-bottom: 1em;
+            }
+            display: block;
           }
         }
       }
