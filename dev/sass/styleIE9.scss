@@ -655,6 +655,19 @@ body {
           }
         }
       }
+      #arrow-up {
+        @include dimensions(60px, 60px);
+        position: relative;
+        bottom: -6em;
+        left: 1em;
+        z-index: 1;
+        @include respond-to(tiny-screens) {
+          bottom: -8em;
+        }
+        img {
+          @include dimensions(100%, 100%);
+        }
+      }
     }
 
     .empty {
