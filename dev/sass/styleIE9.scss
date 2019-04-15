@@ -7,6 +7,11 @@ html, body, .container {
   @include indentations(0, 0);
 }
 
+body * {
+  outline-width: 1.7em;
+  outline-color: #471a00;
+}
+
 body {
   color: #471a00;
   font-family: 'Oranienbaum', serif;
@@ -14,7 +19,6 @@ body {
   a {
     @include dimensions(100%, 100%);
     color: #471a00;
-    outline: none;
     display: inline-block;
     img {
       @include dimensions(100%, 100%);
@@ -57,6 +61,7 @@ body {
           top: 1.2em;
           right: 1em;
           cursor: pointer;
+          z-index: 10;
           span {
             display: block;
             width: 100%;
@@ -311,7 +316,7 @@ body {
       box-sizing: border-box;
       position: relative;
       @include respond-to(small-screens) {
-        margin: 0 0 7em 0;
+        margin-bottom: 7em;
       }
       @include respond-to(tiny-screens) {
         margin-bottom: 9em;
@@ -323,6 +328,24 @@ body {
       p, a, li {
         font-size: 1em;
         line-height: 1.2;
+      }
+      table {
+        width: 100%;
+        margin-bottom: 1.5em;
+      }
+      table, th, td {
+        border: $simple-border;
+        border-collapse: collapse;
+      }
+      th, td {
+        @include indentations(0, 1em);
+        text-align: center;
+        @include respond-to(tiny-screens) {
+          padding: 0.5em;
+        }
+      }
+      .td-title {
+        font-weight: bold;
       }
       .news, .about-library, .news-and-events, .services, .sites-map {
         @include dimensions(65%, auto);
@@ -395,9 +418,21 @@ body {
       // news
       .news {
         section {
+          h6 {
+            @include indentations(1em 0, 0);
+            font: {
+              size: 0.9em;
+              weight: normal;
+            }
+          }
           img {
-            width: auto;
+            @include dimensions(auto, auto);
             max-width: 100%;
+            @include indentations(0.5em 0, 0);
+            &:last-child {
+              margin-bottom: 1em;
+            }
+            display: block;
           }
         }
       }
@@ -553,12 +588,9 @@ body {
         }
       }
       .poster {
-        div {
-          height: 6.5em;
-          @include respond-to(small-screens) {
-            height: auto;
-            margin-bottom: 1em;
-          }
+        @include respond-to(tiny-screens) {
+          @include indentations(1em auto, 1em 0);
+          overflow-x: scroll;
         }
       }
       .poster-ot-vsej-dushi {
@@ -582,6 +614,12 @@ body {
           }
         }
       }
+      .past-events {
+        @include respond-to(tiny-screens) {
+          @include indentations(1em auto, 1em 0);
+          overflow-x: scroll;
+        }
+      }
       // services
       .services {
         a {
@@ -598,23 +636,6 @@ body {
         @include respond-to(tiny-screens) {
           @include indentations(1em auto, 1em 0);
           overflow-x: scroll;
-        }
-        table {
-          margin-bottom: 1.5em;
-        }
-        table, th, td {
-          border: $simple-border;
-          border-collapse: collapse;
-        }
-        th, td {
-          @include indentations(0, 1em);
-          text-align: center;
-          @include respond-to(tiny-screens) {
-            padding: 0.5em;
-          }
-        }
-        .td-title {
-          font-weight: bold;
         }
       }
       // site's map
