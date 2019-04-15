@@ -321,6 +321,7 @@ body {
       }
       @include respond-to(tiny-screens) {
         margin-bottom: 9em;
+        padding: 0.5em 0;
       }
       h2 {
         @include indentations(1em, 0);
