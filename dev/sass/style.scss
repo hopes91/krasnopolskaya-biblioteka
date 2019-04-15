@@ -9,16 +9,16 @@ html, body, .container {
 
 body * {
   outline-width: 1.7em;
-  outline-color: #471a00;
+  outline-color: $dark-brown;
 }
 
 body {
-  color: #471a00;
+  color: $dark-brown;
   font-family: 'Oranienbaum', serif;
   background-color: peachpuff;
   a {
     @include dimensions(100%, 100%);
-    color: #471a00;
+    color: $dark-brown;
     display: inline-block;
     img {
       @include dimensions(100%, 100%);
@@ -115,7 +115,7 @@ body {
               position: relative;
               cursor: pointer;
               span {
-                color: #471a00;
+                color: $dark-brown;
                 position: absolute;
                 right: 2em;
               }
@@ -268,7 +268,7 @@ body {
             cursor: pointer;
             position: relative;
             span {
-              color: #471a00;
+              color: $dark-brown;
               position: absolute;
               right: 1.3em;
               @include respond-to(standart-screens) {
