@@ -7,12 +7,15 @@ html, body, .container {
   @include indentations(0, 0);
 }
 
+body * {
+  outline-color: #C56757;
+}
+
 body {
   color: $dark-brown;
   font-family: 'Oranienbaum', serif;
   background-color: peachpuff;
   outline-style: solid;
-  outline-color: $dark-brown;
   a {
     @include dimensions(100%, 100%);
     color: $dark-brown;
