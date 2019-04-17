@@ -23,41 +23,40 @@ const linksSectionFour = [
 ]
 
 const showNavbarLinks = event => {
-  let sectionLinks
+  let navbarLinks
 
   if (event.target.className === 'section-title') {
-    sectionLinks = ReactDOM.findDOMNode(event.target).nextElementSibling
+    navbarLinks = ReactDOM.findDOMNode(event.target).nextElementSibling
   }
 
-  if (sectionLinks) {
-    sectionLinks.style.display = 'block'
+  if (navbarLinks) {
+    navbarLinks.style.display = 'block'
   }
 }
 
 const hideNavbarLinks = event => {
   let parent = ReactDOM.findDOMNode(event.target).parentNode
-  let sectionLinks
+  let navbarLinks
 
   if (event.target.className === 'section-title') {
-    sectionLinks = ReactDOM.findDOMNode(event.target).nextElementSibling
+    navbarLinks = ReactDOM.findDOMNode(event.target).nextElementSibling
   } else if (parent.className === 'section-links') {
-    sectionLinks = parent
+    navbarLinks = parent
   }
 
-  if (sectionLinks) {
-    sectionLinks.style.display = 'none'
+  if (navbarLinks) {
+    navbarLinks.style.display = 'none'
   }
 }
 
 const Navbar = () => (
   <div id='navbar'>
-    <div className='navbar-section'
-         onMouseEnter={showNavbarLinks} onMouseLeave={hideNavbarLinks}
-    >
+    <div className='navbar-section'>
       <Link to='/' key='index' className='section-title'>
         Главная
       </Link>
     </div>
+
     <div className='navbar-section'
          onMouseEnter={showNavbarLinks} onMouseLeave={hideNavbarLinks}
     >
@@ -74,6 +73,7 @@ const Navbar = () => (
         })}
       </nav>
     </div>
+
     <div className='navbar-section'
          onMouseEnter={showNavbarLinks} onMouseLeave={hideNavbarLinks}
     >
@@ -90,6 +90,7 @@ const Navbar = () => (
         })}
       </nav>
     </div>
+
     <div className='navbar-section'
          onMouseEnter={showNavbarLinks} onMouseLeave={hideNavbarLinks}
     >
@@ -106,9 +107,8 @@ const Navbar = () => (
         })}
       </nav>
     </div>
-    <div className='navbar-section'
-         onMouseEnter={showNavbarLinks} onMouseLeave={hideNavbarLinks}
-    >
+
+    <div className='navbar-section'>
       <Link to='/karta-sajta' key='karta-sajta' className='section-title'>
         Карта сайта
       </Link>
