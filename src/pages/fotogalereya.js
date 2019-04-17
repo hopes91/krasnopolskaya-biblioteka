@@ -47,14 +47,6 @@ const photos2018 = [
 ]
 
 const allPhotos = photos2019.concat(photos2018)
-
-const miniPhotos = document.querySelectorAll('.mini-photo')
-const back = document.getElementById('back')
-const slides = document.querySelectorAll('.slide')
-const dots = document.querySelectorAll('.dot')
-const prevSlide = document.querySelector('.prev-slide')
-const nextSlide = document.querySelector('.next-slide')
-
 let mainSlide = null
 let start = null
 
@@ -63,6 +55,10 @@ class PhotogalleryPage extends Component {
     super(props)
 
     this.showFirstSlide = this.showFirstSlide.bind(this)
+    this.moveSlides = this.moveSlides.bind(this)
+    this.handleArrows = this.handleArrows.bind(this)
+    this.currentSlide = this.currentSlide.bind(this)
+    this.hideSlider = this.hideSlider.bind(this)
   }
 
   componentDidMount() {
@@ -73,10 +69,12 @@ class PhotogalleryPage extends Component {
     }
   }
 
-  showFirstSlide() {
-    back.style.display = 'block'
+  showFirstSlide(event) {
+    const slides = document.querySelectorAll('.slide')
 
-    let clickedAlt = this.getAttribute('alt')
+    document.getElementById('back').style.display = 'block'
+
+    let clickedAlt = event.target.getAttribute('alt')
     let comparedAlt = null
 
     slides.forEach((slide, index) => {
@@ -87,22 +85,31 @@ class PhotogalleryPage extends Component {
         slide.style.display = 'block'
         mainSlide = index
         start = index
+        this.handleArrows(mainSlide)
         this.currentSlide(mainSlide)
-      }
-
-      if (start === 0) {
-        prevSlide.style.display = 'none'
-      } else if (start === miniPhotos.length - 1) {
-        nextSlide.style.display = 'none'
-      } else {
-        prevSlide.style.display = 'block'
-        nextSlide.style.display = 'block'
       }
     })
   }
 
-  moveSlides = index => {
+  moveSlides(index) {
+    const slides = document.querySelectorAll('.slide')
+
     mainSlide += index;
+
+    this.handleArrows(mainSlide)
+
+    slides.forEach(slide => slide.style.display = 'none')
+
+    for (let i = start; i < slides.length; i++) {
+      slides[mainSlide].style.display = 'block'
+      this.currentSlide(mainSlide)
+    }
+  }
+
+  handleArrows(mainSlide) {
+    const slides = document.querySelectorAll('.slide')
+    const prevSlide = document.querySelector('.prev-slide')
+    const nextSlide = document.querySelector('.next-slide')
 
     if (mainSlide < 1) {
       prevSlide.style.display = 'none'
@@ -115,16 +122,11 @@ class PhotogalleryPage extends Component {
     } else {
       nextSlide.style.display = 'block'
     }
-
-    slides.forEach(slide => slide.style.display = 'none')
-
-    for (let i = start; i < slides.length; i++) {
-      slides[mainSlide].style.display = 'block'
-      this.currentSlide(mainSlide)
-    }
   }
 
-  currentSlide = () => {
+  currentSlide(mainSlide) {
+    const dots = document.querySelectorAll('.dot')
+
     dots.forEach(dot => dot.style.backgroundColor = 'oldlace')
 
     for (let i = start; i < dots.length; i++) {
@@ -132,10 +134,10 @@ class PhotogalleryPage extends Component {
     }
   }
 
-  hideSlider = () => {
+  hideSlider() {
     mainSlide = null
     start = null
-    back.style.display = 'none'
+    document.getElementById('back').style.display = 'none'
   }
 
   render() {
@@ -159,6 +161,7 @@ class PhotogalleryPage extends Component {
               )
             })}
           </div>
+
           <h3>2018 год</h3>
           <div className='sorted-by-year'>
             {photos2018.map(photo => {
@@ -174,6 +177,7 @@ class PhotogalleryPage extends Component {
             })}
           </div>
         </div>
+
         <div id='back'>
           <span title='Закрыть' id='close' onClick={this.hideSlider}>&times;</span>
           <div id='front'>
