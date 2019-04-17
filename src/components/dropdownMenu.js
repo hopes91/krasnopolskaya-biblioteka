@@ -22,9 +22,6 @@ const linksSectionFour = [
   { to: '/prejskurant-na-platnye-uslugi', page: 'prejskurant-na-platnye-uslugi', title: 'Прейскурант цен на платные услуги' }
 ]
 
-const burger = document.getElementById('dropdown__burger')
-const dropdownSections = document.querySelectorAll('.menu-section')
-
 const toggleBurger = event => {
 	let parentId = ReactDOM.findDOMNode(event.target).parentNode.id;
 
