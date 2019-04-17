@@ -37,6 +37,8 @@ const SiteMapPage = () => (
           </Link>
         </ul>
       </div>
+
+
       <div className='map__about-library'>
         <p>О библиотеке</p>
         <ul>
@@ -51,6 +53,7 @@ const SiteMapPage = () => (
           })}
         </ul>
       </div>
+
       <div className='map__news-and-events'>
         <p>Новости и события</p>
         <ul>
@@ -65,6 +68,7 @@ const SiteMapPage = () => (
           })}
         </ul>
       </div>
+
       <div className='map__services'>
         <p>Услуги</p>
         <ul>
@@ -79,6 +83,7 @@ const SiteMapPage = () => (
           })}
         </ul>
       </div>
+      
       <div className='map__sites-map'>
         <p>Карта сайта</p>
         <ul>
