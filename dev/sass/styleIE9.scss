@@ -312,14 +312,11 @@ body {
 
     main {
       @include dimensions(100%, auto);
-      @include indentations(0 0 6em 0, 1em);
+      @include indentations(0, 1em);
       box-sizing: border-box;
       position: relative;
-      @include respond-to(small-screens) {
-        margin-bottom: 7em;
-      }
       @include respond-to(tiny-screens) {
-        margin-bottom: 9em;
+        padding: 0.5em 0;
       }
       h2 {
         @include indentations(1em, 0);
@@ -658,12 +655,9 @@ body {
       #arrow-up {
         @include dimensions(50px, 50px);
         position: relative;
-        bottom: -6em;
+        bottom: 0;
         left: 1em;
         z-index: 1;
-        @include respond-to(tiny-screens) {
-          bottom: -8em;
-        }
         img {
           @include dimensions(100%, 100%);
         }
