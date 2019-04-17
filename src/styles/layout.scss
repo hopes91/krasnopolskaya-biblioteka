@@ -125,12 +125,20 @@ body {
         section {
           h6 {
             @include indentations(1em 0, 0);
-            font-size: 0.9em;
+            font: {
+              size: 0.9em;
+              weight: normal;
+            }
           }
 
           img {
-            width: auto;
+            @include dimensions(auto, auto);
             max-width: 100%;
+            @include indentations(0.5em 0, 0);
+            &:last-child {
+              margin-bottom: 1em;
+            }
+            display: block;
           }
         }
       }
@@ -366,7 +374,7 @@ body {
           p {
             margin: 0.5em 0;
           }
-          
+
           ul {
             @include indentations(0, 0 2em);
 
