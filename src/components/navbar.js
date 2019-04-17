@@ -22,7 +22,7 @@ const linksSectionFour = [
   { to: '/prejskurant-na-platnye-uslugi', page: 'prejskurant-na-platnye-uslugi', title: 'Прейскурант цен на платные услуги' }
 ]
 
-const showNavbarLinks = event => {
+function showNavbarLinks(event) {
   let navbarLinks
 
   if (event.target.className === 'section-title') {
@@ -34,7 +34,7 @@ const showNavbarLinks = event => {
   }
 }
 
-const hideNavbarLinks = event => {
+function hideNavbarLinks(event) {
   let parent = ReactDOM.findDOMNode(event.target).parentNode
   let navbarLinks
 

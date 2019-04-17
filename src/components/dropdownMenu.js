@@ -22,7 +22,7 @@ const linksSectionFour = [
   { to: '/prejskurant-na-platnye-uslugi', page: 'prejskurant-na-platnye-uslugi', title: 'Прейскурант цен на платные услуги' }
 ]
 
-const toggleBurger = event => {
+function toggleBurger(event) {
 	let parentId = ReactDOM.findDOMNode(event.target).parentNode.id;
 
 	if (event.target.id === 'dropdown__burger' || parentId === 'dropdown__burger') {
@@ -38,7 +38,7 @@ const toggleBurger = event => {
 	}
 }
 
-const toggleDropdownMenu = () => {
+function toggleDropdownMenu() {
 	let dropdownMenu = document.getElementById('dropdown__menu');
 
 	if (dropdownMenu.style.display === '' || dropdownMenu.style.display === 'none') {
@@ -48,7 +48,7 @@ const toggleDropdownMenu = () => {
 	}
 }
 
-const toggleDropdownLinks = event => {
+function toggleDropdownLinks(event) {
   let parent = ReactDOM.findDOMNode(event.target).parentNode
 
   if (event.target.className === 'section-title') {
