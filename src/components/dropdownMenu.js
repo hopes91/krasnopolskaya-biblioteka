@@ -22,38 +22,33 @@ const linksSectionFour = [
   { to: '/prejskurant-na-platnye-uslugi', page: 'prejskurant-na-platnye-uslugi', title: 'Прейскурант цен на платные услуги' }
 ]
 
-const burgerSpans = document.querySelectorAll('#dropdown__burger span')
-const dropdownMenu = document.getElementById('dropdown__menu')
+const burger = document.getElementById('dropdown__burger')
+const dropdownSections = document.querySelectorAll('.menu-section')
 
-const toggleDropdown = event => {
-  let parentId = ReactDOM.findDOMNode(event.target).parentNode.id
-  const dropdownBurger = document.getElementById('dropdown__burger')
+const toggleBurger = event => {
+	let parentId = ReactDOM.findDOMNode(event.target).parentNode.id;
 
-  if (event.target === dropdownBurger || parentId === 'dropdown__burger') {
-    showDropdown()
-  } else if (event.target === dropdownMenu) {
-    hideDropdown()
-  }
+	if (event.target.id === 'dropdown__burger' || parentId === 'dropdown__burger') {
+		let burgerSpans = document.querySelectorAll('#dropdown__burger span');
+
+		burgerSpans[0].classList.toggle('span-one-active');
+		burgerSpans[2].classList.toggle('span-three-active');
+		setTimeout(() => {
+			burgerSpans[1].classList.toggle('span-two-active');
+		}, 200);
+
+		toggleDropdownMenu();
+	}
 }
 
-const showDropdown = () => {
-  burgerSpans[0].className = 'span-one-active'
-  burgerSpans[2].className = 'span-three-active'
-  setTimeout(() => {
-    burgerSpans[1].className = 'span-two-active'
-  }, 200)
+const toggleDropdownMenu = () => {
+	let dropdownMenu = document.getElementById('dropdown__menu');
 
-  dropdownMenu.style.display = 'block'
-}
-
-const hideDropdown = () => {
-  burgerSpans[0].className = ''
-  burgerSpans[2].className = ''
-  setTimeout(() => {
-    burgerSpans[1].className = ''
-  }, 200)
-
-  dropdownMenu.style.display = 'none'
+	if (dropdownMenu.style.display === '' || dropdownMenu.style.display === 'none') {
+		dropdownMenu.style.display = 'block'
+	} else {
+		dropdownMenu.style.display = 'none'
+	}
 }
 
 const toggleDropdownLinks = event => {
@@ -79,18 +74,20 @@ const toggleDropdownLinks = event => {
 }
 
 const DropdownMenu = () => (
-  <div id='dropdown' onClick={toggleDropdown}>
-    <div id='dropdown__burger'>
+  <div id='dropdown'>
+    <div id='dropdown__burger' onClick={toggleBurger}>
       <span></span>
       <span></span>
       <span></span>
     </div>
+
     <div id='dropdown__menu'>
-      <div className='menu-section' onClick={toggleDropdownLinks}>
+      <div className='menu-section'>
         <Link to='/' key='index' className='section-title'>
           Главная
         </Link>
       </div>
+
       <div className='menu-section' onClick={toggleDropdownLinks}>
         <p className='section-title'>О библиотеке <span>&#9662;</span></p>
         <nav className='section-links'>
@@ -105,6 +102,7 @@ const DropdownMenu = () => (
           })}
         </nav>
       </div>
+
       <div className='menu-section' onClick={toggleDropdownLinks}>
         <p className='section-title'>Новости и события <span>&#9662;</span></p>
         <nav className='section-links'>
@@ -119,6 +117,7 @@ const DropdownMenu = () => (
           })}
         </nav>
       </div>
+
       <div className='menu-section' onClick={toggleDropdownLinks}>
         <p className='section-title'>Услуги <span>&#9662;</span></p>
         <nav className='section-links'>
@@ -133,7 +132,8 @@ const DropdownMenu = () => (
           })}
         </nav>
       </div>
-      <div className='menu-section' onClick={toggleDropdownLinks}>
+
+      <div className='menu-section'>
         <Link to='/karta-sajta' key='karta-sajta' className='section-title'>
           Карта сайта
         </Link>
