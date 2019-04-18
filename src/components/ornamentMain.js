@@ -9,16 +9,16 @@ import ornament4 from '../images/design/ornament-4.jpg'
 
 const OrnamentMain = () => (
   <div className='ornament-main'>
-    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' className='ornament one'>
+    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='ornament one'>
       <img src={ornament1} alt='Уголок' />
     </a>
-    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' className='ornament two'>
+    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='ornament two'>
       <img src={ornament2} alt='Уголок' />
     </a>
-    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' className='ornament three'>
+    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='ornament three'>
       <img src={ornament3} alt='Уголок' />
     </a>
-    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' className='ornament four'>
+    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='ornament four'>
       <img src={ornament4} alt='Уголок' />
     </a>
   </div>

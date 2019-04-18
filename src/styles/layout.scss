@@ -16,8 +16,7 @@ body {
     @include dimensions(100%, 100%);
     display: inline-block;
     color: #471a00;
-    outline: none;
-
+    
     img {
       @include dimensions(100%, 100%);
     }
@@ -183,7 +182,6 @@ body {
           position: absolute;
           top: 0.1em;
           right: 0.5em;
-          outline: none;
           z-index: 20;
           cursor: pointer;
           &:hover {
