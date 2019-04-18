@@ -4,6 +4,8 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
+import viktorinaNaDomuDlyaDevochkiSOV from '../images/photogalery/viktorina-na-domu-dlya-devochki-s-organichennymi-vozmozhnostyami.jpg'
+import chasZozhVperedPoDorogeZdoroviya from '../images/photogalery/chas-zozh-vpered-po-doroge-zdoroviya.jpg'
 import semejnyjKlub29Marta from '../images/photogalery/semejnyj-klub-29-marta.jpg'
 import semejnyjKlub29Marta2 from '../images/photogalery/semejnyj-klub-29-marta-2.jpg'
 import biblionik from '../images/photogalery/biblionik.jpg'
@@ -24,6 +26,8 @@ import novogodnijVecherNaSemejnomKlube2 from '../images/photogalery/novogodnij-v
 import novogodnijVecherNaSemejnomKlube3 from '../images/photogalery/novogodnij-vecher-na-semejnom-klube-3.jpg'
 
 const photos2019 = [
+  { src: viktorinaNaDomuDlyaDevochkiSOV, alt: 'Викторина на дому для девочки с ограниченными возможностями' },
+  { src: chasZozhVperedPoDorogeZdoroviya, alt: 'Час ЗОЖ вперёд по дороге здоровья' },
   { src: semejnyjKlub29Marta, alt: 'Семейный клуб 29 марта' },
   { src: semejnyjKlub29Marta2, alt: 'Семейный клуб 29 марта 2' }
 ]
