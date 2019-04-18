@@ -55,7 +55,7 @@ class PhotogalleryPage extends Component {
     super(props)
 
     this.showFirstSlide = this.showFirstSlide.bind(this)
-    this.moveSlides = this.moveSlides.bind(this)
+    this.showSlides = this.showSlides.bind(this)
     this.handleArrows = this.handleArrows.bind(this)
     this.currentSlide = this.currentSlide.bind(this)
     this.hideSlider = this.hideSlider.bind(this)
@@ -75,56 +75,62 @@ class PhotogalleryPage extends Component {
     document.getElementById('back').style.display = 'block'
 
     let clickedAlt = event.target.getAttribute('alt')
-    let comparedAlt = null
+    let altToCompare = null
 
     slides.forEach((slide, index) => {
-      comparedAlt = slide.getAttribute('alt')
+      altToCompare = slide.getAttribute('alt')
       slide.style.display = 'none'
 
-      if (clickedAlt === comparedAlt) {
+      if (clickedAlt === altToCompare) {
         slide.style.display = 'block'
         mainSlide = index
         start = index
-        this.handleArrows(mainSlide)
-        this.currentSlide(mainSlide)
+        this.handleArrows()
       }
     })
   }
 
-  moveSlides(index) {
+  handleArrows(index) {
     const slides = document.querySelectorAll('.slide')
+    const prevSlide = document.querySelector('.prev-slide')
+    const nextSlide = document.querySelector('.next-slide')
 
-    mainSlide += index;
+    if ((index === -1 && mainSlide === 0) ||
+			(index === 1 && mainSlide === slides.length - 1)) {
+  		index = null
+  	} else if (index === undefined) {
+  		mainSlide = start
+  	} else {
+  		mainSlide += index
+  	}
 
-    this.handleArrows(mainSlide)
+  	if (mainSlide === 0) {
+  		prevSlide.style.display = 'none'
+  	} else {
+  		prevSlide.style.display = 'block'
+  	}
+
+  	if (mainSlide === slides.length - 1) {
+  		nextSlide.style.display = 'none'
+  	} else {
+  		nextSlide.style.display = 'block'
+  	}
+
+  	this.showSlides()
+  }
+
+  showSlides() {
+    const slides = document.querySelectorAll('.slide')
 
     slides.forEach(slide => slide.style.display = 'none')
 
     for (let i = start; i < slides.length; i++) {
       slides[mainSlide].style.display = 'block'
-      this.currentSlide(mainSlide)
+      this.currentSlide()
     }
   }
 
-  handleArrows(mainSlide) {
-    const slides = document.querySelectorAll('.slide')
-    const prevSlide = document.querySelector('.prev-slide')
-    const nextSlide = document.querySelector('.next-slide')
-
-    if (mainSlide < 1) {
-      prevSlide.style.display = 'none'
-    } else {
-      prevSlide.style.display = 'block'
-    }
-
-    if (mainSlide > slides.length - 2) {
-      nextSlide.style.display = 'none'
-    } else {
-      nextSlide.style.display = 'block'
-    }
-  }
-
-  currentSlide(mainSlide) {
+  currentSlide() {
     const dots = document.querySelectorAll('.dot')
 
     dots.forEach(dot => dot.style.backgroundColor = 'oldlace')
@@ -192,8 +198,8 @@ class PhotogalleryPage extends Component {
               )
             })}
           </div>
-          <span className='prev-slide' onClick={() => this.moveSlides(-1)}>&#10094;</span>
-          <span className='next-slide' onClick={() => this.moveSlides(1)}>&#10095;</span>
+          <span className='prev-slide' onClick={() => this.handleArrows(-1)}>&#10094;</span>
+          <span className='next-slide' onClick={() => this.handleArrows(1)}>&#10095;</span>
           <div className='dots'></div>
         </div>
       </Layout>
