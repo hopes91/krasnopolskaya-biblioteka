@@ -51,15 +51,20 @@ const moveSlidesOnKeyDown = event => {
 }
 
 const moveSlides = index => {
+	if ((index === -1 && mainSlide === 0) ||
+			(index === 1 && mainSlide === slides.length - 1)) {
+		index = null;
+	}
+
 	mainSlide += index;
 
-	if (mainSlide < 1) {
+	if (mainSlide === 0) {
 		prevSlide.style.display = 'none';
 	} else {
 		prevSlide.style.display = 'block';
 	}
 
-	if (mainSlide > slides.length - 2) {
+	if (mainSlide === slides.length - 1) {
 		nextSlide.style.display = 'none';
 	} else {
 		nextSlide.style.display = 'block';
