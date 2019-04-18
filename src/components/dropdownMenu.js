@@ -1,5 +1,4 @@
-import React from 'react'
-import ReactDOM from 'react-dom'
+import React, { Component } from 'react'
 import { Link } from 'gatsby'
 
 import '../styles/dropdownMenu.scss'
@@ -22,121 +21,169 @@ const linksSectionFour = [
   { to: '/prejskurant-na-platnye-uslugi', page: 'prejskurant-na-platnye-uslugi', title: 'Прейскурант цен на платные услуги' }
 ]
 
-function toggleBurger(event) {
-	let parentId = ReactDOM.findDOMNode(event.target).parentNode.id;
+class DropdownMenu extends Component {
+  constructor(props) {
+    super(props)
 
-	if (event.target.id === 'dropdown__burger' || parentId === 'dropdown__burger') {
-		let burgerSpans = document.querySelectorAll('#dropdown__burger span');
+    this.toggleDropdownTabIndex = this.toggleDropdownTabIndex.bind(this)
+    this.toggleBurgerOnKeyDown = this.toggleBurgerOnKeyDown.bind(this)
+    this.toggleBurger = this.toggleBurger.bind(this)
+    this.toggleDropdownMenu = this.toggleDropdownMenu.bind(this)
+    this.toggleDropdownLinks = this.toggleDropdownLinks.bind(this)
+  }
 
-		burgerSpans[0].classList.toggle('span-one-active');
-		burgerSpans[2].classList.toggle('span-three-active');
-		setTimeout(() => {
-			burgerSpans[1].classList.toggle('span-two-active');
-		}, 200);
+  componentDidMount() {
+    window.addEventListener('resize', this.toggleDropdownTabIndex)
+    this.toggleDropdownTabIndex()
+  }
 
-		toggleDropdownMenu();
-	}
-}
+  toggleDropdownTabIndex() {
+    const burger = document.getElementById('dropdown__burger')
+  	const dropdownSections = document.querySelectorAll('.dropdown-section')
 
-function toggleDropdownMenu() {
-	let dropdownMenu = document.getElementById('dropdown__menu');
-
-	if (dropdownMenu.style.display === '' || dropdownMenu.style.display === 'none') {
-		dropdownMenu.style.display = 'block'
-	} else {
-		dropdownMenu.style.display = 'none'
-	}
-}
-
-function toggleDropdownLinks(event) {
-  let parent = ReactDOM.findDOMNode(event.target).parentNode
-
-  if (event.target.className === 'section-title') {
-    let dropdownLinks = ReactDOM.findDOMNode(event.target).nextElementSibling
-
-    if (dropdownLinks.style.display === 'block') {
-      dropdownLinks.style.display = 'none'
-    } else {
-      dropdownLinks.style.display = 'block'
-    }
-  } else if (parent.className === 'section-title') {
-    let dropdownLinks = ReactDOM.findDOMNode(event.target).parentNode.nextElementSibling
-
-    if (dropdownLinks.style.display === 'block') {
-      dropdownLinks.style.display = 'none'
-    } else {
-      dropdownLinks.style.display = 'block'
+    if (window.innerWidth > 800) {
+    	burger.setAttribute('tabIndex', '-1')
+      dropdownSections.forEach(section => {
+        if (section.hasAttribute('tabIndex')) {
+          section.setAttribute('tabIndex', '-1')
+        } else {
+          section.children[0].setAttribute('tabIndex', '-1')
+        }
+      })
+    } else if (window.innerWidth <= 800) {
+    	burger.setAttribute('tabIndex', '0')
+      dropdownSections.forEach(section => {
+        if (section.hasAttribute('tabIndex')) {
+          section.setAttribute('tabIndex', '0')
+        } else {
+          section.children[0].setAttribute('tabIndex', '0')
+        }
+      })
     }
   }
+
+  toggleBurgerOnKeyDown(event) {
+  	if (event.key === 'Enter') {
+      this.toggleBurger(event)
+    }
+  }
+
+  toggleBurger(event) {
+  	let parentId = event.target.parentNode.id
+
+  	if (event.target.id === 'dropdown__burger' || parentId === 'dropdown__burger') {
+  		const burgerSpans = document.querySelectorAll('#dropdown__burger span')
+
+  		burgerSpans[0].classList.toggle('span-one-active')
+  		burgerSpans[2].classList.toggle('span-three-active')
+  		setTimeout(() => {
+  			burgerSpans[1].classList.toggle('span-two-active')
+  		}, 200)
+
+  		this.toggleDropdownMenu()
+  	}
+  }
+
+  toggleDropdownMenu() {
+  	const dropdownMenu = document.getElementById('dropdown__menu')
+
+  	if (dropdownMenu.style.display === '' || dropdownMenu.style.display === 'none') {
+  		dropdownMenu.style.display = 'block'
+  	} else {
+  		dropdownMenu.style.display = 'none'
+  	}
+  }
+
+  toggleDropdownLinks(event) {
+    if (event.target.className === 'dropdown-section') {
+      let dropdownLinks = event.target.children[1]
+
+      if (dropdownLinks.style.display === 'block') {
+        dropdownLinks.style.display = 'none'
+      } else {
+        dropdownLinks.style.display = 'block'
+      }
+    }
+  }
+
+  render() {
+    return (
+      <div id='dropdown'>
+        <div tabIndex='-1' id='dropdown__burger'
+              onKeyDown={this.toggleBurgerOnKeyDown} onClick={this.toggleBurger}
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div id='dropdown__menu'>
+          <div className='dropdown-section'>
+            <Link to='/' key='index' tabIndex='-1' className='section-title'>
+              Главная
+            </Link>
+          </div>
+
+          <div tabIndex='-1' className='dropdown-section'
+               onKeyDown={this.toggleDropdownLinks} onClick={this.toggleDropdownLinks}
+          >
+            <p className='section-title'>О библиотеке <span>&#9662;</span></p>
+            <nav className='section-links'>
+              {linksSectionTwo.map(link => {
+                const { to, page, title } = link
+
+                return (
+                  <Link to={to} key={page} tabIndex='-1'>
+                    {title}
+                  </Link>
+                )
+              })}
+            </nav>
+          </div>
+
+          <div tabIndex='-1' className='dropdown-section'
+               onKeyDown={this.toggleDropdownLinks} onClick={this.toggleDropdownLinks}
+          >
+            <p className='section-title'>Новости и события <span>&#9662;</span></p>
+            <nav className='section-links'>
+              {linksSectionThree.map(link => {
+                const { to, page, title } = link
+
+                return (
+                  <Link to={to} key={page} tabIndex='-1'>
+                    {title}
+                  </Link>
+                )
+              })}
+            </nav>
+          </div>
+
+          <div tabIndex='-1' className='dropdown-section'
+               onKeyDown={this.toggleDropdownLinks} onClick={this.toggleDropdownLinks}
+          >
+            <p className='section-title'>Услуги <span>&#9662;</span></p>
+            <nav className='section-links'>
+              {linksSectionFour.map(link => {
+                const { to, page, title } = link
+
+                return (
+                  <Link to={to} key={page} tabIndex='-1'>
+                    {title}
+                  </Link>
+                )
+              })}
+            </nav>
+          </div>
+
+          <div className='dropdown-section'>
+            <Link to='/karta-sajta' key='karta-sajta' tabIndex='-1' className='section-title'>
+              Карта сайта
+            </Link>
+          </div>
+        </div>
+      </div>
+    )
+  }
 }
-
-const DropdownMenu = () => (
-  <div id='dropdown'>
-    <div id='dropdown__burger' onClick={toggleBurger}>
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-
-    <div id='dropdown__menu'>
-      <div className='dropdown-section'>
-        <Link to='/' key='index' className='section-title'>
-          Главная
-        </Link>
-      </div>
-
-      <div className='dropdown-section' onClick={toggleDropdownLinks}>
-        <p className='section-title'>О библиотеке <span>&#9662;</span></p>
-        <nav className='section-links'>
-          {linksSectionTwo.map(link => {
-            const { to, page, title } = link
-
-            return (
-              <Link to={to} key={page}>
-                {title}
-              </Link>
-            )
-          })}
-        </nav>
-      </div>
-
-      <div className='dropdown-section' onClick={toggleDropdownLinks}>
-        <p className='section-title'>Новости и события <span>&#9662;</span></p>
-        <nav className='section-links'>
-          {linksSectionThree.map(link => {
-            const { to, page, title } = link
-
-            return (
-              <Link to={to} key={page}>
-                {title}
-              </Link>
-            )
-          })}
-        </nav>
-      </div>
-
-      <div className='dropdown-section' onClick={toggleDropdownLinks}>
-        <p className='section-title'>Услуги <span>&#9662;</span></p>
-        <nav className='section-links'>
-          {linksSectionFour.map(link => {
-            const { to, page, title } = link
-
-            return (
-              <Link to={to} key={page}>
-                {title}
-              </Link>
-            )
-          })}
-        </nav>
-      </div>
-
-      <div className='dropdown-section'>
-        <Link to='/karta-sajta' key='karta-sajta' className='section-title'>
-          Карта сайта
-        </Link>
-      </div>
-    </div>
-  </div>
-)
 
 export default DropdownMenu
