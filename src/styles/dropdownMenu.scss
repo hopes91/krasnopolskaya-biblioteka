@@ -62,7 +62,7 @@
 		position: absolute;
 		z-index: 5;
 
-    .menu-section {
+    .dropdown-section {
       @include dimensions(100%, auto);
       @include indentations(0, 0);
       background-color: oldlace;

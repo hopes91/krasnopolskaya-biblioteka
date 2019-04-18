@@ -79,13 +79,13 @@ const DropdownMenu = () => (
     </div>
 
     <div id='dropdown__menu'>
-      <div className='menu-section'>
+      <div className='dropdown-section'>
         <Link to='/' key='index' className='section-title'>
           Главная
         </Link>
       </div>
 
-      <div className='menu-section' onClick={toggleDropdownLinks}>
+      <div className='dropdown-section' onClick={toggleDropdownLinks}>
         <p className='section-title'>О библиотеке <span>&#9662;</span></p>
         <nav className='section-links'>
           {linksSectionTwo.map(link => {
@@ -100,7 +100,7 @@ const DropdownMenu = () => (
         </nav>
       </div>
 
-      <div className='menu-section' onClick={toggleDropdownLinks}>
+      <div className='dropdown-section' onClick={toggleDropdownLinks}>
         <p className='section-title'>Новости и события <span>&#9662;</span></p>
         <nav className='section-links'>
           {linksSectionThree.map(link => {
@@ -115,7 +115,7 @@ const DropdownMenu = () => (
         </nav>
       </div>
 
-      <div className='menu-section' onClick={toggleDropdownLinks}>
+      <div className='dropdown-section' onClick={toggleDropdownLinks}>
         <p className='section-title'>Услуги <span>&#9662;</span></p>
         <nav className='section-links'>
           {linksSectionFour.map(link => {
@@ -130,7 +130,7 @@ const DropdownMenu = () => (
         </nav>
       </div>
 
-      <div className='menu-section'>
+      <div className='dropdown-section'>
         <Link to='/karta-sajta' key='karta-sajta' className='section-title'>
           Карта сайта
         </Link>
