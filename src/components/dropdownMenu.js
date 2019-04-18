@@ -25,7 +25,8 @@ class DropdownMenu extends Component {
   constructor(props) {
     super(props)
 
-    this.toggleDropdownTabIndex = this.toggleDropdownTabIndex.bind(this)
+    this.toggleDropdownSectionTabIndex = this.toggleDropdownSectionTabIndex.bind(this)
+    this.toggleDropdownLinksTabIndex = this.toggleDropdownLinksTabIndex.bind(this)
     this.toggleBurgerOnKeyDown = this.toggleBurgerOnKeyDown.bind(this)
     this.toggleBurger = this.toggleBurger.bind(this)
     this.toggleDropdownMenu = this.toggleDropdownMenu.bind(this)
@@ -33,11 +34,11 @@ class DropdownMenu extends Component {
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.toggleDropdownTabIndex)
-    this.toggleDropdownTabIndex()
+    window.addEventListener('resize', this.toggleDropdownSectionTabIndex)
+    this.toggleDropdownSectionTabIndex()
   }
 
-  toggleDropdownTabIndex() {
+  toggleDropdownSectionTabIndex() {
     const burger = document.getElementById('dropdown__burger')
   	const dropdownSections = document.querySelectorAll('.dropdown-section')
 
@@ -51,7 +52,7 @@ class DropdownMenu extends Component {
         }
       })
     } else if (window.innerWidth <= 800) {
-    	burger.setAttribute('tabIndex', '0')
+    	burger.setAttribute('tabIndex', '1')
       dropdownSections.forEach(section => {
         if (section.hasAttribute('tabIndex')) {
           section.setAttribute('tabIndex', '0')
@@ -59,6 +60,16 @@ class DropdownMenu extends Component {
           section.children[0].setAttribute('tabIndex', '0')
         }
       })
+    }
+  }
+
+  toggleDropdownLinksTabIndex(isOpen) {
+    const dropdownLinks = document.querySelectorAll('.section-links a')
+
+    if (isOpen) {
+      dropdownLinks.forEach(link => link.setAttribute('tabIndex', '0'))
+    } else {
+      dropdownLinks.forEach(link => link.setAttribute('tabIndex', '-1'))
     }
   }
 
@@ -87,10 +98,10 @@ class DropdownMenu extends Component {
   toggleDropdownMenu() {
   	const dropdownMenu = document.getElementById('dropdown__menu')
 
-  	if (dropdownMenu.style.display === '' || dropdownMenu.style.display === 'none') {
-  		dropdownMenu.style.display = 'block'
-  	} else {
+  	if (dropdownMenu.style.display === 'block') {
   		dropdownMenu.style.display = 'none'
+  	} else {
+  		dropdownMenu.style.display = 'block'
   	}
   }
 
@@ -100,8 +111,20 @@ class DropdownMenu extends Component {
 
       if (dropdownLinks.style.display === 'block') {
         dropdownLinks.style.display = 'none'
+        this.toggleDropdownLinksTabIndex(false)
       } else {
         dropdownLinks.style.display = 'block'
+        this.toggleDropdownLinksTabIndex(true)
+      }
+    } else if (event.target.className === 'section-title') {
+      let dropdownLinks = event.target.nextElementSibling
+
+      if (dropdownLinks.style.display === 'block') {
+        dropdownLinks.style.display = 'none'
+        this.toggleDropdownLinksTabIndex(false)
+      } else {
+        dropdownLinks.style.display = 'block'
+        this.toggleDropdownLinksTabIndex(true)
       }
     }
   }

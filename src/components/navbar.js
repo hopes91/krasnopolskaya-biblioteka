@@ -25,18 +25,19 @@ class Navbar extends Component {
   constructor(props) {
     super(props)
 
-    this.toggleNavbarTabIndex = this.toggleNavbarTabIndex.bind(this)
-    this.showHideNavbarLinksOnKeyDown = this.showHideNavbarLinksOnKeyDown.bind(this)
+    this.toggleNavbarSectionTabIndex = this.toggleNavbarSectionTabIndex.bind(this)
+    this.toggleNavbarLinksTabIndex = this.toggleNavbarLinksTabIndex.bind(this)
+    this.toggleNavbarLinksOnKeyDown = this.toggleNavbarLinksOnKeyDown.bind(this)
     this.showNavbarLinks = this.showNavbarLinks.bind(this)
     this.hideNavbarLinks = this.hideNavbarLinks.bind(this)
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.toggleNavbarTabIndex)
-    this.toggleNavbarTabIndex()
+    window.addEventListener('resize', this.toggleNavbarSectionTabIndex)
+    this.toggleNavbarSectionTabIndex()
   }
 
-  toggleNavbarTabIndex = () => {
+  toggleNavbarSectionTabIndex() {
     const navbarSections = document.querySelectorAll('.navbar-section')
 
     if (window.innerWidth > 800) {
@@ -58,14 +59,26 @@ class Navbar extends Component {
     }
   }
 
-  showHideNavbarLinksOnKeyDown(event) {
-    if (event.key === 'Enter') {
-      let navbarLinks = event.target.children[1];
+  toggleNavbarLinksTabIndex(isOpen) {
+    const navbarLinks = document.querySelectorAll('.section-links a')
 
-      if (navbarLinks.style.display === '' || navbarLinks.style.display === 'none') {
-        navbarLinks.style.display = 'block'
-      } else {
+    if (isOpen) {
+      navbarLinks.forEach(link => link.setAttribute('tabIndex', '0'))
+    } else {
+      navbarLinks.forEach(link => link.setAttribute('tabIndex', '-1'))
+    }
+  }
+
+  toggleNavbarLinksOnKeyDown(event) {
+    if (event.key === 'Enter') {
+      let navbarLinks = event.target.children[1]
+
+      if (navbarLinks.style.display === 'block') {
         navbarLinks.style.display = 'none'
+        this.toggleNavbarLinksTabIndex(false)
+      } else {
+        navbarLinks.style.display = 'block'
+        this.toggleNavbarLinksTabIndex(true)
       }
     }
   }
@@ -79,6 +92,7 @@ class Navbar extends Component {
 
     if (navbarLinks) {
       navbarLinks.style.display = 'block'
+      this.toggleNavbarLinksTabIndex(true)
     }
   }
 
@@ -94,6 +108,7 @@ class Navbar extends Component {
 
     if (navbarLinks) {
       navbarLinks.style.display = 'none'
+      this.toggleNavbarLinksTabIndex(false)
     }
   }
 
@@ -107,7 +122,7 @@ class Navbar extends Component {
         </div>
 
         <div tabIndex='0' className='navbar-section'
-             onKeyDown={this.showHideNavbarLinksOnKeyDown} onMouseEnter={this.showNavbarLinks} onMouseLeave={this.hideNavbarLinks}
+             onKeyDown={this.toggleNavbarLinksOnKeyDown} onMouseEnter={this.showNavbarLinks} onMouseLeave={this.hideNavbarLinks}
         >
           <p className='section-title'>О библиотеке <span>&#9662;</span></p>
           <nav className='section-links'>
@@ -115,7 +130,7 @@ class Navbar extends Component {
               const { to, page, title } = link
 
               return (
-                <Link to={to} key={page} tabIndex='0'>
+                <Link to={to} key={page} tabIndex='-1'>
                   {title}
                 </Link>
               )
@@ -124,7 +139,7 @@ class Navbar extends Component {
         </div>
 
         <div tabIndex='0' className='navbar-section'
-             onKeyDown={this.showHideNavbarLinksOnKeyDown} onMouseEnter={this.showNavbarLinks} onMouseLeave={this.hideNavbarLinks}
+             onKeyDown={this.toggleNavbarLinksOnKeyDown} onMouseEnter={this.showNavbarLinks} onMouseLeave={this.hideNavbarLinks}
         >
           <p className='section-title'>Новости и события <span>&#9662;</span></p>
           <nav className='section-links'>
@@ -132,7 +147,7 @@ class Navbar extends Component {
               const { to, page, title } = link
 
               return (
-                <Link to={to} key={page} tabIndex='0'>
+                <Link to={to} key={page} tabIndex='-1'>
                   {title}
                 </Link>
               )
@@ -141,7 +156,7 @@ class Navbar extends Component {
         </div>
 
         <div tabIndex='0' className='navbar-section'
-             onKeyDown={this.showHideNavbarLinksOnKeyDown} onMouseEnter={this.showNavbarLinks} onMouseLeave={this.hideNavbarLinks}
+             onKeyDown={this.toggleNavbarLinksOnKeyDown} onMouseEnter={this.showNavbarLinks} onMouseLeave={this.hideNavbarLinks}
         >
           <p className='section-title'>Услуги <span>&#9662;</span></p>
           <nav className='section-links'>
@@ -149,7 +164,7 @@ class Navbar extends Component {
               const { to, page, title } = link
 
               return (
-                <Link to={to} key={page} tabIndex='0'>
+                <Link to={to} key={page} tabIndex='-1'>
                   {title}
                 </Link>
               )
