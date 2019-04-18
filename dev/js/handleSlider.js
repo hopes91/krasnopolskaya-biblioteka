@@ -18,45 +18,39 @@ const showFirstSlide = event => {
 	back.style.display = 'block';
 
 	let clickedAlt = event.target.getAttribute('alt');
-	let comparedAlt = null;
+	let altToCompare = null;
 
 	slides.forEach((slide, index) => {
-		comparedAlt = slide.getAttribute('alt');
+		altToCompare = slide.getAttribute('alt');
 		slide.style.display = 'none';
 
-		if (clickedAlt === comparedAlt) {
+		if (clickedAlt === altToCompare) {
 			slide.style.display = 'block';
 			mainSlide = index;
 			start = index;
-			currentSlide(mainSlide);
-		}
-
-		if (start === 0) {
-			prevSlide.style.display = 'none';
-		} else if (start === miniPhotos.length - 1) {
-			nextSlide.style.display = 'none';
-		} else {
-			prevSlide.style.display = 'block';
-			nextSlide.style.display = 'block';
+			showSlides();
+			handleArrows();
 		}
 	});
 }
 
-const moveSlidesOnKeyDown = event => {
+const handleArrowsOnKeyDown = event => {
 	if (event.key === 'ArrowLeft') {
-		moveSlides(-1);
+		handleArrows(-1);
 	} else if (event.key === 'ArrowRight') {
-		moveSlides(1);
+		handleArrows(1);
 	}
 }
 
-const moveSlides = index => {
+const handleArrows = index => {
 	if ((index === -1 && mainSlide === 0) ||
 			(index === 1 && mainSlide === slides.length - 1)) {
 		index = null;
+	} else if (index === undefined) {
+		mainSlide = start;
+	} else {
+		mainSlide += index;
 	}
-
-	mainSlide += index;
 
 	if (mainSlide === 0) {
 		prevSlide.style.display = 'none';
@@ -70,11 +64,15 @@ const moveSlides = index => {
 		nextSlide.style.display = 'block';
 	}
 
+	showSlides();
+}
+
+const showSlides = () => {
 	slides.forEach(slide => slide.style.display = 'none');
 
 	for (let i = start; i < slides.length; i++) {
 		slides[mainSlide].style.display = 'block';
-		currentSlide(mainSlide);
+		currentSlide();
 	}
 }
 
@@ -103,7 +101,7 @@ const hideSlider = () => {
 if (back) {
 	miniPhotos.forEach(photo => photo.addEventListener('keydown', showFirstSlideOnKeyDown));
 	miniPhotos.forEach(photo => photo.addEventListener('click', showFirstSlide));
-	window.addEventListener('keydown', moveSlidesOnKeyDown);
+	window.addEventListener('keydown', handleArrowsOnKeyDown);
 	window.addEventListener('keydown', hideSliderOnKeyDown);
 	closeIcon.addEventListener('click', hideSlider);
 }
