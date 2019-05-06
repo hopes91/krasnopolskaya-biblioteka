@@ -2,6 +2,7 @@ const miniPhotos = document.querySelectorAll('.mini-photo');
 const back = document.getElementById('back');
 const slides = document.querySelectorAll('.slide');
 const closeIcon = document.getElementById('close');
+
 let mainSlide = null;
 let start = null;
 
@@ -13,6 +14,7 @@ const showFirstSlideOnKeyDown = event => {
 
 const showFirstSlide = event => {
 	addDots();
+	
 	back.style.display = 'block';
 
 	let clickedAlt = event.target.getAttribute('alt');
