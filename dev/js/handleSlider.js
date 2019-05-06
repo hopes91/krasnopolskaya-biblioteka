@@ -2,7 +2,6 @@ const miniPhotos = document.querySelectorAll('.mini-photo');
 const back = document.getElementById('back');
 const slides = document.querySelectorAll('.slide');
 const closeIcon = document.getElementById('close');
-
 let mainSlide = null;
 let start = null;
 
@@ -13,6 +12,7 @@ const showFirstSlideOnKeyDown = event => {
 }
 
 const showFirstSlide = event => {
+	addDots();
 	back.style.display = 'block';
 
 	let clickedAlt = event.target.getAttribute('alt');
@@ -74,6 +74,14 @@ const showSlides = () => {
 		slides[mainSlide].style.display = 'block';
 		currentSlide();
 	}
+}
+
+const addDots = () => {
+	for (let i = 0; i < miniPhotos.length; i++) {
+    const dot = document.createElement('span');
+    dot.setAttribute('class', 'dot');
+    document.querySelector('.dots').appendChild(dot);
+  }
 }
 
 const currentSlide = () => {
