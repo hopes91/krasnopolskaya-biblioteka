@@ -363,7 +363,10 @@ body {
         }
         @include respond-to(small-screens) {
           width: 100%;
-          @include indentations(1em auto, 1.5em);
+          @include indentations(1em auto 3em auto, 1.5em);
+        }
+        @include respond-to(tiny-screens) {
+          margin-bottom: 3.5em;
         }
         img {
           @include dimensions(100%, auto);
@@ -654,13 +657,20 @@ body {
         }
       }
       #arrow-up {
-        @include dimensions(50px, 50px);
+        @include dimensions(auto, auto);
+        @include indentations(0 0 0 1em, 0);
+        text-decoration: none;
+        font-weight: bold;
         position: relative;
         bottom: 0;
-        left: 1em;
         z-index: 1;
-        img {
-          @include dimensions(100%, 100%);
+        @include respond-to(small-screens) {
+          margin: 1em;
+          position: absolute;
+          right: 0;
+        }
+        span {
+          font-size: 1.5em;
         }
       }
     }
