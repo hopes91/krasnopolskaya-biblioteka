@@ -1,9 +1,7 @@
-let miniPhotos = document.querySelectorAll('.mini-photo');
-let back = document.getElementById('back');
-let slides = document.querySelectorAll('.slide');
-let prevSlide = document.querySelector('.prev-slide');
-let nextSlide = document.querySelector('.next-slide');
-let closeIcon = document.getElementById('close');
+const miniPhotos = document.querySelectorAll('.mini-photo');
+const back = document.getElementById('back');
+const slides = document.querySelectorAll('.slide');
+const closeIcon = document.getElementById('close');
 
 let mainSlide = null;
 let start = null;
@@ -42,6 +40,9 @@ const handleArrowsOnKeyDown = event => {
 }
 
 const handleArrows = index => {
+	const prevSlide = document.querySelector('.prev-slide');
+	const nextSlide = document.querySelector('.next-slide');
+
 	if ((index === -1 && mainSlide === 0) ||
 			(index === 1 && mainSlide === slides.length - 1)) {
 		index = null;
@@ -76,12 +77,12 @@ const showSlides = () => {
 }
 
 const currentSlide = () => {
-	let dots = document.querySelectorAll('.dot');
+	const allDots = document.querySelectorAll('.dot');
 
-	dots.forEach(dot => dot.style.backgroundColor = 'oldlace');
+	allDots.forEach(dot => dot.style.backgroundColor = 'oldlace');
 
-	for (let i = start; i < dots.length; i++) {
-		dots[mainSlide].style.backgroundColor = 'saddlebrown';
+	for (let i = start; i < allDots.length; i++) {
+		allDots[mainSlide].style.backgroundColor = 'saddlebrown';
 	}
 }
 

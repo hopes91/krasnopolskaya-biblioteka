@@ -1,10 +1,10 @@
-let todaysDate = document.querySelector('.todays-date');
-let spanDayOfTheWeek = document.getElementById('span-dayOfTheWeek');
-let spanDay = document.getElementById('span-day');
-let spanMonth = document.getElementById('span-month');
-let spanYear = document.getElementById('span-year');
-
 const getTodaysDate = () => {
+  const todaysDate = document.querySelector('.todays-date');
+  const spanDayOfTheWeek = document.getElementById('span-dayOfTheWeek');
+  const spanDay = document.getElementById('span-day');
+  const spanMonth = document.getElementById('span-month');
+  const spanYear = document.getElementById('span-year');
+
   if (todaysDate) {
     let today = new Date();
     let dayOfTheWeekNum = today.getDay();

@@ -1,8 +1,8 @@
-let burger = document.getElementById('burger');
-let dropdownSections = document.querySelectorAll('.dropdown-section');
+const burger = document.getElementById('burger');
+const dropdownSections = document.querySelectorAll('.dropdown-section');
 
 const toggleDropdownTabindex = () => {
-	let dropdownSections = document.querySelectorAll('.dropdown-section');
+	const dropdownSections = document.querySelectorAll('.dropdown-section');
 
   if (window.innerWidth > 800) {
   	burger.setAttribute('tabindex', '-1');
@@ -35,7 +35,7 @@ const toggleBurger = event => {
 	let parentId = event.target.parentNode.id;
 
 	if (event.target.id === 'burger' || parentId === 'burger') {
-		let burgerSpans = document.querySelectorAll('#burger span');
+		const burgerSpans = document.querySelectorAll('#burger span');
 
 		burgerSpans[0].classList.toggle('span-one-active');
 		burgerSpans[2].classList.toggle('span-three-active');
@@ -48,7 +48,7 @@ const toggleBurger = event => {
 }
 
 const toggleDropdownMenu = () => {
-	let dropdownMenu = document.getElementById('drop-menu');
+	const dropdownMenu = document.getElementById('drop-menu');
 
 	if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
 		dropdownMenu.style.display = 'block';

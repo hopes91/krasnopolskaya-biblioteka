@@ -1,4 +1,4 @@
-let navbarSections = document.querySelectorAll('.navbar-section');
+const navbarSections = document.querySelectorAll('.navbar-section');
 
 const toggleNavbarTabindex = () => {
   if (window.innerWidth > 800) {
@@ -42,7 +42,7 @@ const showNavbarLinks = event => {
 
 const hideNavbarLinks = event => {
   let navbarLinks = event.target.children[1];
-  
+
   if (navbarLinks) {
     navbarLinks.style.display = 'none';
   }
