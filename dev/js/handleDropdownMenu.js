@@ -50,7 +50,7 @@ const toggleBurger = event => {
 const toggleDropdownMenu = () => {
 	const dropdownMenu = document.getElementById('drop-menu');
 
-	if (dropdownMenu.style.display === 'none' || dropdownMenu.style.display === '') {
+	if (!dropdownMenu.style.display || dropdownMenu.style.display === 'none') {
 		dropdownMenu.style.display = 'block';
 	} else {
 		dropdownMenu.style.display = 'none';

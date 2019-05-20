@@ -24,7 +24,7 @@ const showHideNavbarLinksOnKeyDown = event => {
   if (event.key === 'Enter') {
     let navbarLinks = event.target.children[1];
 
-    if (navbarLinks.style.display === '' || navbarLinks.style.display === 'none') {
+    if (!navbarLinks.style.display || navbarLinks.style.display === 'none') {
       showNavbarLinks(event);
     } else {
       hideNavbarLinks(event);
