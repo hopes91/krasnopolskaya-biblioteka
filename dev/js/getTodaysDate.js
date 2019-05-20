@@ -5,36 +5,34 @@ const getTodaysDate = () => {
   const spanMonth = document.getElementById('span-month');
   const spanYear = document.getElementById('span-year');
 
-  if (todaysDate) {
-    let today = new Date();
-    let dayOfTheWeekNum = today.getDay();
-    let dayOfTheWeekStr = null;
-    let day = today.getDate();
-    let monthNum = today.getMonth();
-    let monthStr = null;
-    let year = today.getFullYear();
+  let today = new Date();
+  let dayOfTheWeekNum = today.getDay();
+  let dayOfTheWeekStr = null;
+  let day = today.getDate();
+  let monthNum = today.getMonth();
+  let monthStr = null;
+  let year = today.getFullYear();
 
-    const daysOfTheWeek = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
+  const daysOfTheWeek = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота'];
 
-    daysOfTheWeek.forEach((day, ind) => {
-      if (ind == dayOfTheWeekNum) {
-        dayOfTheWeekStr = day;
-      }
-    });
+  daysOfTheWeek.forEach((day, ind) => {
+    if (ind == dayOfTheWeekNum) {
+      dayOfTheWeekStr = day;
+    }
+  });
 
-    const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
+  const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря'];
 
-    months.forEach((month, ind) => {
-      if (ind == monthNum) {
-        monthStr = month;
-      }
-    });
+  months.forEach((month, ind) => {
+    if (ind == monthNum) {
+      monthStr = month;
+    }
+  });
 
-    spanDayOfTheWeek.innerHTML = dayOfTheWeekStr;
-    spanDay.innerHTML = day;
-    spanMonth.innerHTML = monthStr;
-    spanYear.innerHTML = year;
-  }
+  spanDayOfTheWeek.innerHTML = dayOfTheWeekStr;
+  spanDay.innerHTML = day;
+  spanMonth.innerHTML = monthStr;
+  spanYear.innerHTML = year;
 }
 
 window.addEventListener('load', getTodaysDate);
