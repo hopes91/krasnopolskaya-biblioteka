@@ -319,7 +319,7 @@ body {
       position: relative;
       @include respond-to(tiny-screens) {
         margin-bottom: 2em;
-        padding: 0.5em;
+        padding: 0.5em 0.2em;
       }
       h2 {
         @include indentations(1em, 0);
@@ -331,7 +331,7 @@ body {
       }
       table {
         width: 100%;
-        margin-bottom: 1.5em;
+        margin: 0 auto 1.5em auto;
       }
       table, th, td {
         border: $simple-border;
@@ -341,7 +341,7 @@ body {
         @include indentations(0, 1em);
         text-align: center;
         @include respond-to(tiny-screens) {
-          padding: 0.5em;
+          padding: 0.5em 0;
         }
       }
       .td-title {
