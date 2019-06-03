@@ -318,6 +318,7 @@ body {
       box-sizing: border-box;
       position: relative;
       @include respond-to(tiny-screens) {
+        margin-bottom: 2em;
         padding: 0.5em 0;
       }
       h2 {
@@ -395,6 +396,9 @@ body {
           cursor: default;
           @include respond-to(small-screens) {
             width: 12%;
+          }
+          @include respond-to(tiny-screens) {
+            display: none;
           }
           img {
             margin: 0;
@@ -683,6 +687,9 @@ body {
           margin: 1em;
           position: absolute;
           right: 0;
+        }
+        @include respond-to(tiny-screens) {
+          bottom: -2em;
         }
         span {
           font-size: 1.5em;
