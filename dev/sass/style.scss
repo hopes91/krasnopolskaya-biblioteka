@@ -319,7 +319,7 @@ body {
       position: relative;
       @include respond-to(tiny-screens) {
         margin-bottom: 2em;
-        padding: 0.5em 0;
+        padding: 0.5em;
       }
       h2 {
         @include indentations(1em, 0);
@@ -370,6 +370,7 @@ body {
         }
         @include respond-to(tiny-screens) {
           margin-bottom: 3.5em;
+          padding: 1.5em 1em;
         }
         img {
           @include dimensions(100%, auto);
@@ -650,6 +651,9 @@ body {
         text-align: left;
         a {
           @include indentations(0.2em 0.5em, 0);
+          @include respond-to(tiny-screens) {
+            margin: 0.2em 0;
+          }
         }
       }
       .price-list {
