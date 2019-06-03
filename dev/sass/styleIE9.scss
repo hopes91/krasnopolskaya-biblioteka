@@ -395,6 +395,9 @@ body {
           @include respond-to(small-screens) {
             width: 12%;
           }
+          @include respond-to(tiny-screens) {
+            display: none;
+          }
           img {
             margin: 0;
           }
