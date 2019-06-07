@@ -12,22 +12,26 @@ header {
 
   .site-title {
     @include indentations(0, 1em);
+    box-sizing: border-box;
+    text-decoration: none;
     @include respond-to(medium-screens) {
       padding: 1.55em 0.8em;
-      font-size: 1.55em;
     }
     @include respond-to(small-screens) {
       padding: 1.3em 1em 0 1em;
     }
     @include respond-to(tiny-screens) {
       padding-top: 0.8em;
-      font-size: 1.3em;
     }
 
-    a {
-      @include dimensions(auto, auto);
-      box-sizing: border-box;
-      text-decoration: none;
+    h1 {
+      margin: 0;
+      @include respond-to(medium-screens) {
+        font-size: 1.55em;
+      }
+      @include respond-to(tiny-screens) {
+        font-size: 1.3em;
+      }
     }
   }
 }

@@ -10,11 +10,9 @@ import '../styles/header.scss'
 const Header = ({ siteTitle }) => (
   <header>
     <DropdownMenu />
-    <h1 className='site-title'>
-      <Link to='/'>
-        {siteTitle}
-      </Link>
-    </h1>
+    <Link to='/' className='site-title'>
+      <h1>{siteTitle}</h1>
+    </Link>
     <OrnamentTop />
     <Navbar />
   </header>
