@@ -4,26 +4,26 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
-import viktorinaNaDomuDlyaDevochkiSOV from '../images/photogalery/viktorina-na-domu-dlya-devochki-s-organichennymi-vozmozhnostyami.jpg'
-import chasZozhVperedPoDorogeZdoroviya from '../images/photogalery/chas-zozh-vpered-po-doroge-zdoroviya.jpg'
-import semejnyjKlub29Marta from '../images/photogalery/semejnyj-klub-29-marta.jpg'
-import semejnyjKlub29Marta2 from '../images/photogalery/semejnyj-klub-29-marta-2.jpg'
-import biblionik from '../images/photogalery/biblionik.jpg'
-import chtoGdeKogdaPoPravu from '../images/photogalery/chto-gde-kogda-po-pravu.jpg'
-import chtoGdeKogdaPoPravu2 from '../images/photogalery/chto-gde-kogda-po-pravu-2.jpg'
-import kvestVoVremyaNochiPottera from '../images/photogalery/kvest-vo-vremya-nochi-pottera.jpg'
-import garriPotter from '../images/photogalery/garri-potter.jpg'
-import vedma from '../images/photogalery/vedma.jpg'
-import horoshoSidim from '../images/photogalery/horosho-sidim.jpg'
-import katyaSupermama from '../images/photogalery/katya-supermama.jpg'
-import luchshieNaryady from '../images/photogalery/luchshie-naryady.jpg'
-import lukomorieK45letijuBiblioteki from '../images/photogalery/lukomorie-k-45letiju-biblioteki.jpg'
-import nochIskusstv from '../images/photogalery/noch-iskusstv.jpg'
-import tort from '../images/photogalery/tort.jpg'
-import otkryvaemYponiju from '../images/photogalery/otkryvaem-yaponiju.jpg'
-import novogodnijVecherNaSemejnomKlube from '../images/photogalery/novogodnij-vecher-na-semejnom-klube.jpg'
-import novogodnijVecherNaSemejnomKlube2 from '../images/photogalery/novogodnij-vecher-na-semejnom-klube-2.jpg'
-import novogodnijVecherNaSemejnomKlube3 from '../images/photogalery/novogodnij-vecher-na-semejnom-klube-3.jpg'
+import viktorinaNaDomuDlyaDevochkiSOV from '../images/photogallery/viktorina-na-domu-dlya-devochki-s-organichennymi-vozmozhnostyami.jpg'
+import chasZozhVperedPoDorogeZdoroviya from '../images/photogallery/chas-zozh-vpered-po-doroge-zdoroviya.jpg'
+import semejnyjKlub29Marta from '../images/photogallery/semejnyj-klub-29-marta.jpg'
+import semejnyjKlub29Marta2 from '../images/photogallery/semejnyj-klub-29-marta-2.jpg'
+import biblionik from '../images/photogallery/biblionik.jpg'
+import chtoGdeKogdaPoPravu from '../images/photogallery/chto-gde-kogda-po-pravu.jpg'
+import chtoGdeKogdaPoPravu2 from '../images/photogallery/chto-gde-kogda-po-pravu-2.jpg'
+import kvestVoVremyaNochiPottera from '../images/photogallery/kvest-vo-vremya-nochi-pottera.jpg'
+import garriPotter from '../images/photogallery/garri-potter.jpg'
+import vedma from '../images/photogallery/vedma.jpg'
+import horoshoSidim from '../images/photogallery/horosho-sidim.jpg'
+import katyaSupermama from '../images/photogallery/katya-supermama.jpg'
+import luchshieNaryady from '../images/photogallery/luchshie-naryady.jpg'
+import lukomorieK45letijuBiblioteki from '../images/photogallery/lukomorie-k-45letiju-biblioteki.jpg'
+import nochIskusstv from '../images/photogallery/noch-iskusstv.jpg'
+import tort from '../images/photogallery/tort.jpg'
+import otkryvaemYponiju from '../images/photogallery/otkryvaem-yaponiju.jpg'
+import novogodnijVecherNaSemejnomKlube from '../images/photogallery/novogodnij-vecher-na-semejnom-klube.jpg'
+import novogodnijVecherNaSemejnomKlube2 from '../images/photogallery/novogodnij-vecher-na-semejnom-klube-2.jpg'
+import novogodnijVecherNaSemejnomKlube3 from '../images/photogallery/novogodnij-vecher-na-semejnom-klube-3.jpg'
 
 const photos2019 = [
   { src: viktorinaNaDomuDlyaDevochkiSOV, alt: 'Викторина на дому для девочки с ограниченными возможностями' },
@@ -154,7 +154,7 @@ class PhotogalleryPage extends Component {
     return (
       <Layout>
         <SEO title='Фотогалерея' keywords={[`фотогалерея`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
-        <div className='about-library photogalery'>
+        <div className='about-library photogallery'>
           <OrnamentMain />
           <h2>Фотогалерея</h2>
           <h3>2019 год</h3>
