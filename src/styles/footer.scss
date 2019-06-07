@@ -9,15 +9,15 @@ footer {
   border-top: $simple-border;
   position: absolute;
   bottom: 0;
-  @include respond-to(small-screens) {
+  @include respond-to('max-width: 800px') {
     height: 7.5em;
   }
-  @include respond-to(tiny-screens) {
+  @include respond-to('max-width: 640px') {
     height: 9.5em;
   }
 
   p {
-    @include respond-to(small-screens) {
+    @include respond-to('max-width: 800px') {
       @include dimensions(100%, auto);
       text-align: center;
     }
@@ -26,7 +26,7 @@ footer {
   .copyright {
     @include indentations(0, 1.5em 0);
     float: left;
-    @include respond-to(small-screens) {
+    @include respond-to('max-width: 800px') {
       padding: 0.5em 0;
     }
 
@@ -41,7 +41,7 @@ footer {
     @include indentations(0, 1em 0);
     text-align: center;
     float: right;
-    @include respond-to(small-screens) {
+    @include respond-to('max-width: 800px') {
       @include dimensions(100%, auto);
       padding: 0.5em 0;
     }

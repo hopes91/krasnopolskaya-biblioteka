@@ -11,7 +11,7 @@
   background: linear-gradient(to right, peachpuff, burlywood);
   position: relative;
   z-index: 5;
-  @include respond-to(small-screens) {
+  @include respond-to('max-width: 800px') {
     display: none;
   }
 
@@ -19,7 +19,7 @@
     @include dimensions(15em, 100%);
     @include indentations(0, 0);
     vertical-align: top;
-    @include respond-to(standart-screens) {
+    @include respond-to('max-width: 1220px') {
       width: 18.8%;
       &:nth-child(3) {
         width: 25%;
@@ -40,10 +40,10 @@
         color: #471a00;
         position: absolute;
         right: 1.3em;
-        @include respond-to(standart-screens) {
+        @include respond-to('max-width: 1220px') {
           right: 1em;
         }
-        @include respond-to(medium-screens) {
+        @include respond-to('max-width: 1024px') {
           right: 0.5em;
         }
       }

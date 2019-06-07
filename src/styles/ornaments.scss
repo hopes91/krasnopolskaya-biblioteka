@@ -9,7 +9,7 @@
   top: 0;
   right: 1em;
   z-index: 6;
-  @include respond-to(small-screens) {
+  @include respond-to('max-width: 800px') {
     @include dimensions(auto, 4em);
     padding: 0.25em 0 0 1em;
     box-sizing: border-box;
@@ -18,7 +18,7 @@
     left: 0;
     z-index: 10;
   }
-  @include respond-to(tiny-screens) {
+  @include respond-to('max-width: 640px') {
     padding-left: 0.5em;
   }
 
@@ -26,7 +26,7 @@
     @include dimensions(100%, auto);
     @include indentations(0 auto, 0);
     font-size: 1.2em;
-    @include respond-to(small-screens) {
+    @include respond-to('max-width: 800px') {
       @include dimensions(7.7em, 100%);
       @include indentations(0, 0.25em 0 0 0);
       box-sizing: border-box;
@@ -57,27 +57,27 @@
     position: relative;
     bottom: 0.3em;
     cursor: default;
-    @include respond-to(wide-screens) {
+    @include respond-to('min-width: 1367px') {
       width: 8em;
     }
-    @include respond-to(small-screens) {
+    @include respond-to('max-width: 800px') {
       @include dimensions(5.5em, 100%);
       box-sizing: border-box;
       bottom: 0;
       float: left;
     }
-    @include respond-to(tiny-screens) {
+    @include respond-to('max-width: 640px') {
       width: 4.5em;
     }
 
     img {
       @include dimensions(70%, auto);
       @include indentations(0, 0);
-      @include respond-to(small-screens) {
+      @include respond-to('max-width: 800px') {
         width: 100%;
         margin: 0;
       }
-      @include respond-to(tiny-screens) {
+      @include respond-to('max-width: 640px') {
         padding-top: 0.4em;
       }
     }
@@ -88,7 +88,7 @@
   @include dimensions(50%, auto);
   max-width: 1200px;
   @include indentations(1em auto 0 auto, 0);
-  @include respond-to(small-screens) {
+  @include respond-to('max-width: 800px') {
     width: 80%;
   }
 
@@ -106,7 +106,7 @@
     position: absolute !important;
     z-index: -1 !important;
     cursor: default !important;
-    @include respond-to(small-screens) {
+    @include respond-to('max-width: 800px') {
       width: 12% !important;
     }
 
@@ -141,16 +141,16 @@
   position: absolute;
   bottom: 7em;
   right: 1em;
-  @include respond-to(wide-screens) {
+  @include respond-to('min-width: 1367px') {
     width: 13em;
   }
-  @include respond-to(medium-screens) {
+  @include respond-to('max-width: 1024px') {
     width: 20%;
   }
-  @include respond-to(small-screens) {
+  @include respond-to('max-width: 800px') {
     display: none;
   }
-  
+
   a {
     cursor: default;
   }
