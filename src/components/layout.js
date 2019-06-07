@@ -17,6 +17,7 @@ const Layout = ({ children }) => {
       {/* <OrnamentCenter /> */}
       <main>
         {children}
+        <a href='#top' id='arrow-up'><span>&uarr;</span> Наверх</a>
       </main>
       <div className='empty'></div> {/* для IE */}
       <StackOfBooks />
