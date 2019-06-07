@@ -48,7 +48,7 @@
     }
 
     #span-month {
-      padding: 0 0.2em 0 0.1em;
+      padding-left: 0.1em;
     }
   }
 
@@ -109,11 +109,15 @@
     @include respond-to('max-width: 800px') {
       width: 12% !important;
     }
+    @include respond-to('max-width: 640px') {
+      display: none;
+    }
 
     img {
       margin: 0 !important;
     }
   }
+
   .one {
     top: 0.5em;
     left: 0.5em;

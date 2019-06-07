@@ -16,8 +16,7 @@
   }
 
   #dropdown__burger {
-    width: 2.5em;
-    height: 1.5em;
+    @include dimensions(2.5em, 1.5em);
     position: absolute;
     top: 1.2em;
     right: 1em;
@@ -25,12 +24,12 @@
     z-index: 10;
 
     span {
+      @include dimensions(100%, 3em);
       display: block;
-      width: 100%;
-      height: 3px;
       background-color: saddlebrown;
       position: absolute;
       transition: .5s;
+
       &:first-child {
         top: 0;
       }
@@ -41,6 +40,7 @@
         bottom: 0;
       }
     }
+
     .span-one-active {
   		transform: rotate(40deg);
   		transform-origin: 9% 50%;
@@ -78,7 +78,7 @@
         cursor: pointer;
 
         span {
-          color: #471a00;
+          color: $dark-brown;
           position: absolute;
           right: 2em;
         }

@@ -16,7 +16,7 @@
   }
 
   .navbar-section {
-    @include dimensions(15em, 100%);
+    @include dimensions(15em, auto);
     @include indentations(0, 0);
     vertical-align: top;
     @include respond-to('max-width: 1220px') {
@@ -37,7 +37,7 @@
       cursor: pointer;
 
       span {
-        color: #471a00;
+        color: $dark-brown;
         position: absolute;
         right: 1.3em;
         @include respond-to('max-width: 1220px') {

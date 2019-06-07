@@ -11,25 +11,21 @@ header {
   }
 
   .site-title {
-    @include indentations(0, 1em);
+    @include dimensions(auto, auto);
     box-sizing: border-box;
     text-decoration: none;
-    @include respond-to('max-width: 1024px') {
-      padding: 1.55em 0.8em;
-    }
-    @include respond-to('max-width: 800px') {
-      padding: 1.3em 1em 0 1em;
-    }
-    @include respond-to('max-width: 640px') {
-      padding-top: 0.8em;
-    }
 
     h1 {
-      margin: 0;
+      @include indentations(0, 1em);
       @include respond-to('max-width: 1024px') {
+        padding: 1.55em 0.8em;
         font-size: 1.55em;
       }
+      @include respond-to('max-width: 800px') {
+        padding: 1.3em 1em 0 1em;
+      }
       @include respond-to('max-width: 640px') {
+        padding-top: 0.8em;
         font-size: 1.3em;
       }
     }

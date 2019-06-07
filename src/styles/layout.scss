@@ -7,15 +7,19 @@ html, body, .container {
   @include indentations(0, 0);
 }
 
+body * {
+  outline-color: #C56757;
+}
+
 body {
-  color: #471a00;
+  color: $dark-brown;
   font-family: 'Oranienbaum', serif;
   background-color: peachpuff;
 
   a {
     @include dimensions(100%, 100%);
     display: inline-block;
-    color: #471a00;
+    color: $dark-brown;
 
     img {
       @include dimensions(100%, 100%);
@@ -39,15 +43,12 @@ body {
 
     main {
       @include dimensions(100%, auto);
-      @include indentations(0 0 6em 0, 1em);
+      @include indentations(0, 1em);
       box-sizing: border-box;
       position: relative;
-      @include respond-to('max-width: 800px') {
-        margin-bottom: 7em;
-      }
       @include respond-to('max-width: 640px') {
-        margin-bottom: 9em;
-        padding: 0.5em 0;
+        margin-bottom: 2em;
+        padding: 0.5em 0.2em;
       }
 
       h2 {
@@ -62,24 +63,32 @@ body {
 
       table {
         width: 100%;
-        margin-bottom: 1.5em;
+        margin: 0 auto 1.5em auto;
       }
+
       table, th, td {
         border: $simple-border;
         border-collapse: collapse;
       }
+
       th, td {
         @include indentations(0, 1em);
         text-align: center;
         @include respond-to('max-width: 640px') {
-          padding: 0.5em;
+          padding: 0.5em 0;
         }
       }
+
       .td-title {
         font-weight: bold;
       }
 
-      .news, .about-library, .news-and-events, .services, .site-map, .not-found-page {
+      .news,
+      .about-library,
+      .news-and-events,
+      .services,
+      .site-map,
+      .not-found-page {
         @include dimensions(65%, auto);
         min-height: 40em;
         @include indentations(1em auto, 1em 2.2em);
@@ -98,12 +107,17 @@ body {
         }
         @include respond-to('max-width: 800px') {
           width: 100%;
-          @include indentations(1em auto, 1.5em);
+          @include indentations(1em auto 3em auto, 1.5em);
+        }
+        @include respond-to('max-width: 640px') {
+          margin-bottom: 3.5em;
+          padding: 1.5em 1em;
         }
 
         img {
           @include dimensions(100%, auto);
           @include indentations(0.3em 0, 0);
+
           &:last-child {
             margin-bottom: 1em;
           }
@@ -120,9 +134,12 @@ body {
           }
         }
       }
+
       // news
       .news {
         section {
+          margin-bottom: 2em;
+
           h6 {
             @include indentations(1em 0, 0);
             font: {
@@ -135,13 +152,30 @@ body {
             @include dimensions(auto, auto);
             max-width: 100%;
             @include indentations(0.5em 0, 0);
+            display: block;
+
             &:last-child {
               margin-bottom: 1em;
             }
-            display: block;
+          }
+
+          // ответы на викторину
+          ol li span.hidden-answer {
+            display: none;
+          }
+
+          .show-answer {
+            font: {
+              size: 0.9em;
+              weight: bold;
+            }
+            text-decoration: underline;
+            text-decoration-style: dotted;
+            cursor: pointer;
           }
         }
       }
+
       // about-library
       .photogalery {
         h3 {
@@ -165,6 +199,7 @@ body {
           }
         }
       }
+
       #back {
         @include dimensions(100%, 100%);
         display: none;
@@ -201,15 +236,17 @@ body {
             max-width: 100%;
             max-height: 80%;
             @include indentations(auto, 0);
+            display: none;
             position: absolute;
             top: 0;
             right: 0;
             bottom: 0;
             left: 0;
-            display: none;
           }
         }
-        .prev-slide, .next-slide {
+
+        .prev-slide,
+        .next-slide {
           @include indentations(0, 1em 1.2em);
           color: oldlace;
           font-size: 1.5em;
@@ -224,12 +261,14 @@ body {
             padding: 1em 0.5em;
           }
         }
+
         .prev-slide {
           left: 1em;
           @include respond-to('max-width: 800px') {
             left: 0;
           }
         }
+
         .next-slide {
           right: 1em;
           @include respond-to('max-width: 800px') {
@@ -258,6 +297,7 @@ body {
           }
         }
       }
+
       .library-schedule {
         text-align: center;
 
@@ -274,6 +314,7 @@ body {
           margin-bottom: 1.5em;
         }
       }
+
       // news-and-events
       .news-and-events {
         div {
@@ -297,7 +338,8 @@ body {
             float: right;
           }
 
-          .poster-dates, .poster-events {
+          .poster-dates,
+          .poster-events {
             @include respond-to('max-width: 800px') {
               @include dimensions(100%, auto);
               text-align: center;
@@ -306,12 +348,14 @@ body {
           }
         }
       }
+
       .poster {
         @include respond-to('max-width: 640px') {
           @include indentations(1em auto, 1em 0);
           overflow-x: scroll;
         }
       }
+
       .poster-ot-vsej-dushi {
         @include respond-to('max-width: 800px') {
           height: auto;
@@ -325,6 +369,7 @@ body {
           }
         }
       }
+
       .poster-biblionik {
         div {
           height: 11em;
@@ -334,12 +379,14 @@ body {
           }
         }
       }
+
       .past-events {
         @include respond-to('max-width: 640px') {
           @include indentations(1em auto, 1em 0);
           overflow-x: scroll;
         }
       }
+
       // services
       .services {
         a {
@@ -351,14 +398,19 @@ body {
 
         a {
           @include indentations(0.2em 0.5em, 0);
+          @include respond-to('max-width: 640px') {
+            margin: 0.2em 0;
+          }
         }
       }
+
       .price-list {
         @include respond-to('max-width: 640px') {
           @include indentations(1em auto, 1em 0);
           overflow-x: scroll;
         }
       }
+
       // site map
       .site-map {
         text-align: left;
@@ -376,10 +428,6 @@ body {
 
           ul {
             @include indentations(0, 0 2em);
-
-            a {
-              display: list-item;
-            }
           }
         }
       }
