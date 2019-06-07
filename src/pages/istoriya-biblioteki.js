@@ -4,9 +4,9 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
-import insideTheLibrary from '../images/DSCN4651.jpg'
-import insideTheLibrary2 from '../images/SDC12945.jpg'
-import outsideTheLibrary from '../images/DSCN1289.jpg'
+import insideTheLibrary from '../images/photogallery/biblioteka-vnutri.jpg'
+import insideTheLibrary2 from '../images/photogallery/biblioteka-vnutri-2.jpg'
+import outsideTheLibrary from '../images/photogallery/biblioteka-snaruzhi.jpg'
 
 const LibraryHistoryPage = () => (
   <Layout>
@@ -20,8 +20,8 @@ const LibraryHistoryPage = () => (
       <p>Со 2 августа 1982 года библиотекарем после окончания Кировского культпросветучилища стала Елена Евгеньевна Опарина (Фалалеева). В то время в библиотеке был телевизор, радио, радиола. Библиотекарь привозила новые книги из Суны на совхозном автобусе. В 1982 году было 270 читателей, 82 из которых – дети, 2137 посещений, книговыдача – 6167.</p>
       <p>В библиотеке работали кружки для детей «Парус», «Радуга», «Буратино», экологическое агентство «Лесовичок и К», английского языка, для старшеклассниц «Посиделки». Для детей из детсада кружки «Добрые, волшебные слова», «Вятские светлячки», «Библионик». Летом для детей и подростков проводилось много игр, конкурсов. Библиотека участвовала в областных, районных конкурсах «Голос ребёнка», «Эко-фантазёр», «Сова – птица 2005 года», «Чайка – птица 2006 года», Дней защиты от экологической опасности, Форуме юных геральдистов и многих других. Проводились экскурсии в Кировскую областную библиотеку имени Герцена и Кировскую областную детскую библиотеку имени Грина.</p>
       <p>В данный момент библиотека располагается на первом этаже бывшей школы по соседству с Домом культуры.</p>
-      <img src={insideTheLibrary} alt='Краснопольская библиотека изнутри' />
-      <img src={insideTheLibrary2} alt='Краснопольская библиотека изнутри' />
+      <img src={insideTheLibrary} alt='Краснопольская библиотека внутри' />
+      <img src={insideTheLibrary2} alt='Краснопольская библиотека внутри' />
       <img src={outsideTheLibrary} alt='Краснопольская библиотека снаружи' />
     </div>
   </Layout>
