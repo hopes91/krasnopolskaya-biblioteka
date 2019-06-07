@@ -455,7 +455,7 @@ body {
         right: 0;
       }
       @include respond-to('max-width: 640px') {
-        bottom: -2em;
+        bottom: -1.5em;
       }
 
       span {
