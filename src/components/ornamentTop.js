@@ -16,55 +16,30 @@ class OrnamentTop extends Component {
 
   componentDidMount() {
     let today = new Date()
-    let dayOfTheWeekNum = today.getDay().toString()
-    let getDayOfTheWeek = ''
-    let getDay = today.getDate()
-    let monthNum = today.getMonth().toString()
-    let getMonth = ''
-    let getYear = today.getFullYear()
+    let dayOfTheWeekNum = today.getDay()
+    let day = today.getDate()
+    let monthNum = today.getMonth()
+    let year = today.getFullYear()
 
-    const daysOfTheWeek = {
-      0: 'Воскресенье',
-      1: 'Понедельник',
-      2: 'Вторник',
-      3: 'Среда',
-      4: 'Четверг',
-      5: 'Пятница',
-      6: 'Суббота'
-    }
+    const daysOfTheWeek = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота']
 
-    for (let day in daysOfTheWeek) {
-      if (dayOfTheWeekNum === day) {
-        getDayOfTheWeek = daysOfTheWeek[day]
-      }
-    }
+    daysOfTheWeek.forEach((day, ind) => {
+      if (ind !== dayOfTheWeekNum) return;
 
-    const months = {
-      0: 'января',
-      1: 'февраля',
-      2: 'марта',
-      3: 'апреля',
-      4: 'мая',
-      5: 'июня',
-      6: 'июля',
-      7: 'августа',
-      8: 'сентября',
-      9: 'октября',
-      10: 'ноября',
-      11: 'декабря'
-    }
+      this.setState({ dayOfTheWeek: day })
+    })
 
-    for (let month in months) {
-      if (monthNum === month) {
-        getMonth = months[month]
-      }
-    }
+    const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
+
+    months.forEach((month, ind) => {
+      if (ind !== monthNum) return;
+
+      this.setState({ month })
+    })
 
     this.setState({
-      dayOfTheWeek: getDayOfTheWeek,
-      day: getDay,
-      month: getMonth,
-      year: getYear
+      day,
+      year
     })
   }
 
