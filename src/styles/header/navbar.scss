@@ -1,7 +1,7 @@
-@import 'helpers/variables';
-@import 'helpers/mixins';
+@import '../helpers/variables';
+@import '../helpers/mixins';
 
-#navbar {
+.navbar {
   @include dimensions(100%, 3.3em);
   @include indentations(0 auto, 0);
   display: flex;
@@ -15,7 +15,7 @@
     display: none;
   }
 
-  .navbar-section {
+  .navbar__section {
     @include dimensions(15em, auto);
     @include indentations(0, 0);
     vertical-align: top;
@@ -26,7 +26,7 @@
       }
     }
 
-    .section-title {
+    .navbar__section-title {
       @include dimensions(100%, auto);
       @include indentations(0, 1.04em 0.3em);
       box-sizing: border-box;
@@ -49,7 +49,7 @@
       }
     }
 
-    .section-links {
+    .navbar__section-links {
       @include indentations(0, 0);
       display: none;
       background-color: #fcf8ef;

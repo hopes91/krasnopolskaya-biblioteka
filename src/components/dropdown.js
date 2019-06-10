@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'gatsby'
 
-import '../styles/dropdownMenu.scss'
+import '../styles/header/dropdown.scss'
 
 const linksSectionTwo = [
   { to: '/istoriya-biblioteki', page: 'istoriya-biblioteki', title: 'История библиотеки' },
@@ -21,7 +21,7 @@ const linksSectionFour = [
   { to: '/prejskurant-na-platnye-uslugi', page: 'prejskurant-na-platnye-uslugi', title: 'Прейскурант цен на платные услуги' }
 ]
 
-class DropdownMenu extends Component {
+class Dropdown extends Component {
   constructor(props) {
     super(props)
 
@@ -29,7 +29,7 @@ class DropdownMenu extends Component {
     this.toggleDropdownLinksTabIndex = this.toggleDropdownLinksTabIndex.bind(this)
     this.toggleBurgerOnKeyDown = this.toggleBurgerOnKeyDown.bind(this)
     this.toggleBurger = this.toggleBurger.bind(this)
-    this.toggleDropdownMenu = this.toggleDropdownMenu.bind(this)
+    this.toggleDropdown = this.toggleDropdown.bind(this)
     this.toggleDropdownLinks = this.toggleDropdownLinks.bind(this)
   }
 
@@ -91,11 +91,11 @@ class DropdownMenu extends Component {
   			burgerSpans[1].classList.toggle('span-two-active')
   		}, 200)
 
-  		this.toggleDropdownMenu()
+  		this.toggleDropdown()
   	}
   }
 
-  toggleDropdownMenu() {
+  toggleDropdown() {
   	const dropdownMenu = document.getElementById('dropdown__menu')
 
   	if (dropdownMenu.style.display === 'block') {
@@ -131,7 +131,7 @@ class DropdownMenu extends Component {
 
   render() {
     return (
-      <div id='dropdown'>
+      <div className='dropdown'>
         <div tabIndex='-1' id='dropdown__burger'
               onKeyDown={this.toggleBurgerOnKeyDown} onClick={this.toggleBurger}
         >
@@ -209,4 +209,4 @@ class DropdownMenu extends Component {
   }
 }
 
-export default DropdownMenu
+export default Dropdown

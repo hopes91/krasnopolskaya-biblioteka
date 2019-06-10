@@ -2,15 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import DropdownMenu from './dropdownMenu'
+import Dropdown from './dropdown'
 import OrnamentTop from './ornamentTop'
 import Navbar from './navbar'
-import '../styles/header.scss'
+
+import '../styles/header/header.scss'
+import '../styles/header/title.scss'
 
 const Header = ({ siteTitle }) => (
-  <header>
-    <DropdownMenu />
-    <Link to='/' className='site-title'>
+  <header className='header'>
+    <Dropdown />
+    <Link to='/' className='title'>
       <h1>{siteTitle}</h1>
     </Link>
     <OrnamentTop />
