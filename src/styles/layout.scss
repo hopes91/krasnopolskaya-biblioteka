@@ -30,6 +30,14 @@ body {
     border: none;
   }
 
+  .closed {
+    display: none;
+  }
+
+  .opened {
+    display: block;
+  }
+
   .container {
     height: auto;
     min-height: 100%;

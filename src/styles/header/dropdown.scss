@@ -61,7 +61,6 @@
   .dropdown__menu {
 		@include dimensions(100%, auto);
 		@include indentations(0, 4em 0 0 0);
-    display: none;
     text-align: center;
 		position: absolute;
 		z-index: 5;
@@ -90,7 +89,6 @@
 
       .dropdown__section-links {
         @include indentations(0, 0);
-        display: none;
         background-color: #fcf8ef;
         border: $simple-border;
 

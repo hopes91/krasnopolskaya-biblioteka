@@ -25,19 +25,19 @@ class Navbar extends Component {
   constructor(props) {
     super(props)
 
-    this.toggleNavbarSectionTabIndex = this.toggleNavbarSectionTabIndex.bind(this)
+    this.toggleNavbarTabIndex = this.toggleNavbarTabIndex.bind(this)
     this.toggleNavbarLinksTabIndex = this.toggleNavbarLinksTabIndex.bind(this)
-    this.toggleNavbarLinksOnKeyDown = this.toggleNavbarLinksOnKeyDown.bind(this)
+    this.toggleNavbarLinksOnKeyPress = this.toggleNavbarLinksOnKeyPress.bind(this)
     this.showNavbarLinks = this.showNavbarLinks.bind(this)
     this.hideNavbarLinks = this.hideNavbarLinks.bind(this)
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.toggleNavbarSectionTabIndex)
-    this.toggleNavbarSectionTabIndex()
+    window.addEventListener('resize', this.toggleNavbarTabIndex)
+    this.toggleNavbarTabIndex()
   }
 
-  toggleNavbarSectionTabIndex() {
+  toggleNavbarTabIndex() {
     const navbarSections = document.querySelectorAll('.navbar__section')
 
     if (window.innerWidth > 800) {
@@ -59,20 +59,6 @@ class Navbar extends Component {
     }
   }
 
-  toggleNavbarLinksOnKeyDown(event) {
-    if (event.key !== 'Enter') return;
-
-    let navbarLinks = event.target.children[1]
-
-    if (navbarLinks.style.display === 'block') {
-      navbarLinks.style.display = 'none'
-      this.toggleNavbarLinksTabIndex(false)
-    } else {
-      navbarLinks.style.display = 'block'
-      this.toggleNavbarLinksTabIndex(true)
-    }
-  }
-
   toggleNavbarLinksTabIndex(isOpen) {
     const navbarLinks = document.querySelectorAll('.navbar__section-links a')
 
@@ -83,33 +69,45 @@ class Navbar extends Component {
     }
   }
 
+  toggleNavbarLinksOnKeyPress(event) {
+    if (event.key !== 'Enter') return;
+
+    this.showNavbarLinks(event)
+  }
+
   showNavbarLinks(event) {
+    let target = event.target
     let navbarLinks
 
-    if (event.target.className === 'navbar__section-title') {
-      navbarLinks = event.target.nextElementSibling
+    if (target.className === 'navbar__section') {
+      navbarLinks = target.children[1]
+    } else if (target.className === 'navbar__section-title') {
+      navbarLinks = target.nextElementSibling
     }
 
-    if (navbarLinks) {
-      navbarLinks.style.display = 'block'
+    if (navbarLinks.className.match('closed')) {
+      navbarLinks.classList.remove('closed')
+      navbarLinks.classList.add('opened')
       this.toggleNavbarLinksTabIndex(true)
     }
   }
 
   hideNavbarLinks(event) {
-    let parent = event.target.parentNode
+    let target = event.target
+    let parent = target.parentNode
     let navbarLinks
 
-    if (event.target.className === 'navbar__section-title') {
-      navbarLinks = event.target.nextElementSibling
-    } else if (event.target.className === 'navbar__section-links') {
-      navbarLinks = event.target
-    } else if (parent.className === 'navbar__section-links') {
+    if (target.className === 'navbar__section-title') {
+      navbarLinks = target.nextElementSibling
+    } else if (target.className.match('links')) {
+      navbarLinks = target
+    } else if (parent.className.match('links')) {
       navbarLinks = parent
     }
 
-    if (navbarLinks) {
-      navbarLinks.style.display = 'none'
+    if (navbarLinks.className.match('opened')) {
+      navbarLinks.classList.remove('opened')
+      navbarLinks.classList.add('closed')
       this.toggleNavbarLinksTabIndex(false)
     }
   }
@@ -124,10 +122,10 @@ class Navbar extends Component {
         </div>
 
         <div tabIndex='0' className='navbar__section'
-             onKeyDown={this.toggleNavbarLinksOnKeyDown} onMouseEnter={this.showNavbarLinks} onMouseLeave={this.hideNavbarLinks}
+             onKeyPress={this.toggleNavbarLinksOnKeyPress} onMouseEnter={this.showNavbarLinks} onMouseLeave={this.hideNavbarLinks}
         >
           <p className='navbar__section-title'>О библиотеке <span>&#9662;</span></p>
-          <nav className='navbar__section-links'>
+          <nav className='navbar__section-links closed'>
             {linksSectionTwo.map(link => {
               const { to, page, title } = link
 
@@ -141,10 +139,10 @@ class Navbar extends Component {
         </div>
 
         <div tabIndex='0' className='navbar__section'
-             onKeyDown={this.toggleNavbarLinksOnKeyDown} onMouseEnter={this.showNavbarLinks} onMouseLeave={this.hideNavbarLinks}
+             onKeyPress={this.toggleNavbarLinksOnKeyPress} onMouseEnter={this.showNavbarLinks} onMouseLeave={this.hideNavbarLinks}
         >
           <p className='navbar__section-title'>Новости и события <span>&#9662;</span></p>
-          <nav className='navbar__section-links'>
+          <nav className='navbar__section-links closed'>
             {linksSectionThree.map(link => {
               const { to, page, title } = link
 
@@ -158,10 +156,10 @@ class Navbar extends Component {
         </div>
 
         <div tabIndex='0' className='navbar__section'
-             onKeyDown={this.toggleNavbarLinksOnKeyDown} onMouseEnter={this.showNavbarLinks} onMouseLeave={this.hideNavbarLinks}
+             onKeyPress={this.toggleNavbarLinksOnKeyPress} onMouseEnter={this.showNavbarLinks} onMouseLeave={this.hideNavbarLinks}
         >
           <p className='navbar__section-title'>Услуги <span>&#9662;</span></p>
-          <nav className='navbar__section-links'>
+          <nav className='navbar__section-links closed'>
             {linksSectionFour.map(link => {
               const { to, page, title } = link
 

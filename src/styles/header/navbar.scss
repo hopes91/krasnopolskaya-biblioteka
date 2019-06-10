@@ -51,7 +51,6 @@
 
     .navbar__section-links {
       @include indentations(0, 0);
-      display: none;
       background-color: #fcf8ef;
       border: $simple-border;
 

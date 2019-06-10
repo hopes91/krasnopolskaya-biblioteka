@@ -27,9 +27,10 @@ class Dropdown extends Component {
 
     this.toggleDropdownSectionTabIndex = this.toggleDropdownSectionTabIndex.bind(this)
     this.toggleDropdownLinksTabIndex = this.toggleDropdownLinksTabIndex.bind(this)
-    this.toggleBurgerOnKeyDown = this.toggleBurgerOnKeyDown.bind(this)
+    this.toggleBurgerOnKeyPress = this.toggleBurgerOnKeyPress.bind(this)
     this.toggleBurger = this.toggleBurger.bind(this)
     this.toggleDropdown = this.toggleDropdown.bind(this)
+    this.findLinksElement = this.findLinksElement.bind(this)
     this.toggleDropdownLinks = this.toggleDropdownLinks.bind(this)
   }
 
@@ -73,16 +74,16 @@ class Dropdown extends Component {
     }
   }
 
-  toggleBurgerOnKeyDown(event) {
+  toggleBurgerOnKeyPress(event) {
   	if (event.key !== 'Enter') return;
 
     this.toggleBurger(event)
   }
 
   toggleBurger(event) {
-  	let parentClassName = event.target.parentNode.className
+  	let parent = event.target.parentNode
 
-  	if (event.target.className === 'dropdown__burger' || parentClassName === 'dropdown__burger') {
+  	if (event.target.className === 'dropdown__burger' || parent.className === 'dropdown__burger') {
   		const burgerSpans = document.querySelectorAll('.dropdown__burger span')
 
   		burgerSpans[0].classList.toggle('span-one_active')
@@ -90,7 +91,6 @@ class Dropdown extends Component {
   		setTimeout(() => {
   			burgerSpans[1].classList.toggle('span-two_active')
   		}, 200)
-
   		this.toggleDropdown()
   	}
   }
@@ -98,44 +98,39 @@ class Dropdown extends Component {
   toggleDropdown() {
   	const dropdownMenu = document.querySelector('.dropdown__menu')
 
-  	if (dropdownMenu.style.display === 'block') {
-  		dropdownMenu.style.display = 'none'
+  	if (dropdownMenu.className.match('closed')) {
+      dropdownMenu.classList.remove('closed')
+      dropdownMenu.classList.add('opened')
   	} else {
-  		dropdownMenu.style.display = 'block'
+      dropdownMenu.classList.remove('opened')
+      dropdownMenu.classList.add('closed')
   	}
   }
 
-  toggleDropdownLinks(event) {
-    if (event.target.className === 'dropdown__section') {
-      let dropdownLinks = event.target.children[1]
+  findLinksElement(event) {
+    let target = event.target
+    let dropdownLinks
 
-      if (dropdownLinks.style.display === 'block') {
-        dropdownLinks.style.display = 'none'
-        this.toggleDropdownLinksTabIndex(false)
-      } else {
-        dropdownLinks.style.display = 'block'
-        this.toggleDropdownLinksTabIndex(true)
-      }
-    } else if (event.target.className === 'dropdown__section-title') {
-      let dropdownLinks = event.target.nextElementSibling
+    if (target.className === 'dropdown__section') {
+      dropdownLinks = target.children[1]
+    } else if (target.className === 'dropdown__section-title') {
+      dropdownLinks = target.nextElementSibling
+    } else if (target.parentNode.className === 'dropdown__section-title') {
+      dropdownLinks = target.parentNode.nextElementSibling
+    }
 
-      if (dropdownLinks.style.display === 'block') {
-        dropdownLinks.style.display = 'none'
-        this.toggleDropdownLinksTabIndex(false)
-      } else {
-        dropdownLinks.style.display = 'block'
-        this.toggleDropdownLinksTabIndex(true)
-      }
-    } else if (event.target.parentNode.className === 'dropdown__section-title') {
-      let dropdownLinks = event.target.parentNode.nextElementSibling
+    this.toggleDropdownLinks(dropdownLinks)
+  }
 
-      if (dropdownLinks.style.display === 'block') {
-        dropdownLinks.style.display = 'none'
-        this.toggleDropdownLinksTabIndex(false)
-      } else {
-        dropdownLinks.style.display = 'block'
-        this.toggleDropdownLinksTabIndex(true)
-      }
+  toggleDropdownLinks(dropdownLinks) {
+    if (dropdownLinks.className.match('closed')) {
+      dropdownLinks.classList.remove('closed')
+      dropdownLinks.classList.add('opened')
+      this.toggleDropdownLinksTabIndex(true)
+    } else {
+      dropdownLinks.classList.remove('opened')
+      dropdownLinks.classList.add('closed')
+      this.toggleDropdownLinksTabIndex(false)
     }
   }
 
@@ -143,14 +138,14 @@ class Dropdown extends Component {
     return (
       <div className='dropdown'>
         <div tabIndex='-1' className='dropdown__burger'
-              onKeyDown={this.toggleBurgerOnKeyDown} onClick={this.toggleBurger}
+              onKeyPress={this.toggleBurgerOnKeyPress} onClick={this.toggleBurger}
         >
           <span></span>
           <span></span>
           <span></span>
         </div>
 
-        <div className='dropdown__menu'>
+        <div className='dropdown__menu closed'>
           <div className='dropdown__section'>
             <Link to='/' key='index' tabIndex='-1' className='dropdown__section-title'>
               Главная
@@ -158,10 +153,10 @@ class Dropdown extends Component {
           </div>
 
           <div tabIndex='-1' className='dropdown__section'
-               onKeyDown={this.toggleDropdownLinks} onClick={this.toggleDropdownLinks}
+               onKeyPress={this.findLinksElement} onClick={this.findLinksElement}
           >
             <p className='dropdown__section-title'>О библиотеке <span>&#9662;</span></p>
-            <nav className='dropdown__section-links'>
+            <nav className='dropdown__section-links closed'>
               {linksSectionTwo.map(link => {
                 const { to, page, title } = link
 
@@ -175,10 +170,10 @@ class Dropdown extends Component {
           </div>
 
           <div tabIndex='-1' className='dropdown__section'
-               onKeyDown={this.toggleDropdownLinks} onClick={this.toggleDropdownLinks}
+               onKeyPress={this.findLinksElement} onClick={this.findLinksElement}
           >
             <p className='dropdown__section-title'>Новости и события <span>&#9662;</span></p>
-            <nav className='dropdown__section-links'>
+            <nav className='dropdown__section-links closed'>
               {linksSectionThree.map(link => {
                 const { to, page, title } = link
 
@@ -192,10 +187,10 @@ class Dropdown extends Component {
           </div>
 
           <div tabIndex='-1' className='dropdown__section'
-               onKeyDown={this.toggleDropdownLinks} onClick={this.toggleDropdownLinks}
+               onKeyPress={this.findLinksElement} onClick={this.findLinksElement}
           >
             <p className='dropdown__section-title'>Услуги <span>&#9662;</span></p>
-            <nav className='dropdown__section-links'>
+            <nav className='dropdown__section-links closed'>
               {linksSectionFour.map(link => {
                 const { to, page, title } = link
 
