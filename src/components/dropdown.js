@@ -39,8 +39,8 @@ class Dropdown extends Component {
   }
 
   toggleDropdownSectionTabIndex() {
-    const burger = document.getElementById('dropdown__burger')
-  	const dropdownSections = document.querySelectorAll('.dropdown-section')
+    const burger = document.querySelector('.dropdown__burger')
+  	const dropdownSections = document.querySelectorAll('.dropdown__section')
 
     if (window.innerWidth > 800) {
     	burger.setAttribute('tabIndex', '-1')
@@ -64,7 +64,7 @@ class Dropdown extends Component {
   }
 
   toggleDropdownLinksTabIndex(isOpen) {
-    const dropdownLinks = document.querySelectorAll('.section-links a')
+    const dropdownLinks = document.querySelectorAll('.dropdown__section-links a')
 
     if (isOpen) {
       dropdownLinks.forEach(link => link.setAttribute('tabIndex', '0'))
@@ -74,21 +74,21 @@ class Dropdown extends Component {
   }
 
   toggleBurgerOnKeyDown(event) {
-  	if (event.key === 'Enter') {
-      this.toggleBurger(event)
-    }
+  	if (event.key !== 'Enter') return;
+
+    this.toggleBurger(event)
   }
 
   toggleBurger(event) {
-  	let parentId = event.target.parentNode.id
+  	let parentClassName = event.target.parentNode.className
 
-  	if (event.target.id === 'dropdown__burger' || parentId === 'dropdown__burger') {
-  		const burgerSpans = document.querySelectorAll('#dropdown__burger span')
+  	if (event.target.className === 'dropdown__burger' || parentClassName === 'dropdown__burger') {
+  		const burgerSpans = document.querySelectorAll('.dropdown__burger span')
 
-  		burgerSpans[0].classList.toggle('span-one-active')
-  		burgerSpans[2].classList.toggle('span-three-active')
+  		burgerSpans[0].classList.toggle('span-one_active')
+  		burgerSpans[2].classList.toggle('span-three_active')
   		setTimeout(() => {
-  			burgerSpans[1].classList.toggle('span-two-active')
+  			burgerSpans[1].classList.toggle('span-two_active')
   		}, 200)
 
   		this.toggleDropdown()
@@ -96,7 +96,7 @@ class Dropdown extends Component {
   }
 
   toggleDropdown() {
-  	const dropdownMenu = document.getElementById('dropdown__menu')
+  	const dropdownMenu = document.querySelector('.dropdown__menu')
 
   	if (dropdownMenu.style.display === 'block') {
   		dropdownMenu.style.display = 'none'
@@ -106,7 +106,7 @@ class Dropdown extends Component {
   }
 
   toggleDropdownLinks(event) {
-    if (event.target.className === 'dropdown-section') {
+    if (event.target.className === 'dropdown__section') {
       let dropdownLinks = event.target.children[1]
 
       if (dropdownLinks.style.display === 'block') {
@@ -116,8 +116,18 @@ class Dropdown extends Component {
         dropdownLinks.style.display = 'block'
         this.toggleDropdownLinksTabIndex(true)
       }
-    } else if (event.target.className === 'section-title') {
+    } else if (event.target.className === 'dropdown__section-title') {
       let dropdownLinks = event.target.nextElementSibling
+
+      if (dropdownLinks.style.display === 'block') {
+        dropdownLinks.style.display = 'none'
+        this.toggleDropdownLinksTabIndex(false)
+      } else {
+        dropdownLinks.style.display = 'block'
+        this.toggleDropdownLinksTabIndex(true)
+      }
+    } else if (event.target.parentNode.className === 'dropdown__section-title') {
+      let dropdownLinks = event.target.parentNode.nextElementSibling
 
       if (dropdownLinks.style.display === 'block') {
         dropdownLinks.style.display = 'none'
@@ -132,7 +142,7 @@ class Dropdown extends Component {
   render() {
     return (
       <div className='dropdown'>
-        <div tabIndex='-1' id='dropdown__burger'
+        <div tabIndex='-1' className='dropdown__burger'
               onKeyDown={this.toggleBurgerOnKeyDown} onClick={this.toggleBurger}
         >
           <span></span>
@@ -140,18 +150,18 @@ class Dropdown extends Component {
           <span></span>
         </div>
 
-        <div id='dropdown__menu'>
-          <div className='dropdown-section'>
-            <Link to='/' key='index' tabIndex='-1' className='section-title'>
+        <div className='dropdown__menu'>
+          <div className='dropdown__section'>
+            <Link to='/' key='index' tabIndex='-1' className='dropdown__section-title'>
               Главная
             </Link>
           </div>
 
-          <div tabIndex='-1' className='dropdown-section'
+          <div tabIndex='-1' className='dropdown__section'
                onKeyDown={this.toggleDropdownLinks} onClick={this.toggleDropdownLinks}
           >
-            <p className='section-title'>О библиотеке <span>&#9662;</span></p>
-            <nav className='section-links'>
+            <p className='dropdown__section-title'>О библиотеке <span>&#9662;</span></p>
+            <nav className='dropdown__section-links'>
               {linksSectionTwo.map(link => {
                 const { to, page, title } = link
 
@@ -164,11 +174,11 @@ class Dropdown extends Component {
             </nav>
           </div>
 
-          <div tabIndex='-1' className='dropdown-section'
+          <div tabIndex='-1' className='dropdown__section'
                onKeyDown={this.toggleDropdownLinks} onClick={this.toggleDropdownLinks}
           >
-            <p className='section-title'>Новости и события <span>&#9662;</span></p>
-            <nav className='section-links'>
+            <p className='dropdown__section-title'>Новости и события <span>&#9662;</span></p>
+            <nav className='dropdown__section-links'>
               {linksSectionThree.map(link => {
                 const { to, page, title } = link
 
@@ -181,11 +191,11 @@ class Dropdown extends Component {
             </nav>
           </div>
 
-          <div tabIndex='-1' className='dropdown-section'
+          <div tabIndex='-1' className='dropdown__section'
                onKeyDown={this.toggleDropdownLinks} onClick={this.toggleDropdownLinks}
           >
-            <p className='section-title'>Услуги <span>&#9662;</span></p>
-            <nav className='section-links'>
+            <p className='dropdown__section-title'>Услуги <span>&#9662;</span></p>
+            <nav className='dropdown__section-links'>
               {linksSectionFour.map(link => {
                 const { to, page, title } = link
 
@@ -198,8 +208,8 @@ class Dropdown extends Component {
             </nav>
           </div>
 
-          <div className='dropdown-section'>
-            <Link to='/karta-sajta' key='karta-sajta' tabIndex='-1' className='section-title'>
+          <div className='dropdown__section'>
+            <Link to='/karta-sajta' key='karta-sajta' tabIndex='-1' className='dropdown__section-title'>
               Карта сайта
             </Link>
           </div>
