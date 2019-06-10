@@ -42,15 +42,19 @@ class Navbar extends Component {
 
     if (window.innerWidth > 800) {
       navbarSections.forEach(section => {
-        if (!section.hasAttribute('tabIndex')) return;
-
-        section.setAttribute('tabIndex', '0')
+        if (section.hasAttribute('tabindex')) {
+          section.setAttribute('tabindex', '0')
+        } else {
+          section.children[0].setAttribute('tabindex', '0')
+        }
       })
     } else if (window.innerWidth <= 800) {
       navbarSections.forEach(section => {
-        if (!section.hasAttribute('tabIndex')) return;
-
-        section.setAttribute('tabIndex', '-1')
+        if (section.hasAttribute('tabindex')) {
+          section.setAttribute('tabindex', '-1')
+        } else {
+          section.children[0].setAttribute('tabindex', '-1')
+        }
       })
     }
   }
