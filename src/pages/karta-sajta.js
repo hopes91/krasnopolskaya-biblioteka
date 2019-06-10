@@ -12,7 +12,7 @@ const linksSectionTwo = [
   { to: '/rezhim-raboty-biblioteki', page: 'rezhim-raboty-biblioteki', title: 'Режим работы библиотеки' }
 ]
 const linksSectionThree = [
-  { to: '/afisha', page: 'afisha', title: 'Афиша мая 2019 года' },
+  { to: '/afisha', page: 'afisha', title: 'Афиша лета 2019 года' },
   { to: '/afisha-semejnyj-klub-ot-vsej-dushi', page: 'afisha-semejnyj-klub-ot-vsej-dushi', title: 'Программа семейного клуба «От всей души»' },
   { to: '/afisha-kruzhok-biblionik', page: 'afisha-kruzhok-biblionik', title: 'Программа кружка «Библионик»' },
   { to: '/proshedshie-sobytiya-goda', page: 'proshedshie-sobytiya-goda', title: 'Прошедшие события 2019 года' }
