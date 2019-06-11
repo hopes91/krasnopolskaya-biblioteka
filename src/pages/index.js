@@ -46,10 +46,6 @@ class IndexPage extends Component {
           <OrnamentMain />
           <h2 className='page__title'>Новости</h2>
           <section>
-            <h6>воскресенье, 9 июня 2019 год</h6>
-            <img src='images/news/09062019.jpg' alt='9 июня поход с детьми с 14 часов' />
-          </section>
-          <section>
             <h6>пятница, 7 июня 2019 год</h6>
             <img src={news07062019} alt='Благодарность Суходоевой Анастасии Николаевне за помощь в проведении занятий семейного клуба и прошедших Библиосумерках' />
           </section>
