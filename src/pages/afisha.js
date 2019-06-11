@@ -7,9 +7,9 @@ import OrnamentMain from '../components/ornamentMain'
 const PosterPage = () => (
   <Layout>
     <SEO title='Афиша мая 2019 года' keywords={[`афиша`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
-    <div className='news-and-events poster'>
+    <div className='page page_events page_events_poster'>
       <OrnamentMain />
-      <h2>Афиша мая 2019 года</h2>
+      <h2 className='page__title'>Афиша мая 2019 года</h2>
       <table>
         <thead>
           <tr>
@@ -23,7 +23,7 @@ const PosterPage = () => (
           <tr>
             <td>3 июня</td>
             <td>
-              <span className='td-title'>Час весёлых затей «Мир вокруг нас»</span><br />
+              <span className='important'>Час весёлых затей «Мир вокруг нас»</span><br />
               Видео к Дню защиты детей и дню эколога<br />
               Викторина<br />
               Видео «Игрушечные страсти» о полезных и вредных детских игрушках<br />
@@ -99,7 +99,7 @@ const PosterPage = () => (
           <tr>
             <td>26 июня</td>
             <td>
-              <span className='td-title'>Экологический час</span><br />
+              <span className='important'>Экологический час</span><br />
               Видео «Птица 2019 года»<br />
               Викторина «Птицы-рыболовы»
             </td>
@@ -176,7 +176,7 @@ const PosterPage = () => (
           <tr>
             <td>19 августа</td>
             <td>
-              <span className='td-title'>Час вёселых затей</span><br />
+              <span className='important'>Час вёселых затей</span><br />
               Видео «Яблочный Спас»<br />
               Викторина «Яблочко наливное»
             </td>

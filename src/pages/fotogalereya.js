@@ -211,9 +211,9 @@ class PhotogalleryPage extends Component {
     return (
       <Layout>
         <SEO title='Фотогалерея' keywords={[`фотогалерея`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
-        <div className='about-library photogallery'>
+        <div className='page page_about page_about_photogallery'>
           <OrnamentMain />
-          <h2>Фотогалерея</h2>
+          <h2 className='page__title'>Фотогалерея</h2>
           <h3>2019 год</h3>
           <div className='sorted-by-year'>
             {photos2019.map(photo => {

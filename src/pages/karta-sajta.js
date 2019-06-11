@@ -26,9 +26,9 @@ const linksSectionFour = [
 const SiteMapPage = () => (
   <Layout>
     <SEO title='Карта сайта' keywords={[`карта сайта`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
-    <div className='site-map'>
+    <div className='page page_site-map'>
       <OrnamentMain />
-      <h2>Карта сайта</h2>
+      <h2 className='page__title'>Карта сайта</h2>
       <div className='map__index'>
         <p>Главная</p>
         <ul>

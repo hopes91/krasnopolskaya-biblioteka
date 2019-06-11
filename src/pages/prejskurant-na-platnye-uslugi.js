@@ -7,9 +7,9 @@ import OrnamentMain from '../components/ornamentMain'
 const PriceListPage = () => (
   <Layout>
     <SEO title='Прейскурант цен на платные услуги' keywords={[`прейскурант цен`, `платные услуги`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
-    <div className='services price-list'>
+    <div className='page page_services page_services_price-list'>
       <OrnamentMain />
-      <h2>Прейскурант цен на платные услуги Краснопольской библиотеки МКУК Сунская МБС</h2>
+      <h2 className='page__title'>Прейскурант цен на платные услуги Краснопольской библиотеки МКУК Сунская МБС</h2>
       <table>
         <thead>
           <tr>
@@ -23,7 +23,7 @@ const PriceListPage = () => (
         <tbody>
           <tr>
             <td>1</td>
-            <td className='td-title'>Дополнительное обслуживание документами</td>
+            <td className='important'>Дополнительное обслуживание документами</td>
             <td></td>
             <td></td>
           </tr>
@@ -48,7 +48,7 @@ const PriceListPage = () => (
 
           <tr>
             <td>2</td>
-            <td className='td-title'>Обслуживание электронной информацией</td>
+            <td className='important'>Обслуживание электронной информацией</td>
             <td></td>
             <td></td>
           </tr>
@@ -97,7 +97,7 @@ const PriceListPage = () => (
 
           <tr>
             <td>3</td>
-            <td className='td-title'>Прочие услуги</td>
+            <td className='important'>Прочие услуги</td>
             <td></td>
             <td></td>
           </tr>

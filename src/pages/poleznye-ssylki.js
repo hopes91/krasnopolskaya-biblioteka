@@ -26,9 +26,9 @@ const usefulLinks = [
 const UsefulLinksPage = () => (
   <Layout>
     <SEO title='Полезные ссылки' keywords={[`полезные ссылки`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
-    <div className='services useful-links'>
+    <div className='page page_services page_services_useful-links'>
       <OrnamentMain />
-      <h2>Полезные ссылки</h2>
+      <h2 className='page__title'>Полезные ссылки</h2>
       {usefulLinks.map(link => {
         const { href, title } = link
 

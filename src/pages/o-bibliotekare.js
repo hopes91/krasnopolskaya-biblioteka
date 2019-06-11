@@ -7,9 +7,9 @@ import OrnamentMain from '../components/ornamentMain'
 const AboutLibrarianPage = () => (
   <Layout>
     <SEO title='О библиотекаре' keywords={[`о библиотекаре`, `фалалеева елена евгеньевна`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
-    <div className='about-library about-librarian'>
+    <div className='page page_about page_about_librarian'>
       <OrnamentMain />
-      <h2>О библиотекаре</h2>
+      <h2 className='page__title'>О библиотекаре</h2>
       <p>Со 2 августа 1982 года библиотекарем в Краснопольской библиотеке работает Елена Евгеньевна Опарина (Фалалеева). Елена Евгеньевна имеет высшее библиотечное образование, в 1988 закончила Пермский институт культуры. В настоящее время работает на полставки.</p>
     </div>
   </Layout>

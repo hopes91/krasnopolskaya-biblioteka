@@ -21,7 +21,7 @@ class IndexPage extends Component {
   componentDidMount() {
     const questions = document.querySelectorAll('.news ol li')
 
-    if (!questions) return
+    if (!questions) return;
 
     questions.forEach(question => {
       let answer = document.createElement('span')
@@ -32,7 +32,7 @@ class IndexPage extends Component {
   }
 
   showTheAnswer(event) {
-    if (event.target.className !== 'show-answer') return
+    if (event.target.className !== 'show-answer') return;
 
     event.target.style.display = 'none'
     event.target.previousElementSibling.style.display = 'inline'
@@ -42,9 +42,9 @@ class IndexPage extends Component {
     return (
       <Layout>
         <SEO title='Главная' keywords={[`краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
-        <div className='news'>
+        <div className='page page_news'>
           <OrnamentMain />
-          <h2>Новости</h2>
+          <h2 className='page__title'>Новости</h2>
           <section>
             <h6>воскресенье, 9 июня 2019 год</h6>
             <img src='images/news/09062019.jpg' alt='9 июня поход с детьми с 14 часов' />

@@ -6,6 +6,7 @@ import Header from './header'
 // import OrnamentCenter from './ornamentCenter'
 import StackOfBooks from './stackOfBooks'
 import Footer from './footer'
+
 import '../styles/layout.scss'
 
 const Layout = ({ children }) => {
@@ -15,7 +16,7 @@ const Layout = ({ children }) => {
     <div className='container'>
       <Header siteTitle={title} />
       {/* <OrnamentCenter /> */}
-      <main>
+      <main className='main'>
         {children}
         <a href='#top' id='arrow-up'><span>&uarr;</span> Наверх</a>
       </main>
