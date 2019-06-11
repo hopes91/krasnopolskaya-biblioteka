@@ -212,7 +212,7 @@ class PhotogalleryPage extends Component {
   render() {
     return (
       <Layout>
-        <SEO title='Фотогалерея' keywords={[`фотогалерея`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
+        <SEO title='Фотогалерея' keywords={[`фотографии краснопольской библиотеки`, `фотогалерея`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
         <div className='page page_about page_about_photogallery'>
           <OrnamentMain />
           <h2 className='page__title'>Фотогалерея</h2>
