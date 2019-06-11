@@ -8,10 +8,10 @@ import '../styles/main/table.scss'
 
 const PosterPage = () => (
   <Layout>
-    <SEO title='Афиша мая 2019 года' keywords={[`афиша`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
+    <SEO title='Афиша лета 2019 года' keywords={[`предстоящие события`, `афиша`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
     <div className='page page_events page_events_poster'>
       <OrnamentMain />
-      <h2 className='page__title'>Афиша мая 2019 года</h2>
+      <h2 className='page__title'>Афиша лета 2019 года</h2>
       <table>
         <thead>
           <tr>
@@ -25,7 +25,7 @@ const PosterPage = () => (
           <tr>
             <td>3 июня</td>
             <td>
-              <span className='important'>Час весёлых затей «Мир вокруг нас»</span><br />
+              <span><strong>Час весёлых затей «Мир вокруг нас»</strong></span><br />
               Видео к Дню защиты детей и дню эколога<br />
               Викторина<br />
               Видео «Игрушечные страсти» о полезных и вредных детских игрушках<br />
@@ -101,7 +101,7 @@ const PosterPage = () => (
           <tr>
             <td>26 июня</td>
             <td>
-              <span className='important'>Экологический час</span><br />
+              <span><strong>Экологический час</strong></span><br />
               Видео «Птица 2019 года»<br />
               Викторина «Птицы-рыболовы»
             </td>
@@ -178,7 +178,7 @@ const PosterPage = () => (
           <tr>
             <td>19 августа</td>
             <td>
-              <span className='important'>Час вёселых затей</span><br />
+              <span><strong>Час вёселых затей</strong></span><br />
               Видео «Яблочный Спас»<br />
               Викторина «Яблочко наливное»
             </td>
