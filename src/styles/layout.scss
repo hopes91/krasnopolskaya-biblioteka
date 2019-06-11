@@ -68,38 +68,7 @@ body {
         }
       }
 
-      .page_events.page_events_poster {
-        @include respond-to('max-width: 640px') {
-          @include indentations(1em auto, 1em 0);
-          overflow-x: scroll;
-        }
-      }
-
-      .page_events.page_events_poster-ot-vsej-dushi {
-        @include respond-to('max-width: 800px') {
-          height: auto;
-        }
-
-        div {
-          height: 3em;
-          @include respond-to('max-width: 800px') {
-            height: auto;
-            margin-bottom: 1em;
-          }
-        }
-      }
-
-      .page_events.page_events_poster-biblionik {
-        div {
-          height: 11em;
-          @include respond-to('max-width: 800px') {
-            height: auto;
-            margin-bottom: 1em;
-          }
-        }
-      }
-
-      .page_events.page_events_past-events {
+      .page_events_past-events {
         @include respond-to('max-width: 640px') {
           @include indentations(1em auto, 1em 0);
           overflow-x: scroll;

@@ -5,6 +5,7 @@ import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
 import '../styles/page/page.scss'
+import '../styles/page/_events.scss'
 import '../styles/main/table.scss'
 
 const PosterPage = () => (

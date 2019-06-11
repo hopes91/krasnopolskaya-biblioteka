@@ -4,6 +4,9 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
+import '../styles/page/page.scss'
+import '../styles/page/_events.scss'
+
 const biblonikEvents = [
   { posterDate: 'Январь', posterEvents: [ 'Всемирный день снега',
                                           'Видео к юбилею Гайдара',
@@ -73,10 +76,10 @@ const PosterBiblionikPage = () => (
         const { posterDate, posterEvents } = event
 
         return (
-          <div key={posterDate}>
-            <p className='poster-dates'>{posterDate}</p>
-            {posterEvents.map(posterEvent => <p key={posterEvent} className='poster-events'>{posterEvent}</p>)}
-          </div>
+          <section key={posterDate} className='page_events__section'>
+            <p className='page_events__dates'>{posterDate}</p>
+            {posterEvents.map(posterEvent => <p key={posterEvent} className='page_events__events'>{posterEvent}</p>)}
+          </section>
         )
       })}
     </div>
