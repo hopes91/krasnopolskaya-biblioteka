@@ -29,24 +29,7 @@ body {
   }
 
   img {
-    @include dimensions(100%, auto);
-    @include indentations(0.3em 0, 0);
     border: none;
-
-    &:last-child {
-      margin-bottom: 1em;
-    }
-  }
-
-  ul, ol {
-    @include indentations(1.5em 0, 0 5em);
-    text-align: left;
-    @include respond-to('max-width: 1024px') {
-      padding: 0 2em;
-    }
-    @include respond-to('max-width: 640px') {
-      padding: 0 1em;
-    }
   }
 
   .important {
@@ -78,6 +61,17 @@ body {
         padding: 0.5em 0.2em;
       }
 
+      ul, ol {
+        @include indentations(1.5em 0, 0 5em);
+        text-align: left;
+        @include respond-to('max-width: 1024px') {
+          padding: 0 2em;
+        }
+        @include respond-to('max-width: 640px') {
+          padding: 0 1em;
+        }
+      }
+
       .page {
         @include dimensions(65%, auto);
         min-height: 40em;
@@ -107,6 +101,15 @@ body {
         .page__title {
           @include indentations(1em, 0);
           text-align: center;
+        }
+
+        .page__image {
+          @include dimensions(100%, auto);
+          @include indentations(0.3em 0, 0);
+
+          &:last-child {
+            margin-bottom: 1em;
+          }
         }
       }
 
