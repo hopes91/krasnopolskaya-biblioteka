@@ -32,10 +32,6 @@ body {
     border: none;
   }
 
-  .important {
-    font-weight: bold;
-  }
-
   .closed {
     display: none;
   }
@@ -69,81 +65,6 @@ body {
         }
         @include respond-to('max-width: 640px') {
           padding: 0 1em;
-        }
-      }
-
-      .page {
-        @include dimensions(65%, auto);
-        min-height: 40em;
-        @include indentations(1em auto, 1em 2.2em);
-        box-sizing: border-box;
-        text-align: justify;
-        background-color: oldlace;
-        position: relative;
-        z-index: 1;
-        @include respond-to('min-width: 1800px') {
-          width: 70em;
-        }
-        @include respond-to('max-width: 1024px') {
-          width: 75%;
-          margin: 1em;
-          left: 0;
-        }
-        @include respond-to('max-width: 800px') {
-          width: 100%;
-          @include indentations(1em auto 3em auto, 1.5em);
-        }
-        @include respond-to('max-width: 640px') {
-          margin-bottom: 3.5em;
-          padding: 1.5em 1em;
-        }
-
-        .page__title {
-          @include indentations(1em, 0);
-          text-align: center;
-        }
-
-        .page__image {
-          @include dimensions(100%, auto);
-          @include indentations(0.3em 0, 0);
-
-          &:last-child {
-            margin-bottom: 1em;
-          }
-        }
-      }
-
-      // events
-      .page_events {
-        div {
-          @include dimensions(100%, auto);
-
-          p {
-            @include dimensions(auto, 1.2em);
-            @include indentations(0.3em 0, 0);
-          }
-
-          .poster-dates {
-            @include dimensions(25%, auto);
-            font-weight: bold;
-            text-align: left;
-            float: left;
-          }
-
-          .poster-events {
-            @include dimensions(75%, auto);
-            text-align: left;
-            float: right;
-          }
-
-          .poster-dates,
-          .poster-events {
-            @include respond-to('max-width: 800px') {
-              @include dimensions(100%, auto);
-              text-align: center;
-              float: none;
-            }
-          }
         }
       }
 

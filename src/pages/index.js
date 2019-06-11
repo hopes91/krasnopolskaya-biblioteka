@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
+import '../styles/page/page.scss'
 import '../styles/page/_news.scss'
 
 import news07062019 from '../images/news/07062019.jpg'
