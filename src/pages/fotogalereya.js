@@ -4,6 +4,8 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
+import '../styles/page/_about.scss'
+
 import bibliosumerki from '../images/photogallery/bibliosumerki.jpg'
 import bibliosumerki2 from '../images/photogallery/bibliosumerki-2.jpg'
 import bibliosumerki3 from '../images/photogallery/bibliosumerki-3.jpg'
@@ -106,11 +108,11 @@ class PhotogalleryPage extends Component {
   }
 
   showFirstSlide(event) {
-    const slides = document.querySelectorAll('.slide')
+    const slides = document.querySelectorAll('.page_about_photogallery-back__slide')
 
     this.createDots()
 
-    document.getElementById('back').style.display = 'block'
+    document.querySelector('.page_about_photogallery-back').style.display = 'block'
 
     let clickedAlt = event.target.getAttribute('alt')
     let altToCompare = null
@@ -138,9 +140,9 @@ class PhotogalleryPage extends Component {
   }
 
   handleArrows(index) {
-    const slides = document.querySelectorAll('.slide')
-    const prevSlide = document.querySelector('.prev-slide')
-    const nextSlide = document.querySelector('.next-slide')
+    const slides = document.querySelectorAll('.page_about_photogallery-back__slide')
+    const prevSlide = document.querySelector('.page_about_photogallery-back__prev-slide')
+    const nextSlide = document.querySelector('.page_about_photogallery-back__next-slide')
 
     if ((index === -1 && mainSlide === 0) ||
 			(index === 1 && mainSlide === slides.length - 1)) {
@@ -167,7 +169,7 @@ class PhotogalleryPage extends Component {
   }
 
   showSlides() {
-    const slides = document.querySelectorAll('.slide')
+    const slides = document.querySelectorAll('.page_about_photogallery-back__slide')
 
     slides.forEach(slide => slide.style.display = 'none')
 
@@ -178,7 +180,7 @@ class PhotogalleryPage extends Component {
   }
 
   currentSlide() {
-    const dots = document.querySelectorAll('.dot')
+    const dots = document.querySelectorAll('.page_about_photogallery-back__dot')
 
     dots.forEach(dot => dot.style.backgroundColor = 'oldlace')
 
@@ -190,8 +192,8 @@ class PhotogalleryPage extends Component {
   createDots() {
     for (let i = 0; i < allPhotos.length; i++) {
       const dot = document.createElement('span')
-      dot.setAttribute('class', 'dot')
-      document.querySelector('.dots').appendChild(dot)
+      dot.setAttribute('class', 'page_about_photogallery-back__dot')
+      document.querySelector('.page_about_photogallery-back__dots').appendChild(dot)
     }
   }
 
@@ -204,7 +206,7 @@ class PhotogalleryPage extends Component {
   hideSlider() {
     mainSlide = null
     start = null
-    document.getElementById('back').style.display = 'none'
+    document.querySelector('.page_about_photogallery-back').style.display = 'none'
   }
 
   render() {
@@ -214,15 +216,15 @@ class PhotogalleryPage extends Component {
         <div className='page page_about page_about_photogallery'>
           <OrnamentMain />
           <h2 className='page__title'>Фотогалерея</h2>
-          <h3>2019 год</h3>
-          <div className='sorted-by-year'>
+          <h3 className='page_about_photogallery__year'>2019 год</h3>
+          <div className='page_about_photogallery__sorted-by-year'>
             {photos2019.map(photo => {
               const { src, alt } = photo
 
               return (
                 <img
                   src={src} alt={alt} title='Нажмите, чтобы посмотреть в большом разрешении' key={src}
-                  className='mini-photo'
+                  className='page_about_photogallery__mini-photo'
                   onKeyPress={this.showFirstSlideOnKeyPress}
                   onClick={this.showFirstSlide}
                 />
@@ -230,15 +232,15 @@ class PhotogalleryPage extends Component {
             })}
           </div>
 
-          <h3>2018 год</h3>
-          <div className='sorted-by-year'>
+          <h3 className='page_about_photogallery__year'>2018 год</h3>
+          <div className='page_about_photogallery__sorted-by-year'>
             {photos2018.map(photo => {
               const { src, alt } = photo
 
               return (
                 <img
                   src={src} alt={alt} title='Нажмите, чтобы посмотреть в большом разрешении' key={src}
-                  className='mini-photo'
+                  className='page_about_photogallery__mini-photo'
                   onKeyPress={this.showFirstSlideOnKeyPress}
                   onClick={this.showFirstSlide}
                 />
@@ -247,23 +249,23 @@ class PhotogalleryPage extends Component {
           </div>
         </div>
 
-        <div id='back'>
-          <span title='Закрыть' id='close' onClick={this.hideSlider}>&times;</span>
-          <div id='front'>
+        <div className='page_about_photogallery-back'>
+          <span title='Закрыть' className='page_about_photogallery-back__close-icon' onClick={this.hideSlider}>&times;</span>
+          <div className='page_about_photogallery-back__front'>
             {allPhotos.map(photo => {
               const { src, alt } = photo
 
               return (
                 <img
                   src={src} alt={alt} title={alt} key={src}
-                  className='slide'
+                  className='page_about_photogallery-back__slide'
                 />
               )
             })}
           </div>
-          <span className='prev-slide' onClick={() => this.handleArrows(-1)}>&#10094;</span>
-          <span className='next-slide' onClick={() => this.handleArrows(1)}>&#10095;</span>
-          <div className='dots'></div>
+          <span className='page_about_photogallery-back__prev-slide' onClick={() => this.handleArrows(-1)}>&#10094;</span>
+          <span className='page_about_photogallery-back__next-slide' onClick={() => this.handleArrows(1)}>&#10095;</span>
+          <div className='page_about_photogallery-back__dots'></div>
         </div>
       </Layout>
     )
