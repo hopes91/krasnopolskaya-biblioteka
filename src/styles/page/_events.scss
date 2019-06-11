@@ -1,0 +1,35 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+.page_events {
+  .page_events__section {
+    @include dimensions(100%, auto);
+
+    p {
+      @include dimensions(auto, 1.2em);
+      @include indentations(0.5em 0, 0);
+    }
+
+    .page_events__dates {
+      @include dimensions(25%, auto);
+      font-weight: bold;
+      text-align: left;
+      float: left;
+    }
+
+    .page_events__events {
+      @include dimensions(75%, auto);
+      text-align: left;
+      float: right;
+    }
+
+    .page_events__dates,
+    .page_events__events {
+      @include respond-to('max-width: 800px') {
+        @include dimensions(100%, auto);
+        text-align: center;
+        float: none;
+      }
+    }
+  }
+}

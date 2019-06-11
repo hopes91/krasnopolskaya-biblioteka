@@ -4,6 +4,9 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
+import '../styles/page/page.scss'
+import '../styles/page/_events.scss'
+
 const otVsejDushiEvents = [
   { posterDate: 'Январь', posterEvents: 'Святочный вечер' },
   { posterDate: 'Февраль', posterEvents: 'Вечер к Дню влюблённых' },
@@ -26,10 +29,10 @@ const PosterOtVsejDushiPage = () => (
         const { posterDate, posterEvents } = event
 
         return (
-          <div key={posterDate}>
-            <p className='poster-dates'>{posterDate}</p>
-            <p className='poster-events'>{posterEvents}</p>
-          </div>
+          <section key={posterDate} className='page_events__section'>
+            <p className='page_events__dates'>{posterDate}</p>
+            <p className='page_events__events'>{posterEvents}</p>
+          </section>
         )
       })}
     </div>
