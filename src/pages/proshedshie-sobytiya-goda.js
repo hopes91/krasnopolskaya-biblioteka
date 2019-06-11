@@ -4,6 +4,8 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
+import '../styles/page/page.scss'
+import '../styles/page/_events.scss'
 import '../styles/main/table.scss'
 
 const PastEventsPage = () => (
@@ -118,7 +120,7 @@ const PastEventsPage = () => (
           <tr>
             <td>25 марта</td>
             <td>
-              <span className='important'>Час вятской книги</span><br />
+              <span><strong>Час вятской книги</strong></span><br />
               Видео «Ирина Краева читает сказку «Когда Дусе грустно» из книги «Чаепитие с пяткой»<br />
               Видео «Ирина Краева читает сказку «Ломашка и Кефиш» из книги «Чаепитие с пяткой»<br />
               Видео «Ирина Антоненко читает сказку «Маракуйя» из книги И. Краевой «Чаепитие с пяткой»
@@ -144,7 +146,7 @@ const PastEventsPage = () => (
               Час ЗОЖ  «Вперёд по дороге здоровья!»<br />
               Мультфильм «Притча о наркотиках»<br />
               Мультфильм о вреде курения<br /><br />
-              <span className='important'>Час сказки на Вятке</span><br />
+              <span><strong>Час сказки на Вятке</strong></span><br />
               Видео «Сказочные игры на Вятке»<br />
               Комментированное чтение сказки Марины Черненковой «Как царевну сын Балдея спас»
             </td>
@@ -162,7 +164,7 @@ const PastEventsPage = () => (
             <td>
               Библиотечный урок «Современные детские книги»<br />
               Обсуждение видео «Ледовое побоище»<br /><br />
-              <span className='important'>Час вятского фольклора</span><br />
+              <span><strong>Час вятского фольклора</strong></span><br />
               Электронная викторина «Вятские загадки»<br />
               Игра «Угадай вятское словечко»
             </td>
@@ -180,7 +182,7 @@ const PastEventsPage = () => (
             <td>22 апреля</td>
             <td>
               Экологическое ассорти к Дню Земли «Умей жить на Земле!»<br /><br />
-              <span className='important'>Час вятской книги</span><br />
+              <span><strong>Час вятской книги</strong></span><br />
               Видео «В библиотеке №3 города Кирова» о выставке сказочных героев<br />
               Клип «Колотушка тук-тук» по стихотворению Н. Заболоцкого «Меркнут знаки Зодиака»
             </td>
@@ -209,7 +211,7 @@ const PastEventsPage = () => (
           <tr>
             <td>6 мая</td>
             <td>
-              <span className='important'>Час памяти «День победы»</span><br />
+              <span><strong>Час памяти «День победы»</strong></span><br />
               Клип «Хотят ли русские войны»<br />
               Выставка книг «Про тех, кто сражался и победил»
             </td>

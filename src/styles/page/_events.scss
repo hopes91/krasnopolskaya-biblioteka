@@ -64,3 +64,10 @@
     }
   }
 }
+
+.page_events_past-events {
+  @include respond-to('max-width: 640px') {
+    @include indentations(1em auto, 1em 0);
+    overflow-x: scroll;
+  }
+}
