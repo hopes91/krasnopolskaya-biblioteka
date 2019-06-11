@@ -4,6 +4,8 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
+import '../styles/page/page.scss'
+import '../styles/page/_services.scss'
 import '../styles/main/table.scss'
 
 const PriceListPage = () => (
@@ -25,7 +27,7 @@ const PriceListPage = () => (
         <tbody>
           <tr>
             <td>1</td>
-            <td className='important'>Дополнительное обслуживание документами</td>
+            <td><strong>Дополнительное обслуживание документами</strong></td>
             <td></td>
             <td></td>
           </tr>
@@ -50,7 +52,7 @@ const PriceListPage = () => (
 
           <tr>
             <td>2</td>
-            <td className='important'>Обслуживание электронной информацией</td>
+            <td><strong>Обслуживание электронной информацией</strong></td>
             <td></td>
             <td></td>
           </tr>
@@ -99,7 +101,7 @@ const PriceListPage = () => (
 
           <tr>
             <td>3</td>
-            <td className='important'>Прочие услуги</td>
+            <td><strong>Прочие услуги</strong></td>
             <td></td>
             <td></td>
           </tr>
