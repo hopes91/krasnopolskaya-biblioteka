@@ -4,6 +4,9 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
+import '../styles/page/page.scss'
+import '../styles/page/_services.scss'
+
 const usefulLinks = [
   { href: 'http://sunalib.ru/', title: 'Сунская центральная библиотека имени Ф. Ф. Павленкова' },
   { href: 'http://www.herzenlib.ru/', title: 'Кировская областная библиотека имени А. И. Герцена' },
@@ -33,7 +36,7 @@ const UsefulLinksPage = () => (
         const { href, title } = link
 
         return (
-          <a href={href} target='_blank' rel='noopener noreferrer'>{title}</a>
+          <a href={href} key={title} target='_blank' rel='noopener noreferrer' className='page_services_useful-links__link'>{title}</a>
         )
       })}
     </div>

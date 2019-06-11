@@ -68,25 +68,7 @@ body {
         }
       }
 
-      // services
-      .page_services {
-        a {
-          @include dimensions(100%, auto);
-        }
-      }
-
-      .page_services.page_services_useful-links {
-        text-align: left;
-
-        a {
-          @include indentations(0.2em 0.5em, 0);
-          @include respond-to('max-width: 640px') {
-            margin: 0.2em 0;
-          }
-        }
-      }
-
-      .page_services.page_services_price-list {
+      .page_services_price-list {
         @include respond-to('max-width: 640px') {
           @include indentations(1em auto, 1em 0);
           overflow-x: scroll;
