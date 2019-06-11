@@ -4,6 +4,8 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
+import '../styles/main/table.scss'
+
 const PosterPage = () => (
   <Layout>
     <SEO title='Афиша мая 2019 года' keywords={[`афиша`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />

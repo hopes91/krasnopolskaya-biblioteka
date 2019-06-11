@@ -4,6 +4,8 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
+import '../styles/main/table.scss'
+
 const PriceListPage = () => (
   <Layout>
     <SEO title='Прейскурант цен на платные услуги' keywords={[`прейскурант цен`, `платные услуги`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />

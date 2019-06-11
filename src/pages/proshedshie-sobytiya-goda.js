@@ -4,6 +4,8 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
+import '../styles/main/table.scss'
+
 const PastEventsPage = () => (
   <Layout>
     <SEO title='Прошедшие события 2019 года' keywords={[`прошедшие события 2019 года`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />

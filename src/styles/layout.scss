@@ -64,24 +64,6 @@ body {
         line-height: 1.2;
       }
 
-      table {
-        width: 100%;
-        margin: 0 auto 1.5em auto;
-      }
-
-      table, th, td {
-        border: $simple-border;
-        border-collapse: collapse;
-      }
-
-      th, td {
-        @include indentations(0, 1em);
-        text-align: center;
-        @include respond-to('max-width: 640px') {
-          padding: 0.5em 0;
-        }
-      }
-
       .page {
         @include dimensions(65%, auto);
         min-height: 40em;
@@ -427,7 +409,7 @@ body {
           }
         }
       }
-      
+
       // not found page
       .page_not-found-page {
         text-align: center;
