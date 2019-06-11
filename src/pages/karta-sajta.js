@@ -5,6 +5,9 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
+import '../styles/page/page.scss'
+import '../styles/page/_site-map.scss'
+
 const linksSectionTwo = [
   { to: '/istoriya-biblioteki', page: 'istoriya-biblioteki', title: 'История библиотеки' },
   { to: '/fotogalereya', page: 'fotogalereya', title: 'Фотогалерея' },
@@ -29,17 +32,17 @@ const SiteMapPage = () => (
     <div className='page page_site-map'>
       <OrnamentMain />
       <h2 className='page__title'>Карта сайта</h2>
-      <div className='map__index'>
+      <section className='page_site-map__section'>
         <p>Главная</p>
         <ul>
           <Link to='/' key='index'>
             Новости
           </Link>
         </ul>
-      </div>
+      </section>
 
 
-      <div className='map__about-library'>
+      <section className='page_site-map__section'>
         <p>О библиотеке</p>
         <ul>
           {linksSectionTwo.map(link => {
@@ -52,9 +55,9 @@ const SiteMapPage = () => (
             )
           })}
         </ul>
-      </div>
+      </section>
 
-      <div className='map__news-and-events'>
+      <section className='page_site-map__section'>
         <p>Новости и события</p>
         <ul>
           {linksSectionThree.map(link => {
@@ -67,9 +70,9 @@ const SiteMapPage = () => (
             )
           })}
         </ul>
-      </div>
+      </section>
 
-      <div className='map__services'>
+      <section className='page_site-map__section'>
         <p>Услуги</p>
         <ul>
           {linksSectionFour.map(link => {
@@ -82,16 +85,16 @@ const SiteMapPage = () => (
             )
           })}
         </ul>
-      </div>
+      </section>
 
-      <div className='map__sites-map'>
+      <section className='page_site-map__section'>
         <p>Карта сайта</p>
         <ul>
           <Link to='/karta-sajta' key='karta-sajta'>
             Карта сайта
           </Link>
         </ul>
-      </div>
+      </section>
     </div>
   </Layout>
 )

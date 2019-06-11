@@ -1,0 +1,22 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+.page_site-map {
+  text-align: left;
+
+  .page_site-map__section {
+    @include dimensions(100%, auto);
+    margin-bottom: 1em;
+    @include respond-to('max-width: 800px') {
+      margin-bottom: 1.5em;
+    }
+
+    p {
+      margin: 0.5em 0;
+    }
+
+    ul {
+      @include indentations(0, 0 2em);
+    }
+  }
+}
