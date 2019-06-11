@@ -1,0 +1,42 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+.page_news {
+  .page_news__section {
+    margin-bottom: 2em;
+
+    .page_news__section-title {
+      @include indentations(1em 0, 0);
+      font: {
+        size: 0.9em;
+        weight: normal;
+      }
+    }
+
+    .page_news__section-image {
+      @include dimensions(auto, auto);
+      max-width: 100%;
+      @include indentations(0.5em 0, 0);
+      display: block;
+
+      &:last-child {
+        margin-bottom: 1em;
+      }
+    }
+
+    // ответы на викторину
+    ol li span.hidden-answer {
+      display: none;
+    }
+
+    .show-answer {
+      font: {
+        size: 0.9em;
+        weight: bold;
+      }
+      text-decoration: underline;
+      text-decoration-style: dotted;
+      cursor: pointer;
+    }
+  }
+}

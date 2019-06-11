@@ -4,6 +4,8 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
+import '../styles/page/_news.scss'
+
 import news07062019 from '../images/news/07062019.jpg'
 import news05062019 from '../images/news/05062019.jpg'
 import news03062019 from '../images/news/03062019.jpg'
@@ -19,7 +21,7 @@ class IndexPage extends Component {
   }
 
   componentDidMount() {
-    const questions = document.querySelectorAll('.news ol li')
+    const questions = document.querySelectorAll('.page_news ol li')
 
     if (!questions) return;
 
@@ -45,22 +47,22 @@ class IndexPage extends Component {
         <div className='page page_news'>
           <OrnamentMain />
           <h2 className='page__title'>Новости</h2>
-          <section>
-            <h6>пятница, 7 июня 2019 год</h6>
-            <img src={news07062019} alt='Благодарность Суходоевой Анастасии Николаевне за помощь в проведении занятий семейного клуба и прошедших Библиосумерках' />
+          <section className='page_news__section'>
+            <h6 className='page_news__section-title'>пятница, 7 июня 2019 год</h6>
+            <img src={news07062019} alt='Благодарность Суходоевой Анастасии Николаевне за помощь в проведении занятий семейного клуба и прошедших Библиосумерках' className='page_news__section-image' />
           </section>
-          <section>
-            <h6>среда, 5 июня 2019 год</h6>
-            <img src={news05062019} alt='Благодарность Кондаковой Надежде Ивановне за подаренные книги на Всероссийский день библиотек' />
+          <section className='page_news__section'>
+            <h6 className='page_news__section-title'>среда, 5 июня 2019 год</h6>
+            <img src={news05062019} alt='Благодарность Кондаковой Надежде Ивановне за подаренные книги на Всероссийский день библиотек' className='page_news__section-image' />
           </section>
-          <section>
-            <h6>понедельник, 3 июня 2019 год</h6>
-            <img src={news03062019} alt='Грамота Фалалеевой Елене Евгеньевне за 1-ое место в районном конкурсе профессионального мастерства «Театра мир откроет нам свои кулисы»' />
+          <section className='page_news__section'>
+            <h6 className='page_news__section-title'>понедельник, 3 июня 2019 год</h6>
+            <img src={news03062019} alt='Грамота Фалалеевой Елене Евгеньевне за 1-ое место в районном конкурсе профессионального мастерства «Театра мир откроет нам свои кулисы»' className='page_news__section-image' />
           </section>
-          <section>
-            <h6>понедельник, 20 мая 2019 год</h6>
+          <section className='page_news__section'>
+            <h6 className='page_news__section-title'>понедельник, 20 мая 2019 год</h6>
             <p><strong>15 мая в Краснопольской библиотеке прошла Шляпная вечеринка, приуроченная к Международному дню семьи.</strong></p>
-            <img src={shlyapnayaVecherinka} alt='Шляпы со Шляпной вечеринки' />
+            <img src={shlyapnayaVecherinka} alt='Шляпы со Шляпной вечеринки' className='page_news__section-image' />
             <p>Библиотекарь Фалалеева Е.Е. поздравила всех членов семейного клуба и гостей с праздником, пожелала здоровья и счастья. У каждого из нас своя, особенная любовь к шляпам. В библиотеке на четырёх столах была выставка шляп: колпак гнома, индейский головной убор, шляпка миньона, пиратская, ведьмы, клоуна, шута, женские. Оригинальные шляпы были у Анны Кондаковой, Светочки Суходоевой, Даши Суходоевой.</p>
             <p>Ведущая пригласила гостей на <strong>Парад шляп</strong>. Все прошли под клип «Шляпа». Затем библиотекарь провела <strong>«Шляпную дискуссию»</strong>. В шляпе находились жетоны с номерами. Под музыку все передавали друг другу шляпу, и на ком музыка останавливалась, тот вытягивал номер вопроса. За правильный ответ получали жетончик «шляпку».</p>
             <p>Вопросы были такие:</p>
@@ -141,13 +143,13 @@ class IndexPage extends Component {
             <p>Далее поставили <strong>сказку-экспромт «Колобок» на новый лад</strong>. Старика изображал Саша Чекалкин, старуху — Полина Ральникова, зайца — Степан Суходоев, лису — Виолетта Вотинова, волка — Данила Задорин, медведя — Кириил Ситников, колобка — Ксюша Вотинова.</p>
             <p>Под конец пришла очередь <strong>«Танцевального караоке»</strong>, дети станцевали под три видео. А затем началось чаепитие.</p>
           </section>
-          <section>
-            <h6>понедельник, 20 мая 2019 год</h6>
-            <img src={news20052019} alt='Благодарственное письмо за активное участие в марафоне «Добрая Вятка»' />
+          <section className='page_news__section'>
+            <h6 className='page_news__section-title'>понедельник, 20 мая 2019 год</h6>
+            <img src={news20052019} alt='Благодарственное письмо за активное участие в марафоне «Добрая Вятка»' className='page_news__section-image' />
           </section>
-          <section>
-            <h6>воскресенье, 24 марта 2019 год</h6>
-            <img src={news24032019} alt='Благодарность Пермяковой Л.А. и Белобородовой О.С. за подаренные Краснопольской библиотеке журналы' />
+          <section className='page_news__section'>
+            <h6 className='page_news__section-title'>воскресенье, 24 марта 2019 год</h6>
+            <img src={news24032019} alt='Благодарность Пермяковой Л.А. и Белобородовой О.С. за подаренные Краснопольской библиотеке журналы' className='page_news__section-image' />
           </section>
         </div>
       </Layout>
