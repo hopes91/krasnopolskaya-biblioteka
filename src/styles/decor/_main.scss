@@ -1,10 +1,10 @@
-@import 'helpers/variables';
-@import 'helpers/mixins';
+@import '../helpers/variables';
+@import '../helpers/mixins';
 
-.ornament-main {
+.decor_main {
   @include dimensions(100% !important, 100% !important);
 
-  .ornament {
+  .decor_main-corner {
     @include dimensions(10% !important, auto !important);
     @include indentations(0 !important, 0 !important);
     position: absolute !important;
@@ -22,44 +22,23 @@
     }
   }
 
-  .one {
+  .corner-one {
     top: 0.5em;
     left: 0.5em;
   }
-  .two {
+
+  .corner-two {
     top: 0.5em;
     right: 0.5em;
   }
-  .three {
+
+  .corner-three {
     bottom: 0.5em;
     right: 0.5em;
   }
-  .four {
+
+  .corner-four {
     bottom: 0.5em;
     left: 0.5em;
-  }
-
-  .ornament img {
-    margin: 0 !important;
-  }
-}
-
-.stack-of-books {
-  @include dimensions(15%, auto);
-  position: absolute;
-  bottom: 7em;
-  right: 1em;
-  @include respond-to('min-width: 1367px') {
-    width: 13em;
-  }
-  @include respond-to('max-width: 1024px') {
-    width: 20%;
-  }
-  @include respond-to('max-width: 800px') {
-    display: none;
-  }
-
-  a {
-    cursor: default;
   }
 }

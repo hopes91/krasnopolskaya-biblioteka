@@ -1,7 +1,7 @@
 @import '../helpers/variables';
 @import '../helpers/mixins';
 
-.ornament_top {
+.decor_top {
   @include dimensions(9.3em, 6.5em);
   @include indentations(0, 1.3em 0 0 0);
   box-sizing: border-box;
@@ -22,7 +22,7 @@
     padding-left: 0.5em;
   }
 
-  .ornament_top__date {
+  .decor_top__date {
     @include dimensions(100%, auto);
     @include indentations(0 auto, 0);
     font-size: 1.2em;
@@ -33,12 +33,12 @@
       float: right;
     }
 
-    .ornament_top__dayOfTheWeek {
+    .decor_top__dayOfTheWeek {
       width: 70%;
       display: inline-block;
     }
 
-    .ornament_top__day {
+    .decor_top__day {
       padding: 0.17em 0.1em 0 0;
       font: {
         size: 2em;
@@ -47,12 +47,12 @@
       float: left;
     }
 
-    .ornament_top__month {
+    .decor_top__month {
       padding: 0 0.2em 0 0.1em;
     }
   }
 
-  // .ornament_top__pic {
+  // .decor_top__pic {
   //   @include dimensions(7.3em, auto);
   //   position: relative;
   //   bottom: 0.3em;

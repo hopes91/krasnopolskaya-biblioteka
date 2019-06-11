@@ -1,25 +1,25 @@
 import React from 'react'
 
-import '../styles/ornaments.scss'
+import '../styles/decor/_main.scss'
 
-import ornament1 from '../images/design/ornament-1.jpg'
-import ornament2 from '../images/design/ornament-2.jpg'
-import ornament3 from '../images/design/ornament-3.jpg'
-import ornament4 from '../images/design/ornament-4.jpg'
+import corner1 from '../images/decor/corner-1.jpg'
+import corner2 from '../images/decor/corner-2.jpg'
+import corner3 from '../images/decor/corner-3.jpg'
+import corner4 from '../images/decor/corner-4.jpg'
 
 const OrnamentMain = () => (
-  <div className='ornament-main'>
-    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='ornament one'>
-      <img src={ornament1} alt='Уголок' />
+  <div className='decor_main'>
+    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='decor_main-corner corner_one'>
+      <img src={corner1} alt='Уголок' />
     </a>
-    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='ornament two'>
-      <img src={ornament2} alt='Уголок' />
+    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='decor_main-corner corner_two'>
+      <img src={corner2} alt='Уголок' />
     </a>
-    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='ornament three'>
-      <img src={ornament3} alt='Уголок' />
+    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='decor_main-corner corner_three'>
+      <img src={corner3} alt='Уголок' />
     </a>
-    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='ornament four'>
-      <img src={ornament4} alt='Уголок' />
+    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='decor_main-corner corner_four'>
+      <img src={corner4} alt='Уголок' />
     </a>
   </div>
 )

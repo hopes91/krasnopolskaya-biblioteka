@@ -1,9 +1,9 @@
 import React from 'react'
 
-import '../styles/ornament/_center.scss'
+import '../styles/decor/_center.scss'
 
 const OrnamentCenter = () => (
-  <div className='ornament_center'>
+  <div className='decor_center'>
 
   </div>
 )

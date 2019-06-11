@@ -1,0 +1,22 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+.stack-of-books {
+  @include dimensions(15%, auto);
+  position: absolute;
+  bottom: 7em;
+  right: 1em;
+  @include respond-to('min-width: 1367px') {
+    width: 13em;
+  }
+  @include respond-to('max-width: 1024px') {
+    width: 20%;
+  }
+  @include respond-to('max-width: 800px') {
+    display: none;
+  }
+
+  a {
+    cursor: default;
+  }
+}

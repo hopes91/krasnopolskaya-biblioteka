@@ -1,7 +1,7 @@
 @import '../helpers/variables';
 @import '../helpers/mixins';
 
-.ornament_center {
+.decor_center {
   @include dimensions(50%, auto);
   max-width: 1200px;
   @include indentations(1em auto 0 auto, 0);

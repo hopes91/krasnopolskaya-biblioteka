@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-import '../styles/ornament/_top.scss'
+import '../styles/decor/_top.scss'
 
 class OrnamentTop extends Component {
   constructor(props) {
@@ -47,14 +47,14 @@ class OrnamentTop extends Component {
     const { dayOfTheWeek, day, month, year } = this.state
 
     return (
-      <div className='ornament_top'>
-        <p className='ornament_top__date'>
-          <span className='ornament_top__dayOfTheWeek'>{dayOfTheWeek}</span>
-          <span className='ornament_top__day'>{day}</span>
-          <span className='ornament_top__month'>{month}</span>
-          <span className='ornament_top__year'>{year}</span>
+      <div className='decor_top'>
+        <p className='decor_top__date'>
+          <span className='decor_top__dayOfTheWeek'>{dayOfTheWeek}</span>
+          <span className='decor_top__day'>{day}</span>
+          <span className='decor_top__month'>{month}</span>
+          <span className='decor_top__year'>{year}</span>
         </p>
-        {/* <a href='' className='ornament_top__pic'>
+        {/* <a href='' className='decor_top__pic'>
           <img src='' alt='' />
         </a> */}
       </div>

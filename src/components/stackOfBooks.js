@@ -1,8 +1,8 @@
 import React from 'react'
 
-import '../styles/ornaments.scss'
+import '../styles/decor/stack-of-books.scss'
 
-import stackOfBooks from '../images/design/stack-of-books-graphic-illustration.png'
+import stackOfBooks from '../images/decor/stack-of-books-graphic-illustration.png'
 
 const StackOfBooks = () => (
   <div className='stack-of-books'>
