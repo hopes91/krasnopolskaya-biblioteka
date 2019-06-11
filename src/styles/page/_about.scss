@@ -1,8 +1,11 @@
 @import '../helpers/variables';
 @import '../helpers/mixins';
 
-.page_about {
-  .page_about_history {
-    
+.page_about_schedule {
+  text-align: center !important;
+
+  p {
+    @include dimensions(100%, auto);
+    @include indentations(0.8em 0, 0);
   }
 }

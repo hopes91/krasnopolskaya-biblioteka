@@ -235,19 +235,6 @@ body {
         }
       }
 
-      .page_about_schedule {
-        text-align: center;
-
-        p {
-          @include dimensions(100%, auto);
-          @include indentations(0.5em 0, 0);
-        }
-
-        .schedule-time {
-          margin-bottom: 1.5em;
-        }
-      }
-
       // events
       .page_events {
         div {

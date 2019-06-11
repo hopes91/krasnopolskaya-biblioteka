@@ -4,9 +4,11 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
+import '../styles/page/_about.scss'
+
 const AboutLibrarianPage = () => (
   <Layout>
-    <SEO title='О библиотекаре' keywords={[`о библиотекаре`, `фалалеева елена евгеньевна`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
+    <SEO title='О библиотекаре' keywords={[`фалалеева елена евгеньевна`, `о библиотекаре`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
     <div className='page page_about page_about_librarian'>
       <OrnamentMain />
       <h2 className='page__title'>О библиотекаре</h2>
