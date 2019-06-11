@@ -6,6 +6,7 @@ import SEO from '../components/seo'
 import OrnamentMain from '../components/ornamentMain'
 
 import '../styles/page/page.scss'
+import '../styles/page/_not-found-page.scss'
 
 const NotFoundPage = () => (
   <Layout>

@@ -1,0 +1,10 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+.page_not-found-page {
+  text-align: center;
+
+  p a {
+    width: auto;
+  }
+}
