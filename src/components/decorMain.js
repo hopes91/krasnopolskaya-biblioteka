@@ -7,7 +7,7 @@ import corner2 from '../images/decor/corner-2.jpg'
 import corner3 from '../images/decor/corner-3.jpg'
 import corner4 from '../images/decor/corner-4.jpg'
 
-const OrnamentMain = () => (
+const DecorMain = () => (
   <div className='decor_main'>
     <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='decor_main-corner corner_one'>
       <img src={corner1} alt='Уголок' />
@@ -24,4 +24,4 @@ const OrnamentMain = () => (
   </div>
 )
 
-export default OrnamentMain
+export default DecorMain

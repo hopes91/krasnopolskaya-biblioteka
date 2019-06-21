@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import Dropdown from './dropdown'
-import OrnamentTop from './ornamentTop'
+import OrnamentTop from './decorTop'
 import Navbar from './navbar'
 
 import '../styles/header/header.scss'

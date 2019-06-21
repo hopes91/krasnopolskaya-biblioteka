@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import OrnamentMain from '../components/ornamentMain'
+import OrnamentMain from '../components/decorMain'
 
 import '../styles/page/page.scss'
 import '../styles/page/_site-map.scss'

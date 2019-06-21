@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import '../styles/decor/_top.scss'
 
-class OrnamentTop extends Component {
+class DecorTop extends Component {
   constructor(props) {
     super(props)
 
@@ -62,4 +62,4 @@ class OrnamentTop extends Component {
   }
 }
 
-export default OrnamentTop
+export default DecorTop

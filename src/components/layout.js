@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import useSiteMetadata from '../hooks/useSiteMetadata'
 
 import Header from './header'
-// import OrnamentCenter from './ornamentCenter'
+// import DecorCenter from './decorCenter'
 import StackOfBooks from './stackOfBooks'
 import Footer from './footer'
 
@@ -15,7 +15,7 @@ const Layout = ({ children }) => {
   return (
     <div className='container'>
       <Header siteTitle={title} />
-      {/* <OrnamentCenter /> */}
+      {/* <DecorCenter /> */}
       <main className='main'>
         {children}
         <a href='#top' id='arrow-up'><span>&uarr;</span> Наверх</a>
