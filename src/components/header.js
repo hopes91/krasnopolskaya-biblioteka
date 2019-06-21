@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import Dropdown from './dropdown'
-import OrnamentTop from './decorTop'
+import DecorTop from './decorTop'
 import Navbar from './navbar'
 
 import '../styles/header/header.scss'
@@ -15,7 +15,7 @@ const Header = ({ siteTitle }) => (
     <Link to='/' className='title'>
       <h1>{siteTitle}</h1>
     </Link>
-    <OrnamentTop />
+    <DecorTop />
     <Navbar />
   </header>
 )

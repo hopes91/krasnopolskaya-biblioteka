@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import OrnamentMain from '../components/decorMain'
+import DecorMain from '../components/decorMain'
 
 import '../styles/page/page.scss'
 import '../styles/page/_services.scss'
@@ -12,7 +12,7 @@ const PriceListPage = () => (
   <Layout>
     <SEO title='Прейскурант цен на платные услуги' keywords={[`прейскурант цен`, `платные услуги`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
     <div className='page page_services page_services_price-list'>
-      <OrnamentMain />
+      <DecorMain />
       <h2 className='page__title'>Прейскурант цен на платные услуги Краснопольской библиотеки МКУК Сунская МБС</h2>
       <table>
         <thead>

@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import OrnamentMain from '../components/decorMain'
+import DecorMain from '../components/decorMain'
 
 import '../styles/page/page.scss'
 import '../styles/page/_events.scss'
@@ -12,7 +12,7 @@ const PastEventsPage = () => (
   <Layout>
     <SEO title='Прошедшие события 2019 года' keywords={[`прошедшие события 2019 года`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
     <div className='page page_events page_events_past-events'>
-      <OrnamentMain />
+      <DecorMain />
       <h2 className='page__title'>Прошедшие события 2019 года</h2>
       <table>
         <thead>

@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import OrnamentMain from '../components/decorMain'
+import DecorMain from '../components/decorMain'
 
 import '../styles/page/page.scss'
 import '../styles/page/_events.scss'
@@ -61,7 +61,7 @@ const PosterBiblionikPage = () => (
   <Layout>
     <SEO title='Программа кружка «Библионик»' keywords={[`афиша`, `кружок`, `библионик`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
     <div className='page page_events page_events_poster-biblionik'>
-      <OrnamentMain />
+      <DecorMain />
       <h2 className='page__title'>Программа кружка «Библионик» на 2019 год</h2>
       <p>Для детей старшей группы детского сада «Родничок». Занятия проходят по понедельникам с 15:30.</p>
       <ul>

@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import OrnamentMain from '../components/decorMain'
+import DecorMain from '../components/decorMain'
 
 import '../styles/page/page.scss'
 import '../styles/page/_events.scss'
@@ -12,7 +12,7 @@ const PosterPage = () => (
   <Layout>
     <SEO title='Афиша лета 2019 года' keywords={[`предстоящие события`, `афиша`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
     <div className='page page_events page_events_poster'>
-      <OrnamentMain />
+      <DecorMain />
       <h2 className='page__title'>Афиша лета 2019 года</h2>
       <table>
         <thead>

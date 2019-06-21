@@ -2,7 +2,7 @@ import React from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import OrnamentMain from '../components/decorMain'
+import DecorMain from '../components/decorMain'
 
 import '../styles/page/page.scss'
 import '../styles/page/_services.scss'
@@ -11,7 +11,7 @@ const InternetSafetyPage = () => (
   <Layout>
     <SEO title='Безопасность в Интернете' keywords={[`безопасность в интернете`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
     <div className='page page_services page_services_safe-internet'>
-      <OrnamentMain />
+      <DecorMain />
       <h2 className='page__title'>Безопасность в Интернете</h2>
       <p>Интернет — это полезная и интересная вещь, если правильно ею пользоваться, но у всякой медали есть своя оборотная сторона. В виртуальном мире нас подстерегает множество опасностей, о которых мы не имеем ни малейшего понятия. Поэтому надо знать основные правила работы в Интернете и соблюдать их.</p>
       <h3>Внимание! Это важно знать!</h3>

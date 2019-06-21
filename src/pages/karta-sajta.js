@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import OrnamentMain from '../components/decorMain'
+import DecorMain from '../components/decorMain'
 
 import '../styles/page/page.scss'
 import '../styles/page/_site-map.scss'
@@ -30,7 +30,7 @@ const SiteMapPage = () => (
   <Layout>
     <SEO title='Карта сайта' keywords={[`карта сайта`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
     <div className='page page_site-map'>
-      <OrnamentMain />
+      <DecorMain />
       <h2 className='page__title'>Карта сайта</h2>
       <section className='page_site-map__section'>
         <p>Главная</p>

@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import OrnamentMain from '../components/decorMain'
+import DecorMain from '../components/decorMain'
 
 import '../styles/page/page.scss'
 import '../styles/page/_news.scss'
@@ -46,7 +46,7 @@ class IndexPage extends Component {
       <Layout>
         <SEO title='Главная' keywords={[`новости краснопольской библиотеки`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
         <div className='page page_news'>
-          <OrnamentMain />
+          <DecorMain />
           <h2 className='page__title'>Новости</h2>
           <section className='page_news__section'>
             <h6 className='page_news__section-title'>пятница, 7 июня 2019 год</h6>

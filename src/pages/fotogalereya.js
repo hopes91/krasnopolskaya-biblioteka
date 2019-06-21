@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import OrnamentMain from '../components/decorMain'
+import DecorMain from '../components/decorMain'
 
 import '../styles/page/page.scss'
 import '../styles/page/_about.scss'
@@ -215,7 +215,7 @@ class PhotogalleryPage extends Component {
       <Layout>
         <SEO title='Фотогалерея' keywords={[`фотографии краснопольской библиотеки`, `фотогалерея`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
         <div className='page page_about page_about_photogallery'>
-          <OrnamentMain />
+          <DecorMain />
           <h2 className='page__title'>Фотогалерея</h2>
           <h3 className='page_about_photogallery__year'>2019 год</h3>
           <div className='page_about_photogallery__sorted-by-year'>
