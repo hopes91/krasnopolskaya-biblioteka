@@ -33,8 +33,10 @@
   }
 
   .page__image {
-    @include dimensions(100%, auto);
-    @include indentations(0.3em 0, 0);
+    @include dimensions(auto, auto);
+    max-width: 100%;
+    @include indentations(0.5em 0, 0);
+    display: block;
 
     &:last-child {
       margin-bottom: 1em;
