@@ -7,7 +7,7 @@ import DecorTop from './decorTop'
 import Navbar from './navbar'
 
 import '../styles/header/header.scss'
-import '../styles/header/title.scss'
+import '../styles/header/__title.scss'
 
 const Header = ({ siteTitle }) => (
   <header className='header'>
