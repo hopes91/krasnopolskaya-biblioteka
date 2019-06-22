@@ -4,7 +4,7 @@
 .decor_main {
   @include dimensions(100%, 100%);
 
-  .decor_main-corner {
+  .decor_main__corner {
     @include dimensions(10%, auto);
     @include indentations(0, 0);
     position: absolute;
@@ -22,22 +22,22 @@
     }
   }
 
-  .corner_one {
+  .decor_main__corner_one {
     top: 0.5em;
     left: 0.5em;
   }
 
-  .corner_two {
+  .decor_main__corner_two {
     top: 0.5em;
     right: 0.5em;
   }
 
-  .corner_three {
+  .decor_main__corner_three {
     bottom: 0.5em;
     right: 0.5em;
   }
 
-  .corner_four {
+  .decor_main__corner_four {
     bottom: 0.5em;
     left: 0.5em;
   }

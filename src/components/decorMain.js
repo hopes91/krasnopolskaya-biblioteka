@@ -9,16 +9,16 @@ import corner4 from '../images/decor/corner-4.jpg'
 
 const DecorMain = () => (
   <div className='decor_main'>
-    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='decor_main-corner corner_one'>
+    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='decor_main__corner decor_main__corner_one'>
       <img src={corner1} alt='Уголок' />
     </a>
-    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='decor_main-corner corner_two'>
+    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='decor_main__corner decor_main__corner_two'>
       <img src={corner2} alt='Уголок' />
     </a>
-    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='decor_main-corner corner_three'>
+    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='decor_main__corner decor_main__corner_three'>
       <img src={corner3} alt='Уголок' />
     </a>
-    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='decor_main-corner corner_four'>
+    <a href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm' target='_blank' rel='noopener noreferrer' tabIndex='-1' className='decor_main__corner decor_main__corner_four'>
       <img src={corner4} alt='Уголок' />
     </a>
   </div>
