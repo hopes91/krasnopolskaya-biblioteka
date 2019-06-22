@@ -9,7 +9,6 @@ import StackOfBooks from './stackOfBooks'
 import Footer from './footer'
 
 import '../styles/layout.scss'
-import '../styles/main/__arrow-up.scss'
 
 const Layout = ({ children }) => {
   const { title } = useSiteMetadata()
@@ -22,7 +21,7 @@ const Layout = ({ children }) => {
         {children}
         <ArrowUp />
       </main>
-      <div className='empty'></div> {/* для IE */}
+      <div className='container__empty'></div> {/* для IE */}
       <StackOfBooks />
       <Footer siteTitle={title} />
     </div>

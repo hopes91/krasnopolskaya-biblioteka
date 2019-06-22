@@ -66,7 +66,7 @@ body {
       }
     }
 
-    .empty {
+    .container__empty {
       @include dimensions(100%, 6em);
       @include respond-to('max-width: 800px') {
         height: 7.5em;
