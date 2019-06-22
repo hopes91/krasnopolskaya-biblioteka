@@ -12,7 +12,7 @@ import '../styles/header/title.scss'
 const Header = ({ siteTitle }) => (
   <header className='header'>
     <Dropdown />
-    <Link to='/' className='title'>
+    <Link to='/' className='header__title'>
       <h1>{siteTitle}</h1>
     </Link>
     <DecorTop />

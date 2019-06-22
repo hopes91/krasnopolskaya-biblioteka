@@ -1,7 +1,7 @@
 @import '../helpers/variables';
 @import '../helpers/mixins';
 
-.title {
+.header__title {
   @include dimensions(auto, auto);
   box-sizing: border-box;
   text-decoration: none;
