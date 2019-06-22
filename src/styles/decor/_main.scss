@@ -2,23 +2,23 @@
 @import '../helpers/mixins';
 
 .decor_main {
-  @include dimensions(100% !important, 100% !important);
+  @include dimensions(100%, 100%);
 
   .decor_main-corner {
-    @include dimensions(10% !important, auto !important);
-    @include indentations(0 !important, 0 !important);
-    position: absolute !important;
-    z-index: -1 !important;
-    cursor: default !important;
+    @include dimensions(10%, auto);
+    @include indentations(0, 0);
+    position: absolute;
+    z-index: -1;
+    cursor: default;
     @include respond-to('max-width: 800px') {
-      width: 12% !important;
+      width: 12%;
     }
     @include respond-to('max-width: 640px') {
       display: none;
     }
 
     img {
-      margin: 0 !important;
+      margin: 0;
     }
   }
 
