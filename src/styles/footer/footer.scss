@@ -1,7 +1,7 @@
-@import 'helpers/variables';
-@import 'helpers/mixins';
+@import '../helpers/variables';
+@import '../helpers/mixins';
 
-footer {
+.footer {
   @include dimensions(100%, 6em);
   @include indentations(0, 1em);
   box-sizing: border-box;
@@ -16,14 +16,15 @@ footer {
     height: 10em;
   }
 
-  p {
+  .footer__copyright,
+  .footer__address {
     @include respond-to('max-width: 800px') {
       @include dimensions(100%, auto);
       text-align: center;
     }
   }
 
-  .copyright {
+  .footer__copyright {
     @include indentations(0, 1.5em 0);
     float: left;
     @include respond-to('max-width: 800px') {
@@ -36,7 +37,7 @@ footer {
     }
   }
 
-  .address {
+  .footer__address {
     @include dimensions(20em, auto);
     @include indentations(0, 1em 0);
     text-align: center;

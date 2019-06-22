@@ -2,17 +2,17 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import '../styles/footer.scss'
+import '../styles/footer/footer.scss'
 
 const Footer = ({ siteTitle }) => (
-  <footer>
-    <p className='copyright'>
+  <footer className='footer'>
+    <p className='footer__copyright'>
       <Link to='/'>
         &copy; {siteTitle},&nbsp;
       </Link>
-      2018-<span id='current-year'>{new Date().getFullYear()}</span>
+      2018-<span>{new Date().getFullYear()}</span>
     </p>
-    <p className='address'><span>Адрес:</span> Кировская область, Сунский район, деревня Краснополье, улица Школьная, дом 6а</p>
+    <p className='footer__address'><span>Адрес:</span> Кировская область, Сунский район, деревня Краснополье, улица Школьная, дом 6а</p>
   </footer>
 )
 
