@@ -4,21 +4,23 @@ import useSiteMetadata from '../hooks/useSiteMetadata'
 
 import Header from './header'
 // import DecorCenter from './decorCenter'
+import ArrowUp from './arrowUp'
 import StackOfBooks from './stackOfBooks'
 import Footer from './footer'
 
 import '../styles/layout.scss'
+import '../styles/main/__arrow-up.scss'
 
 const Layout = ({ children }) => {
   const { title } = useSiteMetadata()
 
   return (
-    <div className='container'>
+    <div className='container' id='top'>
       <Header siteTitle={title} />
       {/* <DecorCenter /> */}
       <main className='main'>
         {children}
-        <a href='#top' id='arrow-up'><span>&uarr;</span> Наверх</a>
+        <ArrowUp />
       </main>
       <div className='empty'></div> {/* для IE */}
       <StackOfBooks />
