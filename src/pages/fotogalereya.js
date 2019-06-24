@@ -87,33 +87,37 @@ class PhotogalleryPage extends Component {
   constructor(props) {
     super(props)
 
-    // this.showFirstSlideOnKeyPress = this.showFirstSlideOnKeyPress.bind(this)
+    this.showFirstSlideOnKeyDown = this.showFirstSlideOnKeyDown.bind(this)
     this.showFirstSlide = this.showFirstSlide.bind(this)
     this.showSlides = this.showSlides.bind(this)
-    // this.handleArrowsOnKeyPress = this.handleArrowsOnKeyPress.bind(this)
+    this.handleArrowsOnKeyDown = this.handleArrowsOnKeyDown.bind(this)
     this.handleArrows = this.handleArrows.bind(this)
     this.currentSlide = this.currentSlide.bind(this)
-    // this.hideSliderOnKeyPress = this.hideSliderOnKeyPress.bind(this)
+    this.hideSliderOnKeyDown = this.hideSliderOnKeyDown.bind(this)
     this.hideSlider = this.hideSlider.bind(this)
   }
 
   componentDidMount() {
-    window.addEventListener('keypress', this.handleArrowsOnKeyPress)
-	  window.addEventListener('keypress', this.hideSliderOnKeyPress)
+    document.addEventListener('keydown', this.handleArrowsOnKeyDown)
+	  document.addEventListener('keydown', this.hideSliderOnKeyDown)
   }
 
-  showFirstSlideOnKeyPress(event) {
-  	if (event.key !== 'Enter') return;
-
-    this.showFirstSlide(event)
+  showFirstSlideOnKeyDown(event) {
+  	if (event.key === 'Enter') {
+      this.showFirstSlide(event)
+    }
   }
 
   showFirstSlide(event) {
+    const back = document.querySelector('.page_about_photogallery-back')
     const slides = document.querySelectorAll('.page_about_photogallery-back__slide')
 
-    this.createDots()
+    if (back.className.match('opened')) return;
 
-    document.querySelector('.page_about_photogallery-back').style.display = 'block'
+    this.manageDots()
+
+    back.classList.remove('closed')
+    back.classList.add('opened')
 
     let clickedAlt = event.target.getAttribute('alt')
     let altToCompare = null
@@ -131,8 +135,11 @@ class PhotogalleryPage extends Component {
     })
   }
 
-  handleArrowsOnKeyPress(event) {
-    console.log(event.key)
+  handleArrowsOnKeyDown(event) {
+    const back = document.querySelector('.page_about_photogallery-back')
+
+    if (back.className.match('closed')) return;
+
   	if (event.key === 'ArrowLeft') {
   		this.handleArrows(-1)
   	} else if (event.key === 'ArrowRight') {
@@ -190,24 +197,33 @@ class PhotogalleryPage extends Component {
     }
   }
 
-  createDots() {
-    for (let i = 0; i < allPhotos.length; i++) {
+  manageDots() {
+    const dots = document.querySelector('.page_about_photogallery-back__dots')
+
+    dots.innerHTML = ''
+
+    allPhotos.forEach(photo => {
       const dot = document.createElement('span')
       dot.setAttribute('class', 'page_about_photogallery-back__dot')
-      document.querySelector('.page_about_photogallery-back__dots').appendChild(dot)
+      dots.appendChild(dot)
+    })
+  }
+
+  hideSliderOnKeyDown(event) {
+  	if (event.key === 'Escape') {
+      this.hideSlider()
     }
   }
 
-  hideSliderOnKeyPress(event) {
-  	if (event.key === 'Escape') return;
-
-    this.hideSlider();
-  }
-
   hideSlider() {
+    const back = document.querySelector('.page_about_photogallery-back')
+
+    if (back.className.match('closed')) return;
+
+    back.classList.remove('opened')
+    back.classList.add('closed')
     mainSlide = null
     start = null
-    document.querySelector('.page_about_photogallery-back').style.display = 'none'
   }
 
   render() {
@@ -224,9 +240,9 @@ class PhotogalleryPage extends Component {
 
               return (
                 <img
-                  src={src} alt={alt} title='Нажмите, чтобы посмотреть в большом разрешении' key={src}
+                  src={src} alt={alt} title='Нажмите, чтобы посмотреть в большом разрешении' key={src} tabIndex='0'
                   className='page_about_photogallery__mini-photo'
-                  onKeyPress={this.showFirstSlideOnKeyPress}
+                  onKeyDown={this.showFirstSlideOnKeyDown}
                   onClick={this.showFirstSlide}
                 />
               )
@@ -240,9 +256,9 @@ class PhotogalleryPage extends Component {
 
               return (
                 <img
-                  src={src} alt={alt} title='Нажмите, чтобы посмотреть в большом разрешении' key={src}
+                  src={src} alt={alt} title='Нажмите, чтобы посмотреть в большом разрешении' key={src} tabIndex='0'
                   className='page_about_photogallery__mini-photo'
-                  onKeyPress={this.showFirstSlideOnKeyPress}
+                  onKeyDown={this.showFirstSlideOnKeyDown}
                   onClick={this.showFirstSlide}
                 />
               )
@@ -250,8 +266,8 @@ class PhotogalleryPage extends Component {
           </div>
         </div>
 
-        <div className='page_about_photogallery-back'>
-          <span title='Закрыть' className='page_about_photogallery-back__close-icon' onClick={this.hideSlider}>&times;</span>
+        <div className='page_about_photogallery-back closed'>
+          <span title='Закрыть (ESC)' className='page_about_photogallery-back__close-icon' onClick={this.hideSlider}>&times;</span>
           <div className='page_about_photogallery-back__front'>
             {allPhotos.map(photo => {
               const { src, alt } = photo
