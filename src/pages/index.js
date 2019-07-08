@@ -8,6 +8,7 @@ import DecorMain from '../components/decorMain'
 import '../styles/page/page.scss'
 import '../styles/page/_news.scss'
 
+import news08072019 from '../images/news/08072019.jpg'
 import news07062019 from '../images/news/07062019.jpg'
 import news05062019 from '../images/news/05062019.jpg'
 import news03062019 from '../images/news/03062019.jpg'
@@ -53,6 +54,10 @@ class IndexPage extends Component {
             fluid={data.file.childImageSharp.fluid}
             alt='test'
           /> */}
+          <section className='page_news__section'>
+            <h6 className='page_news__section-title'>понедельник, 8 июля 2019 год</h6>
+            <img src={news08072019} alt='Благодарность Самосудовой Вере Алексеевне по подаренные библиотеке журналы' className='page__image' />
+          </section>
           <section className='page_news__section'>
             <h6 className='page_news__section-title'>пятница, 7 июня 2019 год</h6>
             <img src={news07062019} alt='Благодарность Суходоевой Анастасии Николаевне за помощь в проведении занятий семейного клуба и прошедших Библиосумерках' className='page__image' />

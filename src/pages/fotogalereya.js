@@ -7,6 +7,7 @@ import DecorMain from '../components/decorMain'
 import '../styles/page/page.scss'
 import '../styles/page/_about.scss'
 
+import detiNaViktorine from '../images/photogallery/deti-na-viktorine.jpg'
 import bibliosumerki from '../images/photogallery/bibliosumerki.jpg'
 import bibliosumerki2 from '../images/photogallery/bibliosumerki-2.jpg'
 import bibliosumerki3 from '../images/photogallery/bibliosumerki-3.jpg'
@@ -42,6 +43,7 @@ import novogodnijVecherNaSemejnomKlube2 from '../images/photogallery/novogodnij-
 import novogodnijVecherNaSemejnomKlube3 from '../images/photogallery/novogodnij-vecher-na-semejnom-klube-3.jpg'
 
 const photos2019 = [
+  { src: detiNaViktorine, alt: 'Дети на викторине' },
   { src: bibliosumerki, alt: 'Библиосумерки' },
   { src: bibliosumerki2, alt: 'Библиосумерки 2' },
   { src: bibliosumerki3, alt: 'Библиосумерки 3' },
