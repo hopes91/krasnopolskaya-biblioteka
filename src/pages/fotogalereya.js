@@ -43,24 +43,24 @@ import novogodnijVecherNaSemejnomKlube2 from '../images/photogallery/novogodnij-
 import novogodnijVecherNaSemejnomKlube3 from '../images/photogallery/novogodnij-vecher-na-semejnom-klube-3.jpg'
 
 const photos2019 = [
-  { src: detiNaViktorine, alt: 'Дети на викторине' },
-  { src: bibliosumerki, alt: 'Библиосумерки' },
-  { src: bibliosumerki2, alt: 'Библиосумерки 2' },
-  { src: bibliosumerki3, alt: 'Библиосумерки 3' },
+  { src: semejnyjKlub29Marta, alt: 'Семейный клуб 29 марта' },
+  { src: semejnyjKlub29Marta2, alt: 'Семейный клуб 29 марта 2' },
+  { src: chasZozhVperedPoDorogeZdoroviya, alt: 'Час ЗОЖ вперёд по дороге здоровья' },
+  { src: viktorinaNaDomuDlyaDevochkiSOV, alt: 'Викторина на дому для девочки с ограниченными возможностями' },
+  { src: vystavkaTeatrIBiblioteka, alt: 'Выставка «Театр и библиотека»' },
+  { src: detsadovtsyVMaskah, alt: 'Детсадовцы в масках на кружке «Библионик»' },
+  { src: bibliochuchelo, alt: 'Библиочучело для Библионочи' },
+  { src: bibliopiknik1Maya, alt: 'Библиопикник 1 мая' },
+  { src: chasPamyatiNaKruzhkeBiblionik, alt: 'Час памяти на кружке «Библионик»' },
   { src: shlyapnayaVecherinka, alt: 'Шляпная вечеринка' },
   { src: shlyapnayaVecherinka2, alt: 'Шляпная вечеринка 2' },
   { src: shlyapnayaVecherinka3, alt: 'Шляпная вечеринка 3' },
   { src: shlyapnayaVecherinka4, alt: 'Шляпная вечеринка 4' },
   { src: shlyapnayaVecherinka5, alt: 'Шляпная вечеринка 5' },
-  { src: chasPamyatiNaKruzhkeBiblionik, alt: 'Час памяти на кружке «Библионик»' },
-  { src: bibliopiknik1Maya, alt: 'Библиопикник 1 мая' },
-  { src: bibliochuchelo, alt: 'Библиочучело для Библионочи' },
-  { src: detsadovtsyVMaskah, alt: 'Детсадовцы в масках на кружке «Библионик»' },
-  { src: vystavkaTeatrIBiblioteka, alt: 'Выставка «Театр и библиотека»' },
-  { src: viktorinaNaDomuDlyaDevochkiSOV, alt: 'Викторина на дому для девочки с ограниченными возможностями' },
-  { src: chasZozhVperedPoDorogeZdoroviya, alt: 'Час ЗОЖ вперёд по дороге здоровья' },
-  { src: semejnyjKlub29Marta, alt: 'Семейный клуб 29 марта' },
-  { src: semejnyjKlub29Marta2, alt: 'Семейный клуб 29 марта 2' }
+  { src: bibliosumerki, alt: 'Библиосумерки' },
+  { src: bibliosumerki2, alt: 'Библиосумерки 2' },
+  { src: bibliosumerki3, alt: 'Библиосумерки 3' },
+  { src: detiNaViktorine, alt: 'Дети на викторине' }
 ]
 const photos2018 = [
   { src: biblionik, alt: 'Библионик' },
