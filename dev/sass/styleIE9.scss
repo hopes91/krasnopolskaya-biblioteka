@@ -654,12 +654,6 @@ body {
           }
         }
       }
-      .price-list {
-        @include respond-to(tiny-screens) {
-          @include indentations(1em auto, 1em 0);
-          overflow-x: scroll;
-        }
-      }
       // site's map
       .sites-map {
         text-align: left;
