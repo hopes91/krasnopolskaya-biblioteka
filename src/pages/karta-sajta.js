@@ -22,8 +22,7 @@ const linksSectionThree = [
 ]
 const linksSectionFour = [
   { to: '/poleznye-ssylki', page: 'poleznye-ssylki', title: 'Полезные ссылки' },
-  { to: '/bezopasnost-v-internete', page: 'bezopasnost-v-internete', title: 'Безопасность в Интернете' },
-  { to: '/prejskurant-na-platnye-uslugi', page: 'prejskurant-na-platnye-uslugi', title: 'Прейскурант цен на платные услуги' }
+  { to: '/bezopasnost-v-internete', page: 'bezopasnost-v-internete', title: 'Безопасность в Интернете' }
 ]
 
 const SiteMapPage = () => (
