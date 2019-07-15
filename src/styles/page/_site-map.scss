@@ -11,12 +11,19 @@
       margin-bottom: 1.5em;
     }
 
-    p {
+    .page_site-map__section-title {
       margin: 0.5em 0;
     }
 
-    ul {
+    .page_site-map__section-list {
       @include indentations(0, 0 2em);
+      @include respond-to('max-width: 640px') {
+        padding: 0 1em;
+      }
+
+      .page_site-map__section-list-item {
+        line-height: 1.3;
+      }
     }
   }
 }

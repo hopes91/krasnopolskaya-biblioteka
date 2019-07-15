@@ -32,67 +32,67 @@ const SiteMapPage = () => (
       <DecorMain />
       <h2 className='page__title'>Карта сайта</h2>
       <section className='page_site-map__section'>
-        <p>Главная</p>
-        <ul>
-          <Link to='/' key='index'>
+        <p className='page_site-map__section-title'>Главная</p>
+        <nav className='page_site-map__section-list'>
+          <Link to='/' key='index' className='page_site-map__section-list-item'>
             Новости
           </Link>
-        </ul>
+        </nav>
       </section>
 
 
       <section className='page_site-map__section'>
-        <p>О библиотеке</p>
-        <ul>
+        <p className='page_site-map__section-title'>О библиотеке</p>
+        <nav className='page_site-map__section-list'>
           {linksSectionTwo.map(link => {
             const { to, page, title } = link
 
             return (
-              <Link to={to} key={page}>
+              <Link to={to} key={page} className='page_site-map__section-list-item'>
                 {title}
               </Link>
             )
           })}
-        </ul>
+        </nav>
       </section>
 
       <section className='page_site-map__section'>
-        <p>Новости и события</p>
-        <ul>
+        <p className='page_site-map__section-title'>Новости и события</p>
+        <nav className='page_site-map__section-list'>
           {linksSectionThree.map(link => {
             const { to, page, title } = link
 
             return (
-              <Link to={to} key={page}>
+              <Link to={to} key={page} className='page_site-map__section-list-item'>
                 {title}
               </Link>
             )
           })}
-        </ul>
+        </nav>
       </section>
 
       <section className='page_site-map__section'>
-        <p>Услуги</p>
-        <ul>
+        <p className='page_site-map__section-title'>Услуги</p>
+        <nav className='page_site-map__section-list'>
           {linksSectionFour.map(link => {
             const { to, page, title } = link
 
             return (
-              <Link to={to} key={page}>
+              <Link to={to} key={page} className='page_site-map__section-list-item'>
                 {title}
               </Link>
             )
           })}
-        </ul>
+        </nav>
       </section>
 
       <section className='page_site-map__section'>
-        <p>Карта сайта</p>
-        <ul>
-          <Link to='/karta-sajta' key='karta-sajta'>
+        <p className='page_site-map__section-title'>Карта сайта</p>
+        <nav className='page_site-map__section-list'>
+          <Link to='/karta-sajta' key='karta-sajta' className='page_site-map__section-list-item'>
             Карта сайта
           </Link>
-        </ul>
+        </nav>
       </section>
     </div>
   </Layout>
