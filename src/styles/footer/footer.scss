@@ -30,11 +30,6 @@
     @include respond-to('max-width: 800px') {
       padding: 0.3em 0;
     }
-
-    a {
-      width: auto;
-      text-decoration: none;
-    }
   }
 
   .footer__address {

@@ -7,7 +7,7 @@ import { linksSectionTwo, linksSectionThree, linksSectionFour } from '../lists/m
 
 const toggleDropdownSectionTabIndex = () => {
   const burger = document.querySelector('.dropdown__burger')
-  const dropdownSections = document.querySelectorAll('.dropdown__section')
+  const dropdownSections = document.querySelectorAll('.dropdown__menu-section')
 
   if (window.innerWidth > 800) {
     burger.setAttribute('tabIndex', '-1')
@@ -27,7 +27,7 @@ const toggleDropdownSectionTabIndex = () => {
 }
 
 const toggleDropdownLinksTabIndex = (isOpen) => {
-  const dropdownLinks = document.querySelectorAll('.dropdown__section-links a')
+  const dropdownLinks = document.querySelectorAll('.dropdown__menu-section-links a')
 
   isOpen ?
     dropdownLinks.forEach(link => link.setAttribute('tabIndex', '0')) :
@@ -70,11 +70,11 @@ const findLinksElement = (event) => {
   const target = event.target
   let dropdownLinks
 
-  if (target.className === 'dropdown__section') {
+  if (target.className === 'dropdown__menu-section') {
     dropdownLinks = target.children[1]
-  } else if (target.className === 'dropdown__section-title') {
+  } else if (target.className === 'dropdown__menu-section-title') {
     dropdownLinks = target.nextElementSibling
-  } else if (target.parentNode.className === 'dropdown__section-title') {
+  } else if (target.parentNode.className === 'dropdown__menu-section-title') {
     dropdownLinks = target.parentNode.nextElementSibling
   }
 
@@ -112,17 +112,17 @@ const Dropdown = () => {
       </div>
 
       <div className='dropdown__menu closed'>
-        <div className='dropdown__section'>
-          <Link to='/' key='index' tabIndex='-1' className='dropdown__section-title'>
+        <div className='dropdown__menu-section'>
+          <Link to='/' key='index' tabIndex='-1' className='dropdown__menu-section-title'>
             Главная
           </Link>
         </div>
 
-        <div tabIndex='-1' className='dropdown__section'
+        <div tabIndex='-1' className='dropdown__menu-section'
              onKeyPress={findLinksElement} onClick={findLinksElement}
         >
-          <p className='dropdown__section-title'>О библиотеке <span>&#9662;</span></p>
-          <nav className='dropdown__section-links closed'>
+          <p className='dropdown__menu-section-title'>О библиотеке <span>&#9662;</span></p>
+          <nav className='dropdown__menu-section-links closed'>
             {linksSectionTwo.map(link => {
               const { to, page, title } = link
 
@@ -135,11 +135,11 @@ const Dropdown = () => {
           </nav>
         </div>
 
-        <div tabIndex='-1' className='dropdown__section'
+        <div tabIndex='-1' className='dropdown__menu-section'
              onKeyPress={findLinksElement} onClick={findLinksElement}
         >
-          <p className='dropdown__section-title'>Новости и события <span>&#9662;</span></p>
-          <nav className='dropdown__section-links closed'>
+          <p className='dropdown__menu-section-title'>Новости и события <span>&#9662;</span></p>
+          <nav className='dropdown__menu-section-links closed'>
             {linksSectionThree.map(link => {
               const { to, page, title } = link
 
@@ -152,11 +152,11 @@ const Dropdown = () => {
           </nav>
         </div>
 
-        <div tabIndex='-1' className='dropdown__section'
+        <div tabIndex='-1' className='dropdown__menu-section'
              onKeyPress={findLinksElement} onClick={findLinksElement}
         >
-          <p className='dropdown__section-title'>Услуги <span>&#9662;</span></p>
-          <nav className='dropdown__section-links closed'>
+          <p className='dropdown__menu-section-title'>Услуги <span>&#9662;</span></p>
+          <nav className='dropdown__menu-section-links closed'>
             {linksSectionFour.map(link => {
               const { to, page, title } = link
 
@@ -169,8 +169,8 @@ const Dropdown = () => {
           </nav>
         </div>
 
-        <div className='dropdown__section'>
-          <Link to='/karta-sajta' key='karta-sajta' tabIndex='-1' className='dropdown__section-title'>
+        <div className='dropdown__menu-section'>
+          <Link to='/karta-sajta' key='karta-sajta' tabIndex='-1' className='dropdown__menu-section-title'>
             Карта сайта
           </Link>
         </div>

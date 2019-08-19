@@ -65,12 +65,12 @@
 		position: absolute;
 		z-index: 5;
 
-    .dropdown__section {
+    .dropdown__menu-section {
       @include dimensions(100%, auto);
       @include indentations(0, 0);
       background-color: oldlace;
 
-      .dropdown__section-title {
+      .dropdown__menu-section-title {
         @include dimensions(100%, auto);
         @include indentations(0, 1em);
         box-sizing: border-box;
@@ -87,7 +87,7 @@
         }
       }
 
-      .dropdown__section-links {
+      .dropdown__menu-section-links {
         @include indentations(0, 0);
         background-color: #fcf8ef;
         border: $simple-border;

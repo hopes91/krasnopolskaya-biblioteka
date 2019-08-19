@@ -33,12 +33,12 @@
       float: right;
     }
 
-    .decor_top__dayOfTheWeek {
+    .decor_top__date-dayOfTheWeek {
       width: 70%;
       display: inline-block;
     }
 
-    .decor_top__day {
+    .decor_top__date-day {
       padding: 0.17em 0.1em 0 0;
       font: {
         size: 2em;
@@ -47,7 +47,7 @@
       float: left;
     }
 
-    .decor_top__month {
+    .decor_top__date-month {
       padding: 0 0.2em 0 0.1em;
     }
   }

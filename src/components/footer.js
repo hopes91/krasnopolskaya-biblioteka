@@ -3,12 +3,13 @@ import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
 import '../styles/footer/footer.scss'
+import '../styles/header/title.scss'
 
 const Footer = ({ siteTitle }) => (
   <footer className='footer'>
     <p className='footer__copyright'>
-      <Link to='/'>
-        &copy; {siteTitle},&nbsp;
+      <Link to='/' className='title'>
+        &copy;&nbsp;{siteTitle},&nbsp;
       </Link>
       2018-<span>{new Date().getFullYear()}</span>
     </p>
