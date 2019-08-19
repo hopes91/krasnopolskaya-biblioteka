@@ -9,18 +9,14 @@ class Dropdown extends Component {
   constructor(props) {
     super(props)
 
-    this.toggleDropdownSectionTabIndex = this.toggleDropdownSectionTabIndex.bind(this)
-    this.toggleDropdownLinksTabIndex = this.toggleDropdownLinksTabIndex.bind(this)
     this.toggleBurgerOnKeyPress = this.toggleBurgerOnKeyPress.bind(this)
     this.toggleBurger = this.toggleBurger.bind(this)
-    this.toggleDropdown = this.toggleDropdown.bind(this)
     this.findLinksElement = this.findLinksElement.bind(this)
-    this.toggleDropdownLinks = this.toggleDropdownLinks.bind(this)
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.toggleDropdownSectionTabIndex)
     this.toggleDropdownSectionTabIndex()
+    window.addEventListener('resize', this.toggleDropdownSectionTabIndex)
   }
 
   toggleDropdownSectionTabIndex() {
@@ -30,42 +26,35 @@ class Dropdown extends Component {
     if (window.innerWidth > 800) {
     	burger.setAttribute('tabIndex', '-1')
       dropdownSections.forEach(section => {
-        if (section.hasAttribute('tabIndex')) {
-          section.setAttribute('tabIndex', '-1')
-        } else {
+        section.hasAttribute('tabIndex') ?
+          section.setAttribute('tabIndex', '-1') :
           section.children[0].setAttribute('tabIndex', '-1')
-        }
-      })
-    } else if (window.innerWidth <= 800) {
-    	burger.setAttribute('tabIndex', '1')
-      dropdownSections.forEach(section => {
-        if (section.hasAttribute('tabIndex')) {
-          section.setAttribute('tabIndex', '0')
-        } else {
-          section.children[0].setAttribute('tabIndex', '0')
-        }
       })
     }
+
+  	burger.setAttribute('tabIndex', '1')
+    dropdownSections.forEach(section => {
+      section.hasAttribute('tabIndex') ?
+        section.setAttribute('tabIndex', '0') :
+        section.children[0].setAttribute('tabIndex', '0')
+    })
   }
 
   toggleDropdownLinksTabIndex(isOpen) {
     const dropdownLinks = document.querySelectorAll('.dropdown__section-links a')
 
-    if (isOpen) {
-      dropdownLinks.forEach(link => link.setAttribute('tabIndex', '0'))
-    } else {
+    isOpen ?
+      dropdownLinks.forEach(link => link.setAttribute('tabIndex', '0')) :
       dropdownLinks.forEach(link => link.setAttribute('tabIndex', '-1'))
-    }
   }
 
   toggleBurgerOnKeyPress(event) {
-  	if (event.key !== 'Enter') return;
-
-    this.toggleBurger(event)
+  	event.key === 'Enter' &&
+      this.toggleBurger(event)
   }
 
   toggleBurger(event) {
-  	let parent = event.target.parentNode
+  	const parent = event.target.parentNode
 
   	if (event.target.className === 'dropdown__burger' || parent.className === 'dropdown__burger') {
   		const burgerSpans = document.querySelectorAll('.dropdown__burger span')
@@ -92,7 +81,7 @@ class Dropdown extends Component {
   }
 
   findLinksElement(event) {
-    let target = event.target
+    const target = event.target
     let dropdownLinks
 
     if (target.className === 'dropdown__section') {
@@ -107,6 +96,8 @@ class Dropdown extends Component {
   }
 
   toggleDropdownLinks(dropdownLinks) {
+    if (!dropdownLinks) return;
+
     if (dropdownLinks.className.match('closed')) {
       dropdownLinks.classList.remove('closed')
       dropdownLinks.classList.add('opened')
