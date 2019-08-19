@@ -23,7 +23,11 @@ const usefulLinks = [
   { href: 'http://childlib.kmtn.ru/index.htm', title: 'Костромская областная детская библиотека имени Аркадия Гайдара' },
   { href: 'http://www.pushkin-vyatka.ru/', title: 'Центральная городская библиотека имени А. С. Пушкина' },
   { href: 'http://urzhumlib.ru/news/?lib=ucb', title: 'Уржумская центральная библиотека' },
-  { href: 'http://www.nolinsklib.ru/centralnaya_rajonnaya_biblioteka/', title: 'Нолинская Централизованная Библиотечная Система' }
+  { href: 'http://www.nolinsklib.ru/centralnaya_rajonnaya_biblioteka/', title: 'Нолинская Централизованная Библиотечная Система' },
+  { href: 'http://pravo.gov.ru/', title: 'Официальный интернет-портал правовой информации' },
+  { href: 'https://www.gosuslugi.ru/', title: 'Портал государственных услуг Российской Федерации' },
+  { href: 'http://histrf.ru/', title: 'История.РФ — информационный исторический ресурс' },
+  { href: 'https://rvio.histrf.ru/activities/pamyatnyye_daty/item-1141', title: 'Календарь памятных дат России' }
 ]
 
 const UsefulLinksPage = () => (
