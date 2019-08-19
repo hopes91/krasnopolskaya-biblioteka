@@ -9,58 +9,49 @@ class Navbar extends Component {
   constructor(props) {
     super(props)
 
-    this.toggleNavbarTabIndex = this.toggleNavbarTabIndex.bind(this)
-    this.toggleNavbarLinksTabIndex = this.toggleNavbarLinksTabIndex.bind(this)
     this.toggleNavbarLinksOnKeyPress = this.toggleNavbarLinksOnKeyPress.bind(this)
     this.showNavbarLinks = this.showNavbarLinks.bind(this)
     this.hideNavbarLinks = this.hideNavbarLinks.bind(this)
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.toggleNavbarTabIndex)
     this.toggleNavbarTabIndex()
+    window.addEventListener('resize', this.toggleNavbarTabIndex)
   }
 
   toggleNavbarTabIndex() {
     const navbarSections = document.querySelectorAll('.navbar__section')
 
-    if (window.innerWidth > 800) {
+    if (window.innerWidth <= 800) {
       navbarSections.forEach(section => {
-        if (section.hasAttribute('tabindex')) {
-          section.setAttribute('tabindex', '0')
-        } else {
-          section.children[0].setAttribute('tabindex', '0')
-        }
-      })
-    } else if (window.innerWidth <= 800) {
-      navbarSections.forEach(section => {
-        if (section.hasAttribute('tabindex')) {
-          section.setAttribute('tabindex', '-1')
-        } else {
+        section.hasAttribute('tabindex') ?
+          section.setAttribute('tabindex', '-1') :
           section.children[0].setAttribute('tabindex', '-1')
-        }
       })
     }
+
+    navbarSections.forEach(section => {
+      section.hasAttribute('tabindex') ?
+        section.setAttribute('tabindex', '0') :
+        section.children[0].setAttribute('tabindex', '0')
+    })
   }
 
   toggleNavbarLinksTabIndex(isOpen) {
     const navbarLinks = document.querySelectorAll('.navbar__section-links a')
 
-    if (isOpen) {
-      navbarLinks.forEach(link => link.setAttribute('tabIndex', '0'))
-    } else {
+    isOpen ?
+      navbarLinks.forEach(link => link.setAttribute('tabIndex', '0')) :
       navbarLinks.forEach(link => link.setAttribute('tabIndex', '-1'))
-    }
   }
 
   toggleNavbarLinksOnKeyPress(event) {
-    if (event.key !== 'Enter') return;
-
-    this.showNavbarLinks(event)
+    event.key === 'Enter' &&
+      this.showNavbarLinks(event)
   }
 
   showNavbarLinks(event) {
-    let target = event.target
+    const target = event.target
     let navbarLinks
 
     if (target.className === 'navbar__section') {
@@ -69,16 +60,17 @@ class Navbar extends Component {
       navbarLinks = target.nextElementSibling
     }
 
-    if (navbarLinks.className.match('closed')) {
+    if (navbarLinks && navbarLinks.className.match('closed')) {
       navbarLinks.classList.remove('closed')
       navbarLinks.classList.add('opened')
+
       this.toggleNavbarLinksTabIndex(true)
     }
   }
 
   hideNavbarLinks(event) {
-    let target = event.target
-    let parent = target.parentNode
+    const target = event.target
+    const parent = target.parentNode
     let navbarLinks
 
     if (target.className === 'navbar__section-title') {
@@ -89,9 +81,10 @@ class Navbar extends Component {
       navbarLinks = parent
     }
 
-    if (navbarLinks.className.match('opened')) {
+    if (navbarLinks && navbarLinks.className.match('opened')) {
       navbarLinks.classList.remove('opened')
       navbarLinks.classList.add('closed')
+
       this.toggleNavbarLinksTabIndex(false)
     }
   }
