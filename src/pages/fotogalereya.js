@@ -81,7 +81,7 @@ const photos2018 = [
   { src: novogodnijVecherNaSemejnomKlube3, alt: 'Новогодний вечер на семейном клубе 3' }
 ]
 
-let allPhotos = photos2019.concat(photos2018)
+const allPhotos = photos2019.concat(photos2018)
 let mainSlide = null
 let start = null
 
