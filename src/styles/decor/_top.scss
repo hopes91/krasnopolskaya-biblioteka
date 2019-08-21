@@ -23,7 +23,7 @@
   }
 
   .decor_top__date {
-    @include dimensions(100%, auto);
+    @include dimensions(100%, 3em);
     @include indentations(0 auto, 0);
     font-size: 1.2em;
     @include respond-to('max-width: 800px') {
@@ -36,6 +36,7 @@
     .decor_top__date-dayOfTheWeek {
       width: 65%;
       display: inline-block;
+      padding-left: 0.08em;
     }
 
     .decor_top__date-day {
@@ -45,10 +46,12 @@
         weight: bold;
       }
       float: left;
+      position: relative;
     }
 
     .decor_top__date-month {
       padding: 0 0.2em 0 0.1em;
+      display: inline-block;
     }
   }
 
