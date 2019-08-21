@@ -12,43 +12,36 @@ class ArrowUp extends Component {
   scrollToTop(event) {
     event.preventDefault()
 
-    let speed = 0.5
-    let offsetY = window.pageYOffset
+    const speed = 0.5
+    const offsetY = window.pageYOffset
     let hash = null
+    let start = null
 
-    if (event.target.className.match('arrow-up')) {
-      hash = event.target.href.replace(/[^#]*(.*)/, '$1')
-    } else {
+    event.target.className.match('arrow-up') ?
+      hash = event.target.href.replace(/[^#]*(.*)/, '$1') :
       hash = document.querySelector('.main__arrow-up').href.replace(/[^#]*(.*)/, '$1')
-    }
 
-    let indent = document.querySelector(hash).getBoundingClientRect().top
+    const topIndent = document.querySelector(hash).getBoundingClientRect().top
 
     requestAnimationFrame(step)
-
-    let start = null
 
     function step(time) {
       if (start === null) {
         start = time
       }
 
-      let progress = time - start
+      const progress = time - start
       let scroll = null
 
-      if (indent < 0) {
-        scroll = Math.max(offsetY - progress/speed, offsetY + indent)
-      } else {
-        scroll = Math.min(offsetY + progress/speed, offsetY + indent)
-      }
+      topIndent < 0 ?
+        scroll = Math.max(offsetY - progress/speed, offsetY + topIndent) :
+        scroll = Math.min(offsetY + progress/speed, offsetY + topIndent)
 
       window.scrollTo(0, scroll)
 
-      if (scroll !== offsetY + indent) {
-        requestAnimationFrame(step)
-      } else {
+      scroll !== offsetY + topIndent ?
+        requestAnimationFrame(step) :
         window.location.hash = hash
-      }
     }
   }
 
