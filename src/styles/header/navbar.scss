@@ -4,9 +4,7 @@
 .navbar {
   @include dimensions(100%, 3.3em);
   @include indentations(0 auto, 0);
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: center;
+  display: block;
   text-align: center;
   background: linear-gradient(to right, peachpuff, burlywood);
   position: relative;
@@ -18,12 +16,16 @@
   .navbar__section {
     @include dimensions(15em, auto);
     @include indentations(0, 0);
+    display: inline-block;
     vertical-align: top;
     @include respond-to('max-width: 1220px') {
-      width: 18.8%;
+      width: 18.5%;
       &:nth-child(3) {
-        width: 25%;
+        width: 24%;
       }
+    }
+    @include respond-to('max-width: 1024px') {
+      width: 18.3%;
     }
 
     .navbar__section-title {

@@ -128,4 +128,12 @@
     @include dimensions(100%, auto);
     @include indentations(0.8em 0, 0);
   }
+
+  .page_about_schedule__day {
+    font-weight: bold;
+  }
+
+  .page_about_schedule__time {
+    margin-bottom: 1.5em;
+  }
 }
