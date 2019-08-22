@@ -4,7 +4,7 @@ import { Link } from 'gatsby'
 
 import ContainerDropdown from './containerDropdown'
 import ContainerDecorTop from './containerDecorTop'
-import Navbar from './navbar'
+import ContainerNavbar from './containerNavbar'
 
 import '../styles/header/header.scss'
 import '../styles/header/title.scss'
@@ -16,7 +16,7 @@ const Header = ({ siteTitle }) => (
       <h1>{siteTitle}</h1>
     </Link>
     <ContainerDecorTop />
-    <Navbar />
+    <ContainerNavbar />
   </header>
 )
 
