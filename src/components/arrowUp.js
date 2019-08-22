@@ -1,59 +1,49 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import '../styles/main/__arrow-up.scss'
 
-class ArrowUp extends Component {
-  constructor(props) {
-    super(props)
+function scrollToTop(event) {
+  event.preventDefault()
 
-    this.scrollToTop = this.scrollToTop.bind(this)
-  }
+  const speed = 0.3
+  const offsetY = window.pageYOffset
+  let hash = null
+  let start = null
 
-  scrollToTop(event) {
-    event.preventDefault()
+  event.target.className.match('arrow-up') ?
+    hash = event.target.href.replace(/[^#]*(.*)/, '$1') :
+    hash = document.querySelector('.main__arrow-up').href.replace(/[^#]*(.*)/, '$1')
 
-    const speed = 0.5
-    const offsetY = window.pageYOffset
-    let hash = null
-    let start = null
+  const topIndent = document.querySelector(hash).getBoundingClientRect().top
 
-    event.target.className.match('arrow-up') ?
-      hash = event.target.href.replace(/[^#]*(.*)/, '$1') :
-      hash = document.querySelector('.main__arrow-up').href.replace(/[^#]*(.*)/, '$1')
+  requestAnimationFrame(step)
 
-    const topIndent = document.querySelector(hash).getBoundingClientRect().top
-
-    requestAnimationFrame(step)
-
-    function step(time) {
-      if (start === null) {
-        start = time
-      }
-
-      const progress = time - start
-      let scroll = null
-
-      topIndent < 0 ?
-        scroll = Math.max(offsetY - progress/speed, offsetY + topIndent) :
-        scroll = Math.min(offsetY + progress/speed, offsetY + topIndent)
-
-      window.scrollTo(0, scroll)
-
-      scroll !== offsetY + topIndent ?
-        requestAnimationFrame(step) :
-        window.location.hash = hash
+  function step(time) {
+    if (start === null) {
+      start = time
     }
-  }
 
-  render() {
-    return (
-      <a href='#top' className='main__arrow-up'
-         onClick={this.scrollToTop}
-      >
-        <span>&uarr;</span> Наверх
-      </a>
-    )
+    const progress = time - start
+    let scroll = null
+
+    topIndent < 0 ?
+      scroll = Math.max(offsetY - progress/speed, offsetY + topIndent) :
+      scroll = Math.min(offsetY + progress/speed, offsetY + topIndent)
+
+    window.scrollTo(0, scroll)
+
+    scroll !== offsetY + topIndent ?
+      requestAnimationFrame(step) :
+      window.location.hash = hash
   }
 }
+
+const ArrowUp = () => (
+  <a href='#top' className='main__arrow-up'
+     onClick={scrollToTop}
+  >
+    <span>&uarr;</span> Наверх
+  </a>
+)
 
 export default ArrowUp
