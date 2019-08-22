@@ -1,50 +1,19 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 import '../styles/decor/_top.scss'
 
-const DecorTop = () => {
-  const [ dayOfTheWeek, getDayOfTheWeek ] = useState('')
-  const [ day, getDay ] = useState('')
-  const [ month, getMonth ] = useState('')
-  const [ year, getYear ] = useState('')
-
-  useEffect(() => {
-    const today = new Date()
-    const dayOfTheWeekNum = today.getDay()
-    const monthNum = today.getMonth()
-
-    const daysOfTheWeek = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота']
-
-    daysOfTheWeek.forEach((day, ind) => {
-      ind === dayOfTheWeekNum &&
-        getDayOfTheWeek(day)
-    })
-
-    getDay(today.getDate())
-
-    const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
-
-    months.forEach((month, ind) => {
-      ind === monthNum &&
-        getMonth(month)
-    })
-
-    getYear(today.getFullYear())
-  })
-
-  return (
-    <div className='decor_top'>
-      <p className='decor_top__date'>
-        <span className='decor_top__date-dayOfTheWeek'>{dayOfTheWeek}</span>
-        <span className='decor_top__date-day'>{day}</span>
-        <span className='decor_top__date-month'>{month}</span>
-        <span className='decor_top__date-year'>{year}</span>
-      </p>
-      {/* <a href='' className='decor_top__pic'>
-        <img src='' alt='' />
-      </a> */}
-    </div>
-    )
-}
+const DecorTop = ({ dayOfTheWeek, day, month, year }) => (
+  <div className='decor_top'>
+    <p className='decor_top__date'>
+      <span className='decor_top__date-dayOfTheWeek'>{dayOfTheWeek}</span>
+      <span className='decor_top__date-day'>{day}</span>
+      <span className='decor_top__date-month'>{month}</span>
+      <span className='decor_top__date-year'>{year}</span>
+    </p>
+    {/* <a href='' className='decor_top__pic'>
+      <img src='' alt='' />
+    </a> */}
+  </div>
+)
 
 export default DecorTop
