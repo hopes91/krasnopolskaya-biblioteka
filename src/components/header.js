@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
 
-import Dropdown from './dropdown'
+import ContainerDropdown from './containerDropdown'
 import DecorTop from './decorTop'
 import Navbar from './navbar'
 
@@ -11,7 +11,7 @@ import '../styles/header/title.scss'
 
 const Header = ({ siteTitle }) => (
   <header className='header'>
-    <Dropdown />
+    <ContainerDropdown />
     <Link to='/' className='title'>
       <h1>{siteTitle}</h1>
     </Link>
