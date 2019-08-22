@@ -91,10 +91,8 @@ class PhotogalleryPage extends Component {
 
     this.showFirstSlideOnKeyDown = this.showFirstSlideOnKeyDown.bind(this)
     this.showFirstSlide = this.showFirstSlide.bind(this)
-    this.showSlides = this.showSlides.bind(this)
     this.handleArrowsOnKeyDown = this.handleArrowsOnKeyDown.bind(this)
     this.handleArrows = this.handleArrows.bind(this)
-    this.currentSlide = this.currentSlide.bind(this)
     this.hideSliderOnKeyDown = this.hideSliderOnKeyDown.bind(this)
     this.hideSlider = this.hideSlider.bind(this)
   }
@@ -105,9 +103,8 @@ class PhotogalleryPage extends Component {
   }
 
   showFirstSlideOnKeyDown(event) {
-  	if (event.key === 'Enter') {
+  	event.key === 'Enter' &&
       this.showFirstSlide(event)
-    }
   }
 
   showFirstSlide(event) {
@@ -116,12 +113,12 @@ class PhotogalleryPage extends Component {
 
     if (back.className.match('opened')) return;
 
-    this.manageDots()
+    this.createDots()
 
     back.classList.remove('closed')
     back.classList.add('opened')
 
-    let clickedAlt = event.target.getAttribute('alt')
+    const clickedAlt = event.target.getAttribute('alt')
     let altToCompare = null
 
     slides.forEach((slide, index) => {
@@ -199,7 +196,7 @@ class PhotogalleryPage extends Component {
     }
   }
 
-  manageDots() {
+  createDots() {
     const dots = document.querySelector('.page_about_photogallery-back__dots')
 
     dots.innerHTML = ''
@@ -212,9 +209,8 @@ class PhotogalleryPage extends Component {
   }
 
   hideSliderOnKeyDown(event) {
-  	if (event.key === 'Escape') {
+  	event.key === 'Escape' &&
       this.hideSlider()
-    }
   }
 
   hideSlider() {
