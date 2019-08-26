@@ -21,7 +21,7 @@ const Layout = ({ children }) => {
         {children}
         <ArrowUp />
       </main>
-      <div className='container__empty'></div> {/* для IE */}
+      <div className='empty-div'></div> {/* для IE */}
       <StackOfBooks />
       <Footer siteTitle={title} />
     </div>
