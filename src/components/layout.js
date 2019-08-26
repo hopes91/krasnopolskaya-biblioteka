@@ -4,7 +4,7 @@ import useSiteMetadata from '../hooks/useSiteMetadata'
 
 import Header from './header'
 // import DecorCenter from './decorCenter'
-import ArrowUp from './arrowUp'
+import ContainerArrowUp from './containerArrowUp'
 import StackOfBooks from './stackOfBooks'
 import Footer from './footer'
 
@@ -19,7 +19,7 @@ const Layout = ({ children }) => {
       {/* <DecorCenter /> */}
       <main className='main'>
         {children}
-        <ArrowUp />
+        <ContainerArrowUp />
       </main>
       <div className='empty-div'></div> {/* для IE */}
       <StackOfBooks />
