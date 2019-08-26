@@ -1,7 +1,7 @@
 @import '../helpers/variables';
 @import '../helpers/mixins';
 
-.stack-of-books {
+.decor_stack-of-books {
   @include dimensions(15%, auto);
   position: absolute;
   bottom: 7em;
