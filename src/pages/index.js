@@ -12,7 +12,7 @@ import news08072019 from '../images/news/08072019.jpg'
 import news07062019 from '../images/news/07062019.jpg'
 import news05062019 from '../images/news/05062019.jpg'
 import news03062019 from '../images/news/03062019.jpg'
-import shlyapnayaVecherinka from '../images/photogallery/shlyapnaya-vecherinka.jpg'
+import shlyapnayaVecherinka from '../images/photogallery/2019/shlyapnaya-vecherinka.jpg'
 import news20052019 from '../images/news/20052019.jpg'
 import news24032019 from '../images/news/24032019-2.jpg'
 
