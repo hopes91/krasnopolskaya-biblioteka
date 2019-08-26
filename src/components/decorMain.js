@@ -1,7 +1,5 @@
 import React from 'react'
-
 import '../styles/decor/_main.scss'
-
 import corner1 from '../images/decor/corner-1.jpg'
 import corner2 from '../images/decor/corner-2.jpg'
 import corner3 from '../images/decor/corner-3.jpg'

@@ -1,11 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-
 import ContainerDropdown from './containerDropdown'
 import ContainerDecorTop from './containerDecorTop'
 import ContainerNavbar from './containerNavbar'
-
 import '../styles/header/header.scss'
 import '../styles/header/title.scss'
 

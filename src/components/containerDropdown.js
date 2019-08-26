@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react'
-
 import Dropdown from './dropdown'
 
 const toggleSectionTabIndex = () => {

@@ -1,14 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import DecorMain from '../components/decorMain'
-
+import { linksSectionTwo, linksSectionThree, linksSectionFour } from '../lists/menu'
 import '../styles/page/page.scss'
 import '../styles/page/_site-map.scss'
-
-import { linksSectionTwo, linksSectionThree, linksSectionFour } from '../lists/menu'
 
 const SiteMapPage = () => (
   <Layout>

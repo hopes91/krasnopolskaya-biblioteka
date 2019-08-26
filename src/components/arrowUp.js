@@ -1,5 +1,4 @@
 import React from 'react'
-
 import '../styles/main/__arrow-up.scss'
 
 const ArrowUp = ({ scrollToTop }) => (

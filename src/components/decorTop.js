@@ -1,5 +1,4 @@
 import React from 'react'
-
 import '../styles/decor/_top.scss'
 
 const DecorTop = ({ dayOfTheWeek, day, month, year }) => (

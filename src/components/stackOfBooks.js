@@ -1,8 +1,6 @@
 import React from 'react'
-
-import '../styles/decor/_stack-of-books.scss'
-
 import stackOfBooks from '../images/decor/stack-of-books-graphic-illustration.png'
+import '../styles/decor/_stack-of-books.scss'
 
 const StackOfBooks = () => (
   <div className='decor_stack-of-books'>

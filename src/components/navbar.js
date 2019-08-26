@@ -1,9 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
-import '../styles/header/navbar.scss'
-
 import { linksSectionTwo, linksSectionThree, linksSectionFour } from '../lists/menu'
+import '../styles/header/navbar.scss'
 
 const Navbar = ({ toggleLinksOnKeyPress, showLinks, hideLinks }) => (
   <div className='navbar'>

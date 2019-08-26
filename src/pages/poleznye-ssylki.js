@@ -1,13 +1,10 @@
 import React from 'react'
-
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import DecorMain from '../components/decorMain'
-
+import { usefulLinks } from '../lists/usefulLinks'
 import '../styles/page/page.scss'
 import '../styles/page/_services.scss'
-
-import { usefulLinks } from '../lists/usefulLinks'
 
 const UsefulLinksPage = () => (
   <Layout>

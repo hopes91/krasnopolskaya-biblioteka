@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
-// import Img from 'gatsby-image'
-
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import DecorMain from '../components/decorMain'
-
 import '../styles/page/page.scss'
 import '../styles/page/_news.scss'
 
@@ -50,10 +47,6 @@ class IndexPage extends Component {
         <div className='page page_news'>
           <DecorMain />
           <h2 className='page__title'>Новости</h2>
-          {/* <Img
-            fluid={data.file.childImageSharp.fluid}
-            alt='test'
-          /> */}
           <section className='page_news__section'>
             <h6 className='page_news__section-title'>понедельник, 8 июля 2019 год</h6>
             <img src={news08072019} alt='Благодарность Самосудовой Вере Алексеевне по подаренные библиотеке журналы' className='page__image' />

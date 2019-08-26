@@ -1,13 +1,10 @@
 import React from 'react'
-
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import DecorMain from '../components/decorMain'
-
+import { otVsejDushiEvents } from '../lists/otVsejDushiEvents'
 import '../styles/page/page.scss'
 import '../styles/page/_events.scss'
-
-import { otVsejDushiEvents } from '../lists/otVsejDushiEvents'
 
 const PosterOtVsejDushiPage = () => (
   <Layout>

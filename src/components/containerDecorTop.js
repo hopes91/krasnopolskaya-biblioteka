@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-
 import DecorTop from './decorTop'
 
 const ContainerDecorTop = () => {

@@ -1,5 +1,4 @@
 import React from 'react'
-
 import '../styles/decor/_center.scss'
 
 const DecorCenter = () => (

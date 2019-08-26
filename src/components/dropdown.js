@@ -1,9 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
-
-import '../styles/header/dropdown.scss'
-
 import { linksSectionTwo, linksSectionThree, linksSectionFour } from '../lists/menu'
+import '../styles/header/dropdown.scss'
 
 const Dropdown = ({ toggleBurgerOnKeyPress, toggleBurger, findLinksElement }) => (
   <div className='dropdown'>
