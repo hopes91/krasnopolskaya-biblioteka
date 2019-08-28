@@ -1,7 +1,7 @@
 import React from 'react'
 import DecorMain from '../components/decorMain'
 import PhotogalleryByYear from './photogalleryByYear'
-import Slider from './photogalleryBack'
+import Slider from './slider'
 import '../styles/page/page.scss'
 import '../styles/page/_about.scss'
 
