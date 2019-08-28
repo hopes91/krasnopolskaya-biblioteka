@@ -1,10 +1,7 @@
 import React, { Component } from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import DecorMain from '../components/decorMain'
-import '../styles/page/page.scss'
-import '../styles/page/_about.scss'
-
+import Photogallery from '../components/photogallery'
 import detiNaViktorine from '../images/photogallery/2019/deti-na-viktorine.jpg'
 import bibliosumerki from '../images/photogallery/2019/bibliosumerki.jpg'
 import bibliosumerki2 from '../images/photogallery/2019/bibliosumerki-2.jpg'
@@ -58,8 +55,9 @@ const photos2019 = [
   { src: bibliosumerki, alt: 'Библиосумерки' },
   { src: bibliosumerki2, alt: 'Библиосумерки 2' },
   { src: bibliosumerki3, alt: 'Библиосумерки 3' },
-  { src: detiNaViktorine, alt: 'Дети на викторине' }
+  { src: detiNaViktorine, alt: 'Дети на викторине' },
 ]
+
 const photos2018 = [
   { src: biblionik, alt: 'Библионик' },
   { src: chtoGdeKogdaPoPravu, alt: 'Что, где, когда по праву' },
@@ -76,10 +74,11 @@ const photos2018 = [
   { src: otkryvaemYponiju, alt: 'Открываем Японию' },
   { src: novogodnijVecherNaSemejnomKlube, alt: 'Новогодний вечер на семейном клубе' },
   { src: novogodnijVecherNaSemejnomKlube2, alt: 'Новогодний вечер на семейном клубе 2' },
-  { src: novogodnijVecherNaSemejnomKlube3, alt: 'Новогодний вечер на семейном клубе 3' }
+  { src: novogodnijVecherNaSemejnomKlube3, alt: 'Новогодний вечер на семейном клубе 3' },
 ]
 
 const allPhotos = photos2019.concat(photos2018)
+
 let mainSlide = null
 let start = null
 
@@ -226,60 +225,15 @@ class PhotogalleryPage extends Component {
     return (
       <Layout>
         <SEO title='Фотогалерея' keywords={[`фотографии краснопольской библиотеки`, `фотогалерея`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
-        <div className='page page_about page_about_photogallery'>
-          <DecorMain />
-          <h2 className='page__title'>Фотогалерея</h2>
-          <h3 className='page_about_photogallery__year'>2019 год</h3>
-          <div className='page_about_photogallery__sorted-by-year'>
-            {photos2019.map(photo => {
-              const { src, alt } = photo
-
-              return (
-                <img
-                  src={src} alt={alt} title='Нажмите, чтобы посмотреть в большом разрешении' key={src} tabIndex='0'
-                  className='page_about_photogallery__mini-photo'
-                  onKeyDown={this.showFirstSlideOnKeyDown}
-                  onClick={this.showFirstSlide}
-                />
-              )
-            })}
-          </div>
-
-          <h3 className='page_about_photogallery__year'>2018 год</h3>
-          <div className='page_about_photogallery__sorted-by-year'>
-            {photos2018.map(photo => {
-              const { src, alt } = photo
-
-              return (
-                <img
-                  src={src} alt={alt} title='Нажмите, чтобы посмотреть в большом разрешении' key={src} tabIndex='0'
-                  className='page_about_photogallery__mini-photo'
-                  onKeyDown={this.showFirstSlideOnKeyDown}
-                  onClick={this.showFirstSlide}
-                />
-              )
-            })}
-          </div>
-        </div>
-
-        <div className='page_about_photogallery-back closed'>
-          <span title='Закрыть (ESC)' className='page_about_photogallery-back__close-icon' onClick={this.hideSlider}>&times;</span>
-          <div className='page_about_photogallery-back__front'>
-            {allPhotos.map(photo => {
-              const { src, alt } = photo
-
-              return (
-                <img
-                  src={src} alt={alt} title={alt} key={src}
-                  className='page_about_photogallery-back__slide'
-                />
-              )
-            })}
-          </div>
-          <span className='page_about_photogallery-back__prev-slide' onClick={() => this.handleArrows(-1)}>&#10094;</span>
-          <span className='page_about_photogallery-back__next-slide' onClick={() => this.handleArrows(1)}>&#10095;</span>
-          <div className='page_about_photogallery-back__dots'></div>
-        </div>
+        <Photogallery
+          photos2019={photos2019}
+          photos2018={photos2018}
+          allPhotos={allPhotos}
+          showFirstSlideOnKeyDown={this.showFirstSlideOnKeyDown}
+          showFirstSlide={this.showFirstSlide}
+          handleArrows={this.handleArrows}
+          hideSlider={this.hideSlider}
+        />
       </Layout>
     )
   }
