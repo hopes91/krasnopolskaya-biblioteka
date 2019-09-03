@@ -14,7 +14,7 @@ const showFirstSlideOnKeyDown = event => {
 
 const showFirstSlide = event => {
 	addDots();
-	
+
 	back.style.display = 'block';
 
 	let clickedAlt = event.target.getAttribute('alt');
@@ -79,10 +79,14 @@ const showSlides = () => {
 }
 
 const addDots = () => {
+	const dots = document.querySelector('.dots');
+
+	dots.innerHTML = '';
+
 	for (let i = 0; i < miniPhotos.length; i++) {
     const dot = document.createElement('span');
     dot.setAttribute('class', 'dot');
-    document.querySelector('.dots').appendChild(dot);
+    dots.appendChild(dot);
   }
 }
 
