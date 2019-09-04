@@ -15,13 +15,13 @@
       margin: 0.5em 0;
     }
 
-    .links-section__list {
+    .links-section__links {
       @include indentations(0, 0 2em);
       @include respond-to('max-width: 640px') {
         padding: 0 1em;
       }
 
-      .links-section__list-item {
+      .links-section__links-item {
         line-height: 1.3;
       }
     }
