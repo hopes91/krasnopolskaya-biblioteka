@@ -1,3 +1,7 @@
+export const linksSectionOne = [
+  { to: '/', page: 'index', title: 'Главная' }
+]
+
 export const linksSectionTwo = [
   { to: '/istoriya-biblioteki', page: 'istoriya-biblioteki', title: 'История библиотеки' },
   { to: '/fotogalereya', page: 'fotogalereya', title: 'Фотогалерея' },
@@ -15,4 +19,8 @@ export const linksSectionThree = [
 export const linksSectionFour = [
   { to: '/poleznye-ssylki', page: 'poleznye-ssylki', title: 'Полезные ссылки' },
   { to: '/bezopasnost-v-internete', page: 'bezopasnost-v-internete', title: 'Безопасность в Интернете' }
+]
+
+export const linksSectionFive = [
+  { to: '/karta-sajta', page: 'karta-sajta', title: 'Карта сайта' }
 ]
