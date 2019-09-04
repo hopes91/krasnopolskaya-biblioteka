@@ -5,9 +5,7 @@ import '../styles/header/dropdown.scss'
 
 const Dropdown = ({ toggleBurgerOnKeyPress, toggleBurger, findLinksElement }) => (
   <div className='dropdown'>
-    <div tabIndex='-1' className='dropdown__burger'
-          onKeyPress={toggleBurgerOnKeyPress} onClick={toggleBurger}
-    >
+    <div tabIndex='-1' className='dropdown__burger' onKeyPress={toggleBurgerOnKeyPress} onClick={toggleBurger}>
       <span></span>
       <span></span>
       <span></span>
@@ -20,9 +18,7 @@ const Dropdown = ({ toggleBurgerOnKeyPress, toggleBurger, findLinksElement }) =>
         </Link>
       </div>
 
-      <div tabIndex='-1' className='dropdown__menu-section'
-           onKeyPress={findLinksElement} onClick={findLinksElement}
-      >
+      <div tabIndex='-1' className='dropdown__menu-section' onKeyPress={findLinksElement} onClick={findLinksElement}>
         <p className='dropdown__menu-section-title'>О библиотеке <span>&#9662;</span></p>
         <nav className='dropdown__menu-section-links closed'>
           {linksSectionTwo.map(link => {
@@ -37,9 +33,7 @@ const Dropdown = ({ toggleBurgerOnKeyPress, toggleBurger, findLinksElement }) =>
         </nav>
       </div>
 
-      <div tabIndex='-1' className='dropdown__menu-section'
-           onKeyPress={findLinksElement} onClick={findLinksElement}
-      >
+      <div tabIndex='-1' className='dropdown__menu-section' onKeyPress={findLinksElement} onClick={findLinksElement}>
         <p className='dropdown__menu-section-title'>Новости и события <span>&#9662;</span></p>
         <nav className='dropdown__menu-section-links closed'>
           {linksSectionThree.map(link => {
@@ -54,9 +48,7 @@ const Dropdown = ({ toggleBurgerOnKeyPress, toggleBurger, findLinksElement }) =>
         </nav>
       </div>
 
-      <div tabIndex='-1' className='dropdown__menu-section'
-           onKeyPress={findLinksElement} onClick={findLinksElement}
-      >
+      <div tabIndex='-1' className='dropdown__menu-section' onKeyPress={findLinksElement} onClick={findLinksElement}>
         <p className='dropdown__menu-section-title'>Услуги <span>&#9662;</span></p>
         <nav className='dropdown__menu-section-links closed'>
           {linksSectionFour.map(link => {

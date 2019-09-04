@@ -11,9 +11,7 @@ const Navbar = ({ toggleLinksOnKeyPress, showLinks, hideLinks }) => (
       </Link>
     </div>
 
-    <div tabIndex='0' className='navbar__section'
-         onKeyPress={toggleLinksOnKeyPress} onMouseEnter={showLinks} onMouseLeave={hideLinks}
-    >
+    <div tabIndex='0' className='navbar__section' onKeyPress={toggleLinksOnKeyPress} onMouseEnter={showLinks} onMouseLeave={hideLinks}  >
       <p className='navbar__section-title'>О библиотеке <span>&#9662;</span></p>
       <nav className='navbar__section-links closed'>
         {linksSectionTwo.map(link => {
@@ -28,9 +26,7 @@ const Navbar = ({ toggleLinksOnKeyPress, showLinks, hideLinks }) => (
       </nav>
     </div>
 
-    <div tabIndex='0' className='navbar__section'
-         onKeyPress={toggleLinksOnKeyPress} onMouseEnter={showLinks} onMouseLeave={hideLinks}
-    >
+    <div tabIndex='0' className='navbar__section' onKeyPress={toggleLinksOnKeyPress} onMouseEnter={showLinks} onMouseLeave={hideLinks}>
       <p className='navbar__section-title'>Новости и события <span>&#9662;</span></p>
       <nav className='navbar__section-links closed'>
         {linksSectionThree.map(link => {
@@ -45,9 +41,7 @@ const Navbar = ({ toggleLinksOnKeyPress, showLinks, hideLinks }) => (
       </nav>
     </div>
 
-    <div tabIndex='0' className='navbar__section'
-         onKeyPress={toggleLinksOnKeyPress} onMouseEnter={showLinks} onMouseLeave={hideLinks}
-    >
+    <div tabIndex='0' className='navbar__section' onKeyPress={toggleLinksOnKeyPress} onMouseEnter={showLinks} onMouseLeave={hideLinks}>
       <p className='navbar__section-title'>Услуги <span>&#9662;</span></p>
       <nav className='navbar__section-links closed'>
         {linksSectionFour.map(link => {
