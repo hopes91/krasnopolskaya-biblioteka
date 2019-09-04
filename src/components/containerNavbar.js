@@ -20,7 +20,7 @@ const toggleSectionTabIndex = () => {
 }
 
 const toggleLinksTabIndex = (isOpen) => {
-  const navbarLinks = document.querySelectorAll('.navbar__section-links a')
+  const navbarLinks = document.querySelectorAll('.navbar__section a')
 
   isOpen ?
     navbarLinks.forEach(link => link.setAttribute('tabIndex', '0')) :
