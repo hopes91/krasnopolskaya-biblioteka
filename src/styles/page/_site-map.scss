@@ -4,24 +4,24 @@
 .page_site-map {
   text-align: left;
 
-  .page_site-map__section {
+  .links-section {
     @include dimensions(100%, auto);
     margin-bottom: 1em;
     @include respond-to('max-width: 800px') {
       margin-bottom: 1.5em;
     }
 
-    .page_site-map__section-title {
+    .links-section__title {
       margin: 0.5em 0;
     }
 
-    .page_site-map__section-list {
+    .links-section__list {
       @include indentations(0, 0 2em);
       @include respond-to('max-width: 640px') {
         padding: 0 1em;
       }
 
-      .page_site-map__section-list-item {
+      .links-section__list-item {
         line-height: 1.3;
       }
     }

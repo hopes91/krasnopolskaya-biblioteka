@@ -2,13 +2,13 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 const siteMapSection = ({ sectionTitle, links }) => (
-  <div className='page_site-map__section'>
-    <p className='page_site-map__section-title'>{sectionTitle}</p>
-    <nav className='page_site-map__section-list'>
+  <div className='links-section'>
+    <p className='links-section__title'>{sectionTitle}</p>
+    <nav className='links-section__list'>
       {links.map(link => {
         const { to, page, title } = link
 
-        return <Link to={to} key={page} className='page_site-map__section-list-item'>
+        return <Link to={to} key={page} className='links-section__list-item'>
           {title}
         </Link>
       })}

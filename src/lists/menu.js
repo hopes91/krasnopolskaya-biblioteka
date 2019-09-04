@@ -1,3 +1,5 @@
+export const sectionTitles = ['Главная', 'О библиотеке', 'Новости и события', 'Услуги', 'Карта сайта']
+
 export const linksSectionOne = [
   { to: '/', page: 'index', title: 'Новости' }
 ]

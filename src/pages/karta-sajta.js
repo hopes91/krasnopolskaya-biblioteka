@@ -2,7 +2,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import DecorMain from '../components/decorMain'
-import { linksSectionOne, linksSectionTwo, linksSectionThree, linksSectionFour, linksSectionFive } from '../lists/menu'
+import { sectionTitles, linksSectionOne, linksSectionTwo, linksSectionThree, linksSectionFour, linksSectionFive } from '../lists/menu'
 import SiteMapSection from '../components/siteMapSection'
 import '../styles/page/page.scss'
 import '../styles/page/_site-map.scss'
@@ -13,26 +13,20 @@ const SiteMapPage = () => (
     <div className='page page_site-map'>
       <DecorMain />
       <h2 className='page__title'>Карта сайта</h2>
-      <SiteMapSection
-        sectionTitle='Главная'
-        links={linksSectionOne}
-      />
-      <SiteMapSection
-        sectionTitle='О библиотеке'
-        links={linksSectionTwo}
-      />
-      <SiteMapSection
-        sectionTitle='Новости и события'
-        links={linksSectionThree}
-      />
-      <SiteMapSection
-        sectionTitle='Услуги'
-        links={linksSectionFour}
-      />
-      <SiteMapSection
-        sectionTitle='Карта сайта'
-        links={linksSectionFive}
-      />
+      {sectionTitles.map((sectionTitle, ind) => {
+        const sectionLinks = [linksSectionOne, linksSectionTwo, linksSectionThree, linksSectionFour, linksSectionFive]
+        const titleIndex = ind
+
+        const links = sectionLinks.find((section, ind) => {
+          return titleIndex === ind && section
+        })
+
+        return <SiteMapSection
+                key={sectionTitle}
+                sectionTitle={sectionTitle}
+                links={links}
+              />
+      })}
     </div>
   </Layout>
 )
