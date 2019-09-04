@@ -33,6 +33,10 @@ import novogodnijVecherNaSemejnomKlube from '../images/photogallery/2018/novogod
 import novogodnijVecherNaSemejnomKlube2 from '../images/photogallery/2018/novogodnij-vecher-na-semejnom-klube-2.jpg'
 import novogodnijVecherNaSemejnomKlube3 from '../images/photogallery/2018/novogodnij-vecher-na-semejnom-klube-3.jpg'
 
+import insideTheLibrary from '../images/photogallery/biblioteka-vnutri.jpg'
+import insideTheLibrary2 from '../images/photogallery/biblioteka-vnutri-2.jpg'
+import outsideTheLibrary from '../images/photogallery/biblioteka-snaruzhi.jpg'
+
 export const photos2019 = [
   { src: semejnyjKlub29Marta, alt: 'Семейный клуб 29 марта' },
   { src: semejnyjKlub29Marta2, alt: 'Семейный клуб 29 марта 2' },
@@ -71,4 +75,10 @@ export const photos2018 = [
   { src: novogodnijVecherNaSemejnomKlube, alt: 'Новогодний вечер на семейном клубе' },
   { src: novogodnijVecherNaSemejnomKlube2, alt: 'Новогодний вечер на семейном клубе 2' },
   { src: novogodnijVecherNaSemejnomKlube3, alt: 'Новогодний вечер на семейном клубе 3' },
+]
+
+export const libraryPhotos = [
+  { src: insideTheLibrary, alt: 'Краснопольская библиотека внутри' },
+  { src: insideTheLibrary2, alt: 'Краснопольская библиотека внутри' },
+  { src: outsideTheLibrary, alt: 'Краснопольская библиотека снаружи' }
 ]
