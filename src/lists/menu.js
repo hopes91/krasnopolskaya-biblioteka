@@ -1,5 +1,5 @@
 export const linksSectionOne = [
-  { to: '/', page: 'index', title: 'Главная' }
+  { to: '/', page: 'index', title: 'Новости' }
 ]
 
 export const linksSectionTwo = [
