@@ -1,3 +1,12 @@
+import leto2019 from '../images/photogallery/2019/leto-2019.jpg'
+import leto20192 from '../images/photogallery/2019/leto-2019-2.jpg'
+import leto20193 from '../images/photogallery/2019/leto-2019-3.jpg'
+import leto20194 from '../images/photogallery/2019/leto-2019-4.jpg'
+import leto20195 from '../images/photogallery/2019/leto-2019-5.jpg'
+import leto20196 from '../images/photogallery/2019/leto-2019-6.jpg'
+import leto20197 from '../images/photogallery/2019/leto-2019-7.jpg'
+import leto20198 from '../images/photogallery/2019/leto-2019-8.jpg'
+import leto20199 from '../images/photogallery/2019/leto-2019-9.jpg'
 import detiNaViktorine from '../images/photogallery/2019/deti-na-viktorine.jpg'
 import bibliosumerki from '../images/photogallery/2019/bibliosumerki.jpg'
 import bibliosumerki2 from '../images/photogallery/2019/bibliosumerki-2.jpg'
@@ -38,6 +47,15 @@ import insideTheLibrary2 from '../images/photogallery/biblioteka-vnutri-2.jpg'
 import outsideTheLibrary from '../images/photogallery/biblioteka-snaruzhi.jpg'
 
 export const photos2019 = [
+  { src: leto2019, alt: 'Луто 2019' },
+  { src: leto20192, alt: 'Луто 2019 2' },
+  { src: leto20193, alt: 'Луто 2019 3' },
+  { src: leto20194, alt: 'Луто 2019 4' },
+  { src: leto20195, alt: 'Луто 2019 5' },
+  { src: leto20196, alt: 'Луто 2019 6' },
+  { src: leto20197, alt: 'Луто 2019 7' },
+  { src: leto20198, alt: 'Луто 2019 8' },
+  { src: leto20199, alt: 'Луто 2019 9' },
   { src: semejnyjKlub29Marta, alt: 'Семейный клуб 29 марта' },
   { src: semejnyjKlub29Marta2, alt: 'Семейный клуб 29 марта 2' },
   { src: chasZozhVperedPoDorogeZdoroviya, alt: 'Час ЗОЖ вперёд по дороге здоровья' },
