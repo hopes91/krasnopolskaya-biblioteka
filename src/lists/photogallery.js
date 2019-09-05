@@ -1,3 +1,9 @@
+import pohod206SborMusora from '../images/photogallery/2019/pohod-2.06-sbor-musora.jpg'
+import pohod206Besedka from '../images/photogallery/2019/pohod-2.06-besedka.jpg'
+import pohod906Karier from '../images/photogallery/2019/pohod-9.06-karier.jpg'
+import pohod906Karier2 from '../images/photogallery/2019/pohod-9.06-karier-2.jpg'
+import pohod906Karier3 from '../images/photogallery/2019/pohod-9.06-karier-3.jpg'
+import pohod906Karier4 from '../images/photogallery/2019/pohod-9.06-karier-4.jpg'
 import leto2019 from '../images/photogallery/2019/leto-2019.jpg'
 import leto20192 from '../images/photogallery/2019/leto-2019-2.jpg'
 import leto20193 from '../images/photogallery/2019/leto-2019-3.jpg'
@@ -47,6 +53,12 @@ import insideTheLibrary2 from '../images/photogallery/biblioteka-vnutri-2.jpg'
 import outsideTheLibrary from '../images/photogallery/biblioteka-snaruzhi.jpg'
 
 export const photos2019 = [
+  { src: pohod206SborMusora, alt: 'Поход 2 июня, сбор мусора библиотекарем' },
+  { src: pohod206Besedka, alt: 'Поход 2 июня, беседка' },
+  { src: pohod906Karier, alt: 'Поход 9 июня, карьер' },
+  { src: pohod906Karier2, alt: 'Поход 9 июня, карьер 2' },
+  { src: pohod906Karier3, alt: 'Поход 9 июня, карьер 3' },
+  { src: pohod906Karier4, alt: 'Поход 9 июня, карьер 4' },
   { src: leto2019, alt: 'Луто 2019' },
   { src: leto20192, alt: 'Луто 2019 2' },
   { src: leto20193, alt: 'Луто 2019 3' },
