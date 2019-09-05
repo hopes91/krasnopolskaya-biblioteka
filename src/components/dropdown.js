@@ -1,6 +1,6 @@
 import React from 'react'
-import { Link } from 'gatsby'
-import { linksSectionTwo, linksSectionThree, linksSectionFour } from '../lists/menu'
+import { sectionTitles, linksSectionOne, linksSectionTwo, linksSectionThree, linksSectionFour, linksSectionFive } from '../lists/menu'
+import DropdownSection from '../components/dropdownSection'
 import '../styles/header/dropdown.scss'
 
 const Dropdown = ({ toggleBurgerOnKeyPress, toggleBurger, findLinksElement }) => (
@@ -10,64 +10,22 @@ const Dropdown = ({ toggleBurgerOnKeyPress, toggleBurger, findLinksElement }) =>
       <span></span>
       <span></span>
     </div>
-
     <div className='dropdown__menu closed'>
-      <div className='dropdown__menu-section'>
-        <Link to='/' key='index' tabIndex='-1' className='dropdown__menu-section-title'>
-          Главная
-        </Link>
-      </div>
+      {sectionTitles.map((sectionTitle, ind) => {
+        const sectionLinks = [linksSectionOne, linksSectionTwo, linksSectionThree, linksSectionFour, linksSectionFive]
+        const titleIndex = ind
 
-      <div tabIndex='-1' className='dropdown__menu-section' onKeyPress={findLinksElement} onClick={findLinksElement}>
-        <p className='dropdown__menu-section-title'>О библиотеке <span>&#9662;</span></p>
-        <nav className='dropdown__menu-section-links closed'>
-          {linksSectionTwo.map(link => {
-            const { to, page, title } = link
+        const links = sectionLinks.find((section, ind) => {
+          return titleIndex === ind && section
+        })
 
-            return (
-              <Link to={to} key={page} tabIndex='-1'>
-                {title}
-              </Link>
-            )
-          })}
-        </nav>
-      </div>
-
-      <div tabIndex='-1' className='dropdown__menu-section' onKeyPress={findLinksElement} onClick={findLinksElement}>
-        <p className='dropdown__menu-section-title'>Новости и события <span>&#9662;</span></p>
-        <nav className='dropdown__menu-section-links closed'>
-          {linksSectionThree.map(link => {
-            const { to, page, title } = link
-
-            return (
-              <Link to={to} key={page} tabIndex='-1'>
-                {title}
-              </Link>
-            )
-          })}
-        </nav>
-      </div>
-
-      <div tabIndex='-1' className='dropdown__menu-section' onKeyPress={findLinksElement} onClick={findLinksElement}>
-        <p className='dropdown__menu-section-title'>Услуги <span>&#9662;</span></p>
-        <nav className='dropdown__menu-section-links closed'>
-          {linksSectionFour.map(link => {
-            const { to, page, title } = link
-
-            return (
-              <Link to={to} key={page} tabIndex='-1'>
-                {title}
-              </Link>
-            )
-          })}
-        </nav>
-      </div>
-
-      <div className='dropdown__menu-section'>
-        <Link to='/karta-sajta' key='karta-sajta' tabIndex='-1' className='dropdown__menu-section-title'>
-          Карта сайта
-        </Link>
-      </div>
+        return <DropdownSection
+                key={sectionTitle}
+                sectionTitle={sectionTitle}
+                links={links}
+                findLinksElement={findLinksElement}
+              />
+      })}
     </div>
   </div>
 )
