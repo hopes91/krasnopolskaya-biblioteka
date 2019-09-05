@@ -8,9 +8,7 @@ const SiteMapSection = ({ sectionTitle, links }) => (
       {links.map(link => {
         const { to, page, title } = link
 
-        return <Link to={to} key={page} className='links-section__links-item'>
-          {title}
-        </Link>
+        return <Link to={to} key={page} className='links-section__links-item'>{title}</Link>
       })}
     </nav>
   </div>

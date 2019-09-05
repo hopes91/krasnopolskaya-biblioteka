@@ -97,13 +97,11 @@ const ContainerDropdown = () => {
     window.addEventListener('resize', toggleSectionTabIndex)
   })
 
-  return (
-    <Dropdown
-      toggleBurgerOnKeyPress={toggleBurgerOnKeyPress}
-      toggleBurger={toggleBurger}
-      findLinksElement={findLinksElement}
-    />
-  )
+  return <Dropdown
+          toggleBurgerOnKeyPress={toggleBurgerOnKeyPress}
+          toggleBurger={toggleBurger}
+          findLinksElement={findLinksElement}
+        />
 }
 
 export default ContainerDropdown

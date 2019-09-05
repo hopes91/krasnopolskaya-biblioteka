@@ -77,13 +77,11 @@ const ContainerNavbar = () => {
     window.addEventListener('resize', toggleSectionTabIndex)
   })
 
-  return (
-    <Navbar
-      toggleLinksOnKeyPress={toggleLinksOnKeyPress}
-      showLinks={showLinks}
-      hideLinks={hideLinks}
-    />
-  )
+  return <Navbar
+          toggleLinksOnKeyPress={toggleLinksOnKeyPress}
+          showLinks={showLinks}
+          hideLinks={hideLinks}
+        />
 }
 
 export default ContainerNavbar

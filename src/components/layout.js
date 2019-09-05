@@ -13,7 +13,9 @@ const Layout = ({ children }) => {
 
   return (
     <div className='container' id='top'>
-      <Header siteTitle={title} />
+      <Header
+        siteTitle={title}
+      />
       {/* <DecorCenter /> */}
       <main className='main'>
         {children}
@@ -21,7 +23,9 @@ const Layout = ({ children }) => {
       </main>
       <div className='empty-div'></div> {/* для IE */}
       <StackOfBooks />
-      <Footer siteTitle={title} />
+      <Footer
+        siteTitle={title}
+      />
     </div>
   )
 }

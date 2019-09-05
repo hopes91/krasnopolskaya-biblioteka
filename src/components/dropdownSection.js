@@ -13,9 +13,7 @@ const DropdownSection = ({ sectionTitle, links, findLinksElement }) => (
           {links.map(link => {
             const { to, page } = link
 
-            return <Link to={to} key={page} tabIndex='-1' className='dropdown__menu-section-title'>
-                    {sectionTitle}
-                  </Link>
+            return <Link to={to} key={page} tabIndex='-1' className='dropdown__menu-section-title'>{sectionTitle}</Link>
           })}
         </>
         :
@@ -23,9 +21,7 @@ const DropdownSection = ({ sectionTitle, links, findLinksElement }) => (
           {links.map(link => {
             const { to, page, title } = link
 
-            return <Link to={to} key={page} tabIndex='-1'>
-                    {title}
-                  </Link>
+            return <Link to={to} key={page} tabIndex='-1'>{title}</Link>
           })}
         </nav>
     }

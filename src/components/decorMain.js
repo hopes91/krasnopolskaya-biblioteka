@@ -8,13 +8,11 @@ const DecorMain = () => (
     {corners.map(corner => {
       const { secondClass, src } = corner
 
-      return (
-        <Corner
-          key={secondClass}
-          secondClass={secondClass}
-          src={src}
-        />
-      )
+      return <Corner
+              key={secondClass}
+              secondClass={secondClass}
+              src={src}
+            />
     })}
   </div>
 )

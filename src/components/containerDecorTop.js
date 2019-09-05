@@ -31,14 +31,12 @@ const ContainerDecorTop = () => {
     getYear(today.getFullYear())
   })
 
-  return (
-    <DecorTop
-      dayOfTheWeek={dayOfTheWeek}
-      day={day}
-      month={month}
-      year={year}
-    />
-  )
+  return <DecorTop
+          dayOfTheWeek={dayOfTheWeek}
+          day={day}
+          month={month}
+          year={year}
+        />
 }
 
 export default ContainerDecorTop

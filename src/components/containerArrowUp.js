@@ -37,12 +37,10 @@ function scrollToTop(event) {
   }
 }
 
-const ContainerArrowUp = () => {
-  return (
-    <ArrowUp
-      scrollToTop={scrollToTop}
-    />
-  )
-}
+const ContainerArrowUp = () => (
+  <ArrowUp
+    scrollToTop={scrollToTop}
+  />
+)
 
 export default ContainerArrowUp
