@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const siteMapSection = ({ sectionTitle, links }) => (
+const SiteMapSection = ({ sectionTitle, links }) => (
   <div className='links-section'>
     <p className='links-section__title'>{sectionTitle}</p>
     <nav className='links-section__links'>
@@ -16,4 +16,4 @@ const siteMapSection = ({ sectionTitle, links }) => (
   </div>
 )
 
-export default siteMapSection
+export default SiteMapSection

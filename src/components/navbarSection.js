@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const navbarSection = ({ sectionTitle, links, toggleLinksOnKeyPress, showLinks, hideLinks }) => (
+const NavbarSection = ({ sectionTitle, links, toggleLinksOnKeyPress, showLinks, hideLinks }) => (
   <div tabIndex='0' className='navbar__section' onKeyPress={toggleLinksOnKeyPress} onMouseEnter={showLinks} onMouseLeave={hideLinks}>
     {
       links.length > 1 &&
@@ -32,4 +32,4 @@ const navbarSection = ({ sectionTitle, links, toggleLinksOnKeyPress, showLinks, 
   </div>
 )
 
-export default navbarSection
+export default NavbarSection
