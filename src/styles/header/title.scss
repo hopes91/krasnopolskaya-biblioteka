@@ -13,10 +13,10 @@
       font-size: 1.55em;
     }
     @include respond-to('max-width: 800px') {
-      padding: 1.3em 1em 0 1em;
+      padding: 1.3em 1em;
     }
     @include respond-to('max-width: 640px') {
-      padding-top: 0.8em;
+      padding: 1em;
       font-size: 1.3em;
     }
   }
