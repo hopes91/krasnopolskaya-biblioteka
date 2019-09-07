@@ -17,20 +17,13 @@ const toggleLinksTabIndex = (isOpen) => {
     navbarLinks.forEach(link => link.setAttribute('tabIndex', '-1'))
 }
 
-const toggleLinksOnKeyPress = (event) => {
+const showLinksOnKeyPress = (event) => {
   event.key === 'Enter' &&
     showLinks(event)
 }
 
 const showLinks = (event) => {
-  const target = event.target
-  let navbarLinks
-
-  if (target.className === 'navbar__section') {
-    navbarLinks = target.children[1]
-  } else if (target.className.match('title')) {
-    navbarLinks = target.nextElementSibling
-  }
+  const navbarLinks = event.target.nextElementSibling
 
   if (navbarLinks && navbarLinks.className.match('closed')) {
     navbarLinks.classList.remove('closed')
@@ -41,17 +34,8 @@ const showLinks = (event) => {
 }
 
 const hideLinks = (event) => {
-  const target = event.target
-  const parent = target.parentNode
-  let navbarLinks
-
-  if (target.className.match('title')) {
-    navbarLinks = target.nextElementSibling
-  } else if (target.className.match('links')) {
-    navbarLinks = target
-  } else if (parent.className.match('links')) {
-    navbarLinks = parent
-  }
+  const target = event.currentTarget
+  const navbarLinks = target.children[1]
 
   if (navbarLinks && navbarLinks.className.match('opened')) {
     navbarLinks.classList.remove('opened')
@@ -68,7 +52,7 @@ const ContainerNavbar = () => {
   })
 
   return <Navbar
-          toggleLinksOnKeyPress={toggleLinksOnKeyPress}
+          showLinksOnKeyPress={showLinksOnKeyPress}
           showLinks={showLinks}
           hideLinks={hideLinks}
         />
