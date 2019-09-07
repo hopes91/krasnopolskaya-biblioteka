@@ -4,23 +4,13 @@ import Navbar from './navbar'
 const toggleSectionTabIndex = () => {
   const navbarSections = document.querySelectorAll('.navbar__section')
 
-  if (window.innerWidth <= 800) {
-    navbarSections.forEach(section => {
-      section.hasAttribute('tabindex') ?
-        section.setAttribute('tabindex', '-1') :
-        section.children[0].setAttribute('tabindex', '-1')
-    })
-  }
-
-  navbarSections.forEach(section => {
-    section.hasAttribute('tabindex') ?
-      section.setAttribute('tabindex', '0') :
-      section.children[0].setAttribute('tabindex', '0')
-  })
+  window.innerWidth > 800 ?
+    navbarSections.forEach(section => section.children[0].setAttribute('tabindex', '0')) :
+    navbarSections.forEach(section => section.children[0].setAttribute('tabindex', '-1'))
 }
 
 const toggleLinksTabIndex = (isOpen) => {
-  const navbarLinks = document.querySelectorAll('.navbar__section a')
+  const navbarLinks = document.querySelectorAll('.navbar__section-links a')
 
   isOpen ?
     navbarLinks.forEach(link => link.setAttribute('tabIndex', '0')) :
@@ -38,7 +28,7 @@ const showLinks = (event) => {
 
   if (target.className === 'navbar__section') {
     navbarLinks = target.children[1]
-  } else if (target.className === 'navbar__section-title') {
+  } else if (target.className.match('title')) {
     navbarLinks = target.nextElementSibling
   }
 
@@ -55,7 +45,7 @@ const hideLinks = (event) => {
   const parent = target.parentNode
   let navbarLinks
 
-  if (target.className === 'navbar__section-title') {
+  if (target.className.match('title')) {
     navbarLinks = target.nextElementSibling
   } else if (target.className.match('links')) {
     navbarLinks = target
