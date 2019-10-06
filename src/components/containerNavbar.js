@@ -18,6 +18,7 @@ const toggleLinksTabIndex = isOpen => {
 }
 
 const showLinksOnKeyPress = event => {
+  console.log(event);
   event.key === 'Enter' &&
     showLinks(event)
 }
