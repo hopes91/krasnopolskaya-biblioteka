@@ -7,19 +7,11 @@ const toggleSectionTabIndex = () => {
 
   if (window.innerWidth > 800) {
     burger.setAttribute('tabIndex', '-1')
-    dropdownSections.forEach(section => {
-      section.hasAttribute('tabIndex') ?
-        section.setAttribute('tabIndex', '-1') :
-        section.children[0].setAttribute('tabIndex', '-1')
-    })
+    dropdownSections.forEach(section => section.children[0].setAttribute('tabIndex', '-1'))
   }
 
   burger.setAttribute('tabIndex', '1')
-  dropdownSections.forEach(section => {
-    section.hasAttribute('tabIndex') ?
-      section.setAttribute('tabIndex', '0') :
-      section.children[0].setAttribute('tabIndex', '0')
-  })
+  dropdownSections.forEach(section => section.children[0].setAttribute('tabIndex', '0'))
 }
 
 const toggleLinksTabIndex = (isOpen) => {
