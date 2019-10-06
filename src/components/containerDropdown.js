@@ -14,7 +14,7 @@ const toggleSectionTabIndex = () => {
   dropdownSections.forEach(section => section.children[0].setAttribute('tabIndex', '0'))
 }
 
-const toggleLinksTabIndex = (isOpen) => {
+const toggleLinksTabIndex = isOpen => {
   const dropdownLinks = document.querySelectorAll('.dropdown__menu-section-links a')
 
   isOpen ?
@@ -22,12 +22,12 @@ const toggleLinksTabIndex = (isOpen) => {
     dropdownLinks.forEach(link => link.setAttribute('tabIndex', '-1'))
 }
 
-const toggleBurgerOnKeyPress = (event) => {
+const toggleBurgerOnKeyPress = event => {
   event.key === 'Enter' &&
     toggleBurger(event)
 }
 
-const toggleBurger = (event) => {
+const toggleBurger = event => {
   const parent = event.target.parentNode
 
   if (event.target.className === 'dropdown__burger' || parent.className === 'dropdown__burger') {
@@ -54,7 +54,7 @@ const toggleDropdown = () => {
   }
 }
 
-const findLinksElement = (event) => {
+const findLinksElement = event => {
   const target = event.target
   let dropdownLinks
 
@@ -69,16 +69,18 @@ const findLinksElement = (event) => {
   toggleDropdownLinks(dropdownLinks)
 }
 
-const toggleDropdownLinks = (dropdownLinks) => {
+const toggleDropdownLinks = dropdownLinks => {
   if (!dropdownLinks) return;
 
   if (dropdownLinks.className.match('closed')) {
     dropdownLinks.classList.remove('closed')
     dropdownLinks.classList.add('opened')
+
     toggleLinksTabIndex(true)
   } else {
     dropdownLinks.classList.remove('opened')
     dropdownLinks.classList.add('closed')
+    
     toggleLinksTabIndex(false)
   }
 }

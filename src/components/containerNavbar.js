@@ -9,7 +9,7 @@ const toggleSectionTabIndex = () => {
     navbarSections.forEach(section => section.children[0].setAttribute('tabindex', '-1'))
 }
 
-const toggleLinksTabIndex = (isOpen) => {
+const toggleLinksTabIndex = isOpen => {
   const navbarLinks = document.querySelectorAll('.navbar__section-links a')
 
   isOpen ?
@@ -17,12 +17,12 @@ const toggleLinksTabIndex = (isOpen) => {
     navbarLinks.forEach(link => link.setAttribute('tabIndex', '-1'))
 }
 
-const showLinksOnKeyPress = (event) => {
+const showLinksOnKeyPress = event => {
   event.key === 'Enter' &&
     showLinks(event)
 }
 
-const showLinks = (event) => {
+const showLinks = event => {
   const navbarLinks = event.target.nextElementSibling
 
   if (navbarLinks && navbarLinks.className.match('closed')) {
@@ -33,7 +33,7 @@ const showLinks = (event) => {
   }
 }
 
-const hideLinks = (event) => {
+const hideLinks = event => {
   const target = event.currentTarget
   const navbarLinks = target.children[1]
 
