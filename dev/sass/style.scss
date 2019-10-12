@@ -442,19 +442,6 @@ body {
             }
             display: block;
           }
-          // ответы на викторину
-          ol li span.hidden-answer {
-            display: none;
-          }
-          .show-answer {
-            font: {
-              size: 0.9em;
-              weight: bold;
-            }
-            text-decoration: underline;
-            text-decoration-style: dotted;
-            cursor: pointer;
-          }
         }
       }
       // about-library
