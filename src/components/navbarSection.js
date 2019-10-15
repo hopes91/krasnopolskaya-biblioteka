@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const NavbarSection = ({ sectionTitle, links, showLinksOnKeyDown, showLinks, hideLinks }) => (
+const NavbarSection = ({ sectionTitle, links, toggleNavbarLinksOnKeyDown, showLinks, hideLinks }) => (
   <div className='navbar__section' onMouseLeave={hideLinks}>
     {
       links.length > 1 &&
         <p
           className='navbar__section-title'
-          onKeyDown={showLinksOnKeyDown}
+          onKeyDown={toggleNavbarLinksOnKeyDown}
           onMouseEnter={showLinks}
         >
           {sectionTitle} <span>&#9662;</span>

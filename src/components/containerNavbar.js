@@ -17,9 +17,14 @@ const toggleLinksTabIndex = isOpen => {
     navbarLinks.forEach(link => link.setAttribute('tabIndex', '-1'))
 }
 
-const showLinksOnKeyDown = event => {
-  event.key === 'Enter' &&
-    showLinks(event)
+const toggleNavbarLinksOnKeyDown = event => {
+  const navbarLinks = event.target.nextElementSibling
+
+  if (event.key === 'Enter') {
+    navbarLinks.className.match('closed') ?
+      showLinks(event) :
+      hideLinks(event)
+  }
 }
 
 const showLinks = event => {
@@ -34,8 +39,7 @@ const showLinks = event => {
 }
 
 const hideLinks = event => {
-  const target = event.currentTarget
-  const navbarLinks = target.children[1]
+  const navbarLinks = event.currentTarget.children[1] || event.target.nextElementSibling
 
   if (navbarLinks && navbarLinks.className.match('opened')) {
     navbarLinks.classList.remove('opened')
@@ -52,7 +56,7 @@ const ContainerNavbar = () => {
   })
 
   return <Navbar
-          showLinksOnKeyDown={showLinksOnKeyDown}
+          toggleNavbarLinksOnKeyDown={toggleNavbarLinksOnKeyDown}
           showLinks={showLinks}
           hideLinks={hideLinks}
         />
