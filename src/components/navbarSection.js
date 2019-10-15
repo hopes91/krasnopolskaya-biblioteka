@@ -2,7 +2,10 @@ import React from 'react'
 import { Link } from 'gatsby'
 
 const NavbarSection = ({ sectionTitle, links, toggleNavbarLinksOnKeyDown, showLinks, hideLinks }) => (
-  <div className='navbar__section' onMouseLeave={hideLinks}>
+  <div
+    className='navbar__section'
+    onMouseLeave={hideLinks}
+  >
     {
       links.length > 1 &&
         <p

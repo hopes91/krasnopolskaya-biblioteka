@@ -5,7 +5,12 @@ import '../styles/header/dropdown.scss'
 
 const Dropdown = ({ toggleBurgerOnKeyPress, toggleBurger, findLinksElement }) => (
   <div className='dropdown'>
-    <div tabIndex='-1' className='dropdown__burger' onKeyPress={toggleBurgerOnKeyPress} onClick={toggleBurger}>
+    <div
+      tabIndex='-1'
+      className='dropdown__burger'
+      onKeyPress={toggleBurgerOnKeyPress}
+      onClick={toggleBurger}
+    >
       <span></span>
       <span></span>
       <span></span>

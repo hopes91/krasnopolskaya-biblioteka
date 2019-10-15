@@ -21,7 +21,12 @@ const LibraryHistoryPage = () => (
       {libraryPhotos.map(photo => {
         const { src, alt } = photo
 
-        return <img src={src} alt={alt} key={src} className='page__image' />
+        return <img
+                src={src} 
+                alt={alt}
+                key={src}
+                className='page__image'
+              />
       })}
     </div>
   </Layout>

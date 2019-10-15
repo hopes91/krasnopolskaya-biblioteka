@@ -7,7 +7,16 @@ const PhotogalleryByYear = ({ year, photosOfTheYear, showFirstSlideOnKeyDown, sh
     {photosOfTheYear.map(photo => {
       const { src, alt } = photo
 
-      return <img src={src} alt={alt} title='Нажмите, чтобы посмотреть в большом разрешении' key={src} tabIndex='0' className='page_about_photogallery__mini-photo' onKeyDown={showFirstSlideOnKeyDown} onClick={showFirstSlide} />
+      return <img
+              src={src}
+              alt={alt}
+              key={src}
+              tabIndex='0' 
+              title='Нажмите, чтобы посмотреть в большом разрешении'
+              className='page_about_photogallery__mini-photo'
+              onKeyDown={showFirstSlideOnKeyDown}
+              onClick={showFirstSlide}
+            />
     })}
   </div>
   </>

@@ -16,7 +16,15 @@ const UsefulLinksPage = () => (
         const { href, title } = link
 
         return (
-          <a href={href} key={title} target='_blank' rel='noopener noreferrer' className='page_services_useful-links__link'>{title}</a>
+          <a
+            href={href}
+            key={title}
+            target='_blank' 
+            rel='noopener noreferrer'
+            className='page_services_useful-links__link'
+          >
+            {title}
+          </a>
         )
       })}
     </div>
