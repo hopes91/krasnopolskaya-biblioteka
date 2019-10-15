@@ -44,7 +44,7 @@ const showFirstSlide = event => {
 const handleArrowsOnKeyDown = event => {
   const back = document.querySelector('.page_about_photogallery-back')
 
-  if (back.className.match('opened')) {
+  if (back && back.className.match('opened')) {
     event.key === 'ArrowLeft' &&
       handleArrows(-1)
 
@@ -118,7 +118,7 @@ const hideSliderOnKeyDown = event => {
 const hideSlider = () => {
   const back = document.querySelector('.page_about_photogallery-back')
 
-  if (back.className.match('opened')) {
+  if (back && back.className.match('opened')) {
     back.classList.remove('opened')
     back.classList.add('closed')
     mainSlide = null
