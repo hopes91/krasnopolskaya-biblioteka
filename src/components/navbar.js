@@ -3,7 +3,7 @@ import { sectionTitles, linksSectionOne, linksSectionTwo, linksSectionThree, lin
 import NavbarSection from '../components/navbarSection'
 import '../styles/header/navbar.scss'
 
-const Navbar = ({ toggleLinksOnKeyPress, showLinks, hideLinks }) => (
+const Navbar = ({ showLinksOnKeyDown, showLinks, hideLinks }) => (
   <div className='navbar'>
     {sectionTitles.map((sectionTitle, ind) => {
       const sectionLinks = [linksSectionOne, linksSectionTwo, linksSectionThree, linksSectionFour, linksSectionFive]
@@ -17,7 +17,7 @@ const Navbar = ({ toggleLinksOnKeyPress, showLinks, hideLinks }) => (
               key={sectionTitle}
               sectionTitle={sectionTitle}
               links={links}
-              toggleLinksOnKeyPress={toggleLinksOnKeyPress}
+              showLinksOnKeyDown={showLinksOnKeyDown}
               showLinks={showLinks}
               hideLinks={hideLinks}
             />

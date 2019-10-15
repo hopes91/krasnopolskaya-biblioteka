@@ -1,11 +1,17 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const NavbarSection = ({ sectionTitle, links, showLinksOnKeyPress, showLinks, hideLinks }) => (
+const NavbarSection = ({ sectionTitle, links, showLinksOnKeyDown, showLinks, hideLinks }) => (
   <div className='navbar__section' onMouseLeave={hideLinks}>
     {
       links.length > 1 &&
-      <p className='navbar__section-title' onKeyPress={showLinksOnKeyPress} onMouseEnter={showLinks}>{sectionTitle} <span>&#9662;</span></p>
+        <p
+          className='navbar__section-title'
+          onKeyDown={showLinksOnKeyDown}
+          onMouseEnter={showLinks}
+        >
+          {sectionTitle} <span>&#9662;</span>
+        </p>
     }
     {
       links.length === 1 ?
@@ -13,7 +19,14 @@ const NavbarSection = ({ sectionTitle, links, showLinksOnKeyPress, showLinks, hi
           {links.map(link => {
             const { to, page } = link
 
-            return <Link to={to} key={page} tabIndex='0' className='navbar__section-title'>{sectionTitle}</Link>
+            return <Link
+                      to={to}
+                      key={page}
+                      tabIndex='0'
+                      className='navbar__section-title'
+                    >
+                      {sectionTitle}
+                    </Link>
           })}
         </>
         :
@@ -21,7 +34,13 @@ const NavbarSection = ({ sectionTitle, links, showLinksOnKeyPress, showLinks, hi
           {links.map(link => {
             const { to, page, title } = link
 
-            return <Link to={to} key={page} tabIndex='-1'>{title}</Link>
+            return <Link
+                      to={to}
+                      key={page}
+                      tabIndex='-1'
+                    >
+                      {title}
+                    </Link>
           })}
         </nav>
     }

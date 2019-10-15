@@ -17,8 +17,7 @@ const toggleLinksTabIndex = isOpen => {
     navbarLinks.forEach(link => link.setAttribute('tabIndex', '-1'))
 }
 
-const showLinksOnKeyPress = event => {
-  console.log(event);
+const showLinksOnKeyDown = event => {
   event.key === 'Enter' &&
     showLinks(event)
 }
@@ -53,7 +52,7 @@ const ContainerNavbar = () => {
   })
 
   return <Navbar
-          showLinksOnKeyPress={showLinksOnKeyPress}
+          showLinksOnKeyDown={showLinksOnKeyDown}
           showLinks={showLinks}
           hideLinks={hideLinks}
         />
