@@ -18,39 +18,39 @@ const showFirstSlide = event => {
   const back = document.querySelector('.page_about_photogallery-back')
   const slides = document.querySelectorAll('.page_about_photogallery-back__slide')
 
-  if (back.className.match('opened')) return;
+  if (back.className.match('closed')) {
+    createDots()
 
-  createDots()
+    back.classList.remove('closed')
+    back.classList.add('opened')
 
-  back.classList.remove('closed')
-  back.classList.add('opened')
+    const clickedAlt = event.target.getAttribute('alt')
+    let altToCompare = null
 
-  const clickedAlt = event.target.getAttribute('alt')
-  let altToCompare = null
+    slides.forEach((slide, index) => {
+      altToCompare = slide.getAttribute('alt')
+      slide.style.display = 'none'
 
-  slides.forEach((slide, index) => {
-    altToCompare = slide.getAttribute('alt')
-    slide.style.display = 'none'
-
-    if (clickedAlt === altToCompare) {
-      slide.style.display = 'block'
-      mainSlide = index
-      start = index
-      handleArrows()
-    }
-  })
+      if (clickedAlt === altToCompare) {
+        slide.style.display = 'block'
+        mainSlide = index
+        start = index
+        handleArrows()
+      }
+    })
+  }
 }
 
 const handleArrowsOnKeyDown = event => {
   const back = document.querySelector('.page_about_photogallery-back')
 
-  if (back.className.match('closed')) return;
+  if (back.className.match('opened')) {
+    event.key === 'ArrowLeft' &&
+      handleArrows(-1)
 
-  event.key === 'ArrowLeft' &&
-    handleArrows(-1)
-
-  event.key === 'ArrowRight' &&
-    handleArrows(1)
+    event.key === 'ArrowRight' &&
+      handleArrows(1)
+  }
 }
 
 const handleArrows = index => {
@@ -58,11 +58,12 @@ const handleArrows = index => {
   const prevSlide = document.querySelector('.page_about_photogallery-back__prev-slide')
   const nextSlide = document.querySelector('.page_about_photogallery-back__next-slide')
 
-  (index === -1 && mainSlide === 0) || (index === 1 && mainSlide === slides.length - 1) ?
-    index = null :
-  index === undefined ?
-    mainSlide = start :
-    mainSlide += index
+  if (
+    (index === -1 && mainSlide === 0) ||
+    (index === 1 && mainSlide === slides.length - 1)
+  ) index = null
+  else if (index === undefined) mainSlide = start
+  else mainSlide += index
 
   mainSlide === 0 ?
     prevSlide.style.display = 'none' :
@@ -117,12 +118,12 @@ const hideSliderOnKeyDown = event => {
 const hideSlider = () => {
   const back = document.querySelector('.page_about_photogallery-back')
 
-  if (back.className.match('closed')) return;
-
-  back.classList.remove('opened')
-  back.classList.add('closed')
-  mainSlide = null
-  start = null
+  if (back.className.match('opened')) {
+    back.classList.remove('opened')
+    back.classList.add('closed')
+    mainSlide = null
+    start = null
+  }
 }
 
 const PhotogalleryPage = () => {
