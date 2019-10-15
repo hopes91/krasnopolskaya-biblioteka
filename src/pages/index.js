@@ -5,6 +5,8 @@ import DecorMain from '../components/decorMain'
 import '../styles/page/page.scss'
 import '../styles/page/_news.scss'
 
+import news12102019 from '../images/news/12102019.jpg'
+import news121020192 from '../images/news/12102019-2.jpg'
 import news08072019 from '../images/news/08072019.jpg'
 import news07062019 from '../images/news/07062019.jpg'
 import news05062019 from '../images/news/05062019.jpg'
@@ -18,6 +20,11 @@ const IndexPage = () => (
     <div className='page page_news'>
       <DecorMain />
       <h2 className='page__title'>Новости</h2>
+      <section className='page_news__section'>
+        <h6 className='page_news__section-title'>суббота, 12 октября 2019 год</h6>
+        <img src={news12102019} alt="В библиотеке за 9 месяцев было 1260 пользователей, 4137 посещений, 14854 выданных документов" className='page__image' />
+        <img src={news121020192} alt="За 9 месяцев 2019 года лучшие читатели-дети: Бобылев Руслан, Райлинг Женя, Вотинова Виолетта, Зворыгина Марьяна, Вотинова Ксения, Суходоева Таня. Самые активные посетители библиотечных мероприятий: Райлинг Женя, Ситников Кирилл, Перескоков Никита, Чекалкин Саша, Толмачёв Дима, Ральникова Полина." className='page__image' />
+      </section>
       <section className='page_news__section'>
         <h6 className='page_news__section-title'>понедельник, 8 июля 2019 год</h6>
         <img src={news08072019} alt='Благодарность Самосудовой Вере Алексеевне по подаренные библиотеке журналы' className='page__image' />
