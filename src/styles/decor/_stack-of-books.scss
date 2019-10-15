@@ -3,8 +3,8 @@
 
 .decor_stack-of-books {
   @include dimensions(15%, auto);
-  position: absolute;
   bottom: 7em;
+  position: absolute;
   right: 1em;
   @include respond-to('min-width: 1367px') {
     width: 13em;

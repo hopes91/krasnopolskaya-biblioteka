@@ -12,23 +12,23 @@
 
     .page_events__dates {
       @include dimensions(25%, auto);
+      float: left;
       font-weight: bold;
       text-align: left;
-      float: left;
     }
 
     .page_events__events {
       @include dimensions(75%, auto);
-      text-align: left;
       float: right;
+      text-align: left;
     }
 
     .page_events__dates,
     .page_events__events {
       @include respond-to('max-width: 800px') {
         @include dimensions(100%, auto);
-        text-align: center;
         float: none;
+        text-align: center;
       }
     }
   }

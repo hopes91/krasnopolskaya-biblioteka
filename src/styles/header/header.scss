@@ -5,8 +5,8 @@
   @include dimensions(100%, auto);
   @include respond-to('max-width: 800px') {
     height: 8em;
+    left: 0;
     position: relative;
     top: 0;
-    left: 0;
   }
 }

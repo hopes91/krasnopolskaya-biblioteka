@@ -12,16 +12,16 @@ body * {
 }
 
 body {
+  background-color: peachpuff;
   color: $dark-brown;
   font-family: 'Oranienbaum', serif;
   font-size: 1em;
   line-height: 1.2;
-  background-color: peachpuff;
 
   a {
     @include dimensions(100%, 100%);
-    display: inline-block;
     color: $dark-brown;
+    display: inline-block;
 
     img {
       @include dimensions(100%, 100%);
@@ -41,9 +41,9 @@ body {
   }
 
   .container {
+    background: linear-gradient(to right, peachpuff, burlywood);
     height: auto;
     min-height: 100%;
-    background: linear-gradient(to right, peachpuff, burlywood);
     position: relative;
     overflow: hidden;
 

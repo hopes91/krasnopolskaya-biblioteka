@@ -18,12 +18,12 @@
   }
 
   .show-answer {
+    cursor: pointer;
     font: {
       size: 0.9em;
       weight: bold;
     }
     text-decoration: underline;
     text-decoration-style: dotted;
-    cursor: pointer;
   }
 }

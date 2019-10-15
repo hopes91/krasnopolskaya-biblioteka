@@ -3,13 +3,13 @@
 
 .dropdown {
   @include dimensions(100%, 4em);
-  box-sizing: border-box;
-  display: none;
   background-color: oldlace;
   border: $simple-border;
+  box-sizing: border-box;
+  display: none;
+  left: 0;
   position: relative;
   top: 0;
-  left: 0;
   z-index: 5;
   @include respond-to('max-width: 800px') {
     display: block;
@@ -17,16 +17,16 @@
 
   .dropdown__burger {
     @include dimensions(2.5em, 1.5em);
-    position: absolute;
-    top: 1.2em;
-    right: 1em;
     cursor: pointer;
+    position: absolute;
+    right: 1em;
+    top: 1.2em;
     z-index: 10;
 
     span {
       @include dimensions(100%, 3px);
-      display: block;
       background-color: saddlebrown;
+      display: block;
       position: absolute;
       transition: 0.5s;
 
@@ -73,12 +73,12 @@
       .dropdown__menu-section-title {
         @include dimensions(100%, auto);
         @include indentations(0, 1em);
-        box-sizing: border-box;
-        font-size: 1.1em;
         border: $simple-border;
-        text-decoration: none;
-        position: relative;
+        box-sizing: border-box;
         cursor: pointer;
+        font-size: 1.1em;
+        position: relative;
+        text-decoration: none;
 
         span {
           color: $dark-brown;
@@ -94,11 +94,11 @@
 
         a {
           @include indentations(0, 0.8em);
+          border: $simple-border;
           box-sizing: border-box;
           color: saddlebrown;
           font-size: 1.05em;
           text-decoration: none;
-          border: $simple-border;
         }
       }
     }

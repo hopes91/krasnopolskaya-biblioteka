@@ -9,15 +9,15 @@
   h1 {
     @include indentations(0, 1em);
     @include respond-to('max-width: 1024px') {
-      padding: 1.55em 0.8em;
       font-size: 1.55em;
+      padding: 1.55em 0.8em;
     }
     @include respond-to('max-width: 800px') {
       padding: 1.3em 1em;
     }
     @include respond-to('max-width: 640px') {
-      padding: 1em;
       font-size: 1.3em;
+      padding: 1em;
     }
   }
 }

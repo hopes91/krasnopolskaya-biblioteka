@@ -4,10 +4,10 @@
 .navbar {
   @include dimensions(100%, 3.3em);
   @include indentations(0 auto, 0);
-  display: block;
-  text-align: center;
   background: linear-gradient(to right, peachpuff, burlywood);
+  display: block;
   position: relative;
+  text-align: center;
   z-index: 5;
   @include respond-to('max-width: 800px') {
     display: none;
@@ -31,12 +31,12 @@
     .navbar__section-title {
       @include dimensions(100%, auto);
       @include indentations(0, 1.04em 0.3em);
-      box-sizing: border-box;
-      text-decoration: none;
       background-color: oldlace;
       border: $simple-border;
-      position: relative;
+      box-sizing: border-box;
       cursor: pointer;
+      position: relative;
+      text-decoration: none;
 
       span {
         color: $dark-brown;
@@ -58,10 +58,10 @@
 
       a {
         @include indentations(0, 0.8em);
+        border: $simple-border;
         box-sizing: border-box;
         color: saddlebrown;
         text-decoration: none;
-        border: $simple-border;
       }
     }
   }

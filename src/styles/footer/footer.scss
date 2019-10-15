@@ -4,11 +4,11 @@
 .footer {
   @include dimensions(100%, 6em);
   @include indentations(0, 1em);
-  box-sizing: border-box;
   background-color: oldlace;
   border-top: $simple-border;
-  position: absolute;
   bottom: 0;
+  box-sizing: border-box;
+  position: absolute;
   @include respond-to('max-width: 800px') {
     height: 7.5em;
   }
