@@ -22,7 +22,7 @@ const toggleLinksTabIndex = isOpen => {
     dropdownLinks.forEach(link => link.setAttribute('tabIndex', '-1'))
 }
 
-const toggleBurgerOnKeyPress = event => {
+const toggleBurgerOnKeyDown = event => {
   event.key === 'Enter' &&
     toggleBurger(event)
 }
@@ -80,7 +80,7 @@ const toggleDropdownLinks = dropdownLinks => {
   } else {
     dropdownLinks.classList.remove('opened')
     dropdownLinks.classList.add('closed')
-    
+
     toggleLinksTabIndex(false)
   }
 }
@@ -92,7 +92,7 @@ const ContainerDropdown = () => {
   })
 
   return <Dropdown
-          toggleBurgerOnKeyPress={toggleBurgerOnKeyPress}
+          toggleBurgerOnKeyDown={toggleBurgerOnKeyDown}
           toggleBurger={toggleBurger}
           findLinksElement={findLinksElement}
         />

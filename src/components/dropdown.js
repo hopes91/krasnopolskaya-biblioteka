@@ -3,12 +3,12 @@ import { sectionTitles, linksSectionOne, linksSectionTwo, linksSectionThree, lin
 import DropdownSection from '../components/dropdownSection'
 import '../styles/header/dropdown.scss'
 
-const Dropdown = ({ toggleBurgerOnKeyPress, toggleBurger, findLinksElement }) => (
+const Dropdown = ({ toggleBurgerOnKeyDown, toggleBurger, findLinksElement }) => (
   <div className='dropdown'>
     <div
       tabIndex='-1'
       className='dropdown__burger'
-      onKeyPress={toggleBurgerOnKeyPress}
+      onKeyPress={toggleBurgerOnKeyDown}
       onClick={toggleBurger}
     >
       <span></span>
