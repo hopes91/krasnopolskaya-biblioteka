@@ -1,11 +1,11 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const DropdownSection = ({ sectionTitle, links, findLinksElement }) => (
+const DropdownSection = ({ sectionTitle, links, toggleDropdownLinks }) => (
   <div
     className='dropdown__menu-section'
-    onKeyPress={findLinksElement}
-    onClick={findLinksElement}
+    onKeyDown={toggleDropdownLinks}
+    onClick={toggleDropdownLinks}
   >
     {
       links.length > 1 &&

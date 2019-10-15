@@ -24,13 +24,10 @@ const toggleLinksTabIndex = isOpen => {
 
 const toggleBurgerOnKeyDown = event => {
   event.key === 'Enter' &&
-    toggleBurger(event)
+    toggleBurger()
 }
 
-const toggleBurger = event => {
-  const parent = event.target.parentNode
-
-  if (event.target.className === 'dropdown__burger' || parent.className === 'dropdown__burger') {
+const toggleBurger = () => {
     const burgerSpans = document.querySelectorAll('.dropdown__burger span')
 
     burgerSpans[0].classList.toggle('span-one_active')
@@ -38,8 +35,8 @@ const toggleBurger = event => {
     setTimeout(() => {
       burgerSpans[1].classList.toggle('span-two_active')
     }, 200)
+
     toggleDropdown()
-  }
 }
 
 const toggleDropdown = () => {
@@ -54,23 +51,8 @@ const toggleDropdown = () => {
   }
 }
 
-const findLinksElement = event => {
-  const target = event.target
-  let dropdownLinks
-
-  if (target.className === 'dropdown__menu-section') {
-    dropdownLinks = target.children[1]
-  } else if (target.className === 'dropdown__menu-section-title') {
-    dropdownLinks = target.nextElementSibling
-  } else if (target.parentNode.className === 'dropdown__menu-section-title') {
-    dropdownLinks = target.parentNode.nextElementSibling
-  }
-
-  toggleDropdownLinks(dropdownLinks)
-}
-
-const toggleDropdownLinks = dropdownLinks => {
-  if (!dropdownLinks) return;
+const toggleDropdownLinks = event => {
+  const dropdownLinks = event.currentTarget.children[1]
 
   if (dropdownLinks.className.match('closed')) {
     dropdownLinks.classList.remove('closed')
@@ -94,7 +76,7 @@ const ContainerDropdown = () => {
   return <Dropdown
           toggleBurgerOnKeyDown={toggleBurgerOnKeyDown}
           toggleBurger={toggleBurger}
-          findLinksElement={findLinksElement}
+          toggleDropdownLinks={toggleDropdownLinks}
         />
 }
 
