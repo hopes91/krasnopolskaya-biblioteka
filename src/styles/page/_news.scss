@@ -11,19 +11,4 @@
       weight: normal;
     }
   }
-
-  // ответы на викторину
-  ol li span.hidden-answer {
-    display: none;
-  }
-
-  .show-answer {
-    cursor: pointer;
-    font: {
-      size: 0.9em;
-      weight: bold;
-    }
-    text-decoration: underline;
-    text-decoration-style: dotted;
-  }
 }
