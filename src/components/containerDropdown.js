@@ -28,19 +28,21 @@ const toggleBurgerOnKeyDown = event => {
 }
 
 const toggleBurger = () => {
-    const burgerSpans = document.querySelectorAll('.dropdown__burger span')
+  const burgerSpans = document.querySelectorAll('.dropdown__burger span')
 
-    burgerSpans[0].classList.toggle('span-one_active')
-    burgerSpans[2].classList.toggle('span-three_active')
-    setTimeout(() => {
-      burgerSpans[1].classList.toggle('span-two_active')
-    }, 200)
+  burgerSpans[0].classList.toggle('span-one_active')
+  burgerSpans[2].classList.toggle('span-three_active')
+  setTimeout(() => {
+    burgerSpans[1].classList.toggle('span-two_active')
+  }, 200)
 
-    toggleDropdown()
+  toggleDropdown()
 }
 
 const toggleDropdown = () => {
   const dropdownMenu = document.querySelector('.dropdown__menu')
+
+  if (!dropdownMenu) return;
 
   if (dropdownMenu.className.match('closed')) {
     dropdownMenu.classList.remove('closed')
@@ -53,6 +55,8 @@ const toggleDropdown = () => {
 
 const toggleDropdownLinks = event => {
   const dropdownLinks = event.currentTarget.children[1]
+
+  if (!dropdownLinks) return;
 
   if (dropdownLinks.className.match('closed')) {
     dropdownLinks.classList.remove('closed')
