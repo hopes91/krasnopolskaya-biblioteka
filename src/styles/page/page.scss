@@ -19,7 +19,7 @@
     width: 75%;
   }
   @include respond-to('max-width: 800px') {
-    @include indentations(1em auto 3em auto, 1.5em 1.5em 2.5em 1.5em);
+    @include indentations(1em auto, 1.5em 1.5em 2.5em 1.5em);
     width: 100%;
   }
   @include respond-to('max-width: 640px') {
