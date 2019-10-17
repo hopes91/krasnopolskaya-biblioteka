@@ -8,6 +8,12 @@ import StackOfBooks from './stackOfBooks'
 import Footer from './footer'
 import '../styles/layout.scss'
 
+// start for IE
+const forEach = require('./forIE/forEach.js');
+
+forEach();
+// end for IE
+
 const Layout = ({ children }) => {
   const { title } = useSiteMetadata()
 
