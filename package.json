@@ -42,5 +42,8 @@
   },
   "bugs": {
     "url": "https://github.com/hopes91/krasnopolskaya-biblioteka/issues"
-  }
+  },
+  "browserslist": [
+    "last 3 versions"
+  ]
 }
