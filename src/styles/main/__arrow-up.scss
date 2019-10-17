@@ -13,9 +13,6 @@
     float: right;
     margin: 1em;
   }
-  @include respond-to('max-width: 640px') {
-    bottom: -1em;
-  }
 
   span {
     font-size: 1.5em;
