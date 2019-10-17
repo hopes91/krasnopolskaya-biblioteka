@@ -9,7 +9,7 @@ import Footer from './footer'
 import '../styles/layout.scss'
 
 // start for IE
-const forEach = require('./forIE/forEach.js');
+const forEach = require('../scripts/forIE.js');
 
 forEach();
 // end for IE
