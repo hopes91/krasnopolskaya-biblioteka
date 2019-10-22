@@ -1,0 +1,30 @@
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin indentations($margin, $padding) {
+  margin: $margin;
+  padding: $padding;
+}
+
+@mixin respond-to($media) {
+  @if $media == 'min-width: 1800px' {
+    @media (min-width: 1800px) { @content; }
+  }
+  @else if $media == 'min-width: 1367px' {
+    @media (min-width: 1367px) { @content; }
+  }
+  @else if $media == 'max-width: 1220px' {
+    @media (max-width: 1220px) { @content; }
+  }
+  @else if $media == 'max-width: 1024px' {
+    @media (max-width: 1024px) { @content; }
+  }
+  @else if $media == 'max-width: 800px' {
+    @media (max-width: 800px) { @content; }
+  }
+  @else if $media == 'max-width: 640px' {
+    @media (max-width: 640px) { @content; }
+  }
+}

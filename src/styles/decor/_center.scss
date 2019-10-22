@@ -1,0 +1,15 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+.decor_center {
+  @include dimensions(50%, auto);
+  @include indentations(1em auto 0 auto, 0);
+  max-width: 1200px;
+  @include respond-to('max-width: 800px') {
+    width: 80%;
+  }
+
+  a {
+    cursor: default;
+  }
+}

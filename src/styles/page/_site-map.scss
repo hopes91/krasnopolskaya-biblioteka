@@ -1,0 +1,29 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+.page_site-map {
+  text-align: left;
+
+  .links-section {
+    @include dimensions(100%, auto);
+    margin-bottom: 1em;
+    @include respond-to('max-width: 800px') {
+      margin-bottom: 1.5em;
+    }
+
+    .links-section__title {
+      margin: 0.5em 0;
+    }
+
+    .links-section__links {
+      @include indentations(0, 0 2em);
+      @include respond-to('max-width: 640px') {
+        padding: 0 1em;
+      }
+
+      .links-section__links-item {
+        line-height: 1.3;
+      }
+    }
+  }
+}

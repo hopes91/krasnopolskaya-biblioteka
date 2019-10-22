@@ -1,0 +1,73 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+.page_events {
+  .page_events__section {
+    @include dimensions(100%, auto);
+
+    p {
+      @include dimensions(auto, 1.2em);
+      @include indentations(0.5em 0, 0);
+    }
+
+    .page_events__dates {
+      @include dimensions(25%, auto);
+      float: left;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    .page_events__events {
+      @include dimensions(75%, auto);
+      float: right;
+      text-align: left;
+    }
+
+    .page_events__dates,
+    .page_events__events {
+      @include respond-to('max-width: 800px') {
+        @include dimensions(100%, auto);
+        float: none;
+        text-align: center;
+      }
+    }
+  }
+}
+
+.page_events_poster {
+  @include respond-to('max-width: 640px') {
+    @include indentations(1em auto, 1em 0);
+    overflow-x: scroll;
+  }
+}
+
+.page_events_poster-ot-vsej-dushi {
+  @include respond-to('max-width: 800px') {
+    height: auto;
+  }
+
+  .page_events__section {
+    height: 3em;
+    @include respond-to('max-width: 800px') {
+      height: auto;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.page_events_poster-biblionik {
+  .page_events__section {
+    height: 11em;
+    @include respond-to('max-width: 800px') {
+      height: auto;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.page_events_past-events {
+  @include respond-to('max-width: 640px') {
+    @include indentations(1em auto, 1em 0);
+    overflow-x: scroll;
+  }
+}

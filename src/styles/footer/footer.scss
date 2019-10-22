@@ -1,0 +1,49 @@
+@import '../helpers/variables';
+@import '../helpers/mixins';
+
+.footer {
+  @include dimensions(100%, 6em);
+  @include indentations(0, 1em);
+  background-color: oldlace;
+  border-top: $simple-border;
+  bottom: 0;
+  box-sizing: border-box;
+  position: absolute;
+  @include respond-to('max-width: 800px') {
+    height: 7.5em;
+  }
+  @include respond-to('max-width: 640px') {
+    height: 10em;
+  }
+
+  .footer__copyright,
+  .footer__address {
+    @include respond-to('max-width: 800px') {
+      @include dimensions(100%, auto);
+      text-align: center;
+    }
+  }
+
+  .footer__copyright {
+    @include indentations(0, 1.5em 0);
+    float: left;
+    @include respond-to('max-width: 800px') {
+      padding: 0.3em 0;
+    }
+  }
+
+  .footer__address {
+    @include dimensions(20em, auto);
+    @include indentations(0, 1em 0);
+    text-align: center;
+    float: right;
+    @include respond-to('max-width: 800px') {
+      @include dimensions(100%, auto);
+      padding: 0.5em 0;
+    }
+
+    span {
+      font-weight: bold;
+    }
+  }
+}

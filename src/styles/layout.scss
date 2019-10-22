@@ -1,0 +1,79 @@
+@import 'helpers/variables';
+@import 'helpers/mixins';
+@import url('https://fonts.googleapis.com/css?family=Oranienbaum');
+
+html, body, .container {
+  @include dimensions(100%, 100%);
+  @include indentations(0, 0);
+}
+
+body * {
+  outline-color: #C56757;
+}
+
+body {
+  background-color: peachpuff;
+  color: $dark-brown;
+  font-family: 'Oranienbaum', serif;
+  font-size: 1em;
+  line-height: 1.2;
+
+  a {
+    @include dimensions(100%, 100%);
+    color: $dark-brown;
+    display: inline-block;
+
+    img {
+      @include dimensions(100%, 100%);
+    }
+  }
+
+  img {
+    border: none;
+  }
+
+  .closed {
+    display: none;
+  }
+
+  .opened {
+    display: block;
+  }
+
+  .container {
+    background: linear-gradient(to right, peachpuff, burlywood);
+    height: auto;
+    min-height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    .main {
+      @include dimensions(100%, auto);
+      @include indentations(0, 1em);
+      box-sizing: border-box;
+      position: relative;
+      @include respond-to('max-width: 640px') {
+        margin-bottom: 2em;
+        padding: 0.5em 0.2em;
+      }
+
+      ul, ol {
+        @include indentations(1.5em 0, 0 2em);
+        text-align: left;
+        @include respond-to('max-width: 640px') {
+          padding: 0 1em;
+        }
+      }
+    }
+
+    .empty-div {
+      @include dimensions(100%, 6.5em);
+      @include respond-to('max-width: 800px') {
+        height: 10em;
+      }
+      @include respond-to('max-width: 640px') {
+        height: 12em;
+      }
+    }
+  }
+}
