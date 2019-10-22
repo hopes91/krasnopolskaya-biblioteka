@@ -4,9 +4,7 @@
 .main__arrow-up {
   @include dimensions(auto, auto);
   @include indentations(0 0 0 1em, 0);
-  bottom: 0;
   font-weight: bold;
-  position: relative;
   text-decoration: none;
   z-index: 1;
   @include respond-to('max-width: 800px') {
