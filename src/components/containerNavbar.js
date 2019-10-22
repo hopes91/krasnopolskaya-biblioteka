@@ -31,8 +31,7 @@ const showLinks = event => {
   const navbarLinks = event.target.nextElementSibling
 
   if (navbarLinks && navbarLinks.className.match('closed')) {
-    navbarLinks.classList.remove('closed')
-    navbarLinks.classList.add('opened')
+    navbarLinks.className = 'navbar__section-links opened'
 
     toggleLinksTabIndex(true)
   }
@@ -42,8 +41,7 @@ const hideLinks = event => {
   const navbarLinks = event.currentTarget.children[1] || event.target.nextElementSibling
 
   if (navbarLinks && navbarLinks.className.match('opened')) {
-    navbarLinks.classList.remove('opened')
-    navbarLinks.classList.add('closed')
+    navbarLinks.className = 'navbar__section-links closed'
 
     toggleLinksTabIndex(false)
   }

@@ -30,11 +30,15 @@ const toggleBurgerOnKeyDown = event => {
 const toggleBurger = () => {
   const burgerSpans = document.querySelectorAll('.dropdown__burger span')
 
-  burgerSpans[0].classList.toggle('span-one_active')
-  burgerSpans[2].classList.toggle('span-three_active')
-  setTimeout(() => {
-    burgerSpans[1].classList.toggle('span-two_active')
-  }, 200)
+  if (burgerSpans[0].className === '') {
+    burgerSpans[0].className = 'span-one_active'
+    burgerSpans[2].className = 'span-three_active'
+    setTimeout(() => burgerSpans[1].className = 'span-two_active', 200)
+  } else {
+    burgerSpans[0].className = ''
+    burgerSpans[2].className = ''
+    setTimeout(() => burgerSpans[1].className = '', 200)
+  }
 
   toggleDropdown()
 }
@@ -44,13 +48,9 @@ const toggleDropdown = () => {
 
   if (!dropdownMenu) return;
 
-  if (dropdownMenu.className.match('closed')) {
-    dropdownMenu.classList.remove('closed')
-    dropdownMenu.classList.add('opened')
-  } else {
-    dropdownMenu.classList.remove('opened')
-    dropdownMenu.classList.add('closed')
-  }
+  dropdownMenu.className.match('closed') ?
+    dropdownMenu.className = 'dropdown__menu opened' :
+    dropdownMenu.className = 'dropdown__menu closed'
 }
 
 const toggleDropdownLinks = event => {
@@ -59,13 +59,11 @@ const toggleDropdownLinks = event => {
   if (!dropdownLinks) return;
 
   if (dropdownLinks.className.match('closed')) {
-    dropdownLinks.classList.remove('closed')
-    dropdownLinks.classList.add('opened')
+    dropdownLinks.className = 'dropdown__menu-section-links opened'
 
     toggleLinksTabIndex(true)
   } else {
-    dropdownLinks.classList.remove('opened')
-    dropdownLinks.classList.add('closed')
+    dropdownLinks.className = 'dropdown__menu-section-links closed'
 
     toggleLinksTabIndex(false)
   }

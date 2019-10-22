@@ -21,8 +21,7 @@ const showFirstSlide = event => {
   if (back.className.match('closed')) {
     createDots()
 
-    back.classList.remove('closed')
-    back.classList.add('opened')
+    back.className = 'page_about_photogallery-back opened'
 
     const clickedAlt = event.target.getAttribute('alt')
     let altToCompare = null
@@ -119,8 +118,7 @@ const hideSlider = () => {
   const back = document.querySelector('.page_about_photogallery-back')
 
   if (back && back.className.match('opened')) {
-    back.classList.remove('opened')
-    back.classList.add('closed')
+    back.className = 'page_about_photogallery-back closed'
     mainSlide = null
     start = null
   }
