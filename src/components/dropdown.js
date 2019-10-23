@@ -8,7 +8,7 @@ const Dropdown = ({ toggleBurgerOnKeyDown, toggleBurger, toggleDropdownLinks }) 
     <div
       tabIndex='-1'
       className='dropdown__burger'
-      onKeyPress={toggleBurgerOnKeyDown}
+      onKeyDown={toggleBurgerOnKeyDown}
       onClick={toggleBurger}
     >
       <span></span>
