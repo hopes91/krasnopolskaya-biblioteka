@@ -8,28 +8,32 @@ const ContainerDecorTop = () => {
   const [ year, getYear ] = useState('')
 
   useEffect(() => {
-    const today = new Date()
-    const dayOfTheWeekNum = today.getDay()
-    const monthNum = today.getMonth()
-
+    const dayOfTheWeekNum = new Date().getDay()
     const daysOfTheWeek = ['Воскресенье', 'Понедельник', 'Вторник', 'Среда', 'Четверг', 'Пятница', 'Суббота']
 
     daysOfTheWeek.forEach((day, ind) => {
       ind === dayOfTheWeekNum &&
         getDayOfTheWeek(day)
     })
+  }, [dayOfTheWeek])
 
-    getDay(today.getDate())
+  useEffect(() => {
+    getDay(new Date().getDate())
+  }, [day])
 
+  useEffect(() => {
+    const monthNum = new Date().getMonth()
     const months = ['января', 'февраля', 'марта', 'апреля', 'мая', 'июня', 'июля', 'августа', 'сентября', 'октября', 'ноября', 'декабря']
 
     months.forEach((month, ind) => {
       ind === monthNum &&
         getMonth(month)
     })
+  }, [month])
 
-    getYear(today.getFullYear())
-  })
+  useEffect(() => {
+    getYear(new Date().getFullYear())
+  }, [year])
 
   return <DecorTop
           dayOfTheWeek={dayOfTheWeek}
