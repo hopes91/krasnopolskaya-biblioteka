@@ -53,6 +53,11 @@ const toggleDropdown = () => {
     dropdownMenu.className = 'dropdown__menu closed'
 }
 
+const toggleDropdownLinksOnKeyDown = event => {
+  event.key === 'Enter' &&
+    toggleDropdownLinks(event)
+}
+
 const toggleDropdownLinks = event => {
   const dropdownLinks = event.currentTarget.children[1]
 
@@ -78,6 +83,7 @@ const ContainerDropdown = () => {
   return <Dropdown
           toggleBurgerOnKeyDown={toggleBurgerOnKeyDown}
           toggleBurger={toggleBurger}
+          toggleDropdownLinksOnKeyDown={toggleDropdownLinksOnKeyDown}
           toggleDropdownLinks={toggleDropdownLinks}
         />
 }

@@ -3,7 +3,7 @@ import { sectionTitles, linksSectionOne, linksSectionTwo, linksSectionThree, lin
 import DropdownSection from '../components/dropdownSection'
 import '../styles/header/dropdown.scss'
 
-const Dropdown = ({ toggleBurgerOnKeyDown, toggleBurger, toggleDropdownLinks }) => (
+const Dropdown = ({ toggleBurgerOnKeyDown, toggleBurger, toggleDropdownLinksOnKeyDown, toggleDropdownLinks }) => (
   <div className='dropdown'>
     <div
       tabIndex='-1'
@@ -28,6 +28,7 @@ const Dropdown = ({ toggleBurgerOnKeyDown, toggleBurger, toggleDropdownLinks }) 
                 key={sectionTitle}
                 sectionTitle={sectionTitle}
                 links={links}
+                toggleDropdownLinksOnKeyDown={toggleDropdownLinksOnKeyDown}
                 toggleDropdownLinks={toggleDropdownLinks}
               />
       })}

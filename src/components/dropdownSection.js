@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
 
-const DropdownSection = ({ sectionTitle, links, toggleDropdownLinks }) => (
+const DropdownSection = ({ sectionTitle, links, toggleDropdownLinksOnKeyDown, toggleDropdownLinks }) => (
   <div
     className='dropdown__menu-section'
-    onKeyDown={toggleDropdownLinks}
+    onKeyDown={toggleDropdownLinksOnKeyDown}
     onClick={toggleDropdownLinks}
   >
     {
