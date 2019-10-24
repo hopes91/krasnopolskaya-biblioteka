@@ -8,11 +8,7 @@ const DropdownSection = ({ sectionTitle, links, toggleDropdownLinksOnKeyDown, to
     onClick={toggleDropdownLinks}
   >
     {
-      links.length > 1 &&
-        <p className='dropdown__menu-section-title'>{sectionTitle} <span>&#9662;</span></p>
-    }
-    {
-      links.length === 1 ?
+      links.length === 1 &&
         <>
           {links.map(link => {
             const { to, page } = link
@@ -27,21 +23,24 @@ const DropdownSection = ({ sectionTitle, links, toggleDropdownLinksOnKeyDown, to
                     </Link>
           })}
         </>
-        :
-        <nav className='dropdown__menu-section-links closed'>
-          {links.map(link => {
-            const { to, page, title } = link
-
-            return <Link
-                    to={to}
-                    key={page}
-                    tabIndex='-1'
-                  >
-                    {title}
-                  </Link>
-          })}
-        </nav>
     }
+    {
+      links.length > 1 &&
+        <span className='dropdown__menu-section-title'>{sectionTitle} <span>&#9662;</span></span>
+    }
+    <nav className='dropdown__menu-section-links closed'>
+      {links.map(link => {
+        const { to, page, title } = link
+
+        return <Link
+                to={to}
+                key={page}
+                tabIndex='-1'
+              >
+                {title}
+              </Link>
+      })}
+    </nav>
   </div>
 )
 
