@@ -2,7 +2,7 @@
 @import '../helpers/mixins';
 
 .decor_top {
-  @include dimensions(9.3em, 6.5em);
+  @include dimensions(9.5em, 6.5em);
   @include indentations(0, 1.3em 0 0 0);
   box-sizing: border-box;
   position: absolute;
