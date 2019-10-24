@@ -7,17 +7,7 @@ const NavbarSection = ({ sectionTitle, links, toggleNavbarLinksOnKeyDown, showLi
     onMouseLeave={hideLinks}
   >
     {
-      links.length > 1 &&
-        <p
-          className='navbar__section-title'
-          onKeyDown={toggleNavbarLinksOnKeyDown}
-          onMouseEnter={showLinks}
-        >
-          {sectionTitle} <span>&#9662;</span>
-        </p>
-    }
-    {
-      links.length === 1 ?
+      links.length === 1 &&
         <>
           {links.map(link => {
             const { to, page } = link
@@ -32,21 +22,30 @@ const NavbarSection = ({ sectionTitle, links, toggleNavbarLinksOnKeyDown, showLi
                     </Link>
           })}
         </>
-        :
-        <nav className='navbar__section-links closed'>
-          {links.map(link => {
-            const { to, page, title } = link
-
-            return <Link
-                      to={to}
-                      key={page}
-                      tabIndex='-1'
-                    >
-                      {title}
-                    </Link>
-          })}
-        </nav>
     }
+    {
+      links.length > 1 &&
+        <span
+          className='navbar__section-title'
+          onKeyDown={toggleNavbarLinksOnKeyDown}
+          onMouseEnter={showLinks}
+        >
+          {sectionTitle} <span>&#9662;</span>
+        </span>
+    }
+    <nav className='navbar__section-links closed'>
+      {links.map(link => {
+        const { to, page, title } = link
+
+        return <Link
+                  to={to}
+                  key={page}
+                  tabIndex='-1'
+                >
+                  {title}
+                </Link>
+      })}
+    </nav>
   </div>
 )
 
