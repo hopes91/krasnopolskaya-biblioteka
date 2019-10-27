@@ -18,19 +18,15 @@
     top: 0;
     z-index: 10;
   }
-  @include respond-to('max-width: 640px') {
-    padding-left: 0.5em;
-  }
 
   .decor_top__date {
     @include dimensions(100%, 3em);
     @include indentations(0 auto, 0);
     font-size: 1.2em;
     @include respond-to('max-width: 800px') {
-      @include dimensions(7.7em, 100%);
+      @include dimensions(10em, 100%);
       @include indentations(0, 0.25em 0 0 0);
       box-sizing: border-box;
-      float: right;
     }
 
     .decor_top__date-dayOfTheWeek {
