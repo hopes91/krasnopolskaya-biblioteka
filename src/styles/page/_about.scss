@@ -101,13 +101,17 @@
 
   .page_about_photogallery-back__dots {
     @include dimensions(100%, 1em);
-    @include indentations(0 auto, 0);
-    bottom: 2.2em;
+    @include indentations(0 auto, 1em);
+    bottom: 3em;
+    box-sizing: border-box;
     position: relative;
     text-align: center;
     z-index: 20;
     @include respond-to('max-width: 800px') {
-      bottom: 1.8em;
+      bottom: 4em;
+    }
+    @include respond-to('max-width: 800px landscape') {
+      bottom: 3em;
     }
 
     .page_about_photogallery-back__dot {
@@ -117,6 +121,9 @@
       border-radius: 50%;
       display: inline-block;
       vertical-align: middle;
+      @include respond-to('max-width: 800px') {
+        @include dimensions(0.4em, 0.4em);
+      }
     }
   }
 }
