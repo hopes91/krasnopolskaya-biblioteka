@@ -9,4 +9,7 @@
     position: relative;
     top: 0;
   }
+  @include respond-to('max-width: 640px') {
+    height: auto;
+  }
 }

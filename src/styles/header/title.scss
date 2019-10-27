@@ -17,7 +17,7 @@
     }
     @include respond-to('max-width: 640px') {
       font-size: 1.3em;
-      padding: 1em;
+      padding: 0.5em 0.7em;
     }
   }
 }
