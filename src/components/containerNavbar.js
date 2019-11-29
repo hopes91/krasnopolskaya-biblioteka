@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Navbar from './navbar'
 
 const toggleSectionTabIndex = () => {
-  const navbarSections = document.querySelectorAll('.navbar__section')
+  const navbarSections = document.querySelectorAll('.section')
 
   window.innerWidth > 800 ?
     navbarSections.forEach(section => section.children[0].setAttribute('tabindex', '0')) :
@@ -10,7 +10,7 @@ const toggleSectionTabIndex = () => {
 }
 
 const toggleLinksTabIndex = isOpen => {
-  const navbarLinks = document.querySelectorAll('.navbar__section-links a')
+  const navbarLinks = document.querySelectorAll('.section-links a')
 
   isOpen ?
     navbarLinks.forEach(link => link.setAttribute('tabIndex', '0')) :
@@ -31,7 +31,7 @@ const showLinks = event => {
   const navbarLinks = event.target.nextElementSibling
 
   if (navbarLinks && navbarLinks.className.match('closed')) {
-    navbarLinks.className = 'navbar__section-links opened'
+    navbarLinks.className = 'section-links opened'
 
     toggleLinksTabIndex(true)
   }
@@ -41,7 +41,7 @@ const hideLinks = event => {
   const navbarLinks = event.currentTarget.children[1] || event.target.nextElementSibling
 
   if (navbarLinks && navbarLinks.className.match('opened')) {
-    navbarLinks.className = 'navbar__section-links closed'
+    navbarLinks.className = 'section-links closed'
 
     toggleLinksTabIndex(false)
   }

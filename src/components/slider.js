@@ -1,15 +1,15 @@
 import React from 'react'
 
 const Slider = ({ allPhotos, handleArrows, hideSlider }) => (
-  <div className='page_about_photogallery-back closed'>
+  <div className='popup-back closed'>
     <span
       title='Закрыть (ESC)'
-      className='page_about_photogallery-back__close-icon'
+      className='close-popup-icon'
       onClick={hideSlider}
     >
       &times;
     </span>
-    <div className='page_about_photogallery-back__front'>
+    <div className='popup-front'>
       {allPhotos.map(photo => {
         const { src, alt } = photo
 
@@ -18,23 +18,23 @@ const Slider = ({ allPhotos, handleArrows, hideSlider }) => (
                 alt={alt}
                 key={src}
                 title={alt}
-                className='page_about_photogallery-back__slide'
+                className='slide'
               />
       })}
     </div>
     <span
-      className='page_about_photogallery-back__prev-slide'
+      className='prev-slide-arrow'
       onClick={() => handleArrows(-1)}
     >
       &#10094;
     </span>
     <span
-      className='page_about_photogallery-back__next-slide'
+      className='next-slide-arrow'
       onClick={() => handleArrows(1)}
     >
       &#10095;
     </span>
-    <div className='page_about_photogallery-back__dots'></div>
+    <div className='dots'></div>
   </div>
 )
 

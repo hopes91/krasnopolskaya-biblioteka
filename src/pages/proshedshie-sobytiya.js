@@ -3,15 +3,15 @@ import Layout from '../components/layout'
 import SEO from '../components/seo'
 import DecorMain from '../components/decorMain'
 import '../styles/page/page.scss'
-import '../styles/page/_events.scss'
+import '../styles/page/events.scss'
 import '../styles/main/table.scss'
 
 const PastEventsPage = () => (
   <Layout>
     <SEO title='Прошедшие события 2019 года' keywords={[`прошедшие события 2019 года`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
-    <div className='page page_events page_events_past-events'>
+    <div className='page events past-events'>
       <DecorMain />
-      <h2 className='page__title'>Прошедшие события 2019 года</h2>
+      <h2 className='page-title'>Прошедшие события 2019 года</h2>
       <table>
         <thead>
           <tr>

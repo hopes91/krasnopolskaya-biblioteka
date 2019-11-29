@@ -15,13 +15,13 @@ const showFirstSlideOnKeyDown = event => {
 }
 
 const showFirstSlide = event => {
-  const back = document.querySelector('.page_about_photogallery-back')
-  const slides = document.querySelectorAll('.page_about_photogallery-back__slide')
+  const back = document.querySelector('.popup-back')
+  const slides = document.querySelectorAll('.slide')
 
   if (back.className.match('closed')) {
     createDots()
 
-    back.className = 'page_about_photogallery-back opened'
+    back.className = 'popup-back opened'
 
     const clickedAlt = event.target.getAttribute('alt')
     let altToCompare = null
@@ -41,7 +41,7 @@ const showFirstSlide = event => {
 }
 
 const handleArrowsOnKeyDown = event => {
-  const back = document.querySelector('.page_about_photogallery-back')
+  const back = document.querySelector('.popup-back')
 
   if (back && back.className.match('opened')) {
     event.key === 'ArrowLeft' &&
@@ -53,9 +53,9 @@ const handleArrowsOnKeyDown = event => {
 }
 
 const handleArrows = index => {
-  const slides = document.querySelectorAll('.page_about_photogallery-back__slide')
-  const prevSlide = document.querySelector('.page_about_photogallery-back__prev-slide')
-  const nextSlide = document.querySelector('.page_about_photogallery-back__next-slide')
+  const slides = document.querySelectorAll('.slide')
+  const prevSlide = document.querySelector('.prev-slide-arrow')
+  const nextSlide = document.querySelector('.next-slide-arrow')
 
   if (
     (index === -1 && mainSlide === 0) ||
@@ -76,7 +76,7 @@ const handleArrows = index => {
 }
 
 const showSlides = () => {
-  const slides = document.querySelectorAll('.page_about_photogallery-back__slide')
+  const slides = document.querySelectorAll('.slide')
 
   slides.forEach(slide => slide.style.display = 'none')
 
@@ -88,7 +88,7 @@ const showSlides = () => {
 }
 
 const currentSlide = () => {
-  const dots = document.querySelectorAll('.page_about_photogallery-back__dot')
+  const dots = document.querySelectorAll('.dot')
 
   dots.forEach(dot => dot.style.backgroundColor = 'oldlace')
 
@@ -98,13 +98,13 @@ const currentSlide = () => {
 }
 
 const createDots = () => {
-  const dots = document.querySelector('.page_about_photogallery-back__dots')
+  const dots = document.querySelector('.dots')
 
   dots.innerHTML = ''
 
   allPhotos.forEach(photo => {
     const dot = document.createElement('span')
-    dot.setAttribute('class', 'page_about_photogallery-back__dot')
+    dot.setAttribute('class', 'dot')
     dots.appendChild(dot)
   })
 }
@@ -115,10 +115,10 @@ const hideSliderOnKeyDown = event => {
 }
 
 const hideSlider = () => {
-  const back = document.querySelector('.page_about_photogallery-back')
+  const back = document.querySelector('.popup-back')
 
   if (back && back.className.match('opened')) {
-    back.className = 'page_about_photogallery-back closed'
+    back.className = 'popup-back closed'
     mainSlide = null
     start = null
   }

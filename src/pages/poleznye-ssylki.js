@@ -4,14 +4,14 @@ import SEO from '../components/seo'
 import DecorMain from '../components/decorMain'
 import { usefulLinks } from '../lists/usefulLinks'
 import '../styles/page/page.scss'
-import '../styles/page/_services.scss'
+import '../styles/page/services.scss'
 
 const UsefulLinksPage = () => (
   <Layout>
     <SEO title='Полезные ссылки' keywords={[`полезные ссылки`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
-    <div className='page page_services page_services_useful-links'>
+    <div className='page services useful-links'>
       <DecorMain />
-      <h2 className='page__title'>Полезные ссылки</h2>
+      <h2 className='page-title'>Полезные ссылки</h2>
       {usefulLinks.map(link => {
         const { href, title } = link
 
@@ -19,9 +19,8 @@ const UsefulLinksPage = () => (
           <a
             href={href}
             key={title}
-            target='_blank' 
+            target='_blank'
             rel='noopener noreferrer'
-            className='page_services_useful-links__link'
           >
             {title}
           </a>

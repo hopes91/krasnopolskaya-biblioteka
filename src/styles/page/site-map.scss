@@ -1,27 +1,27 @@
 @import '../helpers/variables';
 @import '../helpers/mixins';
 
-.page_site-map {
+.site-map {
   text-align: left;
 
-  .links-section {
+  .section {
     @include dimensions(100%, auto);
     margin-bottom: 1em;
     @include respond-to('max-width: 800px') {
       margin-bottom: 1.5em;
     }
 
-    .links-section__title {
+    .section-title {
       margin: 0.5em 0;
     }
 
-    .links-section__links {
+    .section-links {
       @include indentations(0, 0 2em);
       @include respond-to('max-width: 640px') {
         padding: 0 1em;
       }
 
-      .links-section__links-item {
+      a {
         line-height: 1.3;
       }
     }

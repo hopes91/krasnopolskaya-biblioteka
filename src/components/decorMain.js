@@ -1,10 +1,10 @@
 import React from 'react'
 import Corner from './corner'
-import '../styles/decor/_main.scss'
+import '../styles/decor/main.scss'
 import { corners } from '../lists/decor'
 
 const DecorMain = () => (
-  <div className='decor_main'>
+  <div className='decor-main'>
     {corners.map(corner => {
       const { secondClass, src } = corner
 

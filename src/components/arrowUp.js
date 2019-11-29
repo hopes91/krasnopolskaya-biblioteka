@@ -1,10 +1,10 @@
 import React from 'react'
-import '../styles/main/__arrow-up.scss'
+import '../styles/main/arrow-up.scss'
 
 const ArrowUp = ({ scrollToTop }) => (
   <a
     href='#top'
-    className='main__arrow-up'
+    className='arrow-up'
     onClick={scrollToTop}
   >
     <span>&uarr;</span> Наверх

@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 
 const NavbarSection = ({ sectionTitle, links, toggleNavbarLinksOnKeyDown, showLinks, hideLinks }) => (
   <div
-    className='navbar__section'
+    className='section'
     onMouseLeave={hideLinks}
   >
     {
@@ -16,7 +16,7 @@ const NavbarSection = ({ sectionTitle, links, toggleNavbarLinksOnKeyDown, showLi
                       to={to}
                       key={page}
                       tabIndex='0'
-                      className='navbar__section-title'
+                      className='section-title'
                     >
                       {sectionTitle}
                     </Link>
@@ -26,14 +26,14 @@ const NavbarSection = ({ sectionTitle, links, toggleNavbarLinksOnKeyDown, showLi
     {
       links.length > 1 &&
         <span
-          className='navbar__section-title'
+          className='section-title'
           onKeyDown={toggleNavbarLinksOnKeyDown}
           onMouseEnter={showLinks}
         >
           {sectionTitle} <span>&#9662;</span>
         </span>
     }
-    <nav className='navbar__section-links closed'>
+    <nav className='section-links closed'>
       {links.map(link => {
         const { to, page, title } = link
 

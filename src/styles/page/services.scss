@@ -1,16 +1,16 @@
 @import '../helpers/variables';
 @import '../helpers/mixins';
 
-.page_services {
+.services {
   a {
     @include dimensions(100%, auto);
   }
 }
 
-.page_services_useful-links {
+.useful-links {
   text-align: left;
 
-  .page_services_useful-links__link {
+  a {
     @include indentations(0.2em 0.5em, 0);
     @include respond-to('max-width: 640px') {
       margin: 0.2em 0;

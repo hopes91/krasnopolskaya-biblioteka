@@ -13,7 +13,7 @@
     display: none;
   }
 
-  .navbar__section {
+  .section {
     @include dimensions(15em, auto);
     @include indentations(0, 0);
     display: inline-block;
@@ -28,7 +28,7 @@
       width: 18.3%;
     }
 
-    .navbar__section-title {
+    .section-title {
       @include dimensions(100%, auto);
       @include indentations(0, 1.04em 0.3em);
       background-color: oldlace;
@@ -52,7 +52,7 @@
       }
     }
 
-    .navbar__section-links {
+    .section-links {
       @include indentations(0, 0);
       background-color: #fcf8ef;
       border: $simple-border;

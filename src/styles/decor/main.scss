@@ -1,10 +1,10 @@
 @import '../helpers/variables';
 @import '../helpers/mixins';
 
-.decor_main {
+.decor-main {
   @include dimensions(100%, 100%);
 
-  .decor_main__corner {
+  .corner {
     @include dimensions(10%, auto);
     @include indentations(0, 0);
     cursor: default;
@@ -22,22 +22,22 @@
     }
   }
 
-  .decor_main__corner_one {
+  .corner-one {
     left: 0.5em;
     top: 0.5em;
   }
 
-  .decor_main__corner_two {
+  .corner-two {
     right: 0.5em;
     top: 0.5em;
   }
 
-  .decor_main__corner_three {
+  .corner-three {
     bottom: 0.2em;
     right: 0.5em;
   }
 
-  .decor_main__corner_four {
+  .corner-four {
     bottom: 0.2em;
     left: 0.5em;
   }

@@ -1,10 +1,10 @@
 @import '../helpers/variables';
 @import '../helpers/mixins';
 
-.page_news__section {
+section {
   margin-bottom: 2em;
 
-  .page_news__section-title {
+  h6 {
     @include indentations(1em 0, 0);
     font: {
       size: 1em;

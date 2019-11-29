@@ -16,15 +16,15 @@
     height: 10em;
   }
 
-  .footer__copyright,
-  .footer__address {
+  .copyright,
+  .address {
     @include respond-to('max-width: 800px') {
       @include dimensions(100%, auto);
       text-align: center;
     }
   }
 
-  .footer__copyright {
+  .copyright {
     @include indentations(0, 1.5em 0);
     float: left;
     @include respond-to('max-width: 800px') {
@@ -32,7 +32,7 @@
     }
   }
 
-  .footer__address {
+  .address {
     @include dimensions(20em, auto);
     @include indentations(0, 1em 0);
     text-align: center;

@@ -6,11 +6,11 @@ import '../styles/header/title.scss'
 
 const Footer = ({ siteTitle }) => (
   <footer className='footer'>
-    <p className='footer__copyright'>
+    <p className='copyright'>
       <Link to='/' className='title'>&copy;&nbsp;{siteTitle},&nbsp;</Link>
       2018-<span>{new Date().getFullYear()}</span>
     </p>
-    <p className='footer__address'><span>Адрес:</span> Кировская область, Сунский район, деревня Краснополье, улица Школьная, дом 6а</p>
+    <p className='address'><span>Адрес:</span> Кировская область, Сунский район, деревня Краснополье, улица Школьная, дом 6а</p>
   </footer>
 )
 

@@ -6,7 +6,7 @@ const Corner = ({ secondClass, src }) => (
     target='_blank'
     rel='noopener noreferrer'
     tabIndex='-1'
-    className={`decor_main__corner decor_main__corner_${secondClass}`}
+    className={`corner corner-${secondClass}`}
   >
     <img src={src} alt='Уголок' />
   </a>

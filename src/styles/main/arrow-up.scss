@@ -1,7 +1,7 @@
 @import '../helpers/variables';
 @import '../helpers/mixins';
 
-.main__arrow-up {
+.arrow-up {
   @include dimensions(auto, auto);
   @include indentations(0 0 0 1em, 0);
   font-weight: bold;

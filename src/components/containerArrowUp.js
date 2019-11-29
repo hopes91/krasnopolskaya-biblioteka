@@ -11,7 +11,7 @@ function scrollToTop(event) {
 
   event.target.className.match('arrow-up') ?
     hash = event.target.href.replace(/[^#]*(.*)/, '$1') :
-    hash = document.querySelector('.main__arrow-up').href.replace(/[^#]*(.*)/, '$1')
+    hash = document.querySelector('.arrow-up').href.replace(/[^#]*(.*)/, '$1')
 
   const topIndent = document.querySelector(hash).getBoundingClientRect().top
 

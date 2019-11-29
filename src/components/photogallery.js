@@ -3,13 +3,13 @@ import DecorMain from '../components/decorMain'
 import PhotogalleryByYear from './photogalleryByYear'
 import Slider from './slider'
 import '../styles/page/page.scss'
-import '../styles/page/_about.scss'
+import '../styles/page/about.scss'
 
 const Photogallery = ({ photos2019, photos2018, allPhotos, showFirstSlideOnKeyDown, showFirstSlide, handleArrows, hideSlider }) => (
   <>
-    <div className='page page_about page_about_photogallery'>
+    <div className='page about photogallery'>
       <DecorMain />
-      <h2 className='page__title'>Фотогалерея</h2>
+      <h2 className='page-title'>Фотогалерея</h2>
       <PhotogalleryByYear
         year='2019 год'
         photosOfTheYear={photos2019}

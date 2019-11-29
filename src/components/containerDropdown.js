@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import Dropdown from './dropdown'
 
 const toggleSectionTabIndex = () => {
-  const burger = document.querySelector('.dropdown__burger')
-  const dropdownSections = document.querySelectorAll('.dropdown__menu-section')
+  const burger = document.querySelector('.burger')
+  const dropdownSections = document.querySelectorAll('.section')
 
   if (window.innerWidth > 800) {
     burger.setAttribute('tabIndex', '-1')
@@ -15,7 +15,7 @@ const toggleSectionTabIndex = () => {
 }
 
 const toggleLinksTabIndex = isOpen => {
-  const dropdownLinks = document.querySelectorAll('.dropdown__menu-section-links a')
+  const dropdownLinks = document.querySelectorAll('.section-links a')
 
   isOpen ?
     dropdownLinks.forEach(link => link.setAttribute('tabIndex', '0')) :
@@ -28,7 +28,7 @@ const toggleBurgerOnKeyDown = event => {
 }
 
 const toggleBurger = () => {
-  const burgerSpans = document.querySelectorAll('.dropdown__burger span')
+  const burgerSpans = document.querySelectorAll('.burger span')
 
   if (burgerSpans[0].className === '') {
     burgerSpans[0].className = 'span-one_active'
@@ -44,13 +44,13 @@ const toggleBurger = () => {
 }
 
 const toggleDropdown = () => {
-  const dropdownMenu = document.querySelector('.dropdown__menu')
+  const dropdownMenu = document.querySelector('.dropdown-menu')
 
   if (!dropdownMenu) return;
 
   dropdownMenu.className.match('closed') ?
-    dropdownMenu.className = 'dropdown__menu opened' :
-    dropdownMenu.className = 'dropdown__menu closed'
+    dropdownMenu.className = 'dropdown-menu opened' :
+    dropdownMenu.className = 'dropdown-menu closed'
 }
 
 const toggleDropdownLinksOnKeyDown = event => {
@@ -64,11 +64,11 @@ const toggleDropdownLinks = event => {
   if (!dropdownLinks) return;
 
   if (dropdownLinks.className.match('closed')) {
-    dropdownLinks.className = 'dropdown__menu-section-links opened'
+    dropdownLinks.className = 'section-links opened'
 
     toggleLinksTabIndex(true)
   } else {
-    dropdownLinks.className = 'dropdown__menu-section-links closed'
+    dropdownLinks.className = 'section-links closed'
 
     toggleLinksTabIndex(false)
   }

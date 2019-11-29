@@ -7,7 +7,7 @@ const Dropdown = ({ toggleBurgerOnKeyDown, toggleBurger, toggleDropdownLinksOnKe
   <div className='dropdown'>
     <div
       tabIndex='-1'
-      className='dropdown__burger'
+      className='burger'
       onKeyDown={toggleBurgerOnKeyDown}
       onClick={toggleBurger}
     >
@@ -15,7 +15,7 @@ const Dropdown = ({ toggleBurgerOnKeyDown, toggleBurger, toggleDropdownLinksOnKe
       <span></span>
       <span></span>
     </div>
-    <div className='dropdown__menu closed'>
+    <div className='dropdown-menu closed'>
       {sectionTitles.map((sectionTitle, ind) => {
         const sectionLinks = [linksSectionOne, linksSectionTwo, linksSectionThree, linksSectionFour, linksSectionFive]
         const titleIndex = ind

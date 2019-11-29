@@ -1,19 +1,19 @@
 @import '../helpers/variables';
 @import '../helpers/mixins';
 
-.page_about_photogallery {
-  .page_about_photogallery__year {
+.photogallery {
+  .photos-year {
     text-align: center;
   }
 
-  .page_about_photogallery__sorted-by-year {
+  .photos {
     align-items: center;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
     margin-bottom: 1em;
 
-    .page_about_photogallery__mini-photo {
+    .year-photo {
       @include dimensions(10em, auto);
       cursor: pointer;
       margin: 0.5em;
@@ -24,7 +24,7 @@
   }
 }
 
-.page_about_photogallery-back {
+.popup-back {
   @include dimensions(100%, 100%);
   background-color: rgba(0, 0, 0, 0.9);
   left: 0;
@@ -32,7 +32,7 @@
   top: 0;
   z-index: 10;
 
-  .page_about_photogallery-back__close-icon {
+  .close-popup-icon {
     background-color: rgba(0, 0, 0, 0);
     border: 0;
     color: oldlace;
@@ -42,12 +42,13 @@
     right: 0.5em;
     top: 0.1em;
     z-index: 20;
+
     &:hover {
       font-size: 3.05em;
     }
   }
 
-  .page_about_photogallery-back__front {
+  .popup-front {
     @include dimensions(70%, 100%);
     @include indentations(0 auto, 0);
     background-color: rgba(0, 0, 0, 0);
@@ -55,7 +56,7 @@
     top: 0;
     z-index: 20;
 
-    .page_about_photogallery-back__slide {
+    .slide {
       @include indentations(auto, 0);
       bottom: 0;
       display: none;
@@ -68,8 +69,8 @@
     }
   }
 
-  .page_about_photogallery-back__prev-slide,
-  .page_about_photogallery-back__next-slide {
+  .prev-slide-arrow,
+  .next-slide-arrow {
     @include indentations(0, 1em 1.2em);
     border-radius: 0.3em;
     color: oldlace;
@@ -85,21 +86,21 @@
     }
   }
 
-  .page_about_photogallery-back__prev-slide {
+  .prev-slide-arrow {
     left: 1em;
     @include respond-to('max-width: 800px') {
       left: 0;
     }
   }
 
-  .page_about_photogallery-back__next-slide {
+  .next-slide-arrow {
     right: 1em;
     @include respond-to('max-width: 800px') {
       right: 0;
     }
   }
 
-  .page_about_photogallery-back__dots {
+  .dots {
     @include dimensions(100%, 1em);
     @include indentations(0 auto, 1em);
     bottom: 3em;
@@ -114,7 +115,7 @@
       bottom: 3em;
     }
 
-    .page_about_photogallery-back__dot {
+    .dot {
       @include dimensions(0.5em, 0.5em);
       @include indentations(0 0.1em, 0);
       background-color: oldlace;
@@ -128,7 +129,7 @@
   }
 }
 
-.page_about_schedule {
+.schedule {
   text-align: center;
 
   p {
@@ -136,11 +137,11 @@
     @include indentations(0.8em 0, 0);
   }
 
-  .page_about_schedule__day {
+  .schedule-day {
     font-weight: bold;
   }
 
-  .page_about_schedule__time {
+  .schedule-time {
     margin-bottom: 1.5em;
   }
 }

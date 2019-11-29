@@ -1,9 +1,9 @@
 import React from 'react'
 import stackOfBooks from '../images/decor/stack-of-books-graphic-illustration.png'
-import '../styles/decor/_stack-of-books.scss'
+import '../styles/decor/stack-of-books.scss'
 
 const StackOfBooks = () => (
-  <div className='decor_stack-of-books'>
+  <div className='stack-of-books'>
     <a
       href='https://www.freepik.com/free-vector/stack-of-books-graphic-illustration_2632998.htm'
       target='_blank'

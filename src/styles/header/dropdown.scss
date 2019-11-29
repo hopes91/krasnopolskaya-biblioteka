@@ -15,7 +15,7 @@
     display: block;
   }
 
-  .dropdown__burger {
+  .burger {
     @include dimensions(2.5em, 1.5em);
     cursor: pointer;
     position: absolute;
@@ -58,19 +58,19 @@
   	}
   }
 
-  .dropdown__menu {
+  .dropdown-menu {
 		@include dimensions(100%, auto);
 		@include indentations(0, 4em 0 0 0);
     text-align: center;
 		position: absolute;
 		z-index: 5;
 
-    .dropdown__menu-section {
+    .section {
       @include dimensions(100%, auto);
       @include indentations(0, 0);
       background-color: oldlace;
 
-      .dropdown__menu-section-title {
+      .section-title {
         @include dimensions(100%, auto);
         @include indentations(0, 1em);
         border: $simple-border;
@@ -88,7 +88,7 @@
         }
       }
 
-      .dropdown__menu-section-links {
+      .section-links {
         @include indentations(0, 0);
         background-color: #fcf8ef;
         border: $simple-border;
