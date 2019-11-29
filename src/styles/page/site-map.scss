@@ -16,7 +16,7 @@
     }
 
     .section-links {
-      @include indentations(0, 0 2em);
+      @include indentations(0, 0 1.5em);
       @include respond-to('max-width: 640px') {
         padding: 0 1em;
       }
