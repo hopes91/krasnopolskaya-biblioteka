@@ -27,7 +27,7 @@
   }
 
   .page-title {
-    @include indentations(1em, 0);
+    @include indentations(1em 1em 2em 1em, 0);
     text-align: center;
   }
 
