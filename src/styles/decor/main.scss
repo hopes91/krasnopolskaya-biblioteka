@@ -5,7 +5,7 @@
   @include dimensions(100%, 100%);
 
   .corner {
-    @include dimensions(10%, auto);
+    @include dimensions(8%, auto);
     @include indentations(0, 0);
     cursor: default;
     position: absolute;
