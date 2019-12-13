@@ -109,6 +109,6 @@ export const photos2018 = [
 
 export const libraryPhotos = [
   { src: insideTheLibrary, alt: 'Краснопольская библиотека внутри' },
-  { src: insideTheLibrary2, alt: 'Краснопольская библиотека внутри' },
+  { src: insideTheLibrary2, alt: 'Краснопольская библиотека внутри 2' },
   { src: outsideTheLibrary, alt: 'Краснопольская библиотека снаружи' }
 ]
