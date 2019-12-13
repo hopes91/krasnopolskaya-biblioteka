@@ -10,7 +10,7 @@ const toggleSectionTabIndex = () => {
     dropdownSections.forEach(section => section.children[0].setAttribute('tabIndex', '-1'))
   }
 
-  burger.setAttribute('tabIndex', '1')
+  burger.setAttribute('tabIndex', '0')
   dropdownSections.forEach(section => section.children[0].setAttribute('tabIndex', '0'))
 }
 
