@@ -130,11 +130,10 @@
 }
 
 .schedule {
-  text-align: center;
-
   p {
     @include dimensions(100%, auto);
     @include indentations(0.8em 0, 0);
+    text-align: center;
   }
 
   .schedule-day {
