@@ -6,8 +6,7 @@
 
   .corner {
     @include dimensions(8%, auto);
-    @include indentations(0, 0);
-    cursor: default;
+    margin: 0;
     position: absolute;
     z-index: -1;
     @include respond-to('max-width: 800px') {
@@ -15,10 +14,6 @@
     }
     @include respond-to('max-width: 640px') {
       display: none;
-    }
-
-    img {
-      margin: 0;
     }
   }
 

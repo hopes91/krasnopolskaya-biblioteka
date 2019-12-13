@@ -4,14 +4,7 @@ import '../styles/decor/stack-of-books.scss'
 
 const StackOfBooks = () => (
   <div className='stack-of-books'>
-    <a
-      href='https://www.freepik.com/free-vector/stack-of-books-graphic-illustration_2632998.htm'
-      target='_blank'
-      rel='noopener noreferrer'
-      tabIndex='-1'
-    >
-      <img src={stackOfBooks} alt='Стопка книг' />
-    </a>
+    <img src={stackOfBooks} alt='Стопка книг' />
   </div>
 )
 
