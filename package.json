@@ -1,7 +1,7 @@
 {
   "name": "krasnopolskaya-biblioteka",
   "private": false,
-  "description": "Oficial website for Krasnopolie Library (Russia).",
+  "description": "Краснопольская библиотека МКУК Сунская МБС",
   "version": "0.1.0",
   "author": "Nadya F-a <nadezhdafalaleeva@gmail.com>",
   "dependencies": {
