@@ -6,12 +6,13 @@ import { corners } from '../lists/decor'
 const DecorMain = () => (
   <div className='decor-main'>
     {corners.map(corner => {
-      const { secondClass, src } = corner
+      const { secondClass, src, alt } = corner
 
       return <Corner
               key={secondClass}
               secondClass={secondClass}
               src={src}
+              alt={alt}
             />
     })}
   </div>

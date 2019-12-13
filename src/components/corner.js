@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Corner = ({ secondClass, src }) => (
+const Corner = ({ secondClass, src, alt }) => (
   <a
     href='https://www.freepik.com/free-vector/vintage-ornamental-elements_802577.htm'
     target='_blank'
@@ -8,7 +8,7 @@ const Corner = ({ secondClass, src }) => (
     tabIndex='-1'
     className={`corner corner-${secondClass}`}
   >
-    <img src={src} alt='Уголок' />
+    <img src={src} alt={alt} />
   </a>
 )
 
