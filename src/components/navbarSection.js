@@ -25,27 +25,29 @@ const NavbarSection = ({ sectionTitle, links, toggleNavbarLinksOnKeyDown, showLi
     }
     {
       links.length > 1 &&
-        <span
-          className='section-title'
-          onKeyDown={toggleNavbarLinksOnKeyDown}
-          onMouseEnter={showLinks}
-        >
-          {sectionTitle} <span>&#9662;</span>
-        </span>
-    }
-    <nav className='section-links closed'>
-      {links.map(link => {
-        const { to, page, title } = link
+        <>
+          <span
+            className='section-title'
+            onKeyDown={toggleNavbarLinksOnKeyDown}
+            onMouseEnter={showLinks}
+          >
+            {sectionTitle} <span>&#9662;</span>
+          </span>
+          <nav className='section-links closed'>
+            {links.map(link => {
+              const { to, page, title } = link
 
-        return <Link
-                  to={to}
-                  key={page}
-                  tabIndex='-1'
-                >
-                  {title}
-                </Link>
-      })}
-    </nav>
+              return <Link
+                        to={to}
+                        key={page}
+                        tabIndex='-1'
+                      >
+                        {title}
+                      </Link>
+            })}
+          </nav>
+        </>
+    }
   </div>
 )
 
