@@ -8,7 +8,6 @@
   box-sizing: border-box;
   min-height: 40em;
   position: relative;
-  text-align: justify;
   z-index: 1;
   @include respond-to('min-width: 1800px') {
     width: 70em;
@@ -26,8 +25,13 @@
     padding: 1.5em 1em;
   }
 
+  p {
+    text-align: justify;
+  }
+
   .page-title {
     @include indentations(1em 1em 2em 1em, 0);
+    text-align: justify;
     text-align: center;
   }
 
