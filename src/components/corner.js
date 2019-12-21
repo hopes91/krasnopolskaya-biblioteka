@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Corner = ({ secondClass, src, alt }) => (
-  <img 
+const Corner = ({ secondClass, src }) => (
+  <img
     src={src}
-    alt={alt}
+    alt=''
     className={`corner corner-${secondClass}`}
   />
 )

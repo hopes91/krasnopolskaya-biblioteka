@@ -4,7 +4,7 @@ import '../styles/decor/stack-of-books.scss'
 
 const StackOfBooks = () => (
   <div className='stack-of-books'>
-    <img src={stackOfBooks} alt='Стопка книг' />
+    <img src={stackOfBooks} alt='' />
   </div>
 )
 
