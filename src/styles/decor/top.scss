@@ -23,10 +23,15 @@
     @include dimensions(100%, 3em);
     @include indentations(0 auto, 0);
     font-size: 1.2em;
+    position: relative;
     @include respond-to('max-width: 800px') {
       @include dimensions(10em, 100%);
       @include indentations(0, 0.25em 0 0 0);
       box-sizing: border-box;
+      left: 5em;
+    }
+    @include respond-to('max-width: 640px') {
+      left: 3.7em;
     }
 
     .date-dayOfTheWeek {
@@ -51,34 +56,20 @@
     }
   }
 
-  // .pic {
-  //   @include dimensions(7.3em, auto);
-  //   bottom: 0.3em;
-  //   cursor: default;
-  //   position: relative;
-  //   @include respond-to('min-width: 1367px') {
-  //     width: 8em;
-  //   }
-  //   @include respond-to('max-width: 800px') {
-  //     @include dimensions(5.5em, 100%);
-  //     bottom: 0;
-  //     box-sizing: border-box;
-  //     float: left;
-  //   }
-  //   @include respond-to('max-width: 640px') {
-  //     width: 4.5em;
-  //   }
-  //
-  //   img {
-  //     @include dimensions(70%, auto);
-  //     @include indentations(0, 0);
-  //     @include respond-to('max-width: 800px') {
-  //       margin: 0;
-  //       width: 100%;
-  //     }
-  //     @include respond-to('max-width: 640px') {
-  //       padding-top: 0.4em;
-  //     }
-  //   }
-  // }
+  .pic {
+    @include dimensions(7em, auto);
+    bottom: -2em;
+    left: 0.5em;
+    position: absolute;
+    @include respond-to('max-width: 800px') {
+      bottom: 0.2em;
+      box-sizing: border-box;
+      left: 0.3em;
+      width: 6em;
+    }
+    @include respond-to('max-width: 640px') {
+      bottom: 0.6em;
+      width: 4.5em;
+    }
+  }
 }

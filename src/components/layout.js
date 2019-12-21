@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import useSiteMetadata from '../hooks/useSiteMetadata'
 import Header from './header'
-// import DecorCenter from './decorCenter'
+import DecorCenter from './decorCenter'
 import ContainerArrowUp from './containerArrowUp'
 import StackOfBooks from './stackOfBooks'
 import Footer from './footer'
@@ -22,7 +22,7 @@ const Layout = ({ children }) => {
       <Header
         siteTitle={title}
       />
-      {/* <DecorCenter /> */}
+      <DecorCenter />
       <main className='main'>
         {children}
         <ContainerArrowUp />

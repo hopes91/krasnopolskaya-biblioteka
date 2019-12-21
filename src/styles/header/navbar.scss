@@ -3,11 +3,12 @@
 
 .navbar {
   @include dimensions(100%, 3.3em);
-  @include indentations(0 auto, 0);
+  @include indentations(0 auto 1em auto, 0);
   background: linear-gradient(to right, peachpuff, burlywood);
   display: block;
   position: relative;
   text-align: center;
+  top: 1em;
   z-index: 5;
   @include respond-to('max-width: 800px') {
     display: none;
