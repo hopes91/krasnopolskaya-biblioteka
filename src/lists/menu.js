@@ -12,7 +12,7 @@ export const linksSectionTwo = [
 ]
 
 export const linksSectionThree = [
-  { to: '/afisha', page: 'afisha', title: 'Афиша лета 2019 года' },
+  { to: '/afisha', page: 'afisha', title: 'Афиша' },
   { to: '/ot-vsej-dushi', page: 'ot-vsej-dushi', title: 'Семейный клуб «От всей души»' },
   { to: '/biblionik', page: 'biblionik', title: 'Кружок «Библионик»' },
   { to: '/proshedshie-sobytiya', page: 'proshedshie-sobytiya', title: 'Прошедшие события 2019 года' }
