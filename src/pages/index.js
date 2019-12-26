@@ -7,7 +7,6 @@ import '../styles/page/news.scss'
 
 import news13122019 from '../images/news/13122019.png'
 import news12122019 from '../images/news/12122019.jpg'
-import news121020192 from '../images/news/12102019-2.jpg'
 import news08072019 from '../images/news/08072019.jpg'
 import news07062019 from '../images/news/07062019.jpg'
 import news05062019 from '../images/news/05062019.jpg'
@@ -28,10 +27,6 @@ const IndexPage = () => (
       <section>
         <h3>четверг, 12 декабря 2019 год</h3>
         <img src={news12122019} alt='Расписание работы библиотеки в новогодние праздники' className='page-image' />
-      </section>
-      <section>
-        <h3>суббота, 12 октября 2019 год</h3>
-        <img src={news121020192} alt='Список лучших читателей за 9 месяцев 2019 года' className='page-image' />
       </section>
       <section>
         <h3>понедельник, 8 июля 2019 год</h3>
