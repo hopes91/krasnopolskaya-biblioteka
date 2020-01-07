@@ -13,7 +13,6 @@ export const linksSectionTwo = [
 
 export const linksSectionThree = [
   { to: '/afisha', page: 'afisha', title: 'Афиша на январь 2020 года' },
-  { to: '/ot-vsej-dushi', page: 'ot-vsej-dushi', title: 'Семейный клуб «От всей души»' },
   { to: '/biblionik', page: 'biblionik', title: 'Кружок «Библионик»' },
   { to: '/proshedshie-sobytiya', page: 'proshedshie-sobytiya', title: 'Прошедшие события 2019 года' }
 ]
