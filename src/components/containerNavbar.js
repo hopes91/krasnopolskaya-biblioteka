@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import Navbar from './navbar'
 
 const toggleSectionTabIndex = () => {
-  const navbarSections = document.querySelectorAll('.section')
+  const navbarSections = document.querySelectorAll('.navbar .section')
 
   window.innerWidth > 800 ?
     navbarSections.forEach(section => section.children[0].setAttribute('tabindex', '0')) :
@@ -10,7 +10,7 @@ const toggleSectionTabIndex = () => {
 }
 
 const toggleLinksTabIndex = isOpen => {
-  const navbarLinks = document.querySelectorAll('.section-links a')
+  const navbarLinks = document.querySelectorAll('.navbar .section-links a')
 
   isOpen ?
     navbarLinks.forEach(link => link.setAttribute('tabIndex', '0')) :

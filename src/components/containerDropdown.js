@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import Dropdown from './dropdown'
 
 const toggleSectionTabIndex = () => {
-  const burger = document.querySelector('.burger')
-  const dropdownSections = document.querySelectorAll('.section')
+  const burger = document.querySelector('.dropdown .burger')
+  const dropdownSections = document.querySelectorAll('.dropdown .section')
 
   if (window.innerWidth > 800) {
     burger.setAttribute('tabIndex', '-1')
@@ -15,7 +15,7 @@ const toggleSectionTabIndex = () => {
 }
 
 const toggleLinksTabIndex = isOpen => {
-  const dropdownLinks = document.querySelectorAll('.section-links a')
+  const dropdownLinks = document.querySelectorAll('.dropdown .section-links a')
 
   isOpen ?
     dropdownLinks.forEach(link => link.setAttribute('tabIndex', '0')) :
@@ -28,7 +28,7 @@ const toggleBurgerOnKeyDown = event => {
 }
 
 const toggleBurger = () => {
-  const burgerSpans = document.querySelectorAll('.burger span')
+  const burgerSpans = document.querySelectorAll('.dropdown .burger span')
 
   if (burgerSpans[0].className === '') {
     burgerSpans[0].className = 'span-one_active'
@@ -44,7 +44,7 @@ const toggleBurger = () => {
 }
 
 const toggleDropdown = () => {
-  const dropdownMenu = document.querySelector('.dropdown-menu')
+  const dropdownMenu = document.querySelector('.dropdown .dropdown-menu')
 
   if (!dropdownMenu) return;
 
