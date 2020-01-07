@@ -41,20 +41,6 @@
   }
 }
 
-.poster-ot-vsej-dushi {
-  @include respond-to('max-width: 800px') {
-    height: auto;
-  }
-
-  .section {
-    height: 3em;
-    @include respond-to('max-width: 800px') {
-      height: auto;
-      margin-bottom: 1em;
-    }
-  }
-}
-
 .poster-biblionik {
   .section {
     height: 11em;
