@@ -41,16 +41,6 @@
   }
 }
 
-.poster-biblionik {
-  .section {
-    height: 11em;
-    @include respond-to('max-width: 800px') {
-      height: auto;
-      margin-bottom: 1em;
-    }
-  }
-}
-
 .past-events {
   @include respond-to('max-width: 640px') {
     @include indentations(1em auto, 1em 0);
