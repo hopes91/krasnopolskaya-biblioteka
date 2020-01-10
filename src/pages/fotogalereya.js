@@ -2,9 +2,9 @@ import React, { useEffect } from 'react'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 import Photogallery from '../components/photogallery'
-import { photos2019, photos2018 } from '../lists/photogallery'
+import { photos2020, photos2019, photos2018 } from '../lists/photogallery'
 
-const allPhotos = photos2019.concat(photos2018)
+const allPhotos = photos2020.concat(photos2019, photos2018)
 
 let mainSlide = null
 let start = null
@@ -134,6 +134,7 @@ const PhotogalleryPage = () => {
     <Layout>
       <SEO title='Фотогалерея' keywords={[`фотографии краснопольской библиотеки`, `фотогалерея`, `краснопольская библиотека`, `краснополье`, `сунский район`, `суна`, `кировская область`]} />
       <Photogallery
+        photos2020={photos2020}
         photos2019={photos2019}
         photos2018={photos2018}
         allPhotos={allPhotos}
