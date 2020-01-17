@@ -26,7 +26,6 @@ import leto20195 from '../images/photogallery/2019/leto-2019-5.jpg'
 import leto20196 from '../images/photogallery/2019/leto-2019-6.jpg'
 import leto20197 from '../images/photogallery/2019/leto-2019-7.jpg'
 import leto20198 from '../images/photogallery/2019/leto-2019-8.jpg'
-import leto20199 from '../images/photogallery/2019/leto-2019-9.jpg'
 import pohod906Karier from '../images/photogallery/2019/pohod-9.06-karier.jpg'
 import pohod906Karier2 from '../images/photogallery/2019/pohod-9.06-karier-2.jpg'
 import pohod906Karier3 from '../images/photogallery/2019/pohod-9.06-karier-3.jpg'
@@ -83,13 +82,13 @@ export const photos2019 = [
   { src: bibliosumerki3, alt: 'Библиосумерки 3' },
   { src: detiNaViktorine, alt: 'Дети на викторине' },
   { src: leto2019, alt: 'Лeто 2019' },
-  { src: leto20193, alt: 'Лeто 2019 2' },
-  { src: leto20194, alt: 'Лeто 2019 3' },
-  { src: leto20195, alt: 'Лeто 2019 4' },
-  { src: leto20196, alt: 'Лeто 2019 5' },
-  { src: leto20197, alt: 'Лeто 2019 6' },
-  { src: leto20198, alt: 'Лeто 2019 7' },
-  { src: leto20199, alt: 'Лeто 2019 8' },
+  { src: leto20192, alt: 'Лeто 2019 2' },
+  { src: leto20193, alt: 'Лeто 2019 3' },
+  { src: leto20194, alt: 'Лeто 2019 4' },
+  { src: leto20195, alt: 'Лeто 2019 5' },
+  { src: leto20196, alt: 'Лeто 2019 6' },
+  { src: leto20197, alt: 'Лeто 2019 7' },
+  { src: leto20198, alt: 'Лeто 2019 8' },
   { src: pohod906Karier, alt: 'Поход 9 июня, карьер' },
   { src: pohod906Karier2, alt: 'Поход 9 июня, карьер 2' },
   { src: pohod906Karier3, alt: 'Поход 9 июня, карьер 3' },
