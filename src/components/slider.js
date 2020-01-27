@@ -11,13 +11,13 @@ const Slider = ({ allPhotos, handleArrows, hideSlider }) => (
     </span>
     <div className='popup-front'>
       {allPhotos.map(photo => {
-        const { src, alt } = photo
+        const { src, alt, title } = photo
 
         return <img
                 src={src}
                 alt={alt}
                 key={src}
-                title={alt}
+                title={title}
                 className='slide'
               />
       })}
