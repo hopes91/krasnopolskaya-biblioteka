@@ -3,7 +3,7 @@ import rozhdestvenskijChasVeselykhZhatejDomaUTaniSukhodoevoj from '../images/pho
 import semejnyjKlub29Marta from '../images/photogallery/2019/semejnyj-klub-29-marta.jpg'
 import semejnyjKlub29Marta2 from '../images/photogallery/2019/semejnyj-klub-29-marta-2.jpg'
 import chasZozhVperedPoDorogeZdoroviya from '../images/photogallery/2019/chas-zozh-vpered-po-doroge-zdoroviya.jpg'
-import viktorinaNaDomuDlyaDevochkiSOV from '../images/photogallery/2019/viktorina-na-domu-dlya-devochki-s-organichennymi-vozmozhnostyami.jpg'
+import viktorinaNaDomuDlyaDevochkiSInvalidnostuj from '../images/photogallery/2019/viktorina-na-domu-dlya-devochki-s-invalidnostuj.jpg'
 import vystavkaTeatrIBiblioteka from '../images/photogallery/2019/vystavka-teatr-i-biblioteka.jpg'
 import detsadovtsyVMaskah from '../images/photogallery/2019/detsadovtsy-v-maskah-na-zanyatii-kruzhka-biblionik.jpg'
 import bibliochuchelo from '../images/photogallery/2019/bibliochuchelo-dlya-biblionochi.jpg'
