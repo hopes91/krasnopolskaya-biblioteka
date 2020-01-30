@@ -5,6 +5,7 @@ import DecorMain from '../components/decorMain'
 import '../styles/page/page.scss'
 import '../styles/page/news.scss'
 
+import news30012020 from '../images/news/30012020.jpg'
 import news27012020 from '../images/news/27012020.jpg'
 import news17012020 from '../images/news/17012020.jpg'
 
@@ -14,6 +15,10 @@ const IndexPage = () => (
     <div className='page news'>
       <DecorMain />
       <h2 className='page-title'>Новости</h2>
+      <section>
+        <h3>четверг, 30 января 2020 год</h3>
+        <img src={news30012020} alt='Благодарность Панишевой Н.В. за подаренные книги' className='page-image' />
+      </section>
       <section>
         <h3>понедельник, 27 января 2020 год</h3>
         <p>Краснопольская библиотека участвует в сетевой акции «ПоЧитатели Чехова» к 160-летию со дня рождения писателя.</p>
