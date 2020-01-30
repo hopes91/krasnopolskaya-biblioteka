@@ -46,4 +46,17 @@
     @include indentations(1em auto, 1em 0);
     overflow-x: scroll;
   }
+
+  .past-years-events {
+    .table-title {
+      cursor: pointer;
+      margin: 1em auto 1.2em auto;
+      text-align: center;
+      width: 13em;
+    }
+
+    table {
+      border: none;
+    }
+  }
 }
