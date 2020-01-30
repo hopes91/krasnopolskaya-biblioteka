@@ -2,61 +2,18 @@
 @import '../helpers/mixins';
 
 .events {
-  .section {
-    @include dimensions(100%, auto);
-
-    p {
-      @include dimensions(auto, 1.2em);
-      @include indentations(0.5em 0, 0);
-    }
-
-    .section-date {
-      @include dimensions(25%, auto);
-      float: left;
-      font-weight: bold;
-      text-align: left;
-    }
-
-    .section-event {
-      @include dimensions(75%, auto);
-      float: right;
-      text-align: left;
-    }
-
-    .section-date,
-    .section-event {
-      @include respond-to('max-width: 800px') {
-        @include dimensions(100%, auto);
-        float: none;
-        text-align: center;
-      }
-    }
-  }
-}
-
-.poster {
   @include respond-to('max-width: 640px') {
-    @include indentations(1em auto, 1em 0);
-    overflow-x: scroll;
+    @include indentations(0, 1em 0.5em);
   }
 }
 
 .past-events {
-  @include respond-to('max-width: 640px') {
-    @include indentations(1em auto, 1em 0);
-    overflow-x: scroll;
-  }
-
   .past-years-events {
     .table-title {
       cursor: pointer;
       margin: 1em auto 1.2em auto;
       text-align: center;
       width: 13em;
-    }
-
-    table {
-      border: none;
     }
   }
 }
