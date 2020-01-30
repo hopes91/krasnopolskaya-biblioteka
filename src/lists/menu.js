@@ -12,9 +12,9 @@ export const linksSectionTwo = [
 ]
 
 export const linksSectionThree = [
-  { to: '/afisha', page: 'afisha', title: 'Афиша на январь 2020 года' },
+  { to: '/afisha', page: 'afisha', title: 'Афиша на февраль 2020 года' },
   { to: '/biblionik', page: 'biblionik', title: 'Кружок «Библионик»' },
-  { to: '/proshedshie-sobytiya', page: 'proshedshie-sobytiya', title: 'Прошедшие события 2019 года' }
+  { to: '/proshedshie-sobytiya', page: 'proshedshie-sobytiya', title: 'Прошедшие события' }
 ]
 
 export const linksSectionFour = [
