@@ -7,6 +7,7 @@ import '../styles/page/news.scss'
 
 import news30012020 from '../images/news/30012020.jpg'
 import news27012020 from '../images/news/27012020.jpg'
+import vystavkaProsmotrOChekhove from '../images/photogallery/2020/vystavka-prosmotr-o-chekhove.jpg'
 import news17012020 from '../images/news/17012020.jpg'
 import vystavkaOPtitse2020Zhuravle from '../images/photogallery/2020/vystavka-o-ptitse-2020--zhuravle.jpg'
 
@@ -81,6 +82,7 @@ const IndexPage = () => (
       <section>
         <h3>среда, 22 января 2020 год</h3>
         <p>21 января библиотекарь оформила выставку-просмотр «Чехов знакомый и незнакомый» к 160-летию писателя.</p>
+        <img src={vystavkaProsmotrOChekhove} alt='На столе лежат раскрытые книги Чехова, а на стеллаже висит название выставки' className='page-image' />
       </section>
       <section>
         <h3>пятница, 17 января 2020 год</h3>
