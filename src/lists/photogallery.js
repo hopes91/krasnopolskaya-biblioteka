@@ -1,4 +1,9 @@
 import rozhdestvenskijChasVeselykhZhatejDomaUTaniSukhodoevoj from '../images/photogallery/2020/rozhdestvenskij-chas-veselykh-zhatej-doma-u-tani-sukhodoevoj.jpg'
+import vystavkaOPtitse2020Zhuravle from '../images/photogallery/2020/vystavka-o-ptitse-2020--zhuravle.jpg'
+import vystavkaProsmotrOChekhove from '../images/photogallery/2020/vystavka-prosmotr-o-chekhove.jpg'
+import kruzhokBiblionikKJubilejuChekhova from '../images/photogallery/2020/kruzhok-biblionik-k-jubileju-chekhova.jpg'
+import besedaIViktorinaOChekhoveDlyaTaniSukhodoevoj from '../images/photogallery/2020/beseda-i-viktorina-o-chekhove-dlya-tani-sukhodoevoj.jpg'
+import podarennyeGazetyOtPanishevojNV from '../images/photogallery/2020/podarennye-gazety-ot-panishevoj-n-v.jpg'
 
 import semejnyjKlub29Marta from '../images/photogallery/2019/semejnyj-klub-29-marta.jpg'
 import semejnyjKlub29Marta2 from '../images/photogallery/2019/semejnyj-klub-29-marta-2.jpg'
@@ -60,6 +65,11 @@ import outsideTheLibrary from '../images/photogallery/biblioteka-snaruzhi.jpg'
 
 export const photos2020 = [
   { src: rozhdestvenskijChasVeselykhZhatejDomaUTaniSukhodoevoj, alt: 'Один мальчик и четыре девочки сидят за столами и улыбаются', title: 'Рождественский час весёлых затей дома у Тани Суходоевой' },
+  { src: vystavkaOPtitse2020Zhuravle, alt: 'Выставка с книгами и иллюстрациями о журавлях', title: 'Выставка о птице 2020 года — журавле' },
+  { src: vystavkaProsmotrOChekhove, alt: 'На столе лежат раскрытые книги Чехова, а на стеллаже висит название выставки', title: 'Выставка-просмотр о Чехове' },
+  { src: kruzhokBiblionikKJubilejuChekhova, alt: 'Дети детсадовского возраста обступили стол и рассматривают выставку о Чехове', title: 'Кружок «Библионик» к юбилею Чехова' },
+  { src: besedaIViktorinaOChekhoveDlyaTaniSukhodoevoj, alt: 'Девочка сидит и рассматривает книгу, которую держит в руках', title: 'Беседа и викторина о Чехове для Тани Суходоевой' },
+  { src: podarennyeGazetyOtPanishevojNV, alt: 'Газеты лежат на столе, вид сверху', title: 'Подаренные газеты от Панишевой Н.В.' },
 ]
 
 export const photos2019 = [
