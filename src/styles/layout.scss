@@ -59,6 +59,8 @@ body {
 
       ul, ol {
         @include indentations(1.5em 0, 0 2em);
+        font-size: 1.1em;
+        line-height: 1.3;
         text-align: left;
         @include respond-to('max-width: 640px') {
           padding: 0 1em;

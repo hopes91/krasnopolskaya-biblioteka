@@ -36,6 +36,11 @@
     }
   }
 
+  p {
+    font-size: 1.1em;
+    line-height: 1.3;
+  }
+
   .page-image {
     @include dimensions(auto, auto);
     @include indentations(0.5em 0, 0);

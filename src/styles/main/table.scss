@@ -42,6 +42,8 @@ table {
   th, td {
     @include indentations(0, 1em);
     border: $simple-border;
+    font-size: 1.1em;
+    line-height: 1.3;
     text-align: center;
 
     @include respond-to('max-width: 800px') {
