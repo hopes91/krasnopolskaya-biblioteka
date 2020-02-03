@@ -116,14 +116,14 @@
     }
 
     .dot {
-      @include dimensions(0.5em, 0.5em);
+      @include dimensions(6px, 6px);
       @include indentations(0 0.1em, 0);
       background-color: oldlace;
       border-radius: 50%;
       display: inline-block;
       vertical-align: middle;
       @include respond-to('max-width: 800px') {
-        @include dimensions(0.4em, 0.4em);
+        @include dimensions(5px, 5px);
       }
     }
   }
