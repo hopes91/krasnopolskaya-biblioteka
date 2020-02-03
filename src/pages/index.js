@@ -6,6 +6,7 @@ import '../styles/page/page.scss'
 import '../styles/page/news.scss'
 
 import news30012020 from '../images/news/30012020.jpg'
+import kruzhokBiblionikKJubilejuChekhova from '../images/photogallery/2020/kruzhok-biblionik-k-jubileju-chekhova.jpg'
 import news27012020 from '../images/news/27012020.jpg'
 import vystavkaProsmotrOChekhove from '../images/photogallery/2020/vystavka-prosmotr-o-chekhove.jpg'
 import news17012020 from '../images/news/17012020.jpg'
@@ -63,6 +64,7 @@ const IndexPage = () => (
         <h3>вторник, 28 января 2020 год</h3>
         <p>27 января 11 детей с воспитателем посетили занятие кружка «Библионик»: Литературный портрет «Юбилей Чехова». Сначала дети посмотрели слайд-фильм «Чехов и Россия» с комментариями библиотекаря, затем смотрели мультфильм «Ванька Жуков» по рассказу Чехова.</p>
         <p>Дети сравнивали одежду, дома, транспорт в XIX веке и наши дни. Увидели, как все в доме сапожника издевались над 9-летним мальчишкой. Ребята познакомились с выставкой-просмотром «Чехов знакомый и незнакомый», посмотрели иллюстрации из книг писателя, портреты Чехова, усадьбу «Мелихово», увидели любимые деревья и цветы юбиляра, любимых такс.</p>
+        <img src={kruzhokBiblionikKJubilejuChekhova} alt='Дети детсадовского возраста обступили стол и рассматривают выставку о Чехове' className='page-image' />
         <p>27 января 11 детей и воспитатель на занятии кружка «Библионик» посмотрели и обсудили видео «День воинской славы. День снятия блокады Ленинграда».</p>
       </section>
       <section>
