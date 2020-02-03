@@ -8,6 +8,7 @@ import '../styles/page/news.scss'
 import news30012020 from '../images/news/30012020.jpg'
 import news27012020 from '../images/news/27012020.jpg'
 import news17012020 from '../images/news/17012020.jpg'
+import vystavkaOPtitse2020Zhuravle from '../images/photogallery/2020/vystavka-o-ptitse-2020--zhuravle.jpg'
 
 const IndexPage = () => (
   <Layout>
@@ -88,6 +89,7 @@ const IndexPage = () => (
       <section>
         <h3>пятница, 17 января 2020 год</h3>
         <p>16 января библиотекарь оформила книжную выставку «Журавль — птица 2020 года в России».</p>
+        <img src={vystavkaOPtitse2020Zhuravle} alt='Выставка с книгами и иллюстрациями о журавлях' className='page-image' />
       </section>
       <section>
         <h3>вторник, 14 января 2020 год</h3>
