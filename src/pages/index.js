@@ -6,6 +6,7 @@ import '../styles/page/page.scss'
 import '../styles/page/news.scss'
 
 import news30012020 from '../images/news/30012020.jpg'
+import besedaIViktorinaOChekhoveDlyaTaniSukhodoevoj from '../images/photogallery/2020/beseda-i-viktorina-o-chekhove-dlya-tani-sukhodoevoj.jpg'
 import kruzhokBiblionikKJubilejuChekhova from '../images/photogallery/2020/kruzhok-biblionik-k-jubileju-chekhova.jpg'
 import news27012020 from '../images/news/27012020.jpg'
 import vystavkaProsmotrOChekhove from '../images/photogallery/2020/vystavka-prosmotr-o-chekhove.jpg'
@@ -55,6 +56,7 @@ const IndexPage = () => (
       <section>
         <h3>четверг, 30 января 2020 год</h3>
         <p>29 января библиотекарь провела беседу на дому «Немного о Чехове» и мини-викторину «Чеховская» для ребёнка с инвалидностью.</p>
+        <img src={besedaIViktorinaOChekhoveDlyaTaniSukhodoevoj} alt='Девочка сидит и рассматривает книгу, которую держит в руках' className='page-image' />
       </section>
       <section>
         <h3>среда, 29 января 2020 год</h3>
