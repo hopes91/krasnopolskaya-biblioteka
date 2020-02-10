@@ -8,4 +8,12 @@ section {
     @include indentations(1em 0, 0);
     font-size: 1em;
   }
+
+  h4 {
+    font-size: 1.1em;
+  }
+
+  .page-image.image-new-book {
+    max-width: 25em;
+  }
 }
