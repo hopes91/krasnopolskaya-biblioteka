@@ -5,6 +5,7 @@ import DecorMain from '../components/decorMain'
 import '../styles/page/page.scss'
 import '../styles/page/news.scss'
 
+import news10022020 from '../images/news/10022020.jpg'
 import news30012020 from '../images/news/30012020.jpg'
 import besedaIViktorinaOChekhoveDlyaTaniSukhodoevoj from '../images/photogallery/2020/beseda-i-viktorina-o-chekhove-dlya-tani-sukhodoevoj.jpg'
 import kruzhokBiblionikKJubilejuChekhova from '../images/photogallery/2020/kruzhok-biblionik-k-jubileju-chekhova.jpg'
@@ -19,6 +20,10 @@ const IndexPage = () => (
     <div className='page news'>
       <DecorMain />
       <h2 className='page-title'>Новости</h2>
+      <section>
+        <h3>понедельник, 10 февраля 2020 год</h3>
+        <img src={news10022020} alt='Объявление о совещании библиотекарей 14 февраля' className='page-image' />
+      </section>
       <section>
         <h3>понедельник, 3 февраля 2020 год</h3>
         <p><strong>С 10 по 14 февраля Краснопольская библиотека участвует в четвёртой общероссийской акции «Дарите книги с любовью». <br />
