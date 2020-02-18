@@ -4,6 +4,9 @@ import vystavkaProsmotrOChekhove from '../images/photogallery/2020/vystavka-pros
 import kruzhokBiblionikKJubilejuChekhova from '../images/photogallery/2020/kruzhok-biblionik-k-jubileju-chekhova.jpg'
 import besedaIViktorinaOChekhoveDlyaTaniSukhodoevoj from '../images/photogallery/2020/beseda-i-viktorina-o-chekhove-dlya-tani-sukhodoevoj.jpg'
 import podarennyeGazetyOtPanishevojNV from '../images/photogallery/2020/podarennye-gazety-ot-panishevoj-n-v.jpg'
+import plakatKMezhdunarodnomyDnjuKnigodareniya from '../images/photogallery/2020/plakat-k-mezhdunarodnomy-dnju-knigodareniya.jpg'
+import plakatKMezhdunarodnomyDnjuKnigodareniya2 from '../images/photogallery/2020/plakat-k-mezhdunarodnomy-dnju-knigodareniya-2.jpg'
+import vystavkaAntarktidaKholodilnikZemli from '../images/photogallery/2020/vystavka-antarktida--kholodilnik-zemli.jpg'
 
 import semejnyjKlub29Marta from '../images/photogallery/2019/semejnyj-klub-29-marta.jpg'
 import semejnyjKlub29Marta2 from '../images/photogallery/2019/semejnyj-klub-29-marta-2.jpg'
@@ -70,6 +73,9 @@ export const photos2020 = [
   { src: kruzhokBiblionikKJubilejuChekhova, alt: 'Дети детсадовского возраста обступили стол и рассматривают выставку о Чехове', title: 'Кружок «Библионик» к юбилею Чехова' },
   { src: besedaIViktorinaOChekhoveDlyaTaniSukhodoevoj, alt: 'Девочка сидит и рассматривает книгу, которую держит в руках', title: 'Беседа и викторина о Чехове для Тани Суходоевой' },
   { src: podarennyeGazetyOtPanishevojNV, alt: 'Газеты лежат на столе, вид сверху', title: 'Подаренные газеты от Панишевой Н.В.' },
+  { src: plakatKMezhdunarodnomyDnjuKnigodareniya, alt: 'Нарисованный аист держит в клюве книгу, малыш сидит и читает книгу', title: 'Нарисованный плакат к Международному дню книгодарения' },
+  { src: plakatKMezhdunarodnomyDnjuKnigodareniya2, alt: 'Плакат с вырезками из книг и стихом на книжную тему', title: 'Плакат с вырезками к Международному дню книгодарения' },
+  { src: vystavkaAntarktidaKholodilnikZemli, alt: 'На столе лежат раскрытые книги с иллюстрациями на тему Антарктиды', title: 'Выставка «Антарктида — холодильник Земли»' },
 ]
 
 export const photos2019 = [
