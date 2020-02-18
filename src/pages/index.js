@@ -5,7 +5,6 @@ import DecorMain from '../components/decorMain'
 import '../styles/page/page.scss'
 import '../styles/page/news.scss'
 
-import news10022020 from '../images/news/10022020.jpg'
 import news09022020 from '../images/news/09022020.jpg'
 import news090220202 from '../images/news/09022020-2.jpg'
 import news090220203 from '../images/news/09022020-3.jpg'
@@ -28,10 +27,6 @@ const IndexPage = () => (
     <div className='page news'>
       <DecorMain />
       <h2 className='page-title'>Новости</h2>
-      <section>
-        <h3>понедельник, 10 февраля 2020 год</h3>
-        <img src={news10022020} alt='Объявление о совещании библиотекарей 14 февраля' className='page-image' />
-      </section>
       <section>
         <h3>воскресенье, 9 февраля 2020 год</h3>
         <h4>Книжные новинки зимы 2020 года</h4>
