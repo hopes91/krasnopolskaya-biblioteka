@@ -5,6 +5,7 @@ import DecorMain from '../components/decorMain'
 import '../styles/page/page.scss'
 import '../styles/page/news.scss'
 
+import news27022020 from '../images/news/27022020.jpg'
 import news18022020 from '../images/news/18022020.jpg'
 import news09022020 from '../images/news/09022020.jpg'
 import news090220202 from '../images/news/09022020-2.jpg'
@@ -28,6 +29,12 @@ const IndexPage = () => (
     <div className='page news'>
       <DecorMain />
       <h2 className='page-title'>Новости</h2>
+      <section>
+        <h3>четверг, 27 февраля 2020 год</h3>
+        <a href='https://pamyat-naroda.ru/' target='_blank' rel='noopener noreferrer' style={{display: 'inline-block', width: 'auto'}}>
+          <img src={news27022020} alt='Крупнейший в мире интернет-портал документов о Второй мировой войне память-народа.рф' className='page-image' style={{display: 'inline-block'}} />
+        </a>
+      </section>
       <section>
         <h3>вторник, 18 февраля 2020 год</h3>
         <img src={news18022020} alt='Сертификат участника международной сетевой акции «ПоЧитатели Чехова»' className='page-image' />
