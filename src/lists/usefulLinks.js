@@ -21,4 +21,5 @@ export const usefulLinks = [
   { href: 'https://rvio.histrf.ru/activities/pamyatnyye_daty/item-1141', title: 'Календарь памятных дат России' },
   { href: 'https://domovenok-as.ru/volshebnyi-korob/razvlechenija-dlja-vsei-semi/viktoriny-dlja-detei-viktorina-po-teme-lekarstvenye-rastenija.html', title: 'Сайт «Ваш Домовенок»' },
   { href: 'https://novichokprosto-biblioblog.blogspot.com/2015/01/blog-post_21.html', title: 'Библиоблог' },
+  { href: 'https://pamyat-naroda.ru/', title: 'Интернет-портал «Память народа»' },
 ]
