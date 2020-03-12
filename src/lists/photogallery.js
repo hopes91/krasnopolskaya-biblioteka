@@ -7,6 +7,7 @@ import podarennyeGazetyOtPanishevojNV from '../images/photogallery/2020/podarenn
 import plakatKMezhdunarodnomyDnjuKnigodareniya from '../images/photogallery/2020/plakat-k-mezhdunarodnomy-dnju-knigodareniya.jpg'
 import plakatKMezhdunarodnomyDnjuKnigodareniya2 from '../images/photogallery/2020/plakat-k-mezhdunarodnomy-dnju-knigodareniya-2.jpg'
 import vystavkaAntarktidaKholodilnikZemli from '../images/photogallery/2020/vystavka-antarktida--kholodilnik-zemli.jpg'
+import JulyaKhlebnikovaSKnigojVRukakh from '../images/photogallery/2020/Julya-Khlebnikova-s-knigoj-v-rukakh.jpg'
 
 import semejnyjKlub29Marta from '../images/photogallery/2019/semejnyj-klub-29-marta.jpg'
 import semejnyjKlub29Marta2 from '../images/photogallery/2019/semejnyj-klub-29-marta-2.jpg'
@@ -76,6 +77,7 @@ export const photos2020 = [
   { src: plakatKMezhdunarodnomyDnjuKnigodareniya, alt: 'Нарисованный аист держит в клюве книгу, малыш сидит и читает книгу', title: 'Нарисованный плакат к Международному дню книгодарения' },
   { src: plakatKMezhdunarodnomyDnjuKnigodareniya2, alt: 'Плакат с вырезками из книг и стихом на книжную тему', title: 'Плакат с вырезками к Международному дню книгодарения' },
   { src: vystavkaAntarktidaKholodilnikZemli, alt: 'На столе лежат раскрытые книги с иллюстрациями на тему Антарктиды', title: 'Выставка «Антарктида — холодильник Земли»' },
+  { src: JulyaKhlebnikovaSKnigojVRukakh, alt: 'Девочка в зимней одежде стоит у полок и держит в руках книгу', title: 'Юля Хлебникова с книгой в руках' },
 ]
 
 export const photos2019 = [
