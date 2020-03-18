@@ -5,6 +5,8 @@ import DecorMain from '../components/decorMain'
 import '../styles/page/page.scss'
 import '../styles/page/news.scss'
 
+import news18032020 from '../images/news/18032020.gif'
+import news180320202 from '../images/news/18032020-2.png'
 import news16032020 from '../images/news/16032020.jpg'
 import news12032020 from '../images/news/12032020.jpg'
 import news05032020 from '../images/news/05032020.jpg'
@@ -33,6 +35,11 @@ const IndexPage = () => (
     <div className='page news'>
       <DecorMain />
       <h2 className='page-title'>Новости</h2>
+      <section>
+        <h3>среда, 18 марта 2020 год</h3>
+        <img src={news18032020} alt='Объявление о карантине в библиотеке в 18 марта' className='page-image' />
+        <img src={news180320202} alt='Правила профилактики короновирусной инфекции: кашлять и чихать в сгиб локтя, мыть руки, избегать людных мест и контактов с людьми' className='page-image' />
+      </section>
       <section>
         <h3>понедельник, 16 марта 2020 год</h3>
         <img src={news16032020} alt='Сертификат участника акции-челленджа «ВкусноЧтения российской литературы»' className='page-image' />
