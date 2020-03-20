@@ -9,14 +9,17 @@
 }
 
 @mixin respond-to($media) {
-  @if $media == 'min-width: 1800px' {
-    @media (min-width: 1800px) { @content; }
-  }
-  @else if $media == 'min-width: 1367px' {
-    @media (min-width: 1367px) { @content; }
+  @if $media == 'max-width: 1366px' {
+    @media (max-width: 1366px) { @content; }
   }
   @else if $media == 'max-width: 1220px' {
     @media (max-width: 1220px) { @content; }
+  }
+  @else if $media == 'max-width: 1140px' {
+    @media (max-width: 1140px) { @content; }
+  }
+  @else if $media == 'max-width: 1080px' {
+    @media (max-width: 1080px) { @content; }
   }
   @else if $media == 'max-width: 1024px' {
     @media (max-width: 1024px) { @content; }

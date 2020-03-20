@@ -2,16 +2,19 @@
 @import '../helpers/mixins';
 
 .stack-of-books {
-  @include dimensions(15%, auto);
+  @include dimensions(12%, auto);
   bottom: 7em;
   position: absolute;
   right: 1em;
-  @include respond-to('min-width: 1367px') {
-    width: 13em;
+
+  @include respond-to('max-width: 1366px') {
+    width: 10%;
   }
+
   @include respond-to('max-width: 1024px') {
-    width: 20%;
+    width: 15%;
   }
+  
   @include respond-to('max-width: 800px') {
     display: none;
   }
