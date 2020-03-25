@@ -9,41 +9,81 @@
   bottom: 0;
   box-sizing: border-box;
   position: absolute;
-  @include respond-to('max-width: 800px') {
-    height: 7.5em;
-  }
-  @include respond-to('max-width: 640px') {
-    height: 10em;
+  
+  @include respond-to('max-width: 1024px') {
+    height: 10.5em;
   }
 
-  .copyright,
-  .address {
-    @include respond-to('max-width: 800px') {
-      @include dimensions(100%, auto);
-      text-align: center;
-    }
+  @include respond-to('max-width: 640px') {
+    height: 11.5em;
+  }
+
+  @include respond-to('max-width: 480px') {
+    height: 12.5em;
+  }
+
+  @include respond-to('max-width: 420px') {
+    height: 13.5em;
+  }
+
+  @include respond-to('max-width: 380px') {
+    height: 15em;
   }
 
   .copyright {
     @include indentations(0, 1.5em 0);
     float: left;
-    @include respond-to('max-width: 800px') {
-      padding: 0.3em 0;
+  }
+
+  .social-media {
+    position: absolute;
+    right: 22em;
+    top: 1.8em;
+
+    @include respond-to('max-width: 1024px') {
+      bottom: 1em;
+      right: 0;
+      top: auto;
+      width: 100%;
+    }
+
+    .wrapper {
+      @include respond-to('max-width: 1024px') {
+        margin: 0 auto;
+        position: relative;
+        width: 7em;
+      }
+    }
+
+    a {
+      margin: 0 0.3em;
+      width: 2.7em;
+
+      &:last-child {
+        @include respond-to('max-width: 1024px') {
+          float: right;
+        }
+      }
     }
   }
 
   .address {
     @include dimensions(20em, auto);
     @include indentations(0, 1em 0);
-    text-align: center;
     float: right;
-    @include respond-to('max-width: 800px') {
-      @include dimensions(100%, auto);
-      padding: 0.5em 0;
-    }
 
     span {
       font-weight: bold;
+    }
+  }
+
+  .copyright,
+  .address {
+    @include respond-to('max-width: 1024px') {
+      @include dimensions(100%, auto);
+      float: none;
+      padding: 0.5em 0;
+      text-align: center;
     }
   }
 }
