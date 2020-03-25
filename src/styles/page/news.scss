@@ -1,12 +1,12 @@
 @import '../helpers/variables';
 @import '../helpers/mixins';
 
-section {
-  margin-bottom: 2em;
+.new-news {
+  margin-bottom: 2.5em;
 
-  h3 {
-    @include indentations(1em 0, 0);
+  .news-date {
     font-size: 1em;
+    margin: 0;
   }
 
   h4 {
