@@ -74,23 +74,27 @@ body {
       @include dimensions(100%, 6.5em);
 
       @include respond-to('max-width: 1024px') {
-        height: 10.5em;
+        height: 11em;
+      }
+
+      @include respond-to('max-width: 800px') {
+        height: 13em;
       }
 
       @include respond-to('max-width: 640px') {
-        height: 11.5em;
+        height: 14.5em;
       }
 
       @include respond-to('max-width: 480px') {
-        height: 12.5em;
+        height: 15.5em;
       }
 
       @include respond-to('max-width: 420px') {
-        height: 13.5em;
+        height: 16.5em;
       }
 
       @include respond-to('max-width: 380px') {
-        height: 15em;
+        height: 18em;
       }
     }
   }
