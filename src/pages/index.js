@@ -36,6 +36,10 @@ const IndexPage = () => (
       <DecorMain />
       <h2 className='page-title'>Новости</h2>
       <section className='new-news'>
+        <h3 className='news-date'>вторник, 24 марта 2020 год</h3>
+        <p>У Краснопольской библиотеки появились группы <a href='https://ok.ru/group/56723369361419' target='_blank' rel='noopener noreferrer'>в Одноклассниках</a> и <a href='https://vk.com/public193267292' target='_blank' rel='noopener noreferrer'>во ВКонтакте</a>. Присоединяйтесь!</p>
+      </section>
+      <section className='new-news'>
         <h3 className='news-date'>пятница, 20 марта 2020 год</h3>
         <p>Пока вы сидите на карантине, примите участие в викторине по литературе. Только не подглядывать!</p>
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSda4W3Tig5M5_e2qAUIH1O1xmc_qS-I5OvUeAJQEaCbhWQdhw/viewform?embedded=true" width="640" height="3238" frameborder="0" marginheight="0" marginwidth="0" title="google-form">Загрузка…</iframe>
