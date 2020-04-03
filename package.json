@@ -1,48 +1,36 @@
 {
   "name": "krasnopolskaya-biblioteka",
-  "private": false,
-  "description": "Краснопольская библиотека МКУК Сунская МБС",
-  "version": "0.1.0",
+  "version": "1.0.0",
+  "description": "Oficial website for Krasnopolie Library (Russia).",
+  "main": "script.js",
+  "repository": "git@github.com:hopes91/krasnopolskaya-biblioteka.git",
   "author": "Nadya F-a <nadezhdafalaleeva@gmail.com>",
-  "dependencies": {
-    "gatsby": "^2.3.24",
-    "gatsby-image": "^2.2.3",
-    "gatsby-plugin-gtag": "^1.0.11",
-    "gatsby-plugin-manifest": "^2.0.25",
-    "gatsby-plugin-offline": "^2.0.25",
-    "gatsby-plugin-react-helmet": "^3.0.11",
-    "gatsby-plugin-sass": "^2.0.11",
-    "gatsby-plugin-sharp": "^2.2.1",
-    "gatsby-source-filesystem": "^2.0.28",
-    "gatsby-transformer-sharp": "^2.2.0",
-    "node-sass": "^4.11.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-dom": "npm:@hot-loader/react-dom",
-    "react-helmet": "^5.2.0"
-  },
-  "devDependencies": {
-    "prettier": "^1.16.4"
-  },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+  "devDependencies": {
+    "@babel/core": "^7.2.2",
+    "@babel/preset-env": "^7.2.3",
+    "autoprefixer": "^9.4.5",
+    "browser-sync": "^2.26.3",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
+    "gulp-cached": "^1.1.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-remember": "^1.0.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.1",
+    "gulp-uglifycss": "^1.1.0",
+    "path": "^0.12.7"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/hopes91/krasnopolskaya-biblioteka/"
+  "dependencies": {
+    "@babel/polyfill": "^7.2.5"
   },
-  "bugs": {
-    "url": "https://github.com/hopes91/krasnopolskaya-biblioteka/issues"
-  },
+  "presets": [
+    ["@babel/preset-env", {
+      "useBuiltIns": "entry"
+    }]
+  ],
   "browserslist": [
     "last 3 versions"
   ]
