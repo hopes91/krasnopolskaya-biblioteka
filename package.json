@@ -4,7 +4,7 @@
   "description": "Oficial website for Krasnopolie Library (Russia).",
   "main": "script.js",
   "repository": "git@github.com:hopes91/krasnopolskaya-biblioteka.git",
-  "author": "Nadya F-a <nadezhdafalaleeva@gmail.com>",
+  "author": "Nadezhda Falaleeva <nadezhdafalaleeva@gmail.com>",
   "license": "MIT",
   "devDependencies": {
     "@babel/core": "^7.2.2",
