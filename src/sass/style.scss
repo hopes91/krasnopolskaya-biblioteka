@@ -51,16 +51,16 @@ body {
 
     header {
       @include dimensions(11em, 100%);
+      left: 0;
       position: relative;
+      top: 0;
 
       @include respond-to('max-width: 800px') {
-        height: 8em;
-        left: 0;
-        top: 0;
+        height: 9em;
       }
 
       @include respond-to('max-width: 640px') {
-        height: auto;
+        height: 8.5em;
       }
     }
 
@@ -69,21 +69,24 @@ body {
       box-sizing: border-box;
       text-decoration: none;
 
+      @include respond-to('max-width: 1024px') {
+        position: relative;
+        top: 1.2em;
+      }
+
+      @include respond-to('max-width: 800px') {
+        top: 4.2em;
+      }
+
       h1 {
         @include indentations(0, 1em);
 
         @include respond-to('max-width: 1024px') {
-          font-size: 1.55em;
-          padding: 1.55em 0.8em;
-        }
-
-        @include respond-to('max-width: 800px') {
-          padding: 1.3em 1em;
+          font-size: 1.5em;
         }
 
         @include respond-to('max-width: 640px') {
           font-size: 1.3em;
-          padding: 0.7em 1em 0.9em 0.7em;
         }
       }
     }
@@ -97,6 +100,10 @@ body {
       text-align: center;
       top: 1em;
       z-index: 5;
+
+      @include respond-to('max-width: 1024px') {
+        margin-top: 1em;
+      }
 
       @include respond-to('max-width: 800px') {
         display: none;
@@ -161,5 +168,115 @@ body {
         }
       }
     }
+
+    .dropdown {
+      @include dimensions(4em, 100%);
+      background-color: oldlace;
+      border: $simple-border;
+      box-sizing: border-box;
+      display: none;
+      left: 0;
+      position: absolute;
+      top: 0;
+      z-index: 5;
+
+      @include respond-to('max-width: 800px') {
+        display: block;
+      }
+
+      #burger {
+        @include dimensions(1.5em, 2.5em);
+        cursor: pointer;
+        position: absolute;
+        right: 1.3em;
+        top: 1.2em;
+        z-index: 10;
+
+        span {
+          @include dimensions(3px, 100%);
+          background-color: saddlebrown;
+          display: block;
+          position: absolute;
+          transition: 0.5s;
+
+          &:first-child {
+            top: 0;
+          }
+
+          &:nth-child(2) {
+            top: 0.65em;
+          }
+
+          &:last-child {
+            bottom: 0;
+          }
+        }
+
+        .span-one_active {
+          top: 10px !important;
+      		transform: rotate(40deg);
+      		transform-origin: center;
+      	}
+
+      	.span-two_active {
+      		display: none !important;
+      	}
+
+      	.span-three_active {
+          bottom: 10px !important;
+      		transform: rotate(-40deg);
+      		transform-origin: center;
+      	}
+      }
+
+      .dropdown-menu {
+    		@include indentations(0, 4em 0 0 0);
+    		position: absolute;
+        text-align: center;
+        width: 100%;
+        z-index: 5;
+
+        .dropdown-section {
+          @include indentations(0, 0);
+          background-color: oldlace;
+          width: 100%;
+
+          .section-title {
+            @include indentations(0, 1em);
+            border: $simple-border;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 1.1em;
+            position: relative;
+            text-decoration: none;
+            width: 100%;
+
+            span {
+              color: $dark-brown;
+              position: absolute;
+              right: 2em;
+            }
+          }
+
+          .section-links {
+            @include indentations(0, 0);
+            background-color: #fcf8ef;
+            border: $simple-border;
+
+            a {
+              @include indentations(0, 0.8em);
+              border: $simple-border;
+              box-sizing: border-box;
+              color: $dark-brown;
+              font-size: 1.05em;
+              text-decoration: none;
+            }
+          }
+        }
+    	}
+    }
+
+
   }
 }
