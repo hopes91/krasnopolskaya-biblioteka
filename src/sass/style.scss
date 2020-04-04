@@ -1,0 +1,165 @@
+@import './helpers/_variables.scss';
+@import './helpers/_mixins.scss';
+@import url('https://fonts.googleapis.com/css?family=Oranienbaum');
+
+html,
+body,
+.container {
+  @include dimensions(100%, 100%);
+  @include indentations(0, 0);
+}
+
+body * {
+  outline-color: #C56757;
+}
+
+body {
+  background-color: peachpuff;
+  color: $dark-brown;
+  font-family: 'Oranienbaum', serif;
+  font-size: 16px;
+  line-height: 1.2;
+
+  a {
+    @include dimensions(100%, 100%);
+    color: $dark-brown;
+    display: inline-block;
+
+    img {
+      @include dimensions(100%, 100%);
+    }
+  }
+
+  img {
+    border: none;
+  }
+
+  .closed {
+    display: none;
+  }
+
+  .opened {
+    display: block;
+  }
+
+  .container {
+    background: linear-gradient(to right, peachpuff, burlywood);
+    height: auto;
+    min-height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    header {
+      @include dimensions(11em, 100%);
+      position: relative;
+
+      @include respond-to('max-width: 800px') {
+        height: 8em;
+        left: 0;
+        top: 0;
+      }
+
+      @include respond-to('max-width: 640px') {
+        height: auto;
+      }
+    }
+
+    .site-title {
+      @include dimensions(auto, auto);
+      box-sizing: border-box;
+      text-decoration: none;
+
+      h1 {
+        @include indentations(0, 1em);
+
+        @include respond-to('max-width: 1024px') {
+          font-size: 1.55em;
+          padding: 1.55em 0.8em;
+        }
+
+        @include respond-to('max-width: 800px') {
+          padding: 1.3em 1em;
+        }
+
+        @include respond-to('max-width: 640px') {
+          font-size: 1.3em;
+          padding: 0.7em 1em 0.9em 0.7em;
+        }
+      }
+    }
+
+    .navbar {
+      @include dimensions(3.3em, 100%);
+      @include indentations(0 auto 1em auto, 0);
+      background: linear-gradient(to right, peachpuff, burlywood);
+      display: block;
+      position: relative;
+      text-align: center;
+      top: 1em;
+      z-index: 5;
+
+      @include respond-to('max-width: 800px') {
+        display: none;
+      }
+
+      .navbar-section {
+        @include indentations(0, 0);
+        display: inline-block;
+        vertical-align: top;
+        width: 15em;
+
+        @include respond-to('max-width: 1220px') {
+          // width: 18.5%;
+          //
+          // &:nth-child(3) {
+          //   width: 24%;
+          // }
+        }
+
+        @include respond-to('max-width: 1024px') {
+          width: 12em;
+        }
+
+        .section-title {
+          @include indentations(0, 1.04em 0.3em);
+          background-color: oldlace;
+          border: $simple-border;
+          box-sizing: border-box;
+          cursor: pointer;
+          display: inline-block;
+          position: relative;
+          text-decoration: none;
+          width: 100%;
+
+          span {
+            color: $dark-brown;
+            position: absolute;
+            right: 1.3em;
+
+            @include respond-to('max-width: 1220px') {
+              right: 1em;
+            }
+
+            @include respond-to('max-width: 1024px') {
+              right: 0.5em;
+            }
+          }
+        }
+
+        .section-links {
+          @include indentations(0, 0);
+          background-color: #fcf8ef;
+          border: $simple-border;
+
+          a {
+            @include indentations(0, 0.8em);
+            border: $simple-border;
+            box-sizing: border-box;
+            color: saddlebrown;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+}
