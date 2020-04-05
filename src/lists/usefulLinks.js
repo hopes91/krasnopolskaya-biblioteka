@@ -23,4 +23,5 @@ export const usefulLinks = [
   { href: 'https://novichokprosto-biblioblog.blogspot.com/2015/01/blog-post_21.html', title: 'Библиоблог' },
   { href: 'https://pamyat-naroda.ru/', title: 'Интернет-портал «Память народа»' },
   { href: 'https://www.culture.ru/', title: 'Культура РФ' },
+  { href: 'https://web-landia.ru/', title: 'ВебЛандия: лучшие сайты для детей' },
 ]
