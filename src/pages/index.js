@@ -5,7 +5,6 @@ import DecorMain from '../components/decorMain'
 import '../styles/page/page.scss'
 import '../styles/page/news.scss'
 
-import news18032020 from '../images/news/18032020.gif'
 import news180320202 from '../images/news/18032020-2.png'
 import news16032020 from '../images/news/16032020.jpg'
 import news12032020 from '../images/news/12032020.jpg'
@@ -71,14 +70,14 @@ const IndexPage = () => (
       </section>
       <section className='new-news'>
         <h3 className='news-date'>пятница, 20 марта 2020 год</h3>
-        <p>Пока вы сидите на карантине, примите участие в викторине по литературе. Только не подглядывать!</p>
+        <p>Пока вы сидите на выходных, примите участие в викторине по литературе. Только не подглядывать!</p>
         <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSda4W3Tig5M5_e2qAUIH1O1xmc_qS-I5OvUeAJQEaCbhWQdhw/viewform?embedded=true" width="640" height="3238" frameborder="0" marginheight="0" marginwidth="0" title="google-form">Загрузка…</iframe>
         <a href='https://forms.gle/29jXNNYzR6oG52LB6'>Ссылка на форму</a>
       </section>
       <section className='new-news'>
         <h3 className='news-date'>среда, 18 марта 2020 год</h3>
-        <img src={news18032020} alt='Объявление о карантине в библиотеке в 18 марта' className='page-image' />
-        <img src={news180320202} alt='Правила профилактики короновирусной инфекции: кашлять и чихать в сгиб локтя, мыть руки, избегать людных мест и контактов с людьми' className='page-image' />
+        <p>С 18 марта в Краснопольской библиотеке выходные в связи с коронавирусом.</p>
+        <img src={news180320202} alt='Правила профилактики коронавирусной инфекции: кашлять и чихать в сгиб локтя, мыть руки, избегать людных мест и контактов с людьми' className='page-image' />
       </section>
       <section className='new-news'>
         <h3 className='news-date'>понедельник, 16 марта 2020 год</h3>
