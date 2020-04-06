@@ -91,21 +91,19 @@ body {
       }
     }
 
-    .decor-top {
-      @include dimensions(6.5em, 9.5em);
+    .decor-header {
       box-sizing: border-box;
-      padding-top: 1.3em;
       position: absolute;
       right: 1em;
-      top: 0;
+      top: 1.3em;
+      width: 10em;
       z-index: 6;
 
       @include respond-to('max-width: 800px') {
-        @include dimensions(4em, auto);
         box-sizing: border-box;
+        height: 4em;
         left: 0;
-        padding: 0.25em 0 0 1em;
-        right: 4.5em;
+        right: auto;
         top: 0;
         z-index: 10;
       }
@@ -117,18 +115,22 @@ body {
         position: relative;
 
         @include respond-to('max-width: 800px') {
-          @include dimensions(10em, 100%);
-          @include indentations(0, 0.25em 0 0 0);
+          @include dimensions(auto, 100%);
+          @include indentations(0, 0.4em 0 0 0);
           box-sizing: border-box;
-          // left: 5em;
+          left: 1em;
+          // with .picture
+          // left: 5.5em;
         }
-        // @include respond-to('max-width: 640px') {
-        //   left: 3.7em;
-        // }
+
+        @include respond-to('max-width: 640px') {
+          // with .picture
+          // left: 4.7em;
+        }
 
         .date-dayOfTheWeek {
           display: inline-block;
-          padding-left: 0.08em;
+          padding-left: 0.15em;
           width: 65%;
         }
 
@@ -144,26 +146,25 @@ body {
 
         .date-month {
           display: inline-block;
-          padding: 0 0.2em 0 0.1em;
+          padding: 0 0.2em;
         }
       }
 
       .picture {
-        @include dimensions(7em, auto);
-        bottom: -2em;
-        left: 0.5em;
+        bottom: -3em;
         position: absolute;
+        right: 0.5em;
+        width: 6em;
 
         @include respond-to('max-width: 800px') {
           bottom: 0.2em;
           box-sizing: border-box;
-          left: 0.3em;
-          width: 6em;
+          left: 0.2em;
         }
-        
+
         @include respond-to('max-width: 640px') {
-          bottom: 0.6em;
-          width: 4.5em;
+          bottom: 0.5em;
+          width: 5em;
         }
       }
     }
