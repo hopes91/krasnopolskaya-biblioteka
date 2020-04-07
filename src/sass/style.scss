@@ -347,6 +347,28 @@ body {
       }
     }
 
+    .decor-center {
+      margin: 1em auto;
+      max-width: 1000px;
+      width: 41em;
+
+      @include respond-to('max-width: 1024px') {
+        width: 35em;
+      }
+
+      @include respond-to('max-width: 800px') {
+        width: 33em;
+      }
+
+      @include respond-to('max-width: 640px') {
+        width: 90%;
+      }
+
+      img {
+        width: 100%;
+      }
+    }
+
     main {
       @include indentations(0, 1em);
       box-sizing: border-box;
