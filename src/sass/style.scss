@@ -347,6 +347,57 @@ body {
       }
     }
 
+    main {
+      @include dimensions(100%, auto);
+      @include indentations(0, 1em);
+      box-sizing: border-box;
+      position: relative;
+
+      @include respond-to('max-width: 640px') {
+        margin-bottom: 2em;
+        padding: 0;
+      }
+
+      ul, ol {
+        @include indentations(1.5em 0, 0 2em);
+        font-size: 1.2em;
+        line-height: 1.3;
+        text-align: left;
+
+        @include respond-to('max-width: 640px') {
+          padding: 0 1em;
+        }
+      }
+    }
+
+    .empty-div {
+      @include dimensions(100%, 6.5em);
+
+      @include respond-to('max-width: 1024px') {
+        height: 11em;
+      }
+
+      @include respond-to('max-width: 800px') {
+        height: 13em;
+      }
+
+      @include respond-to('max-width: 640px') {
+        height: 14.5em;
+      }
+
+      @include respond-to('max-width: 480px') {
+        height: 15.5em;
+      }
+
+      @include respond-to('max-width: 420px') {
+        height: 16.5em;
+      }
+
+      @include respond-to('max-width: 380px') {
+        height: 18em;
+      }
+    }
+
     footer {
       @include dimensions(6em, 100%);
       background-color: oldlace;
