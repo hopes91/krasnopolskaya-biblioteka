@@ -62,270 +62,147 @@ body {
       @include respond-to('max-width: 640px') {
         height: 8.5em;
       }
-    }
 
-    .site-title {
-      @include dimensions(auto, auto);
-      box-sizing: border-box;
-      text-decoration: none;
-
-      @include respond-to('max-width: 1024px') {
-        position: relative;
-        top: 1.2em;
-      }
-
-      @include respond-to('max-width: 800px') {
-        top: 4.2em;
-      }
-
-      h1 {
-        @include indentations(0, 1em);
-
-        @include respond-to('max-width: 1024px') {
-          font-size: 1.5em;
-        }
-
-        @include respond-to('max-width: 640px') {
-          font-size: 1.3em;
-        }
-      }
-    }
-
-    .decor-header {
-      box-sizing: border-box;
-      position: absolute;
-      right: 1em;
-      top: 1.3em;
-      width: 10em;
-      z-index: 6;
-
-      @include respond-to('max-width: 800px') {
+      .site-title {
+        @include dimensions(auto, auto);
         box-sizing: border-box;
-        height: 4em;
-        left: 0;
-        right: auto;
-        top: 0;
-        z-index: 10;
-      }
-
-      .date {
-        @include dimensions(3em, 100%);
-        @include indentations(0 auto, 0);
-        font-size: 1.2em;
-        position: relative;
-
-        @include respond-to('max-width: 800px') {
-          @include dimensions(auto, 100%);
-          @include indentations(0, 0.4em 0 0 0);
-          box-sizing: border-box;
-          left: 1em;
-          // with .picture
-          // left: 5.5em;
-        }
-
-        @include respond-to('max-width: 640px') {
-          // with .picture
-          // left: 4.7em;
-        }
-
-        .date-dayOfTheWeek {
-          display: inline-block;
-          padding-left: 0.15em;
-          width: 65%;
-        }
-
-        .date-day {
-          float: left;
-          font: {
-            size: 2em;
-            weight: bold;
-          }
-          padding: 0.17em 0.1em 0 0;
-          position: relative;
-        }
-
-        .date-month {
-          display: inline-block;
-          padding: 0 0.2em;
-        }
-      }
-
-      .picture {
-        bottom: -3em;
-        position: absolute;
-        right: 0.5em;
-        width: 6em;
-
-        @include respond-to('max-width: 800px') {
-          bottom: 0.2em;
-          box-sizing: border-box;
-          left: 0.2em;
-        }
-
-        @include respond-to('max-width: 640px') {
-          bottom: 0.5em;
-          width: 5em;
-        }
-      }
-    }
-
-    .navbar {
-      @include dimensions(3.3em, 100%);
-      @include indentations(0 auto 1em auto, 0);
-      background: linear-gradient(to right, peachpuff, burlywood);
-      display: block;
-      position: relative;
-      text-align: center;
-      top: 1em;
-      z-index: 5;
-
-      @include respond-to('max-width: 1024px') {
-        margin-top: 1em;
-      }
-
-      @include respond-to('max-width: 800px') {
-        display: none;
-      }
-
-      .navbar-section {
-        @include indentations(0, 0);
-        display: inline-block;
-        vertical-align: top;
-        width: 15em;
-
-        @include respond-to('max-width: 1220px') {
-          // width: 18.5%;
-          //
-          // &:nth-child(3) {
-          //   width: 24%;
-          // }
-        }
+        text-decoration: none;
 
         @include respond-to('max-width: 1024px') {
-          width: 12em;
-        }
-
-        .section-title {
-          @include indentations(0, 1.04em 0.3em);
-          background-color: oldlace;
-          border: $simple-border;
-          box-sizing: border-box;
-          cursor: pointer;
-          display: inline-block;
           position: relative;
-          text-decoration: none;
-          width: 100%;
-
-          span {
-            color: $dark-brown;
-            position: absolute;
-            right: 1.3em;
-
-            @include respond-to('max-width: 1220px') {
-              right: 1em;
-            }
-
-            @include respond-to('max-width: 1024px') {
-              right: 0.5em;
-            }
-          }
+          top: 1.2em;
         }
 
-        .section-links {
-          @include indentations(0, 0);
-          background-color: #fcf8ef;
-          border: $simple-border;
+        @include respond-to('max-width: 800px') {
+          top: 4.2em;
+        }
 
-          a {
-            @include indentations(0, 0.8em);
-            border: $simple-border;
-            box-sizing: border-box;
-            color: saddlebrown;
-            text-decoration: none;
+        h1 {
+          @include indentations(0, 1em);
+
+          @include respond-to('max-width: 1024px') {
+            font-size: 1.5em;
+          }
+
+          @include respond-to('max-width: 640px') {
+            font-size: 1.3em;
           }
         }
       }
-    }
 
-    .dropdown {
-      @include dimensions(4em, 100%);
-      background-color: oldlace;
-      border: $simple-border;
-      box-sizing: border-box;
-      display: none;
-      left: 0;
-      position: absolute;
-      top: 0;
-      z-index: 5;
-
-      @include respond-to('max-width: 800px') {
-        display: block;
-      }
-
-      #burger {
-        @include dimensions(1.5em, 2.5em);
-        cursor: pointer;
+      .decor {
+        box-sizing: border-box;
         position: absolute;
-        right: 1.3em;
-        top: 1.2em;
-        z-index: 10;
+        right: 1em;
+        top: 1.3em;
+        width: 10em;
+        z-index: 6;
 
-        span {
-          @include dimensions(3px, 100%);
-          background-color: saddlebrown;
-          display: block;
-          position: absolute;
-          transition: 0.5s;
+        @include respond-to('max-width: 800px') {
+          box-sizing: border-box;
+          height: 4em;
+          left: 0;
+          right: auto;
+          top: 0;
+          z-index: 10;
+        }
 
-          &:first-child {
-            top: 0;
+        .date {
+          @include dimensions(3em, 100%);
+          @include indentations(0 auto, 0);
+          font-size: 1.2em;
+          position: relative;
+
+          @include respond-to('max-width: 800px') {
+            @include dimensions(auto, 100%);
+            @include indentations(0, 0.4em 0 0 0);
+            box-sizing: border-box;
+            left: 1em;
+            // with .picture
+            // left: 5.5em;
           }
 
-          &:nth-child(2) {
-            top: 0.65em;
+          @include respond-to('max-width: 640px') {
+            // with .picture
+            // left: 4.7em;
           }
 
-          &:last-child {
-            bottom: 0;
+          .date-dayOfTheWeek {
+            display: inline-block;
+            padding-left: 0.15em;
+            width: 65%;
+          }
+
+          .date-day {
+            float: left;
+            font: {
+              size: 2em;
+              weight: bold;
+            }
+            padding: 0.17em 0.1em 0 0;
+            position: relative;
+          }
+
+          .date-month {
+            display: inline-block;
+            padding: 0 0.2em;
           }
         }
 
-        .span-one_active {
-          top: 10px !important;
-      		transform: rotate(40deg);
-      		transform-origin: center;
-      	}
+        .picture {
+          bottom: -3em;
+          position: absolute;
+          right: 0.5em;
+          width: 6em;
 
-      	.span-two_active {
-      		display: none !important;
-      	}
+          @include respond-to('max-width: 800px') {
+            bottom: 0.2em;
+            box-sizing: border-box;
+            left: 0.2em;
+          }
 
-      	.span-three_active {
-          bottom: 10px !important;
-      		transform: rotate(-40deg);
-      		transform-origin: center;
-      	}
+          @include respond-to('max-width: 640px') {
+            bottom: 0.5em;
+            width: 5em;
+          }
+        }
       }
 
-      .dropdown-menu {
-    		@include indentations(0, 4em 0 0 0);
-    		position: absolute;
+      .navbar {
+        @include dimensions(3.3em, 100%);
+        @include indentations(0 auto 1em auto, 0);
+        background: linear-gradient(to right, peachpuff, burlywood);
+        display: block;
+        position: relative;
         text-align: center;
-        width: 100%;
+        top: 1em;
         z-index: 5;
 
-        .dropdown-section {
+        @include respond-to('max-width: 1024px') {
+          margin-top: 1em;
+        }
+
+        @include respond-to('max-width: 800px') {
+          display: none;
+        }
+
+        .navbar-section {
           @include indentations(0, 0);
-          background-color: oldlace;
-          width: 100%;
+          display: inline-block;
+          vertical-align: top;
+          width: 15em;
+
+          @include respond-to('max-width: 1024px') {
+            width: 12em;
+          }
 
           .section-title {
-            @include indentations(0, 1em);
+            @include indentations(0, 1.04em 0.3em);
+            background-color: oldlace;
             border: $simple-border;
             box-sizing: border-box;
             cursor: pointer;
             display: inline-block;
-            font-size: 1.1em;
             position: relative;
             text-decoration: none;
             width: 100%;
@@ -333,7 +210,15 @@ body {
             span {
               color: $dark-brown;
               position: absolute;
-              right: 2em;
+              right: 1.3em;
+
+              @include respond-to('max-width: 1220px') {
+                right: 1em;
+              }
+
+              @include respond-to('max-width: 1024px') {
+                right: 0.5em;
+              }
             }
           }
 
@@ -346,15 +231,216 @@ body {
               @include indentations(0, 0.8em);
               border: $simple-border;
               box-sizing: border-box;
-              color: $dark-brown;
-              font-size: 1.05em;
+              color: saddlebrown;
               text-decoration: none;
             }
           }
         }
-    	}
+      }
+
+      .dropdown {
+        @include dimensions(4em, 100%);
+        background-color: oldlace;
+        border: $simple-border;
+        box-sizing: border-box;
+        display: none;
+        left: 0;
+        position: absolute;
+        top: 0;
+        z-index: 5;
+
+        @include respond-to('max-width: 800px') {
+          display: block;
+        }
+
+        #burger {
+          @include dimensions(1.5em, 2.5em);
+          cursor: pointer;
+          position: absolute;
+          right: 1.3em;
+          top: 1.2em;
+          z-index: 10;
+
+          span {
+            @include dimensions(3px, 100%);
+            background-color: saddlebrown;
+            display: block;
+            position: absolute;
+            transition: 0.5s;
+
+            &:first-child {
+              top: 0;
+            }
+
+            &:nth-child(2) {
+              top: 0.65em;
+            }
+
+            &:last-child {
+              bottom: 0;
+            }
+          }
+
+          .span-one_active {
+            top: 10px !important;
+        		transform: rotate(40deg);
+        		transform-origin: center;
+        	}
+
+        	.span-two_active {
+        		display: none !important;
+        	}
+
+        	.span-three_active {
+            bottom: 10px !important;
+        		transform: rotate(-40deg);
+        		transform-origin: center;
+        	}
+        }
+
+        .dropdown-menu {
+      		@include indentations(0, 4em 0 0 0);
+      		position: absolute;
+          text-align: center;
+          width: 100%;
+          z-index: 5;
+
+          .dropdown-section {
+            @include indentations(0, 0);
+            background-color: oldlace;
+            width: 100%;
+
+            .section-title {
+              @include indentations(0, 1em);
+              border: $simple-border;
+              box-sizing: border-box;
+              cursor: pointer;
+              display: inline-block;
+              font-size: 1.1em;
+              position: relative;
+              text-decoration: none;
+              width: 100%;
+
+              span {
+                color: $dark-brown;
+                position: absolute;
+                right: 2em;
+              }
+            }
+
+            .section-links {
+              @include indentations(0, 0);
+              background-color: #fcf8ef;
+              border: $simple-border;
+
+              a {
+                @include indentations(0, 0.8em);
+                border: $simple-border;
+                box-sizing: border-box;
+                color: $dark-brown;
+                font-size: 1.05em;
+                text-decoration: none;
+              }
+            }
+          }
+      	}
+      }
     }
 
+    footer {
+      @include dimensions(6em, 100%);
+      background-color: oldlace;
+      border-top: $simple-border;
+      bottom: 0;
+      box-sizing: border-box;
+      padding: 1em;
+      position: absolute;
 
+      @include respond-to('max-width: 1024px') {
+        height: 10.5em;
+      }
+
+      @include respond-to('max-width: 640px') {
+        height: 11.5em;
+      }
+
+      @include respond-to('max-width: 480px') {
+        height: 12.5em;
+      }
+
+      @include respond-to('max-width: 420px') {
+        height: 13.5em;
+      }
+
+      @include respond-to('max-width: 380px') {
+        height: 15em;
+      }
+
+      .copyright {
+        @include indentations(0, 1.5em 0);
+        float: left;
+
+        .site-title {
+          display: inline;
+          text-decoration: none;
+        }
+      }
+
+      .social-media {
+        position: absolute;
+        right: 22em;
+        top: 1.9em;
+
+        @include respond-to('max-width: 1024px') {
+          bottom: 1em;
+          right: 0;
+          top: auto;
+          width: 100%;
+        }
+
+        .wrapper {
+          @include respond-to('max-width: 1024px') {
+            margin: 0 auto;
+            position: relative;
+            width: 7em;
+          }
+        }
+
+        a {
+          margin: 0 0.3em;
+          width: 2.5em;
+
+          @include respond-to('max-width: 800px') {
+            width: 2.8em;
+          }
+
+          &:last-child {
+            @include respond-to('max-width: 1024px') {
+              float: right;
+            }
+          }
+        }
+      }
+
+      .address {
+        @include indentations(0, 1em 0);
+        float: right;
+        width: 20em;
+
+        span {
+          font-weight: bold;
+        }
+      }
+
+      .copyright,
+      .address {
+        @include respond-to('max-width: 1024px') {
+          @include dimensions(auto, 100%);
+          float: none;
+          padding: 0.5em 0;
+          text-align: center;
+        }
+      }
+    }
   }
 }
