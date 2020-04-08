@@ -612,7 +612,7 @@ body {
         }
       }
 
-      .popup-back {
+      .popup_back {
         @include dimensions(100%, 100%);
         background-color: rgba(0, 0, 0, 0.9);
         left: 0;
@@ -636,7 +636,7 @@ body {
           }
         }
 
-        .popup-front {
+        .popup_front {
           @include dimensions(100%, 70%);
           background-color: rgba(0, 0, 0, 0);
           margin: 0 auto;
@@ -716,7 +716,7 @@ body {
             display: inline-block;
             margin: 0 0.1em;
             vertical-align: middle;
-            
+
             @include respond-to('max-width: 800px') {
               @include dimensions(5px, 5px);
             }
