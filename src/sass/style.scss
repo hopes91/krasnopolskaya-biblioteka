@@ -190,10 +190,18 @@ body {
           @include indentations(0, 0);
           display: inline-block;
           vertical-align: top;
-          width: 15em;
+          width: 14.7em;
+
+          @include respond-to('max-width: 1220px') {
+            width: 18.5%;
+
+            &:nth-child(3) {
+              width: 21%;
+            }
+          }
 
           @include respond-to('max-width: 1024px') {
-            width: 12em;
+            width: 19%;
           }
 
           .section-title {
