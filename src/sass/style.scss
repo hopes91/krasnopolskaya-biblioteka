@@ -604,6 +604,12 @@ body {
         }
       }
 
+      .events {
+        @include respond-to('max-width: 640px') {
+          @include indentations(0, 1em 0.5em);
+        }
+      }
+
       .site-map {
         text-align: left;
 
