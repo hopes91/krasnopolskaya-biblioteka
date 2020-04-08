@@ -1,5 +1,3 @@
-const arrowUp = document.getElementById('arrow-up');
-
 function scrollToTop(event) {
   event.preventDefault();
 
@@ -36,4 +34,4 @@ function scrollToTop(event) {
   }
 }
 
-arrowUp.addEventListener('click', scrollToTop);
+document.getElementById('arrow-up').addEventListener('click', scrollToTop);

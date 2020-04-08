@@ -1,5 +1,3 @@
-const navbarSections = document.querySelectorAll('.navbar-section');
-
 const showSectionLinks = event => {
   const sectionLinks = event.target.children[1];
 
@@ -16,5 +14,5 @@ const hideSectionLinks = event => {
   }
 };
 
-navbarSections.forEach(section => section.addEventListener('mouseenter', showSectionLinks));
-navbarSections.forEach(section => section.addEventListener('mouseleave', hideSectionLinks));
+document.querySelectorAll('.navbar-section').forEach(section => section.addEventListener('mouseenter', showSectionLinks));
+document.querySelectorAll('.navbar-section').forEach(section => section.addEventListener('mouseleave', hideSectionLinks));
