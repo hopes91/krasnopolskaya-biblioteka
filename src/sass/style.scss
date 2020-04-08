@@ -610,6 +610,17 @@ body {
         }
       }
 
+      .past-events {
+        .past-years-events {
+          .table-title {
+            cursor: pointer;
+            margin: 1em auto 1.2em auto;
+            text-align: center;
+            width: 13em;
+          }
+        }
+      }
+
       .site-map {
         text-align: left;
 
