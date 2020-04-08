@@ -145,7 +145,7 @@ body {
 
           .date-month {
             display: inline-block;
-            padding: 0 0.2em;
+            padding-left: 0.2em;
           }
         }
 
@@ -520,8 +520,8 @@ body {
             width: 8%;
             z-index: -1;
 
-            @include respond-to('max-width: 800px') {
-              width: 12%;
+            @include respond-to('max-width: 1024px') {
+              width: 10%;
             }
 
             @include respond-to('max-width: 640px') {
@@ -547,6 +547,35 @@ body {
               bottom: 0.5em;
               left: 0.5em;
             }
+          }
+        }
+      }
+
+      .news {
+        .new-news {
+          margin-bottom: 2.5em;
+
+          .news-date {
+            font-size: 1em;
+            margin: 0;
+          }
+
+          a {
+            display: inline;
+          }
+
+          h4 {
+            font-size: 1.1em;
+          }
+
+          iframe {
+            @include respond-to('max-width: 1024px') {
+              width: 100%;
+            }
+          }
+
+          .page-image.image-new-book {
+            max-width: 25em;
           }
         }
       }
