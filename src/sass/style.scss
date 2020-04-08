@@ -588,6 +588,22 @@ body {
         }
       }
 
+      .schedule {
+        p {
+          @include indentations(0.8em 0, 0);
+          text-align: center;
+          width: 100%;
+        }
+
+        .schedule-day {
+          font-weight: bold;
+        }
+
+        .schedule-time {
+          margin-bottom: 1.5em;
+        }
+      }
+
       .site-map {
         text-align: left;
 
