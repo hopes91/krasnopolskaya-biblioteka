@@ -90,7 +90,7 @@ body {
         }
       }
 
-      .decor {
+      .todays-date {
         box-sizing: border-box;
         position: absolute;
         right: 1em;
@@ -118,12 +118,12 @@ body {
             @include indentations(0, 0.4em 0 0 0);
             box-sizing: border-box;
             left: 1em;
-            // with .picture
+            // with .decor
             // left: 5.5em;
           }
 
           @include respond-to('max-width: 640px') {
-            // with .picture
+            // with .decor
             // left: 4.7em;
           }
 
@@ -149,7 +149,7 @@ body {
           }
         }
 
-        .picture {
+        .decor {
           bottom: -3em;
           position: absolute;
           right: 0.5em;
@@ -347,7 +347,7 @@ body {
       }
     }
 
-    .decor-center {
+    .decor_center {
       margin: 1em auto;
       max-width: 1000px;
       width: 41em;
