@@ -4,6 +4,26 @@ const slides = document.querySelectorAll('.slide');
 let mainSlide = null;
 let start = null;
 
+const manageSliderOnKeyDown = event => {
+  event.stopPropagation();
+
+  if (back.className.match('closed')) {
+    event.key === 'Enter' &&
+      showFirstSlide(event);
+  }
+
+  if (back.className.match('opened')) {
+    event.key === 'ArrowLeft' &&
+      handleArrows(-1);
+
+    event.key === 'ArrowRight' &&
+      handleArrows(1);
+
+    event.key === 'Escape' &&
+      hideSlider();
+  }
+};
+
 const showFirstSlide = event => {
   if (back.className.match('closed')) {
     createDots();
@@ -28,19 +48,9 @@ const showFirstSlide = event => {
   }
 };
 
-const handleArrowsOnKeyDown = event => {
-  if (back && back.className.match('opened')) {
-    event.key === 'ArrowLeft' &&
-      handleArrows(-1);
-
-    event.key === 'ArrowRight' &&
-      handleArrows(1);
-  }
-};
-
 const handleArrows = index => {
-  const prevSlideArrow = document.querySelector('.slide-arrow_prev');
-  const nextSlideArrow = document.querySelector('.slide-arrow_next');
+  const prevSlideArrow = document.querySelector('.arrow_prev');
+  const nextSlideArrow = document.querySelector('.arrow_next');
 
   if (
     (index === -1 && mainSlide === 0) ||
@@ -85,28 +95,22 @@ const createDots = () => {
 
   dotsContainer.innerHTML = '';
 
-  allPhotos.forEach(photo => {
+  slides.forEach(slide => {
     const dot = document.createElement('span');
     dot.setAttribute('class', 'dot');
     dotsContainer.appendChild(dot);
   });
 };
 
-const hideSliderOnKeyDown = event => {
-  event.key === 'Escape' &&
-    hideSlider();
-};
-
 const hideSlider = () => {
-  if (back && back.className.match('opened')) {
-    back.className = 'popup-back closed';
-    mainSlide = null;
-    start = null;
-  }
+  back.className = 'popup-back closed';
+  mainSlide = null;
+  start = null;
 };
 
 if (back) {
-  document.querySelectorAll('.year-photo').addEventListener('click', showFirstSlide);
-  document.querySelector('.close-popup-icon').addEventListener('keydown', hideSliderOnKeyDown);
+  window.addEventListener('keydown', manageSliderOnKeyDown);
+  document.querySelectorAll('.year-photo').forEach(photo => photo.addEventListener('keydown', manageSliderOnKeyDown));
+  document.querySelectorAll('.year-photo').forEach(photo => photo.addEventListener('click', showFirstSlide));
   document.querySelector('.close-popup-icon').addEventListener('click', hideSlider);
 }
