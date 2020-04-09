@@ -283,15 +283,19 @@
               <img src="images/photogallery/2018/novogodnij-vecher-na-semejnom-klube-3.jpg" alt="Мама и сын на новогоднем семейном клубе стоят у книжных полок и смеются" tabindex="0" title="Новогодний вечер на семейном клубе 3" class="slide" />
             </div>
             <!-- END: popup front with a slider -->
-            <!-- START:  -->
-            <span class="slide-arrow_prev">&#10094;</span>
-            <!-- END:  -->
-            <!-- START:  -->
-            <span class="slide-arrow_next">&#10095;</span>
-            <!-- END:  -->
-            <!-- START:  -->
+            <!-- START: arrows -->
+            <div class="arrows">
+              <!-- START: arrow left -->
+              <img src="images/decor/arrow-left_256px.png" alt="Стрелка влево" title="Предыдущее фото" class="arrow arrow_prev" onclick="handleArrows(-1)" />
+              <!-- END: arrow left -->
+              <!-- START: arrow right -->
+              <img src="images/decor/arrow-right_256px.png" alt="Стрелка вправо" title="Следующее фото" class="arrow arrow_next" onclick="handleArrows(1)" />
+              <!-- END: arrow right -->
+            </div>
+            <!-- END: arrows -->
+            <!-- START: dots -->
             <div class="dots"></div>
-            <!-- END:  -->
+            <!-- END: dots -->
           </div>
           <!-- END: popup window -->
           <!-- END: content -->
