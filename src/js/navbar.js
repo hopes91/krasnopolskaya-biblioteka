@@ -1,12 +1,12 @@
 const navbarSections = document.querySelectorAll('.navbar-section');
 
-const toggleSectionTabIndex = () => {
+const toggleNavSectionTabIndex = () => {
   window.innerWidth > 800 ?
     navbarSections.forEach(section => section.children[0].setAttribute('tabindex', '0')) :
     navbarSections.forEach(section => section.children[0].setAttribute('tabindex', '-1'));
 };
 
-const toggleLinksTabIndex = isOpen => {
+const toggleNavSectionLinksTabIndex = isOpen => {
   const sectionLinks = document.querySelectorAll('.navbar .section-links a');
 
   isOpen ?
@@ -19,33 +19,33 @@ const toggleNavbarLinksOnKeyDown = event => {
 
   if (event.key === 'Enter') {
     sectionLinks.className.match('closed') ?
-      showSectionLinks(event) :
-      hideSectionLinks(event);
+      showNavSectionLinks(event) :
+      hideNavSectionLinks(event);
   }
 };
 
-const showSectionLinks = event => {
+const showNavSectionLinks = event => {
   const sectionLinks = event.currentTarget.children[1];
 
   if (sectionLinks && sectionLinks.className.match('closed')) {
     sectionLinks.className = 'section-links opened';
 
-    toggleLinksTabIndex(true);
+    toggleNavSectionLinksTabIndex(true);
   }
 };
 
-const hideSectionLinks = event => {
+const hideNavSectionLinks = event => {
   const sectionLinks = event.currentTarget.children[1] || event.target.nextElementSibling;
 
   if (sectionLinks && sectionLinks.className.match('opened')) {
     sectionLinks.className = 'section-links closed';
 
-    toggleLinksTabIndex(false);
+    toggleNavSectionLinksTabIndex(false);
   }
 };
 
-window.addEventListener('load', toggleSectionTabIndex);
-window.addEventListener('resize', toggleSectionTabIndex);
+window.addEventListener('load', toggleNavSectionTabIndex);
+window.addEventListener('resize', toggleNavSectionTabIndex);
 navbarSections.forEach(section => section.addEventListener('keydown', toggleNavbarLinksOnKeyDown));
-navbarSections.forEach(section => section.addEventListener('mouseenter', showSectionLinks));
-navbarSections.forEach(section => section.addEventListener('mouseleave', hideSectionLinks));
+navbarSections.forEach(section => section.addEventListener('mouseenter', showNavSectionLinks));
+navbarSections.forEach(section => section.addEventListener('mouseleave', hideNavSectionLinks));

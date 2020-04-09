@@ -1,42 +1,78 @@
 const burger = document.getElementById('burger');
-
-const toggleDropdown = event => {
-	burger.nextElementSibling.className.match('closed') ?
-		showDropdown(burger.children):
-    hideDropdown(burger.children);
-};
-
-const showDropdown = burgerSpans => {
-	burgerSpans[0].className = 'span-one_active';
-	burgerSpans[2].className = 'span-three_active';
-	setTimeout(() => {
-		burgerSpans[1].className = 'span-two_active';
-	}, 200);
-
-	burger.nextElementSibling.className = 'dropdown-menu opened';
-};
-
-const hideDropdown = burgerSpans => {
-	burgerSpans[0].className = '';
-	burgerSpans[2].className = '';
-	setTimeout(() => {
-		burgerSpans[1].className = '';
-	}, 200);
-
-	burger.nextElementSibling.className = 'dropdown-menu closed';
-};
-
 const dropdownSections = document.querySelectorAll('.dropdown-section');
 
-const toggleDropdownLinks = event => {
-  const sectionLinks = event.currentTarget.children[1];
-
-  if (sectionLinks) {
-    sectionLinks.className.match('closed') ?
-      sectionLinks.className = 'section-links opened':
-      sectionLinks.className = 'section-links closed';
+const toggleDropSectionTabIndex = () => {
+  if (window.innerWidth <= 800) {
+		burger.setAttribute('tabIndex', '0');
+		dropdownSections.forEach(section => section.children[0].setAttribute('tabIndex', '0'));
   }
+
+	burger.setAttribute('tabIndex', '-1');
+	dropdownSections.forEach(section => section.children[0].setAttribute('tabIndex', '-1'));
 };
 
-burger.addEventListener('click', toggleDropdown);
-dropdownSections.forEach(section => section.addEventListener('click', toggleDropdownLinks));
+const toggleDropSectionLinksTabIndex = isOpen => {
+  const sectionLinks = document.querySelectorAll('.dropdown .section-links a');
+
+  isOpen ?
+    sectionLinks.forEach(link => link.setAttribute('tabIndex', '0')) :
+    sectionLinks.forEach(link => link.setAttribute('tabIndex', '-1'));
+};
+
+const toggleBurgerOnKeyDown = event => {
+  event.key === 'Enter' &&
+    toggleBurger();
+};
+
+const toggleBurger = () => {
+  const burgerSpans = document.querySelectorAll('#burger span');
+
+  if (burgerSpans[0].className === '') {
+    burgerSpans[0].className = 'span-one_active';
+    burgerSpans[2].className = 'span-three_active';
+    setTimeout(() => burgerSpans[1].className = 'span-two_active', 200);
+  } else {
+    burgerSpans[0].className = '';
+    burgerSpans[2].className = '';
+    setTimeout(() => burgerSpans[1].className = '', 200);
+  }
+
+  toggleDropdown();
+};
+
+const toggleDropdown = () => {
+  const dropdownMenu = document.querySelector('.dropdown .dropdown-menu');
+
+  if (dropdownMenu) {
+	  dropdownMenu.className.match('closed') ?
+	    dropdownMenu.className = 'dropdown-menu opened' :
+	    dropdownMenu.className = 'dropdown-menu closed';
+	}
+};
+
+const toggleDropSectionLinksOnKeyDown = event => {
+  event.key === 'Enter' &&
+    toggleDropSectionLinks(event);
+};
+
+const toggleDropSectionLinks = event => {
+  const dropdownLinks = event.currentTarget.children[1];
+
+  if (dropdownLinks) {
+	  if (dropdownLinks.className.match('closed')) {
+	    dropdownLinks.className = 'section-links opened';
+
+	    toggleDropSectionLinksTabIndex(true);
+	  } else {
+	    dropdownLinks.className = 'section-links closed';
+
+	    toggleDropSectionLinksTabIndex(false);
+	  }
+	}
+};
+
+window.addEventListener('load', toggleDropSectionTabIndex);
+window.addEventListener('resize', toggleDropSectionTabIndex);
+burger.addEventListener('keydown', toggleBurgerOnKeyDown);
+burger.addEventListener('click', toggleBurger);
+dropdownSections.forEach(section => section.addEventListener('click', toggleDropSectionLinks));
