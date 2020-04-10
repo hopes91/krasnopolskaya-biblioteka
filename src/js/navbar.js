@@ -17,7 +17,7 @@ const toggleNavSectionLinksTabIndex = isOpen => {
 const toggleNavbarLinksOnKeyDown = event => {
   const sectionLinks = event.target.nextElementSibling;
 
-  if (event.key === 'Enter') {
+  if (event.key === 'Enter' && sectionLinks) {
     sectionLinks.className.match('closed') ?
       showNavSectionLinks(event) :
       hideNavSectionLinks(event);
