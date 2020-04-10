@@ -7,9 +7,8 @@ const imagemin = require('gulp-imagemin');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
 const uglifycss = require('gulp-uglifycss');
-const babel = require('gulp-babel');
-const concat = require('gulp-concat');
-const uglify = require('gulp-uglify');
+const webpack = require('webpack');
+const webpackStream = require('webpack-stream');
 const cached = require('gulp-cached');
 const remember = require('gulp-remember');
 const del = require('del');
@@ -42,15 +41,8 @@ gulp.task('css', function() {
 });
 
 gulp.task('js', function() {
-  return gulp.src([
-      'node_modules/@babel/polyfill/dist/polyfill.js',
-      './src/js/*.js'
-    ])
-    .pipe(cached('js'))
-    .pipe(babel({presets: ['@babel/preset-env']}))
-    .pipe(remember('js'))
-    .pipe(concat('script.js'))
-    .pipe(uglify())
+  return gulp.src('./src/js/**/*.js')
+    .pipe(webpackStream(require('./webpack.config.js')))
     .pipe(gulp.dest('./public'));
 });
 
