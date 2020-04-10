@@ -110,7 +110,7 @@ const hideSlider = () => {
 
 if (back) {
   window.addEventListener('keydown', manageSliderOnKeyDown);
-  document.querySelectorAll('.year-photo').forEach(photo => photo.addEventListener('keydown', manageSliderOnKeyDown));
-  document.querySelectorAll('.year-photo').forEach(photo => photo.addEventListener('click', showFirstSlide));
+  document.querySelectorAll('.min-photo').forEach(photo => photo.addEventListener('keydown', manageSliderOnKeyDown));
+  document.querySelectorAll('.min-photo').forEach(photo => photo.addEventListener('click', showFirstSlide));
   document.querySelector('.close-popup-icon').addEventListener('click', hideSlider);
 }
