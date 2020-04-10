@@ -10,8 +10,8 @@ const toggleNavSectionLinksTabIndex = isOpen => {
   const sectionLinks = document.querySelectorAll('.navbar .section-links a');
 
   isOpen ?
-    sectionLinks.forEach(link => link.setAttribute('tabIndex', '0')) :
-    sectionLinks.forEach(link => link.setAttribute('tabIndex', '-1'));
+    sectionLinks.forEach(link => link.setAttribute('tabindex', '0')) :
+    sectionLinks.forEach(link => link.setAttribute('tabindex', '-1'));
 };
 
 const toggleNavbarLinksOnKeyDown = event => {

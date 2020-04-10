@@ -3,20 +3,22 @@ const dropdownSections = document.querySelectorAll('.dropdown-section');
 
 const toggleDropSectionTabIndex = () => {
   if (window.innerWidth <= 800) {
-		burger.setAttribute('tabIndex', '0');
-		dropdownSections.forEach(section => section.children[0].setAttribute('tabIndex', '0'));
+		burger.setAttribute('tabindex', '0');
+		dropdownSections.forEach(section => section.children[0].setAttribute('tabindex', '0'));
   }
 
-	burger.setAttribute('tabIndex', '-1');
-	dropdownSections.forEach(section => section.children[0].setAttribute('tabIndex', '-1'));
+  if (window.innerWidth > 800) {
+    burger.setAttribute('tabindex', '-1');
+  	dropdownSections.forEach(section => section.children[0].setAttribute('tabindex', '-1'));
+  }
 };
 
 const toggleDropSectionLinksTabIndex = isOpen => {
   const sectionLinks = document.querySelectorAll('.dropdown .section-links a');
 
   isOpen ?
-    sectionLinks.forEach(link => link.setAttribute('tabIndex', '0')) :
-    sectionLinks.forEach(link => link.setAttribute('tabIndex', '-1'));
+    sectionLinks.forEach(link => link.setAttribute('tabindex', '0')) :
+    sectionLinks.forEach(link => link.setAttribute('tabindex', '-1'));
 };
 
 const toggleBurgerOnKeyDown = event => {
