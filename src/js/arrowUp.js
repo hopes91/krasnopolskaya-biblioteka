@@ -1,6 +1,6 @@
+	const arrowUp = document.getElementById('arrow-up');
+
 // const showHideArrowUp = () => {
-// 	const arrowUp = document.getElementById('arrow-up');
-//
 // 	if (window.pageYOffset > window.innerHeight / 3) {
 // 		arrowUp.style.display = 'inline-block';
 //     arrowUp.setAttribute('tabindex', '0');
@@ -22,7 +22,7 @@ function scrollToTop(event) {
 
   event.currentTarget.id.match('arrow-up') ?
     hash = event.currentTarget.href.replace(/[^#]*(.*)/, '$1') :
-    hash = document.querySelector('#arrow-up').href.replace(/[^#]*(.*)/, '$1');
+    hash = arrowUp.href.replace(/[^#]*(.*)/, '$1');
 
   const topIndent = document.querySelector(hash).getBoundingClientRect().top;
 
@@ -49,4 +49,4 @@ function scrollToTop(event) {
 }
 
 // window.addEventListener('scroll', showHideArrowUp);
-document.getElementById('arrow-up').addEventListener('click', scrollToTop);
+arrowUp.addEventListener('click', scrollToTop);

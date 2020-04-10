@@ -1,5 +1,9 @@
 const back = document.querySelector('.popup_back');
+const minPhotos = document.querySelectorAll('.min-photo');
+const closePopupIcon = document.querySelector('.close-popup-icon');
 const slides = document.querySelectorAll('.slide');
+const prevSlideArrow = document.querySelector('.arrow_prev');
+const nextSlideArrow = document.querySelector('.arrow_next');
 
 let mainSlide = null;
 let start = null;
@@ -48,10 +52,13 @@ const showFirstSlide = event => {
   }
 };
 
-const handleArrows = index => {
-  const prevSlideArrow = document.querySelector('.arrow_prev');
-  const nextSlideArrow = document.querySelector('.arrow_next');
+const handleArrowsOnClick = event => {
+  event.target.className.match('prev') ?
+    handleArrows(-1) :
+    handleArrows(1);
+};
 
+const handleArrows = index => {
   if (
     (index === -1 && mainSlide === 0) ||
     (index === 1 && mainSlide === slides.length - 1)
@@ -110,7 +117,9 @@ const hideSlider = () => {
 
 if (back) {
   window.addEventListener('keydown', manageSliderOnKeyDown);
-  document.querySelectorAll('.min-photo').forEach(photo => photo.addEventListener('keydown', manageSliderOnKeyDown));
-  document.querySelectorAll('.min-photo').forEach(photo => photo.addEventListener('click', showFirstSlide));
-  document.querySelector('.close-popup-icon').addEventListener('click', hideSlider);
+  minPhotos.forEach(photo => photo.addEventListener('keydown', manageSliderOnKeyDown));
+  minPhotos.forEach(photo => photo.addEventListener('click', showFirstSlide));
+  prevSlideArrow.addEventListener('click', handleArrowsOnClick);
+  nextSlideArrow.addEventListener('click', handleArrowsOnClick);
+  closePopupIcon.addEventListener('click', hideSlider);
 }
