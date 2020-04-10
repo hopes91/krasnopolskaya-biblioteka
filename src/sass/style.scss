@@ -462,7 +462,7 @@ body {
       }
 
       .page {
-        @include indentations(1em auto 0 auto, 1em 2.2em 4em 2.2em);
+        @include indentations(1em auto 0 auto, 1em 2.2em 7em 2.2em);
         background-color: oldlace;
         box-sizing: border-box;
         max-width: 70em;
@@ -480,7 +480,7 @@ body {
         }
 
         @include respond-to('max-width: 800px') {
-          padding: 1.5em 2em 3.5em 2em;
+          padding: 1.5em 2em 6em 2em;
           width: 100%;
         }
 
