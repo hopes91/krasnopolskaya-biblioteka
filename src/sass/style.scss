@@ -90,6 +90,47 @@ body {
         }
       }
 
+      .decor.may-9th {
+        display: inline-block;
+        left: 1em;
+        position: relative;
+        top: -2em;
+        width: 15em;
+
+        // @include respond-to('max-width: 800px') {
+        //   bottom: -0.2em;
+        //   box-sizing: border-box;
+        //   left: 0.2em;
+        // }
+        //
+        // @include respond-to('max-width: 640px') {
+        //   bottom: 0.5em;
+        //   width: 5em;
+        // }
+
+        img,
+        p {
+          position: relative;
+          vertical-align: top;
+        }
+
+        img {
+          top: -0.1em;
+          width: 2.5em;
+        }
+
+        p {
+          display: inline-block;
+          font: {
+            size: 1.1em;
+            weight: bold;
+          }
+          left: 0.5em;
+          margin: 0;
+          top: 1.3em;
+        }
+      }
+
       .todays-date {
         box-sizing: border-box;
         position: absolute;
@@ -117,13 +158,13 @@ body {
             @include indentations(0, 0.4em 0 0 0);
             box-sizing: border-box;
             left: 1em;
-            // with .decor
-            // left: 5.5em;
+            // New Year
+            left: 5.5em;
           }
 
           @include respond-to('max-width: 640px') {
-            // with .decor
-            // left: 4.7em;
+            // New Year
+            left: 4.7em;
           }
 
           .date-dayOfTheWeek {
@@ -149,13 +190,14 @@ body {
         }
 
         .decor {
+          // New Year
           bottom: -3em;
           position: absolute;
           right: 0.5em;
           width: 6em;
 
           @include respond-to('max-width: 800px') {
-            bottom: 0.2em;
+            bottom: -0.2em;
             box-sizing: border-box;
             left: 0.2em;
           }
