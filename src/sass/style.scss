@@ -881,11 +881,11 @@ body {
         z-index: 1;
 
         @include respond-to('max-width: 800px') {
-          bottom: -1.3em;
+          bottom: -1.5em;
         }
 
-        @include respond-to('max-width:640px') {
-          bottom: -3em;
+        @include respond-to('max-width: 640px') {
+          bottom: -2.5em;
         }
 
         span {
