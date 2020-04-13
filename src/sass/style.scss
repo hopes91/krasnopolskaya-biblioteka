@@ -661,18 +661,17 @@ body {
         z-index: 5;
 
         .close-popup-icon {
+          @include dimensions(2.3em, 2.3em);
           background-color: rgba(0, 0, 0, 0);
-          border: 0;
           color: oldlace;
           cursor: pointer;
-          font-size: 3em;
           position: absolute;
-          right: 0.5em;
-          top: 0.1em;
+          right: 1.5em;
+          top: 0.9em;
           z-index: 5;
 
-          &:hover {
-            font-size: 3.05em;
+          @include respond-to('max-width: 640px') {
+            @include dimensions(1.8em, 1.8em);
           }
         }
 
