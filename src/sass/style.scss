@@ -597,7 +597,7 @@ body {
 
       .news {
         .new-news {
-          margin-bottom: 2.5em;
+          margin-bottom: 2em;
 
           .news-date {
             font-size: 1em;
@@ -624,6 +624,14 @@ body {
 
           .page-image.image-new-book {
             max-width: 25em;
+          }
+        }
+
+        .news-by-months {
+          .news-by-months-title {
+            cursor: pointer;
+            display: inline-block;
+            margin: 0 0 1em 0;
           }
         }
       }
