@@ -596,6 +596,12 @@ body {
       }
 
       .news {
+        &:first-child {
+          p {
+            margin: 1.5em 0 0 0;
+          }
+        }
+
         .new-news {
           margin-bottom: 2em;
 
