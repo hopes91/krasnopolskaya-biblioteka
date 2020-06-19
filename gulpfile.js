@@ -31,7 +31,7 @@ gulp.task('img', function() {
 });
 
 gulp.task('vid', function() {
-  return gulp.src('./src/assets/videos/*.*')
+  return gulp.src('./src/assets/videos/**/*.*')
     .pipe(gulp.dest('./public/videos'));
 });
 
@@ -79,7 +79,7 @@ gulp.task('watch', function() {
     }
   });
 
-  const vidWatcher = gulp.watch('./src/assets/videos/*.*', gulp.series('vid'));
+  const vidWatcher = gulp.watch('./src/assets/videos/**/*.*', gulp.series('vid'));
 
   vidWatcher.on('change', function(event) {
     if (event.type === 'deleted') {
