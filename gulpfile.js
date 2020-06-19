@@ -70,7 +70,7 @@ gulp.task('watch', function() {
     }
   });
 
-  const imgWatcher = gulp.watch('./src/assets/images/*.*', gulp.series('img'));
+  const imgWatcher = gulp.watch('./src/assets/images/**/*.*', gulp.series('img'));
 
   imgWatcher.on('change', function(event) {
     if (event.type === 'deleted') {
