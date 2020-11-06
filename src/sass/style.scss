@@ -837,6 +837,24 @@ body {
         }
       }
 
+      .calendar {
+        span {
+          font-style: italic;
+        }
+
+        .calendar-month {
+          text-transform: uppercase;
+        }
+
+        tr td:first-child {
+          min-width: 5em;
+        }
+
+        tr td:last-child {
+          text-align: left;
+        }
+      }
+
       .useful-links {
         text-align: left;
 
