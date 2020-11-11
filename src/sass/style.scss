@@ -848,7 +848,15 @@ body {
         }
 
         tr td:first-child {
-          min-width: 5em;
+          width: 10em;
+
+          @include respond-to('max-width: 1024px') {
+            width: 5em;
+          }
+
+          @include respond-to('max-width: 800px') {
+            width: 100%;
+          }
         }
 
         tr td:last-child {
