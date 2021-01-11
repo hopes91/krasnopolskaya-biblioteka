@@ -627,15 +627,6 @@ body {
             max-width: 25em;
           }
         }
-
-        // .news-by-months {
-        //   .news-by-months-title {
-        //     cursor: pointer;
-        //     display: inline-block;
-        //     font-size: 1.1em;
-        //     margin: 0 0 0.5em 0;
-        //   }
-        // }
       }
 
       .photogallery {
@@ -788,6 +779,39 @@ body {
             margin: 1em auto 1.2em auto;
             text-align: center;
             width: 13em;
+          }
+        }
+      }
+
+      .news-archive {
+        .old-news {
+          margin-bottom: 2em;
+
+          .news-date {
+            font-size: 1em;
+            margin-top: 0;
+          }
+
+          a {
+            display: inline;
+          }
+
+          h4 {
+            font-size: 1.1em;
+          }
+
+          iframe {
+            @include respond-to('max-width: 1024px') {
+              width: 100%;
+            }
+          }
+
+          .page-image {
+            max-height: 55em;
+          }
+
+          .page-image.image-new-book {
+            max-width: 25em;
           }
         }
       }
