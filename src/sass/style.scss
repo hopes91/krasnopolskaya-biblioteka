@@ -170,26 +170,26 @@ body {
           // }
 
           // May 9th
-          position: absolute;
-          right: 0;
-          top: 1.3em;
-          width: 12.3em;
+          // position: absolute;
+          // right: 0;
+          // top: 1.3em;
+          // width: 12.3em;
+          //
+          // @include respond-to('max-width: 800px') {
+          //   left: 0.7em;
+          //   right: auto;
+          //   top: 0.4em;
+          // }
 
-          @include respond-to('max-width: 800px') {
-            left: 0.7em;
-            right: auto;
-            top: 0.4em;
-          }
-
-          img {
-            position: relative;
-            top: 0;
-            width: 2em;
-
-            @include respond-to('max-width: 800px') {
-              width: 1.8em;
-            }
-          }
+          // img {
+          //   position: relative;
+          //   top: 0;
+          //   width: 2em;
+          //
+          //   @include respond-to('max-width: 800px') {
+          //     width: 1.8em;
+          //   }
+          // }
 
           p {
             bottom: 0.2em;
