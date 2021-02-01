@@ -330,18 +330,18 @@ body {
             }
           }
 
-          .span-one_active {
-            top: 10px !important;
+          span.span-one_active {
+            top: 10px;
         		transform: rotate(40deg);
         		transform-origin: center;
         	}
 
-        	.span-two_active {
-        		display: none !important;
+        	span.span-two_active {
+        		display: none;
         	}
 
-        	.span-three_active {
-            bottom: 10px !important;
+        	span.span-three_active {
+            bottom: 10px;
         		transform: rotate(-40deg);
         		transform-origin: center;
         	}
