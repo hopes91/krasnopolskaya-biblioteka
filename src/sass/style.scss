@@ -1043,9 +1043,10 @@ body {
         }
       }
 
-      .address {
+      .address-footer {
         @include indentations(0, 1em 0);
         float: right;
+        font-style: normal;
         width: 20em;
 
         span {
@@ -1054,7 +1055,7 @@ body {
       }
 
       .copyright,
-      .address {
+      .address-footer {
         @include respond-to('max-width: 1024px') {
           @include dimensions(auto, 100%);
           float: none;
