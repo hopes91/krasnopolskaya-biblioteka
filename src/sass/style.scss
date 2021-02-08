@@ -784,6 +784,12 @@ body {
       }
 
       .news-archive {
+        .past-years-news {
+          a {
+            text-decoration: none;
+          }
+        }
+
         .old-news {
           margin-bottom: 2em;
 
