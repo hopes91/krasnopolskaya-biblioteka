@@ -1,4 +1,4 @@
-const tableTitle = document.querySelector('.table-title');
+const tableTitle = document.querySelectorAll('.table-title');
 
 const toggleEvents = event => {
   const pastEventsTable = event.target.nextElementSibling;
@@ -17,5 +17,5 @@ const changeTitleAttribute = (event, pastEventsTable) => {
 };
 
 if (tableTitle) {
-  tableTitle.addEventListener('click', toggleEvents);
+  tableTitle.forEach(title => title.addEventListener('click', toggleEvents));
 }
