@@ -504,7 +504,7 @@ body {
       }
 
       .page {
-        @include indentations(1em auto 0 auto, 1em 2.2em 7em 2.2em);
+        @include indentations(1em auto 0 auto, 1.5em 2.2em 7em 2.2em);
         background-color: oldlace;
         box-sizing: border-box;
         max-width: 70em;
@@ -626,6 +626,16 @@ body {
           .page-image.image-new-book {
             max-width: 25em;
           }
+        }
+
+        .more-news-button {
+          @include dimensions(auto, 100%);
+          border: $simple-border;
+          box-sizing: border-box;
+          padding: 1em;
+          text-align: center;
+          text-decoration: none;
+          text-transform: uppercase;
         }
       }
 
